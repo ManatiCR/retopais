@@ -126,11 +126,11 @@ deploy:
             drush cc drush
             drush site-set @pantheon.retopais.dev
             echo 'Set sftp'
-            terminus site set-connection-mode --site=<%= dashedAppName %> --env=dev --mode=sftp
+            terminus site set-connection-mode --site=retopais --env=dev --mode=sftp
             drush cc drush --strict=0
             drush si -y retopais --strict=0
             echo 'Set git'
-            terminus site set-connection-mode --site=<%= dashedAppName %> --env=dev --mode=git
+            terminus site set-connection-mode --site=retopais --env=dev --mode=git
             # Post build configuration.
             drush cc drush --strict=0
             drush master-set-current-scope development --strict=0
