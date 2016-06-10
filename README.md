@@ -4,8 +4,8 @@ Reto País Drupal Distribution
 
 ## Dependencies
 
-* VirtualBox: 5.x
-* Vagrant: 1.7.x
+* VirtualBox
+* Vagrant: >=1.7.x
 * Ansible (optional, but recommended): 1.9.x
 
 ### Mac
@@ -37,30 +37,9 @@ Prepare the local site:
 Prepare for local development:
 
 * Visit http://editorconfig.org/ for instructions on how to configure your IDE or editor to use the included `.editorconfig` file.
-* `cp example.config.yml config.yml`
-* Edit config.yml and update the following:
-    * Find and replace `drupalvm.dev` with `BRANDNAME.dev`
-    * vagrant_machine_name: `BRANDNAME`
-    * vagrant_ip: `0.0.0.0`
+* `cp example.config.yml default.config.yml`
+* Edit default.config.yml and update the following:
     * vagrant_synced_folders - local_path: `your-path` (modify as necessary)
-    * vagrant_memory: `2048`
-    * build_makefile: `false`
-    * install_site: `false`
-    * drupal_major_version: `7`
-    * drupal_core_path: `/var/www/build`
-    * drush_version: `7.1.0`
-    * installed_extras:
-      * `# - adminer`
-      * `- mailhog`
-      * `- memcached`
-      * `# - nodejs`
-      * `# - pimpmylog`
-      * `# - ruby`
-      * `- selenium`
-      * `- solr`
-      * `- varnish`
-      * `# - xdebug`
-      * `# - xhprof`
 * [Mac/Linux only] Install Ansible Galaxy roles required for this VM: `sudo ansible-galaxy install -r provisioning/requirements.yml --force`
 
 * `vagrant up`
@@ -69,14 +48,9 @@ Create local settings files:
 
 * `./scripts/local_settings.sh`
 
-Configure Solr search (adapted from
-  [Solr for Drupal Developers](http://www.midwesternmac.com/blogs/jeff-geerling/solr-drupal-developers-part-3)):
-
-* `./scripts/drupalvm_solr.sh`
-
 Prepare the site:
 
-* `./scripts/local_install.sh`
+* `./scripts/retopais_local_install.sh`
 
 ## Structure
 
