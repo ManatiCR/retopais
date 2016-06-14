@@ -56,6 +56,7 @@ $conf['master_modules']['base'] = array(
   'rabbit_hole',
   'rh_node',
   'rh_taxonomy',
+  'select_or_other',
   'semantic_panels',
   'strongarm',
   'token',
