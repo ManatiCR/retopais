@@ -38,8 +38,10 @@ $conf['master_modules']['base'] = array(
   'ctools',
   'date_api',
   'entity',
+  'entityreference',
   'features',
   'fences',
+  'inline_entity_form',
   'link',
   'master',
   'module_filter',
@@ -53,6 +55,10 @@ $conf['master_modules']['base'] = array(
   'token',
   'views',
   'views_bulk_operations',
+
+  // Custom modules.
+  'retopais_feature_field_bases',
+  'retopais_feature_blog',
 );
 
 // Local environment.
