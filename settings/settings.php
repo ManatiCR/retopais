@@ -61,6 +61,7 @@ $conf['master_modules']['base'] = array(
   'strongarm',
   'token',
   'views',
+  'views_content',
   'views_bulk_operations',
 
   // Custom modules.
@@ -68,6 +69,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_blog',
   'retopais_feature_field_bases',
   'retopais_feature_input_formats',
+  'retopais_feature_pages',
   'retopais_feature_proposals',
   'retopais_taxonomy',
 );
