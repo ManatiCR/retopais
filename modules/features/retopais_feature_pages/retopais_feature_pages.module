@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Main file for retopais_feature_pages.
+ * Code for the Reto Pais Pages feature.
  */
+
+include_once 'retopais_feature_pages.features.inc';
 
 /**
  * Implements hook_menu().
