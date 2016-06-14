@@ -47,6 +47,8 @@ projects:
     version: "2.10"
   fences:
     version: "1.2"
+  inline_entity_form:
+    version: "1.8"
   libraries:
     version: "2.3"
   link:
