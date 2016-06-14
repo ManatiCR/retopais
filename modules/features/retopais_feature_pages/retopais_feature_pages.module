@@ -31,7 +31,7 @@ function retopais_feature_pages_menu() {
 function retopais_feature_pages_permission() {
   return array(
     'configure reto pais pages' => array(
-      'name' => t('Configure Reto Pais pages'),
+      'title' => t('Configure Reto Pais pages'),
       'description' => t('Configure some settings used for reto pais pages'),
     ),
   );
