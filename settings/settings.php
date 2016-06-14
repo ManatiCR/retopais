@@ -50,6 +50,7 @@ $conf['master_modules']['base'] = array(
   'panels',
   'semantic_panels',
   'strongarm',
+  'styleguide',
   'token',
   'views',
   'views_bulk_operations',
