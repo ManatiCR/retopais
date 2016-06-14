@@ -55,8 +55,9 @@ $conf['master_modules']['base'] = array(
   'views_bulk_operations',
 
   // Custom modules.
-  'retopais_feature_field_bases',
   'retopais_feature_blog',
+  'retopais_feature_field_bases',
+  'retopais_feature_input_formats',
   'retopais_taxonomy',
 );
 
