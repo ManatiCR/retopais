@@ -39,6 +39,8 @@ projects:
     version: "1.5"
   diff:
     version: "3.2"
+  email:
+    version: "1.3"
   entity:
     version: "1.7"
   entityreference:
@@ -64,8 +66,12 @@ projects:
     patch:
       # https://www.drupal.org/node/2320641
       - "https://www.drupal.org/files/issues/master-2320641-11-Enable-multiple-modules-at-once.patch"
+  maxlength:
+    version: "3.2"
   module_filter:
     version: "2.0"
+  paragraphs:
+    version: "1.0-rc4"
   pathauto:
     version: "1.3"
   panels:

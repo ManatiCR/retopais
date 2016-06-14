@@ -36,6 +36,7 @@ $conf['master_modules']['base'] = array(
   'ckeditor_entity_embed',
   'ctools',
   'date_api',
+  'email',
   'entity',
   'entityreference',
   'features',
@@ -43,14 +44,17 @@ $conf['master_modules']['base'] = array(
   'inline_entity_form',
   'link',
   'master',
+  'maxlength',
   'module_filter',
   'page_manager',
   'panels',
   'pathauto',
   'page_manager',
   'panels',
+  'paragraphs',
   'rabbit_hole',
   'rh_node',
+  'rh_taxonomy',
   'semantic_panels',
   'strongarm',
   'token',
@@ -109,6 +113,9 @@ $conf['cron_safe_threshold'] = 0;
 $conf['ckeditor_entity_embed_entity_bundles'] = array(
   'node' => array('image'),
 );
+
+// Enforce maxlength for user #1.
+$conf['maxlength_always_for_uid1'] = TRUE;
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
