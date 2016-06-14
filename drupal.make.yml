@@ -55,6 +55,9 @@ projects:
     version: "1.4"
   master:
     version: "2.0-beta4"
+    patch:
+      # https://www.drupal.org/node/2320641
+      - "https://www.drupal.org/files/issues/master-2320641-11-Enable-multiple-modules-at-once.patch"
   module_filter:
     version: "2.0"
   pathauto:

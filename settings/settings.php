@@ -57,6 +57,7 @@ $conf['master_modules']['base'] = array(
   // Custom modules.
   'retopais_feature_field_bases',
   'retopais_feature_blog',
+  'retopais_taxonomy',
 );
 
 // Local environment.

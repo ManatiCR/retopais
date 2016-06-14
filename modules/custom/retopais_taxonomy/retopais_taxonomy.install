@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install file for retopais_taxonomy.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function retopais_taxonomy_install() {
+  $blog_categories_vocabulary = taxonomy_vocabulary_machine_name_load('blog_categories');
+  if ($blog_categories_vocabulary) {
+    $term_names = array(
+      'Problemáticas',
+      'Actualizaciones de Reto País',
+      'Apariciones en medios',
+    );
+    foreach ($term_names as $term_name) {
+      $term = (object) array(
+        'name' => $term_name,
+        'vid' => $blog_categories_vocabulary->vid,
+      );
+      taxonomy_term_save($term);
+    }
+  }
+}
