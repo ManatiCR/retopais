@@ -22,7 +22,10 @@ function retopais_feature_proposals_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '26',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '25',
         ),
       ),
       'display' => array(),

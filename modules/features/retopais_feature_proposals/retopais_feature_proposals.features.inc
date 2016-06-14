@@ -23,7 +23,7 @@ function retopais_feature_proposals_node_info() {
       'base' => 'node_content',
       'description' => t('Contains proposals submitted by citizens.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Nombre de la solución'),
       'help' => '',
     ),
   );

@@ -15,7 +15,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '200 palabras máximo',
     'display' => array(
       'ckeditor_embed' => array(
         'label' => 'above',
@@ -43,7 +43,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'body',
-    'label' => 'Idea Summary',
+    'label' => 'Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática',
     'required' => 1,
     'settings' => array(
       'display_summary' => 0,
@@ -98,7 +98,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_canton',
-    'label' => 'Canton',
+    'label' => 'Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -108,7 +108,7 @@ function retopais_feature_proposals_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -142,7 +142,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_heard',
-    'label' => 'Heard',
+    'label' => '¿Cómo te enteraste de esta iniciativa?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -165,7 +165,7 @@ people|Amigo, familiar',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 26,
+      'weight' => 24,
     ),
   );
 
@@ -199,7 +199,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_idea_features',
-    'label' => 'Idea features',
+    'label' => '¿Qué destrezas y características tenés que te diferencien y te permitan incidir sobre el problema con la idea que planteás?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -216,7 +216,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 18,
     ),
   );
 
@@ -250,7 +250,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_idea_motivation',
-    'label' => 'Idea motivation',
+    'label' => '¿Qué te motivó a proponer esta idea o a emprender en este tema?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -267,7 +267,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 17,
     ),
   );
 
@@ -301,7 +301,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_idea_susteinability',
-    'label' => 'Idea susteinability',
+    'label' => '¿Cómo generaría ingresos tu solución para ser sostenible en el tiempo?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -318,7 +318,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -352,7 +352,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_innovative_idea',
-    'label' => 'Innovative Idea',
+    'label' => 'Explicá cómo tu idea es innovadora',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -369,7 +369,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -405,7 +405,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_org_representative',
-    'label' => 'Organization legal representative',
+    'label' => 'Representante legal de la organización',
     'required' => 0,
     'settings' => array(
       'add_mode' => 'select',
@@ -425,7 +425,7 @@ people|Amigo, familiar',
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -459,7 +459,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_organization_address',
-    'label' => 'Organization Address',
+    'label' => 'Dirección de la organización',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -474,7 +474,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -508,7 +508,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_organization_name',
-    'label' => 'Organization Name',
+    'label' => '¿Cuál es el nombre de la organización?',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -523,7 +523,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -557,7 +557,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_organization_way',
-    'label' => 'Organization way',
+    'label' => '¿Esta solución es individual o grupal?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -567,7 +567,7 @@ people|Amigo, familiar',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -601,7 +601,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_problem',
-    'label' => 'Problem',
+    'label' => '¿Qué problemática deseás solucionar?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -611,7 +611,7 @@ people|Amigo, familiar',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 1,
     ),
   );
 
@@ -645,7 +645,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_achievements',
-    'label' => 'Project Achievements',
+    'label' => '¿Cuáles son los logros alcanzados por el proyecto hasta el momento?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -662,7 +662,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -696,7 +696,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_audience',
-    'label' => 'Project Audience',
+    'label' => '¿Quién y cómo se verá beneficiado por la idea?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -713,7 +713,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -747,7 +747,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_links',
-    'label' => 'Project Links',
+    'label' => 'Sitio web, Redes Sociales',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -777,7 +777,7 @@ people|Amigo, familiar',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -811,7 +811,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_origin',
-    'label' => 'Project Origin',
+    'label' => '¿Cómo y cuándo se originó el proyecto?',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -828,7 +828,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -864,7 +864,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_responsible',
-    'label' => 'Project Responsible',
+    'label' => 'Persona responsable del proyecto presentado',
     'required' => 0,
     'settings' => array(
       'add_mode' => 'select',
@@ -884,7 +884,7 @@ people|Amigo, familiar',
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
@@ -922,7 +922,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_project_running',
-    'label' => 'Project Running',
+    'label' => '¿Se encuentra en ejecución?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -932,7 +932,7 @@ people|Amigo, familiar',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -966,7 +966,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_representative_address',
-    'label' => 'Representative Address',
+    'label' => 'Dirección',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -981,7 +981,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 23,
     ),
   );
 
@@ -1015,7 +1015,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_representative_email',
-    'label' => 'Representative Email',
+    'label' => 'Correo electrónico',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1027,7 +1027,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 22,
+      'weight' => 21,
     ),
   );
 
@@ -1061,7 +1061,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_representative_full_name',
-    'label' => 'Representative Full Name',
+    'label' => 'Nombre completo del representante',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -1076,7 +1076,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -1110,7 +1110,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_representative_id_number',
-    'label' => 'Representative ID Number',
+    'label' => 'Número de cédula',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -1125,7 +1125,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 20,
     ),
   );
 
@@ -1159,7 +1159,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_representative_phone',
-    'label' => 'Representative Phone',
+    'label' => 'Número de teléfono',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -1174,7 +1174,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -1208,7 +1208,7 @@ people|Amigo, familiar',
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_solution_type',
-    'label' => 'Solution Type',
+    'label' => '¿Qué tipo de solución querés proponer?',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1218,36 +1218,37 @@ people|Amigo, familiar',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Canton');
-  t('Heard');
-  t('Idea Summary');
-  t('Idea features');
-  t('Idea motivation');
-  t('Idea susteinability');
-  t('Innovative Idea');
-  t('Organization Address');
-  t('Organization Name');
-  t('Organization legal representative');
-  t('Organization way');
-  t('Problem');
-  t('Project Achievements');
-  t('Project Audience');
-  t('Project Links');
-  t('Project Origin');
-  t('Project Responsible');
-  t('Project Running');
-  t('Representative Address');
-  t('Representative Email');
-  t('Representative Full Name');
-  t('Representative ID Number');
-  t('Representative Phone');
-  t('Solution Type');
+  t('200 palabras máximo');
+  t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática');
+  t('Correo electrónico');
+  t('Dirección');
+  t('Dirección de la organización');
+  t('Explicá cómo tu idea es innovadora');
+  t('Nombre completo del representante');
+  t('Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada');
+  t('Número de cédula');
+  t('Número de teléfono');
+  t('Persona responsable del proyecto presentado');
+  t('Representante legal de la organización');
+  t('Sitio web, Redes Sociales');
+  t('¿Cuál es el nombre de la organización?');
+  t('¿Cuáles son los logros alcanzados por el proyecto hasta el momento?');
+  t('¿Cómo generaría ingresos tu solución para ser sostenible en el tiempo?');
+  t('¿Cómo te enteraste de esta iniciativa?');
+  t('¿Cómo y cuándo se originó el proyecto?');
+  t('¿Esta solución es individual o grupal?');
+  t('¿Quién y cómo se verá beneficiado por la idea?');
+  t('¿Qué destrezas y características tenés que te diferencien y te permitan incidir sobre el problema con la idea que planteás?');
+  t('¿Qué problemática deseás solucionar?');
+  t('¿Qué te motivó a proponer esta idea o a emprender en este tema?');
+  t('¿Qué tipo de solución querés proponer?');
+  t('¿Se encuentra en ejecución?');
 
   return $field_instances;
 }

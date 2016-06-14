@@ -35,7 +35,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'fences_wrapper' => 'div',
     'field_name' => 'field_contact_email',
-    'label' => 'Email',
+    'label' => ' Correo electrónico',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -76,7 +76,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'fences_wrapper' => 'div',
     'field_name' => 'field_contact_name',
-    'label' => 'Name',
+    'label' => 'Nombre',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -120,7 +120,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'fences_wrapper' => 'div',
     'field_name' => 'field_contact_phone',
-    'label' => 'Phone',
+    'label' => 'Teléfono',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -186,10 +186,10 @@ function retopais_feature_field_bases_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Email');
+  t(' Correo electrónico');
   t('Featured Image');
-  t('Name');
-  t('Phone');
+  t('Nombre');
+  t('Teléfono');
 
   return $field_instances;
 }
