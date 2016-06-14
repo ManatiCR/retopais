@@ -101,6 +101,9 @@ $conf['fences_default_markup'] = 1;
 // Disable Drupal's "poor man's cron".
 $conf['cron_safe_threshold'] = 0;
 
+// Site name.
+$conf['site_name'] = 'Reto PAÍS';
+
 // Reto Pais Theme.
 $conf['theme_default'] = 'retopais';
 
