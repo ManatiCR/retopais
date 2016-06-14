@@ -50,9 +50,13 @@ $conf['master_modules']['base'] = array(
   'panels',
   'semantic_panels',
   'strongarm',
+  'styleguide',
   'token',
   'views',
   'views_bulk_operations',
+
+  // Custom.
+  'retopais_theme',
 );
 
 // Local environment.
@@ -99,6 +103,9 @@ $conf['cron_safe_threshold'] = 0;
 
 // Site name.
 $conf['site_name'] = 'Reto PAÍS';
+
+// Reto Pais Theme.
+$conf['theme_default'] = 'retopais';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
