@@ -1,0 +1,16 @@
+{
+  "generator-drupal-theme": {
+    "projectName": "retopais",
+    "projectSlug": "retopais",
+    "baseTheme": "aurora",
+    "baseThemeSettings": {
+      "auroraType": "aurora"
+    },
+    "sassDir": "sass",
+    "cssDir": "css",
+    "jsDir": "js",
+    "imgDir": "img",
+    "fontsDir": "fonts",
+    "templateDir": "tpl"
+  }
+}
