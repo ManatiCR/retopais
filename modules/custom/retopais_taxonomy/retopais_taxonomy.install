@@ -39,7 +39,7 @@ function retopais_taxonomy_install() {
       $term = (object) array(
         'name' => $term_name,
         'description' => $term_description,
-        'vid' => $blog_categories_vocabulary->vid,
+        'vid' => $problems_vocabulary->vid,
       );
       taxonomy_term_save($term);
     }
