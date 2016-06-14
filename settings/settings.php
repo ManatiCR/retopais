@@ -49,6 +49,8 @@ $conf['master_modules']['base'] = array(
   'pathauto',
   'page_manager',
   'panels',
+  'rabbit_hole',
+  'rh_node',
   'semantic_panels',
   'strongarm',
   'token',
