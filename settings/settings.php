@@ -33,6 +33,7 @@ $conf['master_modules']['base'] = array(
   'admin_views',
   'adminimal_admin_menu',
   'ckeditor',
+  'ckeditor_entity_embed',
   'ctools',
   'date_api',
   'entity',
