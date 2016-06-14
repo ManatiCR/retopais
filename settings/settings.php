@@ -97,6 +97,9 @@ $conf['fences_default_markup'] = 1;
 // Disable Drupal's "poor man's cron".
 $conf['cron_safe_threshold'] = 0;
 
+// Site name.
+$conf['site_name'] = 'Reto PAÍS';
+
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
   require_once DRUPAL_ROOT . '/sites/default/settings.local.php';
