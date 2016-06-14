@@ -23,6 +23,8 @@ projects:
     version: "1.5"
   adminimal_admin_menu:
     version: "1.7"
+  aurora:
+    version: "3.6"
   ckeditor:
     version: "1.17"
   ctools:
