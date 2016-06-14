@@ -31,6 +31,8 @@ projects:
       url: "https://git.drupal.org/sandbox/guschilds/2465359.git"
       branch: "7.x-1.x"
       revision: "a97e19dbe30945a441fed7c74e6e0ba9a5ed84ff"
+  chosen:
+    version: "2.0-beta5"
   ctools:
     version: "1.9"
   date:
@@ -100,6 +102,10 @@ projects:
     type: "theme"
 
 libraries:
+  chosen:
+    download:
+      type: "file"
+      url: "https://github.com/harvesthq/chosen/releases/download/1.4.2/chosen_v1.4.2.zip"
   ckeditor:
     download:
       type: "file"
