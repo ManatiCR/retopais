@@ -44,4 +44,20 @@ function retopais_taxonomy_install() {
       taxonomy_term_save($term);
     }
   }
+
+  // Create problems terms.
+  $cantons_vocabulary = taxonomy_vocabulary_machine_name_load('cantons');
+  if ($cantons_vocabulary) {
+    if (file_exists(drupal_get_path('module', 'retopais_taxonomy') . '/data/cantons.csv')) {
+      $file = fopen(drupal_get_path('module', 'retopais_taxonomy') . '/data/cantons.csv', 'r');
+      while ($data = fgetcsv($file)) {
+        $canton = reset($data);
+        $term = (object) array(
+          'name' => $canton,
+          'vid' => $cantons_vocabulary->vid,
+        );
+        taxonomy_term_save($term);
+      }
+    }
+  }
 }
