@@ -68,8 +68,8 @@ gulp.task('styles', function () {
 //
 gulp.task('watch', function () {
   'use strict';
-   gulp.watch(paths.js + '/**/*.js', ['scripts']);
-   gulp.watch(paths.sass + '/**/*.scss', ['styles']);
+  gulp.watch(paths.js + '/**/*.js', ['scripts']);
+  gulp.watch(paths.sass + '/**/*.scss', ['styles']);
 });
 
 /**
@@ -80,8 +80,8 @@ gulp.task('browserSync', function () {
   browserSync.init(null, {
     proxy: 'retopais.dev',
     files: [
-    paths.css,
-    paths.js
+      paths.css,
+      paths.js
     ]
   });
 });
