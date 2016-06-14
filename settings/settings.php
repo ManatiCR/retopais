@@ -33,8 +33,6 @@ $conf['master_modules']['base'] = array(
   'admin_views',
   'adminimal_admin_menu',
   'ckeditor',
-  'content_taxonomy',
-  'content_taxonomy_autocomplete',
   'ctools',
   'date_api',
   'entity',
@@ -67,8 +65,6 @@ $conf['master_modules']['local'] = array(
   'devel',
   'diff',
   'field_ui',
-  'memcache_admin',
-  'migrate_ui',
   'views_ui',
 );
 
