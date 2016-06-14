@@ -17,6 +17,12 @@ function retopais_feature_blog_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -61,6 +67,12 @@ function retopais_feature_blog_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -98,6 +110,12 @@ function retopais_feature_blog_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -149,6 +167,12 @@ function retopais_feature_blog_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
