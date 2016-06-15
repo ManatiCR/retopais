@@ -32,7 +32,6 @@ Prepare the local site:
 * `composer install`
 * `npm install`
 * `node_modules/.bin/aquifer extensions-load`
-* `node_modules/.bin/aquifer build`
 
 Prepare for local development:
 
@@ -47,6 +46,10 @@ Prepare for local development:
 Create local settings files:
 
 * `./scripts/local_settings.sh`
+
+Build the site with aquifer:
+
+* `node_modules/.bin/aquifer build`
 
 Prepare the site:
 

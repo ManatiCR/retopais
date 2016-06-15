@@ -53,6 +53,7 @@ $conf['master_modules']['base'] = array(
   'rh_node',
   'semantic_panels',
   'strongarm',
+  'styleguide',
   'token',
   'views',
   'views_bulk_operations',
@@ -63,6 +64,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_field_bases',
   'retopais_feature_input_formats',
   'retopais_taxonomy',
+  'retopais_theme',
 );
 
 // Local environment.
@@ -109,6 +111,12 @@ $conf['cron_safe_threshold'] = 0;
 $conf['ckeditor_entity_embed_entity_bundles'] = array(
   'node' => array('image'),
 );
+
+// Site name.
+$conf['site_name'] = 'Reto PAÍS';
+
+// Reto Pais Theme.
+$conf['theme_default'] = 'retopais';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
