@@ -7,6 +7,7 @@
 include_once 'retopais_feature_pages.features.inc';
 
 define('RETOPAIS_FEATURE_PAGES_MEDIA_KIT_IMAGE_STYLE', 'thumbnail');
+define('RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE', 'medium');
 
 /**
  * Implements hook_menu().
