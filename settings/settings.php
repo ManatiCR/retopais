@@ -59,6 +59,7 @@ $conf['master_modules']['base'] = array(
   'select_or_other',
   'semantic_panels',
   'strongarm',
+  'styleguide',
   'token',
   'views',
   'views_content',
@@ -72,6 +73,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_pages',
   'retopais_feature_proposals',
   'retopais_taxonomy',
+  'retopais_theme',
 );
 
 // Local environment.
@@ -121,6 +123,12 @@ $conf['ckeditor_entity_embed_entity_bundles'] = array(
 
 // Enforce maxlength for user #1.
 $conf['maxlength_always_for_uid1'] = TRUE;
+
+// Site name.
+$conf['site_name'] = 'Reto PAÍS';
+
+// Reto Pais Theme.
+$conf['theme_default'] = 'retopais';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
