@@ -102,7 +102,7 @@ function retopais_feature_proposals_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Contanos más sobre por qué deberías ganar este reto',
+    'label' => 'Contanos más sobre el proyecto',
     'weight' => '2',
     'children' => array(
       0 => 'field_project_achievements',
@@ -128,7 +128,7 @@ function retopais_feature_proposals_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Qué deseás proponer?',
+    'label' => '¿Qué deseás proponer?',
     'weight' => '0',
     'children' => array(
       0 => 'field_organization_way',
