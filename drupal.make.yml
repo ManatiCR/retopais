@@ -74,6 +74,15 @@ projects:
     version: "3.2"
   module_filter:
     version: "2.0"
+  multistep:
+    download:
+      type: "git"
+      url: "https://git.drupal.org/project/multistep.git"
+      branch: "7.x-1.x"
+      revision: "3b0d40a76f7c0d185da320900f651e4dad5be312"
+    patch:
+      # https://www.drupal.org/node/1895894
+      - "https://www.drupal.org/files/issues/multistep-skip_dependant_steps-1895894-1-D7.patch"
   paragraphs:
     version: "1.0-rc4"
   pathauto:
