@@ -7,6 +7,8 @@
 include_once 'retopais_feature_pages.features.inc';
 
 define('RETOPAIS_FEATURE_PAGES_MEDIA_KIT_IMAGE_STYLE', 'thumbnail');
+define('RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE', 'medium');
+define('RETOPAIS_FEATURE_PAGES_BLOG_PROBLEMATICAS_CTA_IMAGE', 'medium');
 
 /**
  * Implements hook_menu().
@@ -18,6 +20,7 @@ function retopais_feature_pages_menu() {
     'access arguments' => array('configure reto pais pages'),
     'page callback' => 'retopais_feature_pages_paths_list',
   );
+
   $items['admin/config/retopais/que-es-reto-pais'] = array(
     'title' => 'Configuración de ¿Qué es Reto País?',
     'description' => 'Configuración de la página estática ¿Qué es Reto País?',
@@ -32,6 +35,22 @@ function retopais_feature_pages_menu() {
     'access arguments' => array('configure reto pais pages'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('retopais_feature_pages_contacto_form'),
+  );
+
+  $items['admin/config/retopais/problematicas'] = array(
+    'title' => 'Configuración de página de Problemáticas',
+    'description' => 'Configuración de la página de Problemáticas',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_pages_problematicas_form'),
+  );
+
+  $items['admin/config/retopais/blog'] = array(
+    'title' => 'Configuración de páginas de Blog',
+    'description' => 'Configuración de la páginas de Blog',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_pages_blog_form'),
   );
 
   return $items;
@@ -199,4 +218,110 @@ function retopais_feature_pages_handle_file_submit($existing_fid, $new_fid) {
     file_save($new_file);
     file_usage_add($new_file, 'retopais_feature_pages', 'contact_page', 1);
   }
+}
+
+/**
+ * Form builder for problematicas config form.
+ */
+function retopais_feature_pages_problematicas_form($form, $form_state) {
+  $form['retopais_feature_pages_problematicas_problems_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título antes del listado de problemáticas'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_problems_title', '¿Por qué fueron elegidas estas problemáticas?'),
+    '#required' => TRUE,
+  );
+
+  $retopais_feature_pages_problematicas_problems_intro = variable_get('retopais_feature_pages_problematicas_problems_intro', array('value' => 'Razones por las cuales fueron elegidas', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_problematicas_problems_intro'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto antes del listado de problemáticas'),
+    '#format' => $retopais_feature_pages_problematicas_problems_intro['format'],
+    '#default_value' => $retopais_feature_pages_problematicas_problems_intro['value'],
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_problematicas_sidebar_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título del Sidebar'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_title', 'Mapa de IPS'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_problematicas_sidebar_text'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Texto del Sidebar'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_text', 'Descripción de esa sección'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_problematicas_sidebar_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Imagen del Sidebar'),
+    '#description' => t('Tipos de archivo permitidos: gif, png, jpg, jpeg'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_image', 0),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#upload_location' => 'public://problematicas/',
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_problematicas_sidebar_cta_text'] = array(
+    '#type' => 'text',
+    '#title' => t('Texto del CTA del sidebar'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_cta_text', 'Conocé más en nuestro Blog'),
+    '#required' => TRUE,
+  );
+
+  $form['#submit'][] = 'retopais_feature_pages_problematicas_form_submit';
+
+  return system_settings_form($form);
+}
+
+/**
+ * Submit form for problematicas form.
+ */
+function retopais_feature_pages_problematicas_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $existing_image = variable_get('retopais_feature_pages_problematicas_sidebar_image', 0);
+  $new_image = $values['retopais_feature_pages_problematicas_sidebar_image'];
+  retopais_feature_pages_handle_file_submit($existing_image, $new_image);
+}
+
+/**
+ * Form builder for blog config.
+ */
+function retopais_feature_pages_blog_form($form, $form_state) {
+  $form['retopais_feature_pages_blog_problematicas_cta_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título del CTA de problemáticas'),
+    '#default_value' => variable_get('retopais_feature_pages_blog_problematicas_cta_title', 'Descubrí las problemáticas'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_blog_problematicas_cta_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Imagen del CTA de problemáticas'),
+    '#description' => t('Tipos de archivo permitidos: gif, png, jpg, jpeg'),
+    '#default_value' => variable_get('retopais_feature_pages_blog_problematicas_cta_image', 0),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#upload_location' => 'public://blog/',
+    '#required' => TRUE,
+  );
+
+  $form['#submit'][] = 'retopais_feature_pages_blog_form_submit';
+
+  return system_settings_form($form);
+}
+
+/**
+ * Submit form for problematicas form.
+ */
+function retopais_feature_pages_blog_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $existing_image = variable_get('retopais_feature_pages_blog_problematicas_cta_image', 0);
+  $new_image = $values['retopais_feature_pages_blog_problematicas_cta_image'];
+  retopais_feature_pages_handle_file_submit($existing_image, $new_image);
 }
