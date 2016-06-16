@@ -14,6 +14,13 @@ function retopais_feature_proposals_ctools_plugin_api($module = NULL, $api = NUL
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function retopais_feature_proposals_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function retopais_feature_proposals_node_info() {

@@ -1,0 +1,127 @@
+<?php
+/**
+ * @file
+ * Code for the Reto Pais Pages feature.
+ */
+
+include_once 'retopais_feature_pages.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function retopais_feature_pages_menu() {
+  $items['admin/config/retopais'] = array(
+    'title' => 'Configuración de Reto País',
+    'description' => 'Configuración de Reto País',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'retopais_feature_pages_paths_list',
+  );
+  $items['admin/config/retopais/que-es-reto-pais'] = array(
+    'title' => 'Configuración de ¿Qué es Reto País?',
+    'description' => 'Configuración de la página estática ¿Qué es Reto País?',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_pages_que_es_reto_pais_form'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function retopais_feature_pages_permission() {
+  return array(
+    'configure reto pais pages' => array(
+      'title' => t('Configure Reto Pais pages'),
+      'description' => t('Configure some settings used for reto pais pages'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function retopais_feature_pages_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner === 'ctools' && $plugin_type === 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Page callback to get a list of pages to config reto pais.
+ */
+function retopais_feature_pages_paths_list() {
+  $parent = menu_link_get_preferred();
+  $parameters = array(
+    'active_trail' => array($parent['plid']),
+    'only_active_trail' => FALSE,
+    'min_depth' => $parent['depth'] + 1,
+    'max_depth' => $parent['depth'] + 1,
+    'conditions' => array('plid' => $parent['mlid']),
+  );
+
+  $children = menu_build_tree($parent['menu_name'], $parameters);
+  $items = array();
+  foreach ($children as $child) {
+    $item = array(
+      'title' => $child['link']['link_title'],
+      'href' => $child['link']['href'],
+      'description' => $child['link']['options']['attributes']['title'],
+      'localized_options' => $child['link']['localized_options'],
+    );
+    $items[] = $item;
+  }
+
+  return array(
+    '#theme' => 'admin_block_content',
+    '#content' => $items,
+  );
+}
+
+/**
+ * Form builder for que es reto pais config form.
+ */
+function retopais_feature_pages_que_es_reto_pais_form($form, $form_state) {
+  $form['retopais_feature_pages_que_es_reto_pais_intro_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Texto introductorio para la página ¿Qué es Reto País?'),
+    '#description' => t('Se muestra debajo del título'),
+    '#default_value' => variable_get('retopais_feature_pages_que_es_reto_pais_intro_text', 'Reto PAIS es el Premio a la Innovación Social que invita a toda la ciudadanía a promover soluciones para 4 problemáticas:'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_que_es_reto_pais_text_after_problems'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Texto a motrarse bajo las problemáticas'),
+    '#default_value' => variable_get('retopais_feature_pages_que_es_reto_pais_text_after_problems', 'Tenemos el mes de julio para recibir propuestas de los ciudadanos y ciudadanas del país.'),
+    '#required' => TRUE,
+  );
+
+  for ($number = 1; $number <= 4; $number++) {
+    $form['retopais_feature_pages_que_es_reto_pais_stage_text_' . $number] = array(
+      '#type' => 'textfield',
+      '#title' => t('Texto para la etapa # @number', array('@number' => $number)),
+      '#default_value' => variable_get('retopais_feature_pages_que_es_reto_pais_stage_text_' . $number, 'Text for stage number ' . $number),
+      '#required' => TRUE,
+    );
+  }
+
+  $retopais_feature_pages_que_es_reto_pais_footer_text = variable_get('retopais_feature_pages_que_es_reto_pais_footer_text', array('value' => 'Texto debajo de las etapas', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_que_es_reto_pais_footer_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto al pie de la página ¿Qué es Reto País?'),
+    '#format' => $retopais_feature_pages_que_es_reto_pais_footer_text['format'],
+    '#default_value' => $retopais_feature_pages_que_es_reto_pais_footer_text['value'],
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_que_es_reto_pais_cta_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Texto para el CTA del final de la página'),
+    '#default_value' => variable_get('retopais_feature_pages_que_es_reto_pais_cta_text', 'Proponé Ideas'),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}
