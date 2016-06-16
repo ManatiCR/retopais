@@ -32,10 +32,12 @@ $conf['master_modules']['base'] = array(
   'admin_menu',
   'admin_views',
   'adminimal_admin_menu',
+  'chosen',
   'ckeditor',
   'ckeditor_entity_embed',
   'ctools',
   'date_api',
+  'email',
   'entity',
   'entityreference',
   'features',
@@ -43,14 +45,18 @@ $conf['master_modules']['base'] = array(
   'inline_entity_form',
   'link',
   'master',
+  'maxlength',
   'module_filter',
   'page_manager',
   'panels',
   'pathauto',
   'page_manager',
   'panels',
+  'paragraphs',
   'rabbit_hole',
   'rh_node',
+  'rh_taxonomy',
+  'select_or_other',
   'semantic_panels',
   'strongarm',
   'styleguide',
@@ -63,6 +69,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_blog',
   'retopais_feature_field_bases',
   'retopais_feature_input_formats',
+  'retopais_feature_proposals',
   'retopais_taxonomy',
   'retopais_theme',
 );
@@ -111,6 +118,9 @@ $conf['cron_safe_threshold'] = 0;
 $conf['ckeditor_entity_embed_entity_bundles'] = array(
   'node' => array('image'),
 );
+
+// Enforce maxlength for user #1.
+$conf['maxlength_always_for_uid1'] = TRUE;
 
 // Site name.
 $conf['site_name'] = 'Reto PAÍS';

@@ -12,3 +12,17 @@ function retopais_feature_field_bases_ctools_plugin_api($module = NULL, $api = N
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function retopais_feature_field_bases_paragraphs_info() {
+  $items = array(
+    'contact_information' => array(
+      'name' => 'Contact Information',
+      'bundle' => 'contact_information',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}

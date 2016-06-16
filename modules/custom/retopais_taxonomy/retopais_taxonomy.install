@@ -9,6 +9,7 @@
  * Implements hook_install().
  */
 function retopais_taxonomy_install() {
+  // Create blog categories terms.
   $blog_categories_vocabulary = taxonomy_vocabulary_machine_name_load('blog_categories');
   if ($blog_categories_vocabulary) {
     $term_names = array(
@@ -22,6 +23,41 @@ function retopais_taxonomy_install() {
         'vid' => $blog_categories_vocabulary->vid,
       );
       taxonomy_term_save($term);
+    }
+  }
+
+  // Create problems terms.
+  $problems_vocabulary = taxonomy_vocabulary_machine_name_load('problems');
+  if ($problems_vocabulary) {
+    $term_names = array(
+      'Separación y recolección de residuos' => 'En Costa Rica nos preocupa el ambiente, sin embargo, nuestras costas siguen recibiendo basura del Valle Central, el mar sigue lleno de plástico y el medio ambiente está sufriendo las consecuencias del mal manejo que le hemos dado a los residuos. Se sabe que en Costa Rica el 55% de residuos que se producen en hogares y comunidades son biodegradables y podrían compostearse, pero no se hace. Según la Jornada Nacional de Limpieza de hace dos años, el 74% de toda la basura recolectada pudo haber sido reciclada y solamente se pudo rescatar 7.8% para reciclar y compostar. ¿Cómo podemos cambiar esto?',
+      'Acceso a la educación superior' => 'Una innovación social que nos enorgullece muchísimo a los ticos es la abolición del ejército y el uso de esos recursos para la educación, esto nos ha permitido tener un alto índice de alfabetización y de escolaridad. Pero, que pasa con la educación superior? En este momento, solamente el 46.3% de los jóvenes entre los 17 y 21 años completa la educación secundaria. Y solamente el 34,2% de los jóvenes entre 18 y 24 años van a la universidad. Necesitamos cambiar este paradigma. La educación es clave para el progreso de un país, y la falta de ella se traduce a problemas sociales y desigualdad. ¿Qué se puede hacer para apoyar a todos estos jóvenes en el estudio y pelear contra la deserción estudiantil?',
+      'Tasa de obesidad' => 'En Costa Rica hemos cometido el error de no ver la obesidad como un tema de urgencia. Actualmente somos el sexto país de América Latina con más sobrepeso y nos encontramos entre los 25 países más obesos del mundo. El 60% de los costarricenses son obesos. Y la obesidad es uno de los factores principales de riesgo de muerte en el mundo. ¿Cuántas enfermedades podremos evitar si nos encontramos en un peso saludable? Urge la promoción de iniciativas que resuelvan esta problemática y que velen por el bienestar de los ciudadanos.',
+      'Accidentes de tránsito' => 'Vemos accidentes en las calles todos los días y escuchamos de ellos siempre en los medios, son tan frecuentes que ya los pasamos de largo, pero son, según datos del INEC, una de las principales causas de muerte en el país. Según la OMS, es la principal causa de muerte en jóvenes en Costa Rica. Y esto se puede prevenir, pasa principalmente por exceso de velocidad e imprudencia. ¿Qué podemos hacer los conductores para evitar las muertes en carrereta? ¿Qué podemos hacer como país?',
+    );
+    foreach ($term_names as $term_name => $term_description) {
+      $term = (object) array(
+        'name' => $term_name,
+        'description' => $term_description,
+        'vid' => $problems_vocabulary->vid,
+      );
+      taxonomy_term_save($term);
+    }
+  }
+
+  // Create problems terms.
+  $cantons_vocabulary = taxonomy_vocabulary_machine_name_load('cantons');
+  if ($cantons_vocabulary) {
+    if (file_exists(drupal_get_path('module', 'retopais_taxonomy') . '/data/cantons.csv')) {
+      $file = fopen(drupal_get_path('module', 'retopais_taxonomy') . '/data/cantons.csv', 'r');
+      while ($data = fgetcsv($file)) {
+        $canton = reset($data);
+        $term = (object) array(
+          'name' => $canton,
+          'vid' => $cantons_vocabulary->vid,
+        );
+        taxonomy_term_save($term);
+      }
     }
   }
 }

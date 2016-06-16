@@ -17,5 +17,21 @@ function retopais_feature_field_bases_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'cantons' => array(
+      'name' => 'Cantons',
+      'machine_name' => 'cantons',
+      'description' => 'Contains Costa Rica cantons.',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'problems' => array(
+      'name' => 'Problems',
+      'machine_name' => 'problems',
+      'description' => 'Contains problems to be solved by citizens proposals.',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
