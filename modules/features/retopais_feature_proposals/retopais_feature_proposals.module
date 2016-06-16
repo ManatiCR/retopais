@@ -26,7 +26,13 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     if ($button) {
       foreach ($current_step_fields as $field) {
         if ($current_step_name === 'group_info_organizacion') {
-          $form[$field][LANGUAGE_NONE][0]['value']['#required'] = TRUE;
+          if ($field === 'field_org_rep_email' ||
+            $field === 'field_proj_resp_email') {
+            $form[$field][LANGUAGE_NONE][0]['email']['#required'] = TRUE;
+          }
+          else {
+            $form[$field][LANGUAGE_NONE][0]['value']['#required'] = TRUE;
+          }
         }
         // Only validate the fields in current step.
         $button['#limit_validation_errors'][] = array($field);
