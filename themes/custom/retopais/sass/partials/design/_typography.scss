@@ -1,0 +1,28 @@
+///////////////////////
+// Typography
+// @_typography.scss
+///////////////////////
+
+html,
+body {
+  font-family: $open-sans;
+  line-height: 1.4;
+  color: $dark;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: $oswald;
+}
+h5,
+h6 {
+  font-weight: bold;
+}
+a {
+  text-decoration:none;
+  color: $blue;
+  &:hover {
+    color: $lightblue;
+  }
+}
