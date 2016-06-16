@@ -19,13 +19,13 @@ function retopais_feature_proposals_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '26',
+          'weight' => '13',
         ),
         'rabbit_hole' => array(
-          'weight' => '25',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
@@ -52,10 +52,36 @@ function retopais_feature_proposals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_show_step_numbers';
+  $strongarm->value = 0;
+  $export['multistep_show_step_numbers'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_status_publishing';
+  $strongarm->value = 'default';
+  $export['multistep_status_publishing'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_status_revisions';
+  $strongarm->value = 'last-complete';
+  $export['multistep_status_revisions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_workflow_mode';
+  $strongarm->value = 'free';
+  $export['multistep_workflow_mode'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_proposal';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_proposal'] = $strongarm;
 
   $strongarm = new stdClass();

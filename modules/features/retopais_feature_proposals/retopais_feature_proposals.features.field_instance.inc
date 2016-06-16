@@ -64,7 +64,7 @@ function retopais_feature_proposals_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -110,7 +110,7 @@ function retopais_feature_proposals_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -167,7 +167,7 @@ people|Amigo, familiar',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 24,
+      'weight' => 11,
     ),
   );
 
@@ -218,7 +218,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 6,
     ),
   );
 
@@ -269,7 +269,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 5,
     ),
   );
 
@@ -320,7 +320,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -371,7 +371,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -427,7 +427,7 @@ people|Amigo, familiar',
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 14,
+      'weight' => 5,
     ),
   );
 
@@ -476,7 +476,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 7,
     ),
   );
 
@@ -525,7 +525,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 4,
     ),
   );
 
@@ -617,7 +617,7 @@ people|Amigo, familiar',
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -668,7 +668,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -719,7 +719,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -783,7 +783,7 @@ people|Amigo, familiar',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -834,7 +834,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 3,
     ),
   );
 
@@ -890,7 +890,7 @@ people|Amigo, familiar',
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 15,
+      'weight' => 6,
     ),
   );
 
@@ -938,7 +938,7 @@ people|Amigo, familiar',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 5,
     ),
   );
 
@@ -987,7 +987,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 10,
     ),
   );
 
@@ -1033,7 +1033,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 21,
+      'weight' => 8,
     ),
   );
 
@@ -1082,7 +1082,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 6,
     ),
   );
 
@@ -1131,7 +1131,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 7,
     ),
   );
 
@@ -1180,7 +1180,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 9,
     ),
   );
 
