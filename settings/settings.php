@@ -33,13 +33,14 @@ $conf['master_modules']['base'] = array(
   'admin_views',
   'adminimal_admin_menu',
   'ckeditor',
-  'content_taxonomy',
-  'content_taxonomy_autocomplete',
+  'ckeditor_entity_embed',
   'ctools',
   'date_api',
   'entity',
+  'entityreference',
   'features',
   'fences',
+  'inline_entity_form',
   'link',
   'master',
   'module_filter',
@@ -55,7 +56,11 @@ $conf['master_modules']['base'] = array(
   'views',
   'views_bulk_operations',
 
-  // Custom.
+  // Custom modules.
+  'retopais_feature_blog',
+  'retopais_feature_field_bases',
+  'retopais_feature_input_formats',
+  'retopais_taxonomy',
   'retopais_theme',
 );
 
@@ -65,8 +70,6 @@ $conf['master_modules']['local'] = array(
   'devel',
   'diff',
   'field_ui',
-  'memcache_admin',
-  'migrate_ui',
   'views_ui',
 );
 
@@ -100,6 +103,11 @@ $conf['fences_default_markup'] = 1;
 
 // Disable Drupal's "poor man's cron".
 $conf['cron_safe_threshold'] = 0;
+
+// CKEditor Embed allowed bundles.
+$conf['ckeditor_entity_embed_entity_bundles'] = array(
+  'node' => array('image'),
+);
 
 // Site name.
 $conf['site_name'] = 'Reto PAÍS';
