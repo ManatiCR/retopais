@@ -21,7 +21,7 @@ function retopais_feature_proposals_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Datos del representante',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_heard',
       1 => 'field_representative_address',
@@ -79,10 +79,15 @@ function retopais_feature_proposals_field_group_info() {
     'label' => 'Contanos más sobre tu organización',
     'weight' => '3',
     'children' => array(
-      0 => 'field_org_representative',
-      1 => 'field_organization_address',
-      2 => 'field_organization_name',
-      3 => 'field_project_responsible',
+      0 => 'field_organization_address',
+      1 => 'field_organization_name',
+      2 => 'field_project_responsible',
+      3 => 'field_org_rep_name',
+      4 => 'field_org_rep_phone',
+      5 => 'field_org_rep_email',
+      6 => 'field_proj_resp_name',
+      7 => 'field_proj_resp_phone',
+      8 => 'field_proj_resp_email',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
