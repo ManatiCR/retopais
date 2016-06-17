@@ -48,6 +48,16 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
         $button['#limit_validation_errors'][] = array($field);
       }
     }
+    // Terms of Service.
+    if ($current_step_name ===  'group_datos_representante') {
+      $form['tos'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('He leído y acepto los !tos', array('!tos' => l(t('términos del reglamento'), 'reglamento'))),
+        '#required' => TRUE,
+        '#weight' => 50,
+      );
+      $button['#limit_validation_errors'][] = array('tos');
+    }
 
     // Don't validate on previous button because nothing is being saved.
     if (isset($form['actions']['previous'])) {
