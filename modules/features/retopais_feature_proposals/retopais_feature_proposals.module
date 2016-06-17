@@ -12,6 +12,10 @@ include_once 'retopais_feature_proposals.features.inc';
 function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_state) {
   $current_step_name = $form['#multistep']['current'];
   if (isset($form['#groups'][$current_step_name])) {
+    // Add extra submit for access control.
+    if ($current_step_name === 'group_inicio') {
+      $form['actions']['next']['#submit'][] = 'retopais_feature_proposals_access_control_submit';
+    }
     // Ensure right title.
     if ($current_step_name !== 'group_inicio') {
       $node_wrapper = entity_metadata_wrapper('node', $form_state['node']);
@@ -178,6 +182,40 @@ function retopais_feature_proposals_preprocess_proposal_progress(&$variables) {
     }
   }
   $variables['steps'] = $steps;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function retopais_feature_proposals_node_access($node, $op, $account) {
+  if ($op !== 'update' || $account->uid) {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  // Only affect anonymous user and update op.
+  $session_id = session_id();
+  $id = db_query('SELECT id FROM {retopais_feature_proposals_nid_session} WHERE nid = :nid AND session_id = :session_id', array(
+    ':nid' => $node->nid,
+    ':session_id' => $session_id,
+  ))->fetchField();
+  if ($id) {
+    return NODE_ACCESS_ALLOW;
+  }
+  return NODE_ACCESS_DENY;
+}
+
+/**
+ * Extra submit for access control.
+ */
+function retopais_feature_proposals_access_control_submit($form, &$form_state) {
+  $node = $form_state['node'];
+  $_SESSION['save'] = TRUE;
+  $session_id = session_id();
+  $record = array(
+    'nid' => $node->nid,
+    'session_id' => $session_id,
+  );
+  drupal_write_record('retopais_feature_proposals_nid_session', $record);
 }
 
 /**
