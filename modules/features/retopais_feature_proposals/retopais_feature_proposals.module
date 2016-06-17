@@ -84,6 +84,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
         '#weight' => 50,
       );
       $button['#limit_validation_errors'][] = array('tos');
+      $button['#submit'][] = 'retopais_feature_proposals_final_submit';
     }
 
     // Don't validate on previous button because nothing is being saved.
@@ -177,6 +178,13 @@ function retopais_feature_proposals_preprocess_proposal_progress(&$variables) {
     }
   }
   $variables['steps'] = $steps;
+}
+
+/**
+ * Final submit for proposal form.
+ */
+function retopais_feature_proposals_final_submit($form, &$form_state) {
+  $form_state['redirect'] = 'propuesta-enviada';
 }
 
 /**

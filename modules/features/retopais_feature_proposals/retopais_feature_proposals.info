@@ -62,6 +62,7 @@ features[field_instance][] = node-proposal-field_representative_phone
 features[field_instance][] = node-proposal-field_solution_type
 features[node][] = proposal
 features[page_manager_handlers][] = node_edit__panel_context_3ff4eec3-6d06-4090-bce8-84e3b8cf8d43
+features[page_manager_pages][] = propuesta_enviada
 features[user_permission][] = access content
 features[user_permission][] = create proposal content
 features[user_permission][] = edit own proposal content
