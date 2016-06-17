@@ -49,6 +49,7 @@ $conf['master_modules']['base'] = array(
   'module_filter',
   'page_manager',
   'panels',
+  'path_breadcrumbs',
   'pathauto',
   'page_manager',
   'panels',
@@ -82,6 +83,7 @@ $conf['master_modules']['local'] = array(
   'devel',
   'diff',
   'field_ui',
+  'path_breadcrumbs_ui',
   'views_ui',
 );
 
@@ -129,6 +131,9 @@ $conf['site_name'] = 'Reto PAÍS';
 
 // Reto Pais Theme.
 $conf['theme_default'] = 'retopais';
+
+// Breadcrumbs.
+$conf['path_breadcrumbs_delimiter'] = '>';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
