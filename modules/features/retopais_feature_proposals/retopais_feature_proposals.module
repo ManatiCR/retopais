@@ -17,6 +17,8 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
       $node_wrapper = entity_metadata_wrapper('node', $form_state['node']);
       $solution_type = $node_wrapper->field_solution_type->value();
       $organization_way = $node_wrapper->field_organization_way->value();
+      // For internal use.
+      $organization_way = $organization_way === 'organization' ? $organization_way : 'other';
       $steps = retopais_feature_proposals_get_steps_info();
       if (isset($steps[$solution_type][$organization_way][$current_step_name]['long'])) {
         $form['#groups'][$current_step_name]->label = $steps[$solution_type][$organization_way][$current_step_name]['long'];
@@ -101,6 +103,55 @@ function retopais_feature_proposals_multistep_step_alter(&$step, $direction, $fo
   if ($new_step) {
     $step = $new_step;
   }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function retopais_feature_proposals_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner === 'ctools' && $plugin_type === 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function retopais_feature_proposals_theme() {
+  return array(
+    'proposal_progress' => array(
+      'variables' => array(
+        'steps' => array(),
+        'current_step' => '',
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
+      'template' => 'proposal-progress',
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_proposal_progress().
+ */
+function retopais_feature_proposals_preprocess_proposal_progress(&$variables) {
+  $steps = array();
+  $passed_current = FALSE;
+  foreach ($variables['steps'] as $step_name => $titles) {
+    $steps[$step_name] = array(
+      'title' => $titles['short'],
+    );
+    if ($step_name === $variables['current_step']) {
+      $steps[$step_name]['class'] = 'proposal-progress-item-current';
+      $passed_current = TRUE;
+    }
+    elseif (!$passed_current) {
+      $steps[$step_name]['class'] = 'proposal-progress-item-done';
+    }
+    else {
+      $steps[$step_name]['class'] = 'proposal-progress-item-pending';
+    }
+  }
+  $variables['steps'] = $steps;
 }
 
 /**
