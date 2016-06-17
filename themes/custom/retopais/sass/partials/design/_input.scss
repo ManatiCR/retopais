@@ -1,9 +1,10 @@
 //////////////////////////////
-// input
+// Input
 // @_input.scss
 //////////////////////////////
 
-input[type="text"] {
+input[type="text"],
+.form-text {
   background-color: white;
   color: #353e42;
   padding: 8px 8px;
@@ -14,7 +15,6 @@ input[type="text"] {
     color: $blue;
     outline: none;
   }
-
 }
 
 .form-item-textfield,
@@ -24,15 +24,16 @@ input[type="text"] {
   }
 }
 
-.form-item-textarea {
-  color: $blue;
-}
-
 textarea {
   border-radius: 4px;
   border: solid 1px $dark;
   overflow: auto;
+  min-height: 128px;
   &:focus {
     outline: none;
   }
+}
+
+.grippie {
+  display: none;
 }
