@@ -10,7 +10,6 @@
       var fields = settings.proposalsOptionsToButtons;
       for (var index = 0; index < fields.length; index++) {
         var selector = '#edit-' + fields[index].replace(/_/g, '-') + '-und';
-        console.log(selector);
         if (jQuery(selector).length) {
           jQuery(selector).select2Buttons();
         }
