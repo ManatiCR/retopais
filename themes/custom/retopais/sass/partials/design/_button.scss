@@ -1,0 +1,65 @@
+//////////////////////////////
+// Buttons
+// @_buttons.scss
+//////////////////////////////
+
+button,
+.button,
+input[type='submit'],
+input[type='submit'] + #edit-cancel {
+  border-radius: 5px;
+  padding: 18px 60px;
+  border: 2px solid $blue;
+  color: $blue;
+  background-color: $white;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $blue;
+    box-shadow: 0 2px 0 $darkblue;
+    color: $white;
+    cursor: pointer;
+    padding: 18px 60px 16px 60px;
+    margin-bottom: 2px;
+  }
+}
+
+input[type='submit'] + #edit-cancel {
+  margin-left: 10px;
+}
+
+input[type='submit'].button-red, .button-red,
+input[type='submit'].button-dark, .button-dark {
+  border: none;
+  padding: 20px 62px 18px 62px;
+  margin-bottom: 2px;
+}
+
+input[type='submit'].button-red, .button-red{
+  color: $white;
+  background-color: $red;
+  box-shadow: 0 2px 0 $darkred;
+  &:hover {
+    background-color: $darkred;
+    box-shadow: 0 2px 0 $darkerred;
+  }
+}
+
+input[type='submit'].button-yellow, .button-yellow {
+  border: 2px solid $yellow;
+  color: $dark;
+  &:hover {
+    background-color: $yellow;
+    box-shadow: 0 2px 0 $darkyellow;
+  }
+}
+
+input[type='submit'].button-dark, .button-dark {
+  background-color: $button-grey;
+  box-shadow: 0 2px 0 $darker-gray;
+  color: $dark;
+  &:hover {
+    color: $white;
+    background-color: $dark;
+    box-shadow: 0 2px 0 $darker-gray;
+  }
+}
