@@ -127,3 +127,9 @@ libraries:
     download:
       type: "file"
       url: "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.4/ckeditor_4.5.4_standard.zip"
+  select2buttons:
+    download:
+      type: "git"
+      url: "git@github.com:o-sam-o/jquery.select2Buttons.git"
+      branch: "master"
+      revision: "6a41a9673d86b289acd2948037cea8b9d3eb8fe3"
