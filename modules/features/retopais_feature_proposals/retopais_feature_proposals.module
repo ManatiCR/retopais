@@ -28,25 +28,25 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     // Change fields to buttons as required.
     if ($current_step_name === 'group_inicio' ||
       $current_step_name === 'group_info_solucion_info') {
-        $fields_to_replace = array(
-          'field_problem',
-          'field_solution_type',
-          'field_organization_way',
-          'field_project_running',
-        );
-        $form['#attached']['js'][] = array(
-          'data' => libraries_get_path('select2buttons') . '/jQuery.select2Buttons.js',
-          'type' => 'file',
+      $fields_to_replace = array(
+        'field_problem',
+        'field_solution_type',
+        'field_organization_way',
+        'field_project_running',
       );
-        $form['#attached']['js'][] = array(
-          'data' => array(
-            'proposalsOptionsToButtons' => $fields_to_replace,
-          ),
-          'type' => 'setting',
-        );
-        $form['#attached']['js'][] = array(
-          'data' => drupal_get_path('module', 'retopais_feature_proposals') . '/js/proposal_options_to_buttons.js',
-          'type' => 'file',
+      $form['#attached']['js'][] = array(
+        'data' => libraries_get_path('select2buttons') . '/jQuery.select2Buttons.js',
+        'type' => 'file',
+      );
+      $form['#attached']['js'][] = array(
+        'data' => array(
+          'proposalsOptionsToButtons' => $fields_to_replace,
+        ),
+        'type' => 'setting',
+      );
+      $form['#attached']['js'][] = array(
+        'data' => drupal_get_path('module', 'retopais_feature_proposals') . '/js/proposal_options_to_buttons.js',
+        'type' => 'file',
       );
     }
     $current_step = $form['#groups'][$current_step_name];
