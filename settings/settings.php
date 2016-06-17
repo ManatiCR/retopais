@@ -32,30 +32,48 @@ $conf['master_modules']['base'] = array(
   'admin_menu',
   'admin_views',
   'adminimal_admin_menu',
+  'chosen',
   'ckeditor',
-  'content_taxonomy',
-  'content_taxonomy_autocomplete',
+  'ckeditor_entity_embed',
   'ctools',
   'date_api',
+  'email',
   'entity',
+  'entityreference',
   'features',
   'fences',
+  'inline_entity_form',
   'link',
   'master',
+  'maxlength',
   'module_filter',
   'page_manager',
   'panels',
+  'path_breadcrumbs',
   'pathauto',
   'page_manager',
   'panels',
+  'paragraphs',
+  'rabbit_hole',
+  'rh_node',
+  'rh_taxonomy',
+  'select_or_other',
   'semantic_panels',
   'strongarm',
   'styleguide',
   'token',
   'views',
+  'views_content',
   'views_bulk_operations',
 
-  // Custom.
+  // Custom modules.
+  'retopais_feature_alliances',
+  'retopais_feature_blog',
+  'retopais_feature_field_bases',
+  'retopais_feature_input_formats',
+  'retopais_feature_pages',
+  'retopais_feature_proposals',
+  'retopais_taxonomy',
   'retopais_theme',
 );
 
@@ -65,8 +83,7 @@ $conf['master_modules']['local'] = array(
   'devel',
   'diff',
   'field_ui',
-  'memcache_admin',
-  'migrate_ui',
+  'path_breadcrumbs_ui',
   'views_ui',
 );
 
@@ -101,8 +118,22 @@ $conf['fences_default_markup'] = 1;
 // Disable Drupal's "poor man's cron".
 $conf['cron_safe_threshold'] = 0;
 
+// CKEditor Embed allowed bundles.
+$conf['ckeditor_entity_embed_entity_bundles'] = array(
+  'node' => array('image'),
+);
+
+// Enforce maxlength for user #1.
+$conf['maxlength_always_for_uid1'] = TRUE;
+
+// Site name.
+$conf['site_name'] = 'Reto PAÍS';
+
 // Reto Pais Theme.
 $conf['theme_default'] = 'retopais';
+
+// Breadcrumbs.
+$conf['path_breadcrumbs_delimiter'] = '>';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {

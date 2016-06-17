@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Reto Pais Proposals feature.
+ */
+
+include_once 'retopais_feature_proposals.features.inc';
