@@ -10,6 +10,17 @@
 function retopais_feature_proposals_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access content'.
+  $permissions['access content'] = array(
+    'name' => 'access content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create proposal content'.
   $permissions['create proposal content'] = array(
     'name' => 'create proposal content',
@@ -24,6 +35,7 @@ function retopais_feature_proposals_user_default_permissions() {
   $permissions['edit own proposal content'] = array(
     'name' => 'edit own proposal content',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
