@@ -35,7 +35,7 @@ function proposal_progress_render($subtype, $conf, $panel_args, $context) {
       return $block;
     }
   }
-  elseif($page_callback == 'node_add') {
+  elseif ($page_callback == 'page_manager_node_add') {
     if ($router_item['page_arguments'][0] !== $type) {
       // No expected node type? Return empty block.
       return $block;
