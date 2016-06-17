@@ -51,7 +51,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
       }
     }
     // Terms of Service.
-    if ($current_step_name ===  'group_datos_representante') {
+    if ($current_step_name === 'group_datos_representante') {
       $form['tos'] = array(
         '#type' => 'checkbox',
         '#title' => t('He leído y acepto los !tos', array('!tos' => l(t('términos del reglamento'), 'reglamento'))),
