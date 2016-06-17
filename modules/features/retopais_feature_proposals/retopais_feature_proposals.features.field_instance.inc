@@ -800,7 +800,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -1073,11 +1073,7 @@ people|Amigo, familiar',
   // Exported field_instance: 'node-proposal-field_project_running'.
   $field_instances['node-proposal-field_project_running'] = array(
     'bundle' => 'proposal',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1092,7 +1088,7 @@ people|Amigo, familiar',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1112,8 +1108,10 @@ people|Amigo, familiar',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
       'weight' => 5,
     ),
   );
