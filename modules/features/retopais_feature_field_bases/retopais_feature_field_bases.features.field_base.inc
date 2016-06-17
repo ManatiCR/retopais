@@ -395,7 +395,7 @@ function retopais_feature_field_bases_field_default_field_bases() {
       'allowed_values' => array(
         'individual' => 'Individual',
         'group' => 'Grupal',
-        'organization' => 'Organization',
+        'organization' => 'Organizacional',
       ),
       'allowed_values_function' => '',
     ),
