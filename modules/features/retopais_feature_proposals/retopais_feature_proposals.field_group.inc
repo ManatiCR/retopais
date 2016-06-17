@@ -175,10 +175,11 @@ function retopais_feature_proposals_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Contanos de tu idea');
+  t('Contanos más sobre el proyecto');
   t('Contanos más sobre por qué deberías ganar este reto');
   t('Contanos más sobre tu organización');
   t('Datos del representante');
-  t('Qué deseás proponer?');
+  t('¿Qué deseás proponer?');
 
   return $field_groups;
 }
