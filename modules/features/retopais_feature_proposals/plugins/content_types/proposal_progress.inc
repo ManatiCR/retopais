@@ -20,7 +20,7 @@ $plugin = array(
 function proposal_progress_render($subtype, $conf, $panel_args, $context) {
   // Build the content type block.
   $block = new stdClass();
-  $block->title = '';
+  $block->title = t('Proponé Ideas');
 
   $node = FALSE;
   $type = 'proposal';

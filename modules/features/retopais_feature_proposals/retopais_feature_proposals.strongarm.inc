@@ -98,5 +98,12 @@ function retopais_feature_proposals_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_proposal'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_manager_node_edit_disabled';
+  $strongarm->value = FALSE;
+  $export['page_manager_node_edit_disabled'] = $strongarm;
+
   return $export;
 }

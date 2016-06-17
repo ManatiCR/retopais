@@ -41,5 +41,15 @@ function retopais_feature_proposals_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view own unpublished content'.
+  $permissions['view own unpublished content'] = array(
+    'name' => 'view own unpublished content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+    ),
+    'module' => 'node',
+  );
+
   return $permissions;
 }
