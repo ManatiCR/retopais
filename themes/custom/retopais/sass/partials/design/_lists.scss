@@ -25,3 +25,10 @@ ol li::before {
   padding: 2px 7px;
   border-radius: 16px;
 }
+li {
+  a {
+    &:hover {
+      color: $blue;
+    }
+  }
+}
