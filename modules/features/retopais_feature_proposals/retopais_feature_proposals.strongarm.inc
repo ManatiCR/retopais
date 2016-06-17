@@ -52,6 +52,34 @@ function retopais_feature_proposals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_button_done';
+  $strongarm->value = 'Enviar Propueta';
+  $export['multistep_button_done'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_button_next';
+  $strongarm->value = 'Siguiente';
+  $export['multistep_button_next'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_button_prev';
+  $strongarm->value = 'Regresar';
+  $export['multistep_button_prev'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'multistep_button_save';
+  $strongarm->value = 'Save';
+  $export['multistep_button_save'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'multistep_show_step_numbers';
   $strongarm->value = 0;
   $export['multistep_show_step_numbers'] = $strongarm;
