@@ -18,8 +18,8 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
       $solution_type = $node_wrapper->field_solution_type->value();
       $organization_way = $node_wrapper->field_organization_way->value();
       $steps = retopais_feature_proposals_get_steps_info();
-      if (isset($steps[$solution_type][$organization_way]['long'])) {
-        $form['#groups'][$current_step_name]->label = $steps[$solution_type][$organization_way]['long'];
+      if (isset($steps[$solution_type][$organization_way][$current_step_name]['long'])) {
+        $form['#groups'][$current_step_name]->label = $steps[$solution_type][$organization_way][$current_step_name]['long'];
       }
     }
     $current_step = $form['#groups'][$current_step_name];
