@@ -573,13 +573,13 @@ function retopais_feature_field_bases_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'No',
-        1 => 'Sí',
+        'yes' => 'Sí',
+        'no' => 'No',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_boolean',
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_representative_address'.
