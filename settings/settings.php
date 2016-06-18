@@ -75,6 +75,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_input_formats',
   'retopais_feature_pages',
   'retopais_feature_proposals',
+  'retopais_feature_site_layout',
   'retopais_taxonomy',
   'retopais_theme',
 );
