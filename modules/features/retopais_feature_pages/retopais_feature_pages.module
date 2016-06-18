@@ -11,6 +11,20 @@ define('RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE', 'medium');
 define('RETOPAIS_FEATURE_PAGES_BLOG_PROBLEMATICAS_CTA_IMAGE', 'medium');
 
 /**
+ * Implements hook_init().
+ */
+function retopais_feature_pages_init() {
+  $router_item = menu_get_item();
+  if ($router_item['page_callback'] === 'page_manager_page_execute') {
+    // We need to fix titles.
+    $page_name = reset($router_item['page_arguments']);
+    $page = page_manager_get_task('page');
+    $subtask = page_manager_get_task_subtask($page, $page_name);
+    drupal_set_title($subtask['admin title']);
+  }
+}
+
+/**
  * Implements hook_menu().
  */
 function retopais_feature_pages_menu() {
