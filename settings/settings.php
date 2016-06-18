@@ -49,6 +49,7 @@ $conf['master_modules']['base'] = array(
   'module_filter',
   'page_manager',
   'panels',
+  'panels_everywhere',
   'path_breadcrumbs',
   'pathauto',
   'page_manager',

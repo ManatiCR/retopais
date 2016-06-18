@@ -82,6 +82,8 @@ projects:
     version: "1.3"
   panels:
     version: "3.5"
+  panels_everywhere:
+    version: "1.0-rc2"
   rabbit_hole:
     version: "2.23"
   select_or_other:
