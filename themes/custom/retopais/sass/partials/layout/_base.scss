@@ -1,0 +1,19 @@
+///////////////////////////////
+// Base Layout rules.
+// @_base.scss
+///////////////////////////////
+
+// Singularity.gs configuration.
+@include add-grid(12);
+@include add-gutter(1/3);
+
+* {
+  box-sizing: border-box;
+}
+
+// Container rules.
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px;
+}
