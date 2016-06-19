@@ -68,7 +68,7 @@ gulp.task('styles', function () {
 //
 gulp.task('watch', function () {
   'use strict';
-  gulp.watch(paths.js + '/**/*.js', ['scripts']);
+  gulp.watch(paths.sourceJs + '/**/*.js', ['scripts']);
   gulp.watch(paths.sass + '/**/*.scss', ['styles']);
 });
 
