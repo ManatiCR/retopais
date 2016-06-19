@@ -81,7 +81,7 @@ function retopais_feature_site_layout_install() {
     'customized' => 1,
     'options' => array(
       'attributes' => array(
-        'class' => array('main-menu-propone'),
+        'class' => array('menu-item-propone'),
       ),
     ),
   );
@@ -123,6 +123,11 @@ function retopais_feature_site_layout_install() {
     'menu_name' => 'top-bar-menu',
     'weight' => 0,
     'plid' => 0,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('menu-item-mesainnovacion'),
+      ),
+    ),
   );
 
   // Impactico.
@@ -132,6 +137,11 @@ function retopais_feature_site_layout_install() {
     'menu_name' => 'top-bar-menu',
     'weight' => 1,
     'plid' => 0,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('menu-item-impactico'),
+      ),
+    ),
   );
 
   // Save menu links.
