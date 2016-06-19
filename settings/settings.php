@@ -44,6 +44,7 @@ $conf['master_modules']['base'] = array(
   'fences',
   'inline_entity_form',
   'link',
+  'magic',
   'master',
   'maxlength',
   'module_filter',
