@@ -136,6 +136,132 @@ function retopais_feature_site_layout_default_page_manager_handlers() {
     $pane->uuid = 'cd68d447-0ff6-4691-abe9-9d6fd311be4a';
     $display->content['new-cd68d447-0ff6-4691-abe9-9d6fd311be4a'] = $pane;
     $display->panels['main'][0] = 'new-cd68d447-0ff6-4691-abe9-9d6fd311be4a';
+    $pane = new stdClass();
+    $pane->pid = 'new-b1c363b3-1169-499e-9301-9af70c75d533';
+    $pane->panel = 'nav';
+    $pane->type = 'block';
+    $pane->subtype = 'system-main-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => 'nav',
+          'class_enable' => 1,
+          'class' => 'nav-main',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b1c363b3-1169-499e-9301-9af70c75d533';
+    $display->content['new-b1c363b3-1169-499e-9301-9af70c75d533'] = $pane;
+    $display->panels['nav'][0] = 'new-b1c363b3-1169-499e-9301-9af70c75d533';
+    $pane = new stdClass();
+    $pane->pid = 'new-199ec9cd-110d-44ca-9ab7-5798c351bd4d';
+    $pane->panel = 'top_bar';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-top-bar-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => 'nav',
+          'class_enable' => 1,
+          'class' => 'nav-top-bar',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '199ec9cd-110d-44ca-9ab7-5798c351bd4d';
+    $display->content['new-199ec9cd-110d-44ca-9ab7-5798c351bd4d'] = $pane;
+    $display->panels['top_bar'][0] = 'new-199ec9cd-110d-44ca-9ab7-5798c351bd4d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-26f3ca8a-8fd6-45ec-a468-2b9a8d984169';
   $handler->conf['display'] = $display;
