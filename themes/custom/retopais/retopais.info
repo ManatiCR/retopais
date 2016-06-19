@@ -23,6 +23,8 @@ stylesheets[print][] = 'css/print.css'
 ; ========================================
 ; Scripts
 ; ========================================
+scripts[] = 'js/enquire.min.js'
+scripts[] = 'js/scripts.js'
 
 ; ========================================
 ; Panels
