@@ -138,6 +138,9 @@ $conf['theme_default'] = 'retopais';
 // Breadcrumbs.
 $conf['path_breadcrumbs_delimiter'] = '>';
 
+// Panels Everywhere.
+$conf['panels_everywhere_site_template_enabled'] = TRUE;
+
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
   require_once DRUPAL_ROOT . '/sites/default/settings.local.php';
