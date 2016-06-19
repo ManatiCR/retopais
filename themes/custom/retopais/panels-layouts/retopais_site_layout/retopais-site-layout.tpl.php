@@ -19,7 +19,7 @@
     </div>
   </div>
   <?php endif; ?>
-  <div class="container">
+  <div class="container container-header">
     <?php print $content['header']; ?>
     <?php if (isset($content['nav'])): ?>
     <?php print $content['nav']; ?>
