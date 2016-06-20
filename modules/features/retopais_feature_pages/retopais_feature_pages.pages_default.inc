@@ -16,7 +16,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $page->admin_title = 'Contacto';
   $page->admin_description = '';
   $page->path = 'contacto';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -173,6 +176,25 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->uuid = '1152c588-6304-49db-968e-46283154ab12';
     $display->content['new-1152c588-6304-49db-968e-46283154ab12'] = $pane;
     $display->panels['middle'][0] = 'new-1152c588-6304-49db-968e-46283154ab12';
+    $pane = new stdClass();
+    $pane->pid = 'new-5d5a23a5-5e89-4a40-a707-fd13db736bfb';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'problems-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5d5a23a5-5e89-4a40-a707-fd13db736bfb';
+    $display->content['new-5d5a23a5-5e89-4a40-a707-fd13db736bfb'] = $pane;
+    $display->panels['middle'][1] = 'new-5d5a23a5-5e89-4a40-a707-fd13db736bfb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1152c588-6304-49db-968e-46283154ab12';
   $handler->conf['display'] = $display;
@@ -187,7 +209,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $page->admin_title = 'Problemáticas';
   $page->admin_description = '';
   $page->path = 'problematicas';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -347,7 +372,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $page->admin_title = 'Qué es Reto PAÍS?';
   $page->admin_description = '';
   $page->path = 'que-es-reto-pais';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
