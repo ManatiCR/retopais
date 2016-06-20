@@ -70,6 +70,7 @@ $conf['master_modules']['base'] = array(
   // Custom modules.
   'retopais_feature_alliances',
   'retopais_feature_blog',
+  'retopais_feature_config',
   'retopais_feature_field_bases',
   'retopais_feature_input_formats',
   'retopais_feature_pages',
