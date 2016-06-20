@@ -112,6 +112,17 @@ function retopais_feature_pages_theme() {
       'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
       'template' => 'homepage-que-es-reto-pais',
     ),
+    'homepage_premios' => array(
+      'variables' => array(
+        'link' => '',
+        'ideas_title' => '',
+        'ideas_description' => '',
+        'solution_title' => '',
+        'solution_description' => '',
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
+      'template' => 'homepage-premios',
+    ),
   );
 }
 
@@ -372,6 +383,41 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#type' => 'textfield',
     '#title' => t('Video del componente Qué es Reto País'),
     '#default_value' => variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', ''),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_premio_idea_titulo'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título del premio para ideas'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_idea_titulo', '1 ganador(a) por cada problemática (4)'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_premio_idea_descripcion'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Descripción del premio para ideas'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', 'Descripción de este premio'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_premio_solucion_titulo'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título del premio para soluciones'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_solucion_titulo', '1 ganador(a)'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_premio_solucion_descripcion'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Descripción del premio para soluciones'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', 'Descripción de este premio'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_premio_cta'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Texto del CTA de conocer más de los premios'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_cta', 'Conocé más de los premios'),
     '#required' => TRUE,
   );
 
