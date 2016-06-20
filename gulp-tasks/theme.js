@@ -11,9 +11,6 @@ var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var stripDebug = require('gulp-strip-debug');
-var rename = require('gulp-rename');
 
 //
 // Path settings
@@ -44,12 +41,6 @@ gulp.task('scripts', function () {
   return gulp.src(paths.sourceJs + '/**/*.js')
     // Concatenate everything within the JavaScript folder.
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest(paths.js))
-    .pipe(rename('scripts.min.js'))
-    // Strip all debugger code out.
-    .pipe(stripDebug())
-    // Minify the JavaScript.
-    .pipe(uglify())
     .pipe(gulp.dest(paths.js));
 });
 
