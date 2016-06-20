@@ -32,6 +32,7 @@ $conf['master_modules']['base'] = array(
   'admin_menu',
   'admin_views',
   'adminimal_admin_menu',
+  'captcha',
   'chosen',
   'ckeditor',
   'ckeditor_entity_embed',
@@ -42,7 +43,9 @@ $conf['master_modules']['base'] = array(
   'entityreference',
   'features',
   'fences',
+  'honeypot',
   'inline_entity_form',
+  'libraries',
   'link',
   'master',
   'maxlength',
@@ -55,6 +58,7 @@ $conf['master_modules']['base'] = array(
   'panels',
   'paragraphs',
   'rabbit_hole',
+  'recaptcha',
   'rh_node',
   'rh_taxonomy',
   'select_or_other',
@@ -65,8 +69,10 @@ $conf['master_modules']['base'] = array(
   'views',
   'views_content',
   'views_bulk_operations',
+  'views_cache_bully',
 
   // Custom modules.
+  'retopais_environment',
   'retopais_feature_alliances',
   'retopais_feature_blog',
   'retopais_feature_config',
@@ -135,6 +141,25 @@ $conf['theme_default'] = 'retopais';
 
 // Breadcrumbs.
 $conf['path_breadcrumbs_delimiter'] = '>';
+
+// Don't bootstrap the database when serving pages from the cache.
+$conf['page_cache_invoke_hooks'] = FALSE;
+
+// Configuration for views caching.
+$conf['views_cache_bully_results_lifespan'] = 300;
+$conf['views_cache_bully_output_lifespan'] = 300;
+
+// Environment.
+$conf['environment_require_override'] = FALSE;
+$conf['environment_indicator_overwrite'] = TRUE;
+
+// Avoid Recaptcha issue.
+// https://www.drupal.org/node/2476057.
+ini_set('arg_separator.output', '&');
+
+// Recaptcha.
+$conf['recaptcha_site_key'] = '6Lfu4iITAAAAAD7Tr-ufLQff_x8QKnm7MQx0OUAm';
+$conf['recaptcha_secret_key'] = '6Lfu4iITAAAAAA9ft2eaKMUqLJHeIb9eAMa6pby5';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
