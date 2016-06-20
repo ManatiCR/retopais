@@ -233,6 +233,29 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->uuid = 'a765bff4-3c41-4787-bb36-faeafe49cd35';
     $display->content['new-a765bff4-3c41-4787-bb36-faeafe49cd35'] = $pane;
     $display->panels['middle'][3] = 'new-a765bff4-3c41-4787-bb36-faeafe49cd35';
+    $pane = new stdClass();
+    $pane->pid = 'new-4e2305b5-cc4a-4934-80b6-487cd302f850';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Patrocinadores',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '4e2305b5-cc4a-4934-80b6-487cd302f850';
+    $display->content['new-4e2305b5-cc4a-4934-80b6-487cd302f850'] = $pane;
+    $display->panels['middle'][4] = 'new-4e2305b5-cc4a-4934-80b6-487cd302f850';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1152c588-6304-49db-968e-46283154ab12';
   $handler->conf['display'] = $display;
