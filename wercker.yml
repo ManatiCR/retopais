@@ -126,7 +126,7 @@ deploy:
             echo 'Set sftp'
             terminus site set-connection-mode --site=retopais --env=dev --mode=sftp
             terminus drush --site=retopais --env=dev "cc drush --strict=0"
-            terminus drush --site=retopais --env=dev "si -y retopais --strict=0"
+            terminus drush --site=retopais --env=dev "si --account-pass=admin -y retopais --strict=0"
             echo 'Set git'
             terminus site set-connection-mode --site=retopais --env=dev --mode=git
             # Post build configuration.
@@ -287,7 +287,7 @@ deploy-multidev:
             echo 'Set sftp'
             terminus site set-connection-mode --site=retopais --env=$NEWBRANCH --mode=sftp
             terminus drush --site=retopais --env=$NEWBRANCH "cc drush --strict=0"
-            terminus drush --site=retopais --env=$NEWBRANCH "si -y retopais --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "si --account-pass=admin -y retopais --strict=0"
             echo 'Set git'
             terminus site set-connection-mode --site=retopais --env=$NEWBRANCH --mode=git
             # Post build configuration.
