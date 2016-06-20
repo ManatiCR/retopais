@@ -122,3 +122,7 @@ libraries:
     download:
       type: "file"
       url: "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.4/ckeditor_4.5.4_standard.zip"
+  enquirejs:
+    download:
+      type: "file"
+      url: "https://raw.githubusercontent.com/WickyNilliams/enquire.js/v2.1.2/dist/enquire.min.js"
