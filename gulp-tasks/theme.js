@@ -4,6 +4,8 @@
  */
 /* eslint-env node */
 
+'use strict';
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
@@ -39,7 +41,6 @@ var sassOptions = {
 //
 
 gulp.task('scripts', function () {
-  'use strict';
   return gulp.src(paths.sourceJs + '/**/*.js')
     // Concatenate everything within the JavaScript folder.
     .pipe(concat('scripts.js'))
@@ -56,7 +57,6 @@ gulp.task('scripts', function () {
 // SASS Task
 //
 gulp.task('styles', function () {
-  'use strict';
   return gulp.src(paths.sass + '/**/*.scss')
          .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
          .pipe(prefix(["last 2 versions", "> 1%", "ie 8"]))
@@ -67,7 +67,6 @@ gulp.task('styles', function () {
 // Watch
 //
 gulp.task('watch', function () {
-  'use strict';
   gulp.watch(paths.sourceJs + '/**/*.js', ['scripts']);
   gulp.watch(paths.sass + '/**/*.scss', ['styles']);
 });
@@ -76,7 +75,6 @@ gulp.task('watch', function () {
  * Task for running browserSync.
  */
 gulp.task('browserSync', function () {
-  'use strict';
   browserSync.init(null, {
     proxy: 'retopais.dev',
     files: [
