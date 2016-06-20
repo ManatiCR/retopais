@@ -305,3 +305,4 @@ deploy-multidev:
             drush master-execute -y --strict=0
             drush cc all --strict=0
             drush en -y pantheon_api --strict=0
+            echo "If everything worked, go to http://$NEWBRANCH.retopais.pantheonsite.io"
