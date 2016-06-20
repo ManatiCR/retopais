@@ -1,0 +1,77 @@
+///////////////////////
+// Typography
+// @_typography.scss
+///////////////////////
+html, body {
+  font-family: $open-sans;
+  line-height: 1.4;
+  color: $dark;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include font-size(1.4);
+}
+
+h1, h2, h3, h4 {
+  font-family: $oswald;
+}
+
+h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  @include font-size(3);
+}
+
+h2 {
+  @include font-size(2.4);
+}
+
+h3 {
+  @include font-size(1.8);
+  color: $blue;
+}
+
+h4 {
+  @include font-size(1.4);
+  font-weight: bold;
+  a {
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+a {
+  @include font-size(1.4);
+  text-decoration:none;
+  color: $dark;
+  font-weight: bold;
+  &:hover {
+    color: $blue;
+  }
+}
+
+p {
+  @include font-size(1.4);
+}
+
+button,
+.button,
+input[type='submit'],
+input[type='submit'] + #edit-cancel {
+font-family: $oswald;
+font-weight: 400;
+font-size: 1.2rem;
+}
+b, strong {
+  font-weight: bold;
+}
+i {
+  font-style: italic;
+}

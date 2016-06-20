@@ -14,5 +14,9 @@
 //  If you'd like a hard reset, uncomment `compass/reset`.
 //  If you'd prefer a soft reset, uncomment `normalize`
 //////////////////////////////
-// @import 'compass/reset';
-// @import 'normalize';
+
+.page-admin-appearance-styleguide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
