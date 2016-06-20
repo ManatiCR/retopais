@@ -139,6 +139,45 @@ function retopais_feature_field_bases_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-problems-field_abstract'.
+  $field_instances['taxonomy_term-problems-field_abstract'] = array(
+    'bundle' => 'problems',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_abstract',
+    'label' => 'Abstract',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-problems-field_featured_image'.
   $field_instances['taxonomy_term-problems-field_featured_image'] = array(
     'bundle' => 'problems',
@@ -180,13 +219,14 @@ function retopais_feature_field_bases_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t(' Correo electrónico');
+  t('Abstract');
   t('Featured Image');
   t('Nombre');
   t('Teléfono');
