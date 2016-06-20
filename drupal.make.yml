@@ -25,6 +25,7 @@ projects:
     version: "1.7"
   aurora:
     version: "3.6"
+    type: "theme"
   ckeditor:
     version: "1.17"
   ckeditor_entity_embed:
