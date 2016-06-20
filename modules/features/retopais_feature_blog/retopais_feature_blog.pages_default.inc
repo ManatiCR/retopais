@@ -67,7 +67,7 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'format' => 'long',
+      'format' => 'blog_date',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
       'override_title_text' => '',
@@ -116,7 +116,7 @@ function retopais_feature_blog_default_page_manager_handlers() {
       'id' => '',
       'class' => '',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -140,7 +140,7 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -156,6 +156,25 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $display->content['new-59e99933-fe2d-4815-b369-1b80e6e614b0'] = $pane;
     $display->panels['middle'][3] = 'new-59e99933-fe2d-4815-b369-1b80e6e614b0';
     $pane = new stdClass();
+    $pane->pid = 'new-0c1b37eb-8c30-4328-8052-e7307db7cf76';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blog-recent_articles';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '0c1b37eb-8c30-4328-8052-e7307db7cf76';
+    $display->content['new-0c1b37eb-8c30-4328-8052-e7307db7cf76'] = $pane;
+    $display->panels['middle'][4] = 'new-0c1b37eb-8c30-4328-8052-e7307db7cf76';
+    $pane = new stdClass();
     $pane->pid = 'new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -169,11 +188,11 @@ function retopais_feature_blog_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
     $display->content['new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9'] = $pane;
-    $display->panels['middle'][4] = 'new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
+    $display->panels['middle'][5] = 'new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -194,7 +213,10 @@ function retopais_feature_blog_default_page_manager_pages() {
   $page->admin_title = 'Blog';
   $page->admin_description = '';
   $page->path = 'blog/!category';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'category' => array(

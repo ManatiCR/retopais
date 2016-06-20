@@ -14,7 +14,7 @@ function retopais_feature_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_blog_date';
-  $strongarm->value = 'd \d\e F \d\e Y';
+  $strongarm->value = 'd \\d\\e F \\d\\e Y';
   $export['date_format_blog_date'] = $strongarm;
 
   $strongarm = new stdClass();

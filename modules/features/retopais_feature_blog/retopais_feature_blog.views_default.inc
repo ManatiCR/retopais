@@ -160,6 +160,12 @@ function retopais_feature_blog_views_default_views() {
 
   /* Display: Recent Articles */
   $handler = $view->new_display('panel_pane', 'Recent Articles', 'recent_articles');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Últimos artículos';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -177,7 +183,7 @@ function retopais_feature_blog_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['date_format'] = 'blog_date';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Body */
@@ -191,7 +197,7 @@ function retopais_feature_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '300',
+    'trim_length' => '150',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -228,6 +234,7 @@ function retopais_feature_blog_views_default_views() {
     t('Blog'),
     t('Reto Pais'),
     t('Recent Articles'),
+    t('Últimos artículos'),
   );
   $export['blog'] = $view;
 
