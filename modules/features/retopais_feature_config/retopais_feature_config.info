@@ -1,0 +1,14 @@
+name = Reto Pais Global Config
+description = Provides no feature related configuration.
+core = 7.x
+package = Reto Pais
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = locale
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[language][] = es
+features[variable][] = language_default
+project path = sites/all/modules/features

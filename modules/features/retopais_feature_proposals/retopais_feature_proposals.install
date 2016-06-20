@@ -8,6 +8,18 @@
 /**
  * Implements hook_install().
  */
+function retopais_feature_proposals_install() {
+  // Create alias for proposal node add form.
+  $path = array(
+    'source' => 'node/add/proposal',
+    'alias' => 'propone-idea',
+  );
+  path_save($path);
+}
+
+/**
+ * Implements hook_schema().
+ */
 function retopais_feature_proposals_schema() {
   $schema['retopais_feature_proposals_nid_session'] = array(
     'description' => 'Information about anonymous users session id and node id',
