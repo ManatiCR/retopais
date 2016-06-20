@@ -184,7 +184,7 @@ deploy-test:
             # Post build configuration.
             drush sqlsan -y --strict=0
             drush cc drush --strict=0
-            drush master-set-current-scope development --strict=0
+            drush master-set-current-scope test --strict=0
             drush master-execute -y --strict=0
             drush updb -y --strict=0
             drush cc all --strict=0
@@ -235,7 +235,7 @@ deploy-live:
             drush site-set @pantheon.retopais.live
             # Post build configuration.
             drush cc drush --strict=0
-            drush master-set-current-scope development --strict=0
+            drush master-set-current-scope production --strict=0
             drush master-execute -y --strict=0
             drush updb -y --strict=0
             drush cc all --strict=0
