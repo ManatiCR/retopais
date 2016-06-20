@@ -223,7 +223,7 @@ deploy-live:
     - script:
         name: Deploy code to live
         code: |
-            terminus site deploy --site=retopais --env=live
+            terminus site deploy --site=retopais --env=live --note="Deployed from wercker UI"
     - script:
         name: Deploy steps to pantheon live
         code: |
