@@ -2,11 +2,13 @@
 // Typography
 // @_typography.scss
 ///////////////////////
-
 html, body {
   font-family: $open-sans;
   line-height: 1.4;
   color: $dark;
+}
+
+html {
   font-size: 62.5%;
 }
 
