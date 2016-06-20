@@ -154,7 +154,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Problems (titles and classes) */
-  $handler = $view->new_display('panel_pane', 'Problems (titles and classes)', 'panel_pane_4');
+  $handler = $view->new_display('panel_pane', 'Problems (titles and classes)', 'problems_only_names');
   $handler->display->display_options['display_description'] = 'Only titles and css classes.';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
