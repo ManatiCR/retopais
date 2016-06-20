@@ -69,7 +69,7 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->configuration = array(
       'format' => 'blog_date',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
