@@ -471,17 +471,27 @@ select:focus {
   font-size: 2rem;
 }
 
+@media (min-width: 768px) {
+  .nav-main a, .nav-main .toggle-nav {
+    padding: 6px 18px;
+    font-size: 17px;
+    font-size: 1.7rem;
+  }
+}
+
 .nav-main .toggle-nav {
   padding-left: 40px;
   background: url(../img/icons/menu.svg) no-repeat 5px center;
   background-size: 30px 24px;
 }
 
-.nav-main a:hover {
+.nav-main a:hover, .nav-main a.active {
   color: #e13e32;
 }
 
 .nav-main .menu-item-propone {
   background-color: #ffcb50;
+  border-radius: 5px;
+  border-bottom: 2px solid #e5a72c;
   color: #353e42;
 }
