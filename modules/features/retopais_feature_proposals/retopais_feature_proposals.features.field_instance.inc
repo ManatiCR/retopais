@@ -64,7 +64,7 @@ function retopais_feature_proposals_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -110,7 +110,7 @@ function retopais_feature_proposals_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -167,7 +167,7 @@ people|Amigo, familiar',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 24,
+      'weight' => 12,
     ),
   );
 
@@ -218,7 +218,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 7,
     ),
   );
 
@@ -269,7 +269,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 5,
     ),
   );
 
@@ -320,7 +320,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -371,12 +371,12 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_org_representative'.
-  $field_instances['node-proposal-field_org_representative'] = array(
+  // Exported field_instance: 'node-proposal-field_org_rep_email'.
+  $field_instances['node-proposal-field_org_rep_email'] = array(
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
@@ -390,12 +390,10 @@ people|Amigo, familiar',
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'paragraphs',
-        'settings' => array(
-          'view_mode' => 'full',
-        ),
-        'type' => 'paragraphs_view',
-        'weight' => 13,
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -406,28 +404,118 @@ people|Amigo, familiar',
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
-    'field_name' => 'field_org_representative',
-    'label' => 'Representante legal de la organización',
+    'field_name' => 'field_org_rep_email',
+    'label' => 'Correo electrónico',
     'required' => 0,
     'settings' => array(
-      'add_mode' => 'select',
-      'allowed_bundles' => array(
-        'contact_information' => 'contact_information',
-      ),
-      'bundle_weights' => array(
-        'contact_information' => 2,
-      ),
-      'default_edit_mode' => 'open',
-      'title' => 'Contact',
-      'title_multiple' => 'Contacts',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'paragraphs',
-      'settings' => array(),
-      'type' => 'paragraphs_embed',
-      'weight' => 14,
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_org_rep_name'.
+  $field_instances['node-proposal-field_org_rep_name'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_org_rep_name',
+    'label' => 'Nombre del representante legal de la organización',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_org_rep_phone'.
+  $field_instances['node-proposal-field_org_rep_phone'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_org_rep_phone',
+    'label' => 'Teléfono',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -476,7 +564,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 12,
     ),
   );
 
@@ -525,7 +613,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 4,
     ),
   );
 
@@ -617,7 +705,151 @@ people|Amigo, familiar',
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_proj_resp_email'.
+  $field_instances['node-proposal-field_proj_resp_email'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_proj_resp_email',
+    'label' => 'Correo electrónico',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_proj_resp_name'.
+  $field_instances['node-proposal-field_proj_resp_name'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_proj_resp_name',
+    'label' => 'Persona responsable del proyecto presentado',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_proj_resp_phone'.
+  $field_instances['node-proposal-field_proj_resp_phone'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_proj_resp_phone',
+    'label' => 'Teléfono',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
     ),
   );
 
@@ -668,7 +900,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -719,7 +951,7 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -783,7 +1015,7 @@ people|Amigo, familiar',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -834,74 +1066,14 @@ people|Amigo, familiar',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-proposal-field_project_responsible'.
-  $field_instances['node-proposal-field_project_responsible'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'ckeditor_embed' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'paragraphs',
-        'settings' => array(
-          'view_mode' => 'full',
-        ),
-        'type' => 'paragraphs_view',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_project_responsible',
-    'label' => 'Persona responsable del proyecto presentado',
-    'required' => 0,
-    'settings' => array(
-      'add_mode' => 'select',
-      'allowed_bundles' => array(
-        'contact_information' => 'contact_information',
-      ),
-      'bundle_weights' => array(
-        'contact_information' => 2,
-      ),
-      'default_edit_mode' => 'open',
-      'title' => 'Contact',
-      'title_multiple' => 'Contacts',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'paragraphs',
-      'settings' => array(),
-      'type' => 'paragraphs_embed',
-      'weight' => 15,
+      'weight' => 3,
     ),
   );
 
   // Exported field_instance: 'node-proposal-field_project_running'.
   $field_instances['node-proposal-field_project_running'] = array(
     'bundle' => 'proposal',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -916,7 +1088,7 @@ people|Amigo, familiar',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -936,9 +1108,11 @@ people|Amigo, familiar',
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 11,
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
     ),
   );
 
@@ -987,7 +1161,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 11,
     ),
   );
 
@@ -1033,7 +1207,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 21,
+      'weight' => 8,
     ),
   );
 
@@ -1082,7 +1256,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 6,
     ),
   );
 
@@ -1131,7 +1305,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 7,
     ),
   );
 
@@ -1180,7 +1354,7 @@ people|Amigo, familiar',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 9,
     ),
   );
 
@@ -1239,12 +1413,13 @@ people|Amigo, familiar',
   t('Dirección de la organización');
   t('Explicá cómo tu idea es innovadora');
   t('Nombre completo del representante');
+  t('Nombre del representante legal de la organización');
   t('Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada');
   t('Número de cédula');
   t('Número de teléfono');
   t('Persona responsable del proyecto presentado');
-  t('Representante legal de la organización');
   t('Sitio web, Redes Sociales');
+  t('Teléfono');
   t('¿Cuál es el nombre de la organización?');
   t('¿Cuáles son los logros alcanzados por el proyecto hasta el momento?');
   t('¿Cómo generaría ingresos tu solución para ser sostenible en el tiempo?');

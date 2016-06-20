@@ -43,6 +43,7 @@ $conf['master_modules']['base'] = array(
   'features',
   'fences',
   'inline_entity_form',
+  'libraries',
   'link',
   'magic',
   'master',
