@@ -275,13 +275,9 @@ deploy-multidev:
         name: Deploy code to pantheon
         code: |
             npm install -g aquifer aquifer-git
-            echo 'WERCKER GIT BRANCH'
-            echo $WERCKER_GIT_BRANCH
             NEWBRANCH=$WERCKER_GIT_BRANCH
-            echo "NEW BRANCH"
-            echo $NEWBRANCH
-            LENGTH=${#BRANCH}
-            if [ LENGTH > 10 ] ; then NEWBRANCH=${BRANCH:8:6} ; fi
+            LENGTH=${#NEWBRANCH}
+            if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:6} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
             echo "NEW BRANCH"
