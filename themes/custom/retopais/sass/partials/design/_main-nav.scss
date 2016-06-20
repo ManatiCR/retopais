@@ -8,6 +8,9 @@
   width: 100%;
   @include breakpoint($medium) {
     background-color: transparent;
+    width: 580px;
+  }
+  @include breakpoint(1090px) {
     width: auto;
   }
   ul {
@@ -49,8 +52,10 @@
 
   .menu-item-propone {
     background-color: $yellow;
-    border-radius: 5px;
-    border-bottom: 2px solid $darkyellow;
     color: $dark;
+    @include breakpoint($medium) {
+      border-radius: 5px;
+      border-bottom: 2px solid $darkyellow;
+    }
   }
 }
