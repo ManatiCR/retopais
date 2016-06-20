@@ -137,3 +137,106 @@ deploy:
             drush master-execute -y --strict=0
             drush cc all --strict=0
             drush en -y pantheon_api --strict=0
+deploy-test:
+    steps:
+    - script:
+        name: Install ssh and other dependencies
+        code: |
+            apt-get update -y
+            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
+    - add-ssh-key:
+        keyname: DEPLOYMENT_KEY
+    - script:
+        name: Install other dependencies
+        code: |
+            eval `ssh-agent`
+            ssh-add /tmp/tmp.*
+            wget -q https://deb.nodesource.com/setup_4.x
+            chmod +x setup_4.x
+            ./setup_4.x
+            rm setup_4.x
+            apt-get install nodejs -y
+            curl -sS https://getcomposer.org/installer | php
+            mv composer.phar /usr/bin/composer
+            composer install --prefer-source --no-interaction
+            npm install
+            composer global require drush/drush:7.1.* --no-interaction
+            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
+    - script:
+        name: Install Pantheon CLI
+        code: |
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            terminus auth login --machine-token=$PANTHEON_TOKEN
+            terminus sites aliases
+    - script:
+        name: Deploy code to test
+        code: |
+            terminus site deploy --site=retopais --env=test --sync-content
+    - script:
+        name: Deploy steps to pantheon test
+        code: |
+            echo 'Host *' >> /root/.ssh/config
+            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            mkdir -p ~/.drush
+            cp ./wercker/policy.drush.inc ~/.drush/
+            drush cc drush
+            drush site-set @pantheon.retopais.test
+            # Post build configuration.
+            drush sqlsan -y --strict=0
+            drush cc drush --strict=0
+            drush master-set-current-scope development --strict=0
+            drush master-execute -y --strict=0
+            drush updb -y --strict=0
+            drush cc all --strict=0
+            drush en -y pantheon_api --strict=0
+deploy-live:
+    steps:
+    - script:
+        name: Install ssh and other dependencies
+        code: |
+            apt-get update -y
+            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
+    - add-ssh-key:
+        keyname: DEPLOYMENT_KEY
+    - script:
+        name: Install other dependencies
+        code: |
+            eval `ssh-agent`
+            ssh-add /tmp/tmp.*
+            wget -q https://deb.nodesource.com/setup_4.x
+            chmod +x setup_4.x
+            ./setup_4.x
+            rm setup_4.x
+            apt-get install nodejs -y
+            curl -sS https://getcomposer.org/installer | php
+            mv composer.phar /usr/bin/composer
+            composer install --prefer-source --no-interaction
+            npm install
+            composer global require drush/drush:7.1.* --no-interaction
+            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
+    - script:
+        name: Install Pantheon CLI
+        code: |
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            terminus auth login --machine-token=$PANTHEON_TOKEN
+            terminus sites aliases
+    - script:
+        name: Deploy code to live
+        code: |
+            terminus site deploy --site=retopais --env=live
+    - script:
+        name: Deploy steps to pantheon live
+        code: |
+            echo 'Host *' >> /root/.ssh/config
+            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            mkdir -p ~/.drush
+            cp ./wercker/policy.drush.inc ~/.drush/
+            drush cc drush
+            drush site-set @pantheon.retopais.live
+            # Post build configuration.
+            drush cc drush --strict=0
+            drush master-set-current-scope development --strict=0
+            drush master-execute -y --strict=0
+            drush updb -y --strict=0
+            drush cc all --strict=0
+            drush en -y pantheon_api --strict=0
