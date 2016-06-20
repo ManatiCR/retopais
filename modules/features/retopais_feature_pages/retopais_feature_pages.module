@@ -435,5 +435,28 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#required' => TRUE,
   );
 
+  $form['retopais_feature_pages_homepage_timeline_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Texto del CTA de conocer más de los premios'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_timeline_image', 0),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#upload_location' => 'public://homepage/',
+    '#required' => TRUE,
+  );
+
+  $form['#submit'][] = 'retopais_feature_pages_homepage_form_submit';
+
   return system_settings_form($form);
+}
+
+/**
+ * Submit form for homepage form page.
+ */
+function retopais_feature_pages_homepage_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $existing_image = variable_get('retopais_feature_pages_homepage_timeline_image', 0);
+  $new_image = $values['retopais_feature_pages_homepage_timeline_image'];
+  retopais_feature_pages_handle_file_submit($existing_image, $new_image);
 }
