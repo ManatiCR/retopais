@@ -123,20 +123,18 @@ deploy:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
-            drush cc drush
-            drush site-set @pantheon.retopais.dev
             echo 'Set sftp'
             terminus site set-connection-mode --site=retopais --env=dev --mode=sftp
-            drush cc drush --strict=0
-            drush si -y retopais --strict=0
+            terminus drush --site=retopais --env=dev "cc drush --strict=0"
+            terminus drush --site=retopais --env=dev "si -y retopais --strict=0"
             echo 'Set git'
             terminus site set-connection-mode --site=retopais --env=dev --mode=git
             # Post build configuration.
-            drush cc drush --strict=0
-            drush master-set-current-scope development --strict=0
-            drush master-execute -y --strict=0
-            drush cc all --strict=0
-            drush en -y pantheon_api --strict=0
+            terminus drush --site=retopais --env=dev "cc drush --strict=0"
+            terminus drush --site=retopais --env=dev "master-set-current-scope development --strict=0"
+            terminus drush --site=retopais --env=dev "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=dev "cc all --strict=0"
+            terminus drush --site=retopais --env=dev "en -y pantheon_api --strict=0"
 deploy-test:
     steps:
     - script:
@@ -179,16 +177,14 @@ deploy-test:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
-            drush cc drush
-            drush site-set @pantheon.retopais.test
             # Post build configuration.
-            drush sqlsan -y --strict=0
-            drush cc drush --strict=0
-            drush master-set-current-scope test --strict=0
-            drush master-execute -y --strict=0
-            drush updb -y --strict=0
-            drush cc all --strict=0
-            drush en -y pantheon_api --strict=0
+            terminus drush --site=retopais --env=test "sqlsan -y --strict=0"
+            terminus drush --site=retopais --env=test "cc drush --strict=0"
+            terminus drush --site=retopais --env=test "master-set-current-scope test --strict=0"
+            terminus drush --site=retopais --env=test "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=test "updb -y --strict=0"
+            terminus drush --site=retopais --env=test "cc all --strict=0"
+            terminus drush --site=retopais --env=test "en -y pantheon_api --strict=0"
 deploy-live:
     steps:
     - script:
@@ -231,15 +227,13 @@ deploy-live:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
-            drush cc drush
-            drush site-set @pantheon.retopais.live
             # Post build configuration.
-            drush cc drush --strict=0
-            drush master-set-current-scope production --strict=0
-            drush master-execute -y --strict=0
-            drush updb -y --strict=0
-            drush cc all --strict=0
-            drush en -y pantheon_api --strict=0
+            terminus drush --site=retopais --env=live "cc drush --strict=0"
+            terminus drush --site=retopais --env=live "master-set-current-scope production --strict=0"
+            terminus drush --site=retopais --env=live "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=live "updb -y --strict=0"
+            terminus drush --site=retopais --env=live "cc all --strict=0"
+            terminus drush --site=retopais --env=live "en -y pantheon_api --strict=0"
 deploy-multidev:
     steps:
     - script:
@@ -280,8 +274,6 @@ deploy-multidev:
             if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:6} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
-            echo "NEW BRANCH"
-            echo $NEWBRANCH
             aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
     - script:
         name: Deploy steps to pantheon dev
@@ -290,20 +282,18 @@ deploy-multidev:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
-            drush cc drush
             terminus site create-env --site=retopais --to-env=$NEWBRANCH --from-env=dev
             terminus sites aliases
-            drush site-set @pantheon.retopais.$NEWBRANCH
             echo 'Set sftp'
             terminus site set-connection-mode --site=retopais --env=$NEWBRANCH --mode=sftp
-            drush cc drush --strict=0
-            drush si -y retopais --strict=0
+            terminus drush --site=retopais --env=$NEWBRANCH "cc drush --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "si -y retopais --strict=0"
             echo 'Set git'
             terminus site set-connection-mode --site=retopais --env=$NEWBRANCH --mode=git
             # Post build configuration.
-            drush cc drush --strict=0
-            drush master-set-current-scope development --strict=0
-            drush master-execute -y --strict=0
-            drush cc all --strict=0
-            drush en -y pantheon_api --strict=0
-            echo "If everything worked, go to http://$NEWBRANCH.retopais.pantheonsite.io"
+            terminus drush --site=retopais --env=$NEWBRANCH "cc drush --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "master-set-current-scope development --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "cc all --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "en -y pantheon_api --strict=0"
+            echo "If everything worked, go to http://$NEWBRANCH-retopais.pantheonsite.io"
