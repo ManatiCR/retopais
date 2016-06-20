@@ -25,6 +25,7 @@ projects:
     version: "1.7"
   aurora:
     version: "3.6"
+    type: "theme"
   captcha:
     version: "1.3"
   ckeditor:
