@@ -291,7 +291,8 @@ deploy-multidev:
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
             drush cc drush
-            terminus site create-env --site=retopais --to-env=$NEWBRANCH
+            terminus site create-env --site=retopais --to-env=$NEWBRANCH --from-env=dev
+            terminus sites aliases
             drush site-set @pantheon.retopais.$NEWBRANCH
             echo 'Set sftp'
             terminus site set-connection-mode --site=retopais --env=$NEWBRANCH --mode=sftp
