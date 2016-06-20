@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install file for retopais_feature_proposals.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function retopais_feature_proposals_install() {
+  // Create alias for proposal node add form.
+  $path = array(
+    'source' => 'node/add/proposal',
+    'alias' => 'propone-idea',
+  );
+  path_save($path);
+}
