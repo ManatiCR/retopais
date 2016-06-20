@@ -171,7 +171,7 @@ deploy-test:
     - script:
         name: Deploy code to test
         code: |
-            terminus site deploy --site=retopais --env=test --sync-content
+            terminus site deploy --site=retopais --env=test --sync-content --note="Deployed from wercker UI"
     - script:
         name: Deploy steps to pantheon test
         code: |
