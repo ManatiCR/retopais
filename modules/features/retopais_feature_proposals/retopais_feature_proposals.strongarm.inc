@@ -53,7 +53,7 @@ function retopais_feature_proposals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'multistep_button_done';
-  $strongarm->value = 'Enviar Propueta';
+  $strongarm->value = 'Enviar Propuesta';
   $export['multistep_button_done'] = $strongarm;
 
   $strongarm = new stdClass();
