@@ -20,10 +20,11 @@ $plugin = array(
 function problematicas_sidebar_render($subtype, $conf, $panel_args, $context) {
   // Build the content type block.
   $block = new stdClass();
-  $block->title = check_plain(variable_get('retopais_feature_pages_problematicas_sidebar_title', 'Mapa de IPS'));
+  $block->title = check_plain(variable_get('retopais_feature_pages_problematicas_sidebar_title', 'Índice de Progreso Social en Costa Rica'));
 
+  $retopais_feature_pages_problematicas_sidebar_text = variable_get('retopais_feature_pages_problematicas_sidebar_text', array('value' => 'Alguna descripción del IPS', 'format' => 'filtered_html'));
   $block->content['ips-description'] = array(
-    '#markup' => '<p class="problematicas-sidebar-description">' . check_plain(variable_get('retopais_feature_pages_problematicas_sidebar_text')) . '</p>',
+    '#markup' => '<div class="problematicas-sidebar-description">' . check_markup($retopais_feature_pages_problematicas_sidebar_text['value'], $retopais_feature_pages_problematicas_sidebar_text['format']) . '</div>',
   );
 
   $image = file_load(variable_get('retopais_feature_pages_problematicas_sidebar_image', 0));
