@@ -65,6 +65,11 @@
     ],
     [
       "fra"
+    ],
+    [
+      "environment-switch",
+      "local",
+      "--force"
     ]
   ]
 }
