@@ -195,6 +195,25 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->uuid = '5d5a23a5-5e89-4a40-a707-fd13db736bfb';
     $display->content['new-5d5a23a5-5e89-4a40-a707-fd13db736bfb'] = $pane;
     $display->panels['middle'][1] = 'new-5d5a23a5-5e89-4a40-a707-fd13db736bfb';
+    $pane = new stdClass();
+    $pane->pid = 'new-2e6251ab-f281-4d4d-b621-95803a993f5c';
+    $pane->panel = 'middle';
+    $pane->type = 'homepage_premios';
+    $pane->subtype = 'homepage_premios';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '2e6251ab-f281-4d4d-b621-95803a993f5c';
+    $display->content['new-2e6251ab-f281-4d4d-b621-95803a993f5c'] = $pane;
+    $display->panels['middle'][2] = 'new-2e6251ab-f281-4d4d-b621-95803a993f5c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1152c588-6304-49db-968e-46283154ab12';
   $handler->conf['display'] = $display;
