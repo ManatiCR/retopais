@@ -300,14 +300,15 @@ function retopais_feature_pages_problematicas_form($form, $form_state) {
   $form['retopais_feature_pages_problematicas_sidebar_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Título del Sidebar'),
-    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_title', 'Mapa de IPS'),
+    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_title', 'Índice de Progreso Social en Costa Rica'),
     '#required' => TRUE,
   );
 
+  $retopais_feature_pages_problematicas_sidebar_text = variable_get('retopais_feature_pages_problematicas_sidebar_text', array('value' => 'Alguna descripción del IPS', 'format' => 'filtered_html'));
   $form['retopais_feature_pages_problematicas_sidebar_text'] = array(
-    '#type' => 'textarea',
+    '#type' => 'text_format',
     '#title' => t('Texto del Sidebar'),
-    '#default_value' => variable_get('retopais_feature_pages_problematicas_sidebar_text', 'Descripción de esa sección'),
+    '#default_value' => $retopais_feature_pages_problematicas_sidebar_text['value'],
     '#required' => TRUE,
   );
 

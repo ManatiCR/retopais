@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Install file for retopais_feature_proposals.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function retopais_feature_proposals_install() {
+  // Create alias for proposal node add form.
+  $path = array(
+    'source' => 'node/add/proposal',
+    'alias' => 'propone-idea',
+  );
+  path_save($path);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function retopais_feature_proposals_schema() {
+  $schema['retopais_feature_proposals_nid_session'] = array(
+    'description' => 'Information about anonymous users session id and node id',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => 'Primary identifier for each row',
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => 'Node ID',
+      ),
+      'session_id' => array(
+        'type' => 'varchar',
+        'not null' => FALSE,
+        'length' => 128,
+        'description' => 'Session id for anonymous users',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array('nid'),
+      'session_id' => array('session_id'),
+    ),
+    'primary key' => array('id'),
+    'foreign keys' => array(
+      'nid' => array(
+        'table' => 'node',
+        'columns' => array('nid' => 'nid'),
+      ),
+    ),
+  );
+
+  return $schema;
+}

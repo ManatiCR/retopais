@@ -642,6 +642,125 @@ function retopais_feature_pages_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['que_es_reto_pais'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'reglamento';
+  $page->task = 'page';
+  $page->admin_title = 'Reglamento';
+  $page->admin_description = '';
+  $page->path = 'reglamento';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_reglamento__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'reglamento';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Reglamento',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Reglamento';
+  $display->uuid = 'cf5c5def-18c7-4fca-b97a-eb37d80dcece';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-c366fbfb-9af2-4330-8371-da7dd9ea610a';
+    $pane->panel = 'middle';
+    $pane->type = 'page_title';
+    $pane->subtype = 'page_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'markup' => 'h1',
+      'class' => '',
+      'id' => '',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c366fbfb-9af2-4330-8371-da7dd9ea610a';
+    $display->content['new-c366fbfb-9af2-4330-8371-da7dd9ea610a'] = $pane;
+    $display->panels['middle'][0] = 'new-c366fbfb-9af2-4330-8371-da7dd9ea610a';
+    $pane = new stdClass();
+    $pane->pid = 'new-16984945-94be-4067-a6e4-765eec452247';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Just some placeholder content',
+      'body' => '<p>Look around, look at what we have. Beauty is everywhere, you only have to look to see it. It\'s beautiful - and we haven\'t even done anything to it yet. Here we\'re limited by the time we have. Working it up and down, back and forth. We spend so much of our life looking - but never seeing.</p>
+
+<p>If you hypnotize it, it will go away. Trees get lonely too, so we\'ll give him a little friend. This is gonna be a happy little seascape. Each highlight must have it\'s own private shadow.</p>
+
+<p>No pressure. Just relax and watch it happen. Let\'s make a nice big leafy tree. Work that paint. I think there\'s an artist hidden in the bottom of every single one of us.</p>
+
+<p>Every time you practice, you learn more. I really believe that if you practice enough you could paint the \'Mona Lisa\' with a two-inch brush. Maybe there\'s a happy little Evergreen that lives here.</p>
+
+<p>Isn\'t that fantastic? You don\'t have to be crazy to do this but it does help. Just take out whatever you don\'t want. It\'ll change your entire perspective.</p>
+
+<p>God gave you this gift of imagination. Use it. Remember how free clouds are. They just lay around in the sky all day long. See there, told you that would be easy. This is probably the greatest thing to happen in my life - to be able to share this with you.</p>
+
+<p>Have fun with it. Little trees and bushes grow however makes them happy. That\'s why I paint - because I can create the kind of world I want - and I can make this world as happy as I want it. It\'s amazing what you can do with a little love in your heart.</p>
+',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '16984945-94be-4067-a6e4-765eec452247';
+    $display->content['new-16984945-94be-4067-a6e4-765eec452247'] = $pane;
+    $display->panels['middle'][1] = 'new-16984945-94be-4067-a6e4-765eec452247';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-c366fbfb-9af2-4330-8371-da7dd9ea610a';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['reglamento'] = $page;
+
   return $pages;
 
 }

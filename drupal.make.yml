@@ -25,6 +25,9 @@ projects:
     version: "1.7"
   aurora:
     version: "3.6"
+    type: "theme"
+  captcha:
+    version: "1.3"
   ckeditor:
     version: "1.17"
   ckeditor_entity_embed:
@@ -59,6 +62,8 @@ projects:
     version: "2.10"
   fences:
     version: "1.2"
+  honeypot:
+    version: "1.22"
   inline_entity_form:
     version: "1.8"
   libraries:
@@ -74,6 +79,15 @@ projects:
     version: "3.2"
   module_filter:
     version: "2.0"
+  multistep:
+    download:
+      type: "git"
+      url: "https://git.drupal.org/project/multistep.git"
+      branch: "7.x-1.x"
+      revision: "3b0d40a76f7c0d185da320900f651e4dad5be312"
+    patch:
+      # https://www.drupal.org/node/1895894
+      - "https://www.drupal.org/files/issues/multistep-skip_dependant_steps-1895894-1-D7.patch"
   paragraphs:
     version: "1.0-rc4"
   path_breadcrumbs:
@@ -84,6 +98,8 @@ projects:
     version: "3.5"
   rabbit_hole:
     version: "2.23"
+  recaptcha:
+    version: "2.1"
   select_or_other:
     version: "2.22"
   semantic_panels:
@@ -118,3 +134,9 @@ libraries:
     download:
       type: "file"
       url: "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.4/ckeditor_4.5.4_standard.zip"
+  select2buttons:
+    download:
+      type: "git"
+      url: "https://github.com/o-sam-o/jquery.select2Buttons.git"
+      branch: "master"
+      revision: "6a41a9673d86b289acd2948037cea8b9d3eb8fe3"

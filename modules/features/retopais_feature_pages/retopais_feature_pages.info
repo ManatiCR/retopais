@@ -16,6 +16,7 @@ features[page_manager_pages][] = contacto
 features[page_manager_pages][] = homepage
 features[page_manager_pages][] = problematicas
 features[page_manager_pages][] = que_es_reto_pais
+features[page_manager_pages][] = reglamento
 features[user_permission][] = access site-wide contact form
 features[variable][] = site_frontpage
 project path = sites/all/modules/features

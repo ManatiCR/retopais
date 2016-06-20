@@ -39,7 +39,7 @@ function retopais_taxonomy_install() {
         'abstract' => 'Solamente el 46.3% de los jóvenes entre los 17 y 21 años completa la educación secundaria y solamente el 34,2% de los jóvenes entre 18 y 24 años van a la universidad.',
       ),
       'Tasa de obesidad' => array(
-        'description' => 'En Costa Rica hemos cometido el error de no ver la obesidad como un tema de urgencia. Actualmente somos el sexto país de América Latina con más sobrepeso y nos encontramos entre los 25 países más obesos del mundo. El 60% de los costarricenses son obesos. Y la obesidad es uno de los factores principales de riesgo de muerte en el mundo. ¿Cuántas enfermedades podremos evitar si nos encontramos en un peso saludable? Urge la promoción de iniciativas que resuelvan esta problemática y que velen por el bienestar de los ciudadanos.',
+        'description' => 'En Costa Rica hemos cometido el error de no ver la obesidad como un tema de urgencia. Actualmente somos el sexto país de América Latina con más sobrepeso y nos encontramos entre los 25 países más obesos del mundo. El 60% de los adultos costarricenses son obesos. Y la obesidad es uno de los factores principales de riesgo de muerte en el mundo. ¿Cuántas enfermedades podremos evitar si nos encontramos en un peso saludable? Urge la promoción de iniciativas que resuelvan esta problemática y que velen por el bienestar de los ciudadanos.',
         'abstract' => '6 de cada 10 adultos en Costa Rica sufren de obesidad y estamos catalogados entre los 10 países más obesos del mundo.',
       ),
       'Accidentes de tránsito' => array(
