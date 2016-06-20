@@ -32,6 +32,7 @@ $conf['master_modules']['base'] = array(
   'admin_menu',
   'admin_views',
   'adminimal_admin_menu',
+  'captcha',
   'chosen',
   'ckeditor',
   'ckeditor_entity_embed',
@@ -42,6 +43,7 @@ $conf['master_modules']['base'] = array(
   'entityreference',
   'features',
   'fences',
+  'honeypot',
   'inline_entity_form',
   'libraries',
   'link',
@@ -56,6 +58,7 @@ $conf['master_modules']['base'] = array(
   'panels',
   'paragraphs',
   'rabbit_hole',
+  'recaptcha',
   'rh_node',
   'rh_taxonomy',
   'select_or_other',
@@ -136,6 +139,15 @@ $conf['theme_default'] = 'retopais';
 
 // Breadcrumbs.
 $conf['path_breadcrumbs_delimiter'] = '>';
+
+// Avoid Recaptcha issue.
+// https://www.drupal.org/node/2476057.
+ini_set('arg_separator.output', '&');
+
+// Recaptcha.
+$conf['recaptcha_site_key'] = '6Lfu4iITAAAAAD7Tr-ufLQff_x8QKnm7MQx0OUAm';
+$conf['recaptcha_secret_key'] = '6Lfu4iITAAAAAA9ft2eaKMUqLJHeIb9eAMa6pby5';
+
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
