@@ -26,6 +26,7 @@ build:
             ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
             # Drupal settings.
             cp ./wercker/wercker.settings.secret.php ./settings/settings.secret.php
+            cp ./wercker/wercker.settings.local.php ./settings/settings.local.php
             # Configure Solr.
             #cp -R /opt/solr-4.3.1 $HOME/solr
             #curl http://ftp.drupal.org/files/projects/apachesolr-7.x-1.x-dev.tar.gz | tar -xz
@@ -133,6 +134,7 @@ deploy:
             terminus drush --site=retopais --env=dev "cc drush --strict=0"
             terminus drush --site=retopais --env=dev "master-set-current-scope development --strict=0"
             terminus drush --site=retopais --env=dev "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=dev "environment-switch development --force --strict=0"
             terminus drush --site=retopais --env=dev "cc all --strict=0"
             terminus drush --site=retopais --env=dev "en -y pantheon_api --strict=0"
 deploy-test:
@@ -182,6 +184,7 @@ deploy-test:
             terminus drush --site=retopais --env=test "cc drush --strict=0"
             terminus drush --site=retopais --env=test "master-set-current-scope test --strict=0"
             terminus drush --site=retopais --env=test "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=test "environment-switch test --force --strict=0"
             terminus drush --site=retopais --env=test "updb -y --strict=0"
             terminus drush --site=retopais --env=test "cc all --strict=0"
             terminus drush --site=retopais --env=test "en -y pantheon_api --strict=0"
@@ -231,6 +234,7 @@ deploy-live:
             terminus drush --site=retopais --env=live "cc drush --strict=0"
             terminus drush --site=retopais --env=live "master-set-current-scope production --strict=0"
             terminus drush --site=retopais --env=live "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=live "environment-switch production --force --strict=0"
             terminus drush --site=retopais --env=live "updb -y --strict=0"
             terminus drush --site=retopais --env=live "cc all --strict=0"
             terminus drush --site=retopais --env=live "en -y pantheon_api --strict=0"
@@ -294,6 +298,7 @@ deploy-multidev:
             terminus drush --site=retopais --env=$NEWBRANCH "cc drush --strict=0"
             terminus drush --site=retopais --env=$NEWBRANCH "master-set-current-scope development --strict=0"
             terminus drush --site=retopais --env=$NEWBRANCH "master-execute -y --strict=0"
+            terminus drush --site=retopais --env=$NEWBRANCH "environment-switch development --force --strict=0"
             terminus drush --site=retopais --env=$NEWBRANCH "cc all --strict=0"
             terminus drush --site=retopais --env=$NEWBRANCH "en -y pantheon_api --strict=0"
             echo "If everything worked, go to http://$NEWBRANCH-retopais.pantheonsite.io"
