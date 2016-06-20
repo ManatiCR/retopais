@@ -123,6 +123,13 @@ function retopais_feature_pages_theme() {
       'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
       'template' => 'homepage-premios',
     ),
+    'homepage_participa_en_el_reto' => array(
+      'variables' => array(
+        'link' => '',
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
+      'template' => 'homepage-participa-en-el-reto',
+    ),
   );
 }
 
@@ -418,6 +425,13 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#type' => 'textfield',
     '#title' => t('Texto del CTA de conocer más de los premios'),
     '#default_value' => variable_get('retopais_feature_pages_homepage_premio_cta', 'Conocé más de los premios'),
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_participa_cta_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Participá en el RETO CTA text'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_participa_cta_text', 'Participá en el RETO'),
     '#required' => TRUE,
   );
 
