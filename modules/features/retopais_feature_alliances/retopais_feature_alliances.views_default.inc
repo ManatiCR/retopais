@@ -185,6 +185,32 @@ function retopais_feature_alliances_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $translatables['alianzas'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Content entity referenced from field_featured_image'),
+    t('Main Alliances'),
+    t('Esta es una iniciativa promovida por la <a href="http://presidencia.go.cr/consejoinnovaciontalento" target="_blank">Mesa de Innovación Social</a> del Consejo Presidencial de Innovación y Talento Humano.'),
+    t('Reto Pais'),
+    t('Organizer Alliances'),
+    t('Organiza:'),
+    t('Sponsor Alliances'),
+    t('Patrocinan:'),
+  );
   $export['alianzas'] = $view;
 
   return $export;
