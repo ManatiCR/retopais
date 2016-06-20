@@ -302,4 +302,3 @@ deploy-multidev:
             terminus drush --site=retopais --env=$NEWBRANCH "cc all --strict=0"
             terminus drush --site=retopais --env=$NEWBRANCH "en -y pantheon_api --strict=0"
             echo "If everything worked, go to http://$NEWBRANCH-retopais.pantheonsite.io"
->>>>>>> 1d4a67910b5f41423768216572d2a439d100bad7
