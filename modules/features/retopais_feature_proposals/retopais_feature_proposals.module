@@ -213,6 +213,23 @@ function retopais_feature_proposals_node_access($node, $op, $account) {
 }
 
 /**
+ * Implements hook_preprocess_views_view_fields().
+ */
+function retopais_feature_proposals_preprocess_views_view_fields(&$vars) {
+  $view = $vars['view'];
+  if ($view->name === 'problems' && $view->current_display === 'problems_only_names') {
+    $raw = $vars['fields']['name']->raw;
+    $class = drupal_html_class($raw);
+    $class = str_replace('á', 'a', $class);
+    $class = str_replace('é', 'e', $class);
+    $class = str_replace('í', 'i', $class);
+    $class = str_replace('ó', 'o', $class);
+    $class = str_replace('ú', 'u', $class);
+    $vars['fields']['name']->content = '<span class="field-content icon-' . $class . '">' . check_plain($raw) . '</span>';
+  }
+}
+
+/**
  * Extra submit for access control.
  */
 function retopais_feature_proposals_access_control_submit($form, &$form_state) {
