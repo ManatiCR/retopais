@@ -22,8 +22,6 @@ function que_es_retopais_footer_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
   $block->title = '';
 
-  $items = array();
-
   $footer = variable_get('retopais_feature_pages_que_es_reto_pais_footer_text', array('value' => 'Texto debajo de las etapas', 'format' => 'filtered_html'));
 
   $block->content['footer'] = array(

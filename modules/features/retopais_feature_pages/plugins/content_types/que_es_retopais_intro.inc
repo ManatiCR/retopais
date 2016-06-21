@@ -22,8 +22,13 @@ function que_es_retopais_intro_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
   $block->title = '';
 
+  $intro = variable_get('retopais_feature_pages_que_es_reto_pais_intro_text', array('value' => 'Reto PAIS es el Premio a la Innovación Social que invita a toda la ciudadanía a promover soluciones para <strong>4 problemáticas:</strong>', 'format' => 'filtered_html'));
+
   $block->content['introduction_text'] = array(
-    '#markup' => '<p class="que-es-reto-pais introduction-text">' . check_plain(variable_get('retopais_feature_pages_que_es_reto_pais_intro_text', 'Reto PAIS es el Premio a la Innovación Social que invita a toda la ciudadanía a promover soluciones para 4 problemáticas:')) . '</p>',
+    '#type' => 'item',
+    '#markup' => check_markup($intro['value'], $intro['format']),
+    '#prefix' => '<p class="que-es-reto-pais introduction-text">',
+    '#suffix' => '</p>',
   );
   return $block;
 }
