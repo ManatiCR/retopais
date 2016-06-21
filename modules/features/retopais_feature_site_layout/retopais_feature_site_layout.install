@@ -74,7 +74,7 @@ function retopais_feature_site_layout_install() {
   // Proponé Ideas.
   $menu_links[] = array(
     'link_title' => 'Proponé Ideas',
-    'link_path' => 'propone-idea',
+    'link_path' => 'node/add/proposal',
     'menu_name' => 'main-menu',
     'weight' => 3,
     'plid' => 0,
