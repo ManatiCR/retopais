@@ -52,7 +52,7 @@ function retopais_taxonomy_install() {
       ),
     );
     $folder_name = 'public://problematicas';
-    file_prepare_directory($folder_name);
+    file_prepare_directory($folder_name, FILE_CREATE_DIRECTORY);
     foreach ($term_names as $term_name => $value) {
       $term = array(
         'name' => $term_name,
@@ -61,7 +61,7 @@ function retopais_taxonomy_install() {
       );
       $term['field_abstract'][LANGUAGE_NONE][0]['value'] = $value['abstract'];
 
-      $destination = 'public://problematicas/' . $value['image'];
+      $destination = $folder_name . '/' . $value['image'];
       $source = drupal_get_path('module', 'retopais_taxonomy') . '/data/' . $value['image'];
       file_unmanaged_copy($source, $destination, FILE_EXISTS_RENAME);
       $file = new stdClass();
