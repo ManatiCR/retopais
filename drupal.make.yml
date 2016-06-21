@@ -66,6 +66,8 @@ projects:
     version: "1.22"
   inline_entity_form:
     version: "1.8"
+  l10n_update:
+    version: "2.0"
   libraries:
     version: "2.3"
   link:

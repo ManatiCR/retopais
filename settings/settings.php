@@ -45,6 +45,7 @@ $conf['master_modules']['base'] = array(
   'fences',
   'honeypot',
   'inline_entity_form',
+  'l10n_update',
   'libraries',
   'link',
   'master',
