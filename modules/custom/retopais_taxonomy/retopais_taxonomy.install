@@ -51,7 +51,8 @@ function retopais_taxonomy_install() {
         'image' => 'traffic.png',
       ),
     );
-    file_prepare_directory('public://problematicas');
+    $folder_name = 'public://problematicas';
+    file_prepare_directory($folder_name);
     foreach ($term_names as $term_name => $value) {
       $term = array(
         'name' => $term_name,
