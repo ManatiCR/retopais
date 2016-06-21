@@ -1,0 +1,61 @@
+///////////////////////////////////
+// Styles for main navigation.
+// @_main-nav.scss
+///////////////////////////////////
+
+.nav-main {
+  background-color: $dark-gray;
+  width: 100%;
+  @include breakpoint($medium) {
+    background-color: transparent;
+    width: 580px;
+  }
+  @include breakpoint(1090px) {
+    width: auto;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    &.collapsed {
+      display: none;
+    }
+  }
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include breakpoint($medium) {
+      display: inline-block;
+    }
+  }
+  a, .toggle-nav {
+    color: $white;
+    font-family: Oswald;
+    display: block;
+    padding: 10px;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    @include font-size(2);
+    @include breakpoint($medium) {
+      padding: 6px 18px;
+      @include font-size(1.7);
+    }
+  }
+  .toggle-nav {
+    padding-left: 40px;
+    background: url(../img/icons/menu.svg) no-repeat 5px center;
+    background-size: 30px 24px;
+  }
+  a:hover, a.active {
+    color: $red;
+  }
+
+  .menu-item-propone {
+    background-color: $yellow;
+    color: $dark;
+    @include breakpoint($medium) {
+      border-radius: 5px;
+      border-bottom: 2px solid $darkyellow;
+    }
+  }
+}

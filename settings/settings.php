@@ -45,13 +45,16 @@ $conf['master_modules']['base'] = array(
   'fences',
   'honeypot',
   'inline_entity_form',
+  'l10n_update',
   'libraries',
   'link',
+  'magic',
   'master',
   'maxlength',
   'module_filter',
   'page_manager',
   'panels',
+  'panels_everywhere',
   'path_breadcrumbs',
   'pathauto',
   'page_manager',
@@ -80,6 +83,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_input_formats',
   'retopais_feature_pages',
   'retopais_feature_proposals',
+  'retopais_feature_site_layout',
   'retopais_taxonomy',
   'retopais_theme',
 );
@@ -141,6 +145,9 @@ $conf['theme_default'] = 'retopais';
 
 // Breadcrumbs.
 $conf['path_breadcrumbs_delimiter'] = '>';
+
+// Panels Everywhere.
+$conf['panels_everywhere_site_template_enabled'] = TRUE;
 
 // Don't bootstrap the database when serving pages from the cache.
 $conf['page_cache_invoke_hooks'] = FALSE;

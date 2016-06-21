@@ -4,14 +4,13 @@
  */
 /* eslint-env node */
 
+'use strict';
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var stripDebug = require('gulp-strip-debug');
-var rename = require('gulp-rename');
 
 //
 // Path settings
@@ -39,16 +38,9 @@ var sassOptions = {
 //
 
 gulp.task('scripts', function () {
-  'use strict';
   return gulp.src(paths.sourceJs + '/**/*.js')
     // Concatenate everything within the JavaScript folder.
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest(paths.js))
-    .pipe(rename('scripts.min.js'))
-    // Strip all debugger code out.
-    .pipe(stripDebug())
-    // Minify the JavaScript.
-    .pipe(uglify())
     .pipe(gulp.dest(paths.js));
 });
 
@@ -56,7 +48,6 @@ gulp.task('scripts', function () {
 // SASS Task
 //
 gulp.task('styles', function () {
-  'use strict';
   return gulp.src(paths.sass + '/**/*.scss')
          .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
          .pipe(prefix(["last 2 versions", "> 1%", "ie 8"]))
@@ -67,8 +58,7 @@ gulp.task('styles', function () {
 // Watch
 //
 gulp.task('watch', function () {
-  'use strict';
-  gulp.watch(paths.js + '/**/*.js', ['scripts']);
+  gulp.watch(paths.sourceJs + '/**/*.js', ['scripts']);
   gulp.watch(paths.sass + '/**/*.scss', ['styles']);
 });
 
@@ -76,7 +66,6 @@ gulp.task('watch', function () {
  * Task for running browserSync.
  */
 gulp.task('browserSync', function () {
-  'use strict';
   browserSync.init(null, {
     proxy: 'retopais.dev',
     files: [

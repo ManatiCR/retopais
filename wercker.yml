@@ -188,6 +188,8 @@ deploy-test:
             terminus drush --site=retopais --env=test "updb -y --strict=0"
             terminus drush --site=retopais --env=test "cc all --strict=0"
             terminus drush --site=retopais --env=test "en -y pantheon_api --strict=0"
+            terminus drush --site=retopais --env=test "l10n-update-refresh --strict=0"
+            terminus drush --site=retopais --env=test "l10n-update --strict=0"
 deploy-live:
     steps:
     - script:
@@ -238,6 +240,8 @@ deploy-live:
             terminus drush --site=retopais --env=live "updb -y --strict=0"
             terminus drush --site=retopais --env=live "cc all --strict=0"
             terminus drush --site=retopais --env=live "en -y pantheon_api --strict=0"
+            terminus drush --site=retopais --env=live "l10n-update-refresh --strict=0"
+            terminus drush --site=retopais --env=live "l10n-update --strict=0"
 deploy-multidev:
     steps:
     - script:
