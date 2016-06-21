@@ -152,6 +152,22 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['field_api_classes'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Problems (titles and classes) */
+  $handler = $view->new_display('panel_pane', 'Problems (titles and classes)', 'problems_only_names');
+  $handler->display->display_options['display_description'] = 'Only titles and css classes.';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $translatables['problems'] = array(
     t('Master'),
     t('more'),
@@ -176,6 +192,8 @@ function retopais_feature_proposals_views_default_views() {
     t('Problems with Abstract'),
     t('¿Qué problemáticas puedo solucionar?'),
     t('Image, Name and Abstract'),
+    t('Problems (titles and classes)'),
+    t('Only titles and css classes.'),
   );
   $export['problems'] = $view;
 
