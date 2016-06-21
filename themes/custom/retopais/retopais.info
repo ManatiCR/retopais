@@ -23,9 +23,22 @@ stylesheets[print][] = 'css/print.css'
 ; ========================================
 ; Scripts
 ; ========================================
+scripts[] = 'js/scripts.js'
+
+; ========================================
+; Panels
+; ========================================
+
+plugins[panels][layouts] = panels-layouts
 
 ; ========================================
 ; Modernizr
 ; ========================================
 
 modernizr[tests][] = css_boxsizing
+
+; ========================================
+; Settings
+; ========================================
+
+settings[magic_css_excludes] = system/system.menus.css
