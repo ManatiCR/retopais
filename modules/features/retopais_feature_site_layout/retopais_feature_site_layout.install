@@ -126,6 +126,7 @@ function retopais_feature_site_layout_install() {
     'options' => array(
       'attributes' => array(
         'class' => array('menu-item-mesainnovacion'),
+        'target' => '_blank',
       ),
     ),
   );
@@ -140,6 +141,7 @@ function retopais_feature_site_layout_install() {
     'options' => array(
       'attributes' => array(
         'class' => array('menu-item-impactico'),
+        'target' => '_blank',
       ),
     ),
   );
