@@ -1,10 +1,44 @@
+//////////////////////////////
+// Problems views
+// @_pager.scss
+//////////////////////////////
+
 .pane-problems-panel-pane-1 {
+  margin: 40px 0 0 0;
   .view-content {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: $oswald;
+    @include breakpoint($medium) {
+      justify-content: center;
+    }
+    @include breakpoint($large) {
+      width: 70%;
+    }
   }
   .views-row {
     text-align: center;
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+    @include breakpoint($small) {
+      flex: 1 1 40%;
+    }
+    @include breakpoint($large) {
+      flex: 1 1 25%;
+    }
+  }
+  .icon-acceso-a-la-educacion-superior {
+    color: $icon-purple;
+  }
+  .icon-accidentes-de-transito {
+    color: $icon-yellow;
+  }
+  .icon-separacion-y-recoleccion-de-residuos {
+    color: $icon-green;
+  }
+  .icon-tasa-de-obesidad {
+    color: $icon-blue;
   }
 }
