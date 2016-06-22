@@ -497,6 +497,10 @@ hr {
   }
 }
 
+.nav-main .menu-item-propone {
+  text-shadow: none;
+}
+
 .nav-main .toggle-nav {
   padding-left: 40px;
   background: url(../img/icons/menu.svg) no-repeat 5px center;
