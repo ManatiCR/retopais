@@ -16,9 +16,10 @@ body {
   padding: 0;
 }
 
-// Container rules.
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 10px;
+main, .container {
+  padding: 0 20px;
+  @include breakpoint($desktop) {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
 }

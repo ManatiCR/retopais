@@ -1,0 +1,17 @@
+/////////////////////
+// Cta's
+// @_ctas.scss
+/////////////////////
+
+.pane-que-es-retopais-cta {
+  margin: 50px 0;
+}
+
+.pane-que-es-retopais-cta {
+  .button {
+    position: relative;
+    &:after {
+      @include triangle();
+    }
+  }
+}
