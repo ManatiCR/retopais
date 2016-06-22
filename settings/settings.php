@@ -148,6 +148,9 @@ $conf['path_breadcrumbs_delimiter'] = '>';
 
 // Panels Everywhere.
 $conf['panels_everywhere_site_template_enabled'] = TRUE;
+$conf['panels_everywhere_head_title_include_name'] = FALSE;
+$conf['panels_everywhere_head_title_include_slogan'] = FALSE;
+$conf['panels_everywhere_head_title_separator'] = '';
 
 // Don't bootstrap the database when serving pages from the cache.
 $conf['page_cache_invoke_hooks'] = FALSE;
