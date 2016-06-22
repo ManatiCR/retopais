@@ -1,0 +1,31 @@
+.stages-list {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  li {
+    background-color: $dark;
+    color: $white;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-left: 10px;
+    @include breakpoint($large) {
+      flex: 0 1 auto;
+    }
+    &:before {
+      background-color: $blue;
+    }
+    & .stages-wrapper {
+
+    }
+  }
+}
+
+.pane-que-es-retopais-cta {
+  margin: 50px 0;
+}
