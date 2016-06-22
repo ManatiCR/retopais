@@ -24,6 +24,60 @@ function retopais_feature_alliances_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function retopais_feature_alliances_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: sponsor1.
+  $styles['sponsor1'] = array(
+    'label' => 'Sponsor Level 1',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 220,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: sponsor2.
+  $styles['sponsor2'] = array(
+    'label' => 'Sponsor Level 2',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 160,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: sponsor3.
+  $styles['sponsor3'] = array(
+    'label' => 'Sponsor Level 3',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 125,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function retopais_feature_alliances_node_info() {

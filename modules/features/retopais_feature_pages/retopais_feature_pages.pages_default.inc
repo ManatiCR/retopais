@@ -263,6 +263,9 @@ function retopais_feature_pages_default_page_manager_pages() {
       'override_title' => 1,
       'override_title_text' => 'Patrocinadores',
       'override_title_heading' => 'h2',
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor1',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -275,6 +278,58 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->uuid = '4e2305b5-cc4a-4934-80b6-487cd302f850';
     $display->content['new-4e2305b5-cc4a-4934-80b6-487cd302f850'] = $pane;
     $display->panels['middle'][5] = 'new-4e2305b5-cc4a-4934-80b6-487cd302f850';
+    $pane = new stdClass();
+    $pane->pid = 'new-5f242e59-d4af-4d5c-b312-b9d77381b90a';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor2',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '5f242e59-d4af-4d5c-b312-b9d77381b90a';
+    $display->content['new-5f242e59-d4af-4d5c-b312-b9d77381b90a'] = $pane;
+    $display->panels['middle'][6] = 'new-5f242e59-d4af-4d5c-b312-b9d77381b90a';
+    $pane = new stdClass();
+    $pane->pid = 'new-833c5ca5-b186-4e0c-bc77-b8b0aa4dd929';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor3',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '833c5ca5-b186-4e0c-bc77-b8b0aa4dd929';
+    $display->content['new-833c5ca5-b186-4e0c-bc77-b8b0aa4dd929'] = $pane;
+    $display->panels['middle'][7] = 'new-833c5ca5-b186-4e0c-bc77-b8b0aa4dd929';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1152c588-6304-49db-968e-46283154ab12';
   $handler->conf['display'] = $display;
@@ -650,7 +705,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $page->admin_title = 'Reglamento';
   $page->admin_description = '';
   $page->path = 'reglamento';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
