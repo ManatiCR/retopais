@@ -1,0 +1,23 @@
+//////////////////////////////
+// Alliances
+// @_alliances.scss
+//////////////////////////////
+
+.view-alianzas {
+  .view-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .views-row {
+    margin-right: 30px;
+  }
+}
+.view-display-id-panel_pane_3 {
+  .views-row {
+    width: 25;
+  }
+  .field-image {
+    text-align: center;
+  }
+}
