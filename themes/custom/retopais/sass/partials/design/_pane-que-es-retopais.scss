@@ -3,7 +3,7 @@
 // @_pager.scss
 //////////////////////////////
 
-.pane-que-es-retopais-intro {
+.pane-que-es-retopais-intro, .pane-que-es-retopais-footer {
   @include breakpoint($medium) {
     width: 80%;
   }
@@ -11,7 +11,8 @@
     width: 50%;
   }
 }
-// CTA.
+
+// Proposal.
 .pane-que-es-retopais-proposals {
   p {
     background-color: $yellow;
