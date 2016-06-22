@@ -710,3 +710,27 @@ hr {
           transform: translateY(-48%);
   margin-left: 10px;
 }
+
+.view-alianzas .view-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-alianzas .views-row {
+  margin-right: 30px;
+}
+
+.view-display-id-panel_pane_3 .views-row {
+  width: 25;
+}
+
+.view-display-id-panel_pane_3 .field-image {
+  text-align: center;
+}
