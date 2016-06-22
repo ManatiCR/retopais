@@ -26,6 +26,26 @@ main, .container {
   }
 }
 
+@media (min-width: 768px) {
+  .page-sidebar-primary-content {
+    width: 72.88136%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-sidebar-secondary-content {
+    width: 25.42373%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
