@@ -3,6 +3,7 @@
   justify-content: space-around;
   align-content: center;
   li {
+    position: relative;
     background-color: $dark;
     color: $white;
     width: 200px;
@@ -10,22 +11,24 @@
     border-radius: 100px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
     align-items: center;
     margin-left: 10px;
-    @include breakpoint($large) {
-      flex: 0 1 auto;
-    }
+    text-indent: 0;
     &:before {
+      font-family: $oswald;
       background-color: $blue;
+      padding: 15px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
     & .stages-wrapper {
-
+      margin-left: -30px;
     }
   }
-}
-
-.pane-que-es-retopais-cta {
-  margin: 50px 0;
 }
