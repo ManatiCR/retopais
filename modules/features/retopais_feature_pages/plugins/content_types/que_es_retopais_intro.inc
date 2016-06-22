@@ -27,8 +27,8 @@ function que_es_retopais_intro_render($subtype, $conf, $panel_args, $context) {
   $block->content['introduction_text'] = array(
     '#type' => 'item',
     '#markup' => check_markup($intro['value'], $intro['format']),
-    '#prefix' => '<p class="que-es-reto-pais introduction-text">',
-    '#suffix' => '</p>',
+    '#prefix' => '<div class="que-es-reto-pais introduction-text">',
+    '#suffix' => '</div>',
   );
   return $block;
 }
