@@ -30,8 +30,11 @@ input[type='submit'] + #edit-cancel {
 .button-red,
 .button-dark {
   border: none;
-  padding: 20px 62px 18px 62px;
+  padding: 20px 60px 18px 60px;
   margin-bottom: 2px;
+  &:hover {
+    padding: 20px 60px 18px 60px;
+  }
 }
 
 .button-red{
