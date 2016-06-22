@@ -26,14 +26,14 @@ function que_es_retopais_stages_render($subtype, $conf, $panel_args, $context) {
 
   for ($index = 1; $index <= 4; $index++) {
     $text = check_plain(variable_get('retopais_feature_pages_que_es_reto_pais_stage_text_' . $index, 'Text for stage number ' . $index));
-    $items[] = $text;
+    $items[] = '<div class="stages-wrapper">' . $text . '</div>';
   }
 
   $block->content['stages'] = array(
     '#prefix' => '<div class="que-es-reto-pais stages">',
     '#theme' => 'item_list',
     '#title' => '',
-    '#type' => 'ul',
+    '#type' => 'ol',
     '#attributes' => array(
       'class' => array('que-es-reto-pais stages-list'),
     ),
