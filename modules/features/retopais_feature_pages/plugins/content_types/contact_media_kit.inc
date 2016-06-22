@@ -29,14 +29,13 @@ function media_kit_render($subtype, $conf, $panel_args, $context) {
     $image_path = $image->uri;
 
     $variables = array(
-      'style_name' => RETOPAIS_FEATURE_PAGES_MEDIA_KIT_IMAGE_STYLE,
       'path' => $image_path,
       'attributes' => array(),
     );
 
     $block->content['media-kit'] = array(
       '#theme' => 'link',
-      '#text' => theme_image_style($variables),
+      '#text' => theme_image($variables),
       '#path' => $file_path,
       '#prefix' => '<div class="media-kit-download">',
       '#suffix' => '</div>',
