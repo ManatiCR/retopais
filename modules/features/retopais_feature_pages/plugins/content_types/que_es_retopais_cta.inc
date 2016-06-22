@@ -26,7 +26,7 @@ function que_es_retopais_cta_render($subtype, $conf, $panel_args, $context) {
     '#type' => 'item',
     '#prefix' => '<div class="que-es-reto-pais propose-cta">',
     '#suffix' => '</div>',
-    '#markup' => l(check_plain(variable_get('retopais_feature_pages_que_es_reto_pais_cta_text', 'Proponé Ideas')), 'node/add/proposal', array('attributes' => array('class' => 'button-red'))),
+    '#markup' => l(check_plain(variable_get('retopais_feature_pages_que_es_reto_pais_cta_text', 'Proponé Ideas')), 'node/add/proposal', array('attributes' => array('class' => 'button button-red'))),
   );
   return $block;
 }
