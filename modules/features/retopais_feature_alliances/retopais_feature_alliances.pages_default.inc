@@ -128,7 +128,14 @@ function retopais_feature_alliances_default_page_manager_pages() {
     $pane->subtype = 'alianzas-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor1',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -140,6 +147,58 @@ function retopais_feature_alliances_default_page_manager_pages() {
     $pane->uuid = '94969bed-e53d-4d38-a717-855b211e9c6c';
     $display->content['new-94969bed-e53d-4d38-a717-855b211e9c6c'] = $pane;
     $display->panels['middle'][3] = 'new-94969bed-e53d-4d38-a717-855b211e9c6c';
+    $pane = new stdClass();
+    $pane->pid = 'new-b517dc2b-2387-4a4e-abe1-1634ddf02f96';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor2',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'b517dc2b-2387-4a4e-abe1-1634ddf02f96';
+    $display->content['new-b517dc2b-2387-4a4e-abe1-1634ddf02f96'] = $pane;
+    $display->panels['middle'][4] = 'new-b517dc2b-2387-4a4e-abe1-1634ddf02f96';
+    $pane = new stdClass();
+    $pane->pid = 'new-8a9f8f54-a694-4aa9-877d-189a1c62065a';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'exposed' => array(
+        'field_alliance_type_value' => 'sponsor3',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '8a9f8f54-a694-4aa9-877d-189a1c62065a';
+    $display->content['new-8a9f8f54-a694-4aa9-877d-189a1c62065a'] = $pane;
+    $display->panels['middle'][5] = 'new-8a9f8f54-a694-4aa9-877d-189a1c62065a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-bb8950e3-8b4f-4671-8629-c2485a4467c5';
   $handler->conf['display'] = $display;
