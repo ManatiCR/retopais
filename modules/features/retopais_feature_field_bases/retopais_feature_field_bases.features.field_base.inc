@@ -68,7 +68,9 @@ function retopais_feature_field_bases_field_default_field_bases() {
       'allowed_values' => array(
         'main' => 'Principales',
         'organizer' => 'Organizador',
-        'sponsor' => 'Patrocinador',
+        'sponsor1' => 'Patrocinador Nivel 1',
+        'sponsor2' => 'Patrocinador Nivel 2',
+        'sponsor3' => 'Patrocinador Nivel 3',
         'mesa' => 'Mesa de Innovacion',
       ),
       'allowed_values_function' => '',
