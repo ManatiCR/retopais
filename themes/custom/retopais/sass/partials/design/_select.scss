@@ -2,14 +2,3 @@
 // Select
 // @_select.scss
 //////////////////////////////
-
-select {
-  border: 1px solid $darkblue;
-  color: white;
-  border-radius: 4px;
-  background-color: $blue;
-  padding: 5px 10px;
-  &:focus {
-    outline: none;
-  }
-}
