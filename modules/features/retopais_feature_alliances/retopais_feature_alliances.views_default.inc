@@ -30,6 +30,13 @@ function retopais_feature_alliances_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_alliance_type',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_featured_image_target_id']['id'] = 'field_featured_image_target_id';
@@ -160,6 +167,40 @@ function retopais_feature_alliances_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Patrocinan:';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: URL */
+  $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
+  $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
+  $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
+  $handler->display->display_options['fields']['field_url']['label'] = '';
+  $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_url']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_url']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_url']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_url']['field_api_classes'] = TRUE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_featured_image_target_id';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_url]';
+  $handler->display->display_options['fields']['field_image']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -180,8 +221,15 @@ function retopais_feature_alliances_views_default_views() {
   $handler->display->display_options['filters']['field_alliance_type_value']['id'] = 'field_alliance_type_value';
   $handler->display->display_options['filters']['field_alliance_type_value']['table'] = 'field_data_field_alliance_type';
   $handler->display->display_options['filters']['field_alliance_type_value']['field'] = 'field_alliance_type_value';
-  $handler->display->display_options['filters']['field_alliance_type_value']['value'] = array(
-    'sponsor' => 'sponsor',
+  $handler->display->display_options['filters']['field_alliance_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_alliance_type_value']['expose']['operator_id'] = 'field_alliance_type_value_op';
+  $handler->display->display_options['filters']['field_alliance_type_value']['expose']['label'] = 'Alliance Type';
+  $handler->display->display_options['filters']['field_alliance_type_value']['expose']['operator'] = 'field_alliance_type_value_op';
+  $handler->display->display_options['filters']['field_alliance_type_value']['expose']['identifier'] = 'field_alliance_type_value';
+  $handler->display->display_options['filters']['field_alliance_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
   );
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -192,7 +240,7 @@ function retopais_feature_alliances_views_default_views() {
   $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Mesa Alliances */
@@ -259,6 +307,7 @@ function retopais_feature_alliances_views_default_views() {
     t('Organiza:'),
     t('Sponsor Alliances'),
     t('Patrocinan:'),
+    t('Alliance Type'),
     t('Mesa Alliances'),
     t('Apoyado por:'),
   );

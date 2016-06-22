@@ -1,7 +1,7 @@
 name = Reto País Site Layout
 description = Reto País Site Layout.
 core = 7.x
-package = Features
+package = Reto Pais
 version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = page_manager
@@ -10,3 +10,4 @@ dependencies[] = semantic_panels
 features[ctools][] = page_manager:pages_default:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = site_template__panel_context_12926229-762a-490b-9aa5-5e6394884268
+project path = sites/all/modules/features
