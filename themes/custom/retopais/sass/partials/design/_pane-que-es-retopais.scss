@@ -42,12 +42,3 @@
     }
   }
 }
-
-.page-que-es-reto-pais {
-  .page-sidebar-secondary-content {
-    display: none;
-    @include breakpoint($medium) {
-      display: block;
-    }
-  }
-}

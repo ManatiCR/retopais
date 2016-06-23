@@ -691,25 +691,6 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->uuid = '4dfcf3a0-bf7e-4fa4-87ac-b358c8f8b7fa';
     $display->content['new-4dfcf3a0-bf7e-4fa4-87ac-b358c8f8b7fa'] = $pane;
     $display->panels['left'][6] = 'new-4dfcf3a0-bf7e-4fa4-87ac-b358c8f8b7fa';
-    $pane = new stdClass();
-    $pane->pid = 'new-1b8d6d3f-8c57-4a92-975b-77311184aa89';
-    $pane->panel = 'right';
-    $pane->type = 'que_es_retopais_premios';
-    $pane->subtype = 'que_es_retopais_premios';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '1b8d6d3f-8c57-4a92-975b-77311184aa89';
-    $display->content['new-1b8d6d3f-8c57-4a92-975b-77311184aa89'] = $pane;
-    $display->panels['right'][0] = 'new-1b8d6d3f-8c57-4a92-975b-77311184aa89';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
