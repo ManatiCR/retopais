@@ -64,5 +64,5 @@ function retopais_feature_blog_node_insert($node) {
  * Implements hook_node_update().
  */
 function retopais_feature_blog_node_update($node) {
-  retopais_feature_blog_insert($node);
+  retopais_feature_blog_node_insert($node);
 }
