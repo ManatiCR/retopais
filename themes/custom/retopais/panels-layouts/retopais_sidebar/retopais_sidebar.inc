@@ -9,6 +9,7 @@ $plugin = array(
   'category'    => t('Reto País'),
   'icon'        => 'icon.png',
   'theme'       => 'retopais_sidebar',
+  'admin css'   => '../../css/panels-layouts/retopais_sidebar.admin.css',
   'regions'     => array(
     'left'          => t('Left'),
     'right'         => t('Right'),
