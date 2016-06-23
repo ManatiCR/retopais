@@ -60,6 +60,25 @@ function retopais_feature_proposals_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-a4a66baa-682f-4c60-b3c4-33c0e03e4e64';
+    $pane->panel = 'middle';
+    $pane->type = 'proposals_form_steps';
+    $pane->subtype = 'proposals_form_steps';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a4a66baa-682f-4c60-b3c4-33c0e03e4e64';
+    $display->content['new-a4a66baa-682f-4c60-b3c4-33c0e03e4e64'] = $pane;
+    $display->panels['middle'][0] = 'new-a4a66baa-682f-4c60-b3c4-33c0e03e4e64';
+    $pane = new stdClass();
     $pane->pid = 'new-2642abf3-3eaf-42d5-aee9-2a5a73630206';
     $pane->panel = 'middle';
     $pane->type = 'proposal_progress';
@@ -73,11 +92,11 @@ function retopais_feature_proposals_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '2642abf3-3eaf-42d5-aee9-2a5a73630206';
     $display->content['new-2642abf3-3eaf-42d5-aee9-2a5a73630206'] = $pane;
-    $display->panels['middle'][0] = 'new-2642abf3-3eaf-42d5-aee9-2a5a73630206';
+    $display->panels['middle'][1] = 'new-2642abf3-3eaf-42d5-aee9-2a5a73630206';
     $pane = new stdClass();
     $pane->pid = 'new-b84f2694-24bf-4a3d-855e-de72c086eddc';
     $pane->panel = 'middle';
@@ -97,11 +116,11 @@ function retopais_feature_proposals_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'b84f2694-24bf-4a3d-855e-de72c086eddc';
     $display->content['new-b84f2694-24bf-4a3d-855e-de72c086eddc'] = $pane;
-    $display->panels['middle'][1] = 'new-b84f2694-24bf-4a3d-855e-de72c086eddc';
+    $display->panels['middle'][2] = 'new-b84f2694-24bf-4a3d-855e-de72c086eddc';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
