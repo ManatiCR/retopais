@@ -41,6 +41,9 @@
       @include font-size(1.7);
     }
   }
+  .menu-item-propone {
+    text-shadow: none;
+  }
   .toggle-nav {
     padding-left: 40px;
     background: url(../img/icons/menu.svg) no-repeat 5px center;

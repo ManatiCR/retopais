@@ -26,6 +26,26 @@ main, .container {
   }
 }
 
+@media (min-width: 768px) {
+  .page-sidebar-primary-content {
+    width: 72.88136%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-sidebar-secondary-content {
+    width: 25.42373%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
@@ -41,7 +61,7 @@ body {
   font-size: 1.4rem;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
   font-family: "Oswald", sans-serif;
 }
 
@@ -66,9 +86,8 @@ h3 {
 }
 
 h4 {
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 h4 a:hover {
@@ -76,20 +95,21 @@ h4 a:hover {
 }
 
 a {
-  font-size: 14px;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: #353e42;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+p, div {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+b, strong {
   font-weight: bold;
 }
 
-a:hover {
-  color: #4ba3bf;
-}
-
-p {
-  font-size: 14px;
-  font-size: 1.4rem;
+i {
+  font-style: italic;
 }
 
 button,
@@ -100,15 +120,7 @@ input[type='submit'],
 input[type='submit'] + #edit-cancel {
   font-family: "Oswald", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-}
-
-b, strong {
-  font-weight: bold;
-}
-
-i {
-  font-style: italic;
+  font-size: 1.6rem;
 }
 
 div:not(#foo) input[type="checkbox"] {
@@ -140,6 +152,16 @@ div:not(#foo) input[type="checkbox"]:checked + label {
   cursor: pointer;
   background-size: 23px 20px;
   background-image: url("../img/icons/squared-checked.svg");
+}
+
+a {
+  text-decoration: none;
+  color: #4ba3bf;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 ol {
@@ -211,10 +233,21 @@ input[type="text"],
   padding: 8px 8px;
   border-radius: 4px;
   border: solid 1px #353e42;
+  width: 100%;
+  max-width: 400px;
+}
+
+textarea {
+  border-radius: 4px;
+  border: solid 1px #353e42;
+  overflow: auto;
+  min-height: 128px;
+  max-width: 600px;
 }
 
 input[type="text"]:focus,
-.form-text:focus {
+.form-text:focus,
+textarea:focus {
   border: solid 1px #4ba3bf;
   color: #4ba3bf;
   outline: none;
@@ -223,17 +256,6 @@ input[type="text"]:focus,
 .form-item-textfield label,
 .form-item-autocomplete label {
   text-transform: uppercase;
-}
-
-textarea {
-  border-radius: 4px;
-  border: solid 1px #353e42;
-  overflow: auto;
-  min-height: 128px;
-}
-
-textarea:focus {
-  outline: none;
 }
 
 .grippie {
@@ -321,18 +343,6 @@ hr {
   border: none;
   border-bottom: 5px solid #f0f7f7;
   margin: 1.4em 0;
-}
-
-select {
-  border: 1px solid #318da3;
-  color: white;
-  border-radius: 4px;
-  background-color: #4ba3bf;
-  padding: 5px 10px;
-}
-
-select:focus {
-  outline: none;
 }
 
 .breadcrumb {
@@ -505,6 +515,10 @@ select:focus {
     font-size: 17px;
     font-size: 1.7rem;
   }
+}
+
+.nav-main .menu-item-propone {
+  text-shadow: none;
 }
 
 .nav-main .toggle-nav {
@@ -715,4 +729,8 @@ select:focus {
   -webkit-transform: translateY(-48%);
           transform: translateY(-48%);
   margin-left: 10px;
+}
+
+.media-kit-download img {
+  width: 100%;
 }
