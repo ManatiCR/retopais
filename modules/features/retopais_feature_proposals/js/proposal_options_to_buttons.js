@@ -11,7 +11,9 @@
       for (var index = 0; index < fields.length; index++) {
         var selector = '#edit-' + fields[index].replace(/_/g, '-') + '-und';
         if (jQuery(selector).length) {
-          jQuery(selector).select2Buttons();
+          jQuery(selector, context).once('select2Buttons', function () {
+            jQuery(this).select2Buttons();
+          });
         }
       }
     }

@@ -23,10 +23,10 @@ function homepage_premios_render($subtype, $conf, $panel_args, $context) {
   $block->title = '';
 
   $ideas_title = variable_get('retopais_feature_pages_homepage_premio_idea_titulo', '1 ganador(a) por cada problemática (4)');
-  $ideas_description = variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', 'Descripción de este premio');
+  $ideas_description = variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', array('value' => 'Descripción de este premio', 'format' => 'filtered_html'));
 
   $solution_title = variable_get('retopais_feature_pages_homepage_premio_solucion_titulo', '1 ganador(a)');
-  $solution_description = variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', 'Descripción de este premio');
+  $solution_description = variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', array('value' => 'Descripción de este premio', 'format' => 'filtered_html'));
 
   $premios_cta_title = variable_get('retopais_feature_pages_homepage_premio_cta', 'Conocé más de los premios');
 
@@ -34,9 +34,9 @@ function homepage_premios_render($subtype, $conf, $panel_args, $context) {
     '#theme' => 'homepage_premios',
     '#link' => l($premios_cta_title, 'que-es-reto-pais'),
     '#ideas_title' => $ideas_title,
-    '#ideas_description' => $ideas_description,
+    '#ideas_description' => check_markup($ideas_description['value'], $ideas_description['format']),
     '#solution_title' => $solution_title,
-    '#solution_description' => $solution_description,
+    '#solution_description' => check_markup($solution_description['value'], $solution_description['format']),
   );
 
   return $block;

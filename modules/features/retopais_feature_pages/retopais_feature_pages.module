@@ -6,7 +6,6 @@
 
 include_once 'retopais_feature_pages.features.inc';
 
-define('RETOPAIS_FEATURE_PAGES_MEDIA_KIT_IMAGE_STYLE', 'thumbnail');
 define('RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE', 'medium');
 define('RETOPAIS_FEATURE_PAGES_BLOG_PROBLEMATICAS_CTA_IMAGE', 'medium');
 define('RETOPAIS_FEATURE_PAGES_HOMEPAGE_TIMELINE_IMAGE', 'medium');
@@ -211,6 +210,15 @@ function retopais_feature_pages_que_es_reto_pais_form($form, $form_state) {
     '#required' => TRUE,
   );
 
+  $retopais_feature_pages_que_es_reto_pais_premios_text = variable_get('retopais_feature_pages_que_es_reto_pais_premios_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_que_es_reto_pais_premios_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto acerca de los premios'),
+    '#format' => $retopais_feature_pages_que_es_reto_pais_premios_text['format'],
+    '#default_value' => $retopais_feature_pages_que_es_reto_pais_premios_text['value'],
+    '#required' => TRUE,
+  );
+
   return system_settings_form($form);
 }
 
@@ -359,31 +367,7 @@ function retopais_feature_pages_blog_form($form, $form_state) {
     '#required' => TRUE,
   );
 
-  $form['retopais_feature_pages_blog_problematicas_cta_image'] = array(
-    '#type' => 'managed_file',
-    '#title' => t('Imagen del CTA de problemáticas'),
-    '#description' => t('Tipos de archivo permitidos: gif, png, jpg, jpeg'),
-    '#default_value' => variable_get('retopais_feature_pages_blog_problematicas_cta_image', 0),
-    '#upload_validators' => array(
-      'file_validate_extensions' => array('gif png jpg jpeg'),
-    ),
-    '#upload_location' => 'public://blog/',
-    '#required' => TRUE,
-  );
-
-  $form['#submit'][] = 'retopais_feature_pages_blog_form_submit';
-
   return system_settings_form($form);
-}
-
-/**
- * Submit form for problematicas form.
- */
-function retopais_feature_pages_blog_form_submit($form, &$form_state) {
-  $values = $form_state['values'];
-  $existing_image = variable_get('retopais_feature_pages_blog_problematicas_cta_image', 0);
-  $new_image = $values['retopais_feature_pages_blog_problematicas_cta_image'];
-  retopais_feature_pages_handle_file_submit($existing_image, $new_image);
 }
 
 /**
@@ -404,10 +388,12 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#required' => TRUE,
   );
 
+  $retopais_feature_pages_homepage_premio_idea_descripcion = variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', array('value' => 'Alguna descripción del premio', 'format' => 'filtered_html'));
   $form['retopais_feature_pages_homepage_premio_idea_descripcion'] = array(
-    '#type' => 'textarea',
+    '#type' => 'text_format',
     '#title' => t('Descripción del premio para ideas'),
-    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', 'Descripción de este premio'),
+    '#default_value' => $retopais_feature_pages_homepage_premio_idea_descripcion['value'],
+    '#format' => $retopais_feature_pages_homepage_premio_idea_descripcion['format'],
     '#required' => TRUE,
   );
 
@@ -418,10 +404,12 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#required' => TRUE,
   );
 
+  $retopais_feature_pages_homepage_premio_solucion_descripcion = variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', array('value' => 'Alguna descripción del premio', 'format' => 'filtered_html'));
   $form['retopais_feature_pages_homepage_premio_solucion_descripcion'] = array(
-    '#type' => 'textarea',
+    '#type' => 'text_format',
     '#title' => t('Descripción del premio para soluciones'),
-    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', 'Descripción de este premio'),
+    '#default_value' => $retopais_feature_pages_homepage_premio_solucion_descripcion['value'],
+    '#format' => $retopais_feature_pages_homepage_premio_solucion_descripcion['format'],
     '#required' => TRUE,
   );
 

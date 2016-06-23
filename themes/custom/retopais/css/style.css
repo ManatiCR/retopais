@@ -26,6 +26,26 @@ main, .container {
   }
 }
 
+@media (min-width: 768px) {
+  .page-sidebar-primary-content {
+    width: 72.88136%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-sidebar-secondary-content {
+    width: 25.42373%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
@@ -246,10 +266,21 @@ input[type="text"],
   padding: 8px 8px;
   border-radius: 4px;
   border: solid 1px #353e42;
+  width: 100%;
+  max-width: 400px;
+}
+
+textarea {
+  border-radius: 4px;
+  border: solid 1px #353e42;
+  overflow: auto;
+  min-height: 128px;
+  max-width: 600px;
 }
 
 input[type="text"]:focus,
-.form-text:focus {
+.form-text:focus,
+textarea:focus {
   border: solid 1px #4ba3bf;
   color: #4ba3bf;
   outline: none;
@@ -258,17 +289,6 @@ input[type="text"]:focus,
 .form-item-textfield label,
 .form-item-autocomplete label {
   text-transform: uppercase;
-}
-
-textarea {
-  border-radius: 4px;
-  border: solid 1px #353e42;
-  overflow: auto;
-  min-height: 128px;
-}
-
-textarea:focus {
-  outline: none;
 }
 
 .grippie {
@@ -744,4 +764,8 @@ hr {
   -webkit-transform: translateY(-48%);
           transform: translateY(-48%);
   margin-left: 10px;
+}
+
+.media-kit-download img {
+  width: 100%;
 }
