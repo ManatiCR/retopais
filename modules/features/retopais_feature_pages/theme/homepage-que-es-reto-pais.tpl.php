@@ -13,8 +13,14 @@
     <div class="que-es-reto-pais--link"><?php print $link; ?></div>
   </div>
   <div class="que-es-reto-pais--right">
+    <?php if ($video): ?>
     <div class="que-es-reto-pais--video">
       <iframe width="560" height="315" src="<?php print $video; ?>" frameborder="0"></iframe>
     </div>
+    <?php elseif ($image): ?>
+    <div class="que-es-reto-pais--image">
+      <?php print $image; ?>
+    </div>
+    <?php endif; ?>
   </div>
 </div>

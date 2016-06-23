@@ -23,6 +23,7 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
   $block->title = '';
 
   $video = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', '');
+  $image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   if ($video) {
     $parts = drupal_parse_url($video);
     if (isset($parts['query'])) {
@@ -30,11 +31,22 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
       $video = 'https://www.youtube.com/embed/' . $video_id;
     }
   }
+  elseif ($image) {
+    $image_file = file_load($image);
+    $image_path = $image_file->uri;
+    $variables = array(
+      'path' => $image_path,
+      'attributes' => array(),
+    );
+
+    $image = theme_image($variables);
+  }
 
   $block->content['que-es-reto-pais'] = array(
     '#theme' => 'homepage_que_es_reto_pais',
     '#link' => l(t('Descubrí más sobre El Reto'), 'que-es-reto-pais'),
     '#video' => $video,
+    '#image' => $image,
   );
   return $block;
 }
