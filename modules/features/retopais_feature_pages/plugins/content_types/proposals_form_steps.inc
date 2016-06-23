@@ -20,7 +20,7 @@ $plugin = array(
 function proposals_form_steps_render($subtype, $conf, $panel_args, $context) {
   // Build the content type block.
   $block = new stdClass();
-  $block->title = t('Proponé Ideas');
+  $block->title = '';
 
   $items = array();
 
