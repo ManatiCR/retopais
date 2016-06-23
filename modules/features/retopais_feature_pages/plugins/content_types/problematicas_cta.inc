@@ -22,34 +22,17 @@ function problematicas_cta_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
   $block->title = '';
 
-  $block->content['problematicas-cta-title'] = array(
-    '#markup' => '<h3>' . check_plain(variable_get('retopais_feature_pages_blog_problematicas_cta_title', '')) . '</h3>',
+  $block->content['problematicas-cta-link'] = array(
+    '#theme' => 'link',
+    '#text' => check_plain(variable_get('retopais_feature_pages_blog_problematicas_cta_title', 'Descubrí las problemáticas')),
+    '#path' => 'problematicas',
+    '#prefix' => '<div class="problematicas-cta-link">',
+    '#suffix' => '</div>',
+    '#options' => array(
+      'attributes' => array(),
+      'html' => FALSE,
+    ),
   );
 
-  $image = file_load(variable_get('retopais_feature_pages_blog_problematicas_cta_image', 0));
-  if ($image) {
-    $image_path = $image->uri;
-
-    $variables = array(
-      'style_name' => RETOPAIS_FEATURE_PAGES_BLOG_PROBLEMATICAS_CTA_IMAGE,
-      'path' => $image_path,
-      'attributes' => array(),
-    );
-
-    $block->content['problematicas-cta-link'] = array(
-      '#theme' => 'link',
-      '#text' => theme_image_style($variables),
-      '#path' => 'problematicas',
-      '#prefix' => '<div class="problematicas-cta-link">',
-      '#suffix' => '</div>',
-      '#options' => array(
-        'attributes' => array(
-          'class' => array('problematicas-cta-link'),
-          'title' => t('Ir a página de Problemáticas'),
-        ),
-        'html' => TRUE,
-      ),
-    );
-  }
   return $block;
 }
