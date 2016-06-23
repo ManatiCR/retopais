@@ -655,16 +655,6 @@ hr {
   }
 }
 
-.page-que-es-reto-pais .page-sidebar-secondary-content {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .page-que-es-reto-pais .page-sidebar-secondary-content {
-    display: block;
-  }
-}
-
 .stages-list {
   display: -webkit-box;
   display: -ms-flexbox;
