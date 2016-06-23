@@ -7,7 +7,7 @@
 
 $plugin = array(
   'single' => TRUE,
-  'title' => t('Qué es Reto Pais Premios Text'),
+  'title' => t('Qué es Reto Pais Premios Sidebar Text'),
   'content_types' => 'que_es_retopais_premios',
   'description' => t('Premios en el sidebar de ¿Qué es Reto País?'),
   'render callback' => 'que_es_retopais_premios_render',
@@ -22,7 +22,7 @@ function que_es_retopais_premios_render($subtype, $conf, $panel_args, $context) 
   $block = new stdClass();
   $block->title = t('Premios');
 
-  $premios = variable_get('retopais_feature_pages_que_es_reto_pais_premios_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
+  $premios = variable_get('retopais_feature_pages_que_es_reto_pais_premios_sidebar_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
 
   $block->content['premios_text'] = array(
     '#type' => 'item',
