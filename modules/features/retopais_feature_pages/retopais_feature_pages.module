@@ -211,6 +211,15 @@ function retopais_feature_pages_que_es_reto_pais_form($form, $form_state) {
     '#required' => TRUE,
   );
 
+  $retopais_feature_pages_que_es_reto_pais_premios_text = variable_get('retopais_feature_pages_que_es_reto_pais_premios_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_que_es_reto_pais_premios_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto acerca de los premios'),
+    '#format' => $retopais_feature_pages_que_es_reto_pais_premios_text['format'],
+    '#default_value' => $retopais_feature_pages_que_es_reto_pais_premios_text['value'],
+    '#required' => TRUE,
+  );
+
   return system_settings_form($form);
 }
 
