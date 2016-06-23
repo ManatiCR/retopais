@@ -47,12 +47,14 @@ function retopais_feature_pages_default_page_manager_pages() {
     'name' => 'panel',
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'retopais_sidebar';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -62,7 +64,7 @@ function retopais_feature_pages_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-4129d240-c4f8-44a2-9f81-c1199ad0ca6d';
-    $pane->panel = 'middle';
+    $pane->panel = 'left';
     $pane->type = 'contact';
     $pane->subtype = 'contact';
     $pane->shown = TRUE;
@@ -82,10 +84,10 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '4129d240-c4f8-44a2-9f81-c1199ad0ca6d';
     $display->content['new-4129d240-c4f8-44a2-9f81-c1199ad0ca6d'] = $pane;
-    $display->panels['middle'][0] = 'new-4129d240-c4f8-44a2-9f81-c1199ad0ca6d';
+    $display->panels['left'][0] = 'new-4129d240-c4f8-44a2-9f81-c1199ad0ca6d';
     $pane = new stdClass();
     $pane->pid = 'new-18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2';
-    $pane->panel = 'middle';
+    $pane->panel = 'right';
     $pane->type = 'contact_media_kit';
     $pane->subtype = 'contact_media_kit';
     $pane->shown = TRUE;
@@ -97,11 +99,11 @@ function retopais_feature_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2';
     $display->content['new-18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2'] = $pane;
-    $display->panels['middle'][1] = 'new-18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2';
+    $display->panels['right'][0] = 'new-18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-18127bf3-a68d-47c1-8fd8-ee2c32e8e5b2';
   $handler->conf['display'] = $display;
