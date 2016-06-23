@@ -1,0 +1,28 @@
+///////////////////////
+// Messages
+// @_typography.scss
+///////////////////////
+
+.messages {
+  border-radius: 4px;
+  &.status, &.warning, &.error {
+    border: none;
+    padding: 30px 10px 30px 60px;
+    background-position: 18px 50%;
+  }
+  &.status {
+    background-image: url(../img/icons/check.png);
+    background-color: $message-green;
+    color: $white;
+  }
+  &.warning {
+    background-image: url(../img/icons/warning.png);
+    background-color: $message-yellow;
+    color: $darker-gray;
+  }
+  &.error {
+    background-image: url(../img/icons/error.png);
+    background-color: $message-red;
+    color: $white;
+  }
+}
