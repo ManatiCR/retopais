@@ -24,11 +24,11 @@
  */
 ?>
 <article class="blog-item">
-  <section class="blog-item--image">
-    <?php if (!empty($fields['field_image']->content)): ?>
+  <?php if (!empty($fields['field_image']->content)): ?>
+    <section class="blog-item--image">
       <?php print $fields['field_image']->content; ?>
-    <?php endif; ?>
-  </section>
+    </section>
+  <?php endif; ?>
   <section class="blog-item--content">
     <h3 class="blog-item--title"><?php print $fields['title']->content; ?></h3>
     <span class="blog-item--date"><?php print $fields['created']->content; ?></span>
