@@ -870,7 +870,7 @@ hr {
   background-color: #dddddd;
 }
 
-.page-node-add-proposal .select-buttons li:first-child {
+.page-node-add-proposal .select-buttons li:first-child, .form-item-field-project-running-und .select-buttons li:first-child {
   display: none;
 }
 
@@ -917,4 +917,36 @@ hr {
   background-color: #fff;
   box-shadow: none;
   text-decoration: underline;
+}
+
+.field-name-field-project-links {
+  display: block;
+}
+
+.field-name-field-project-links .draggable {
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.field-name-field-project-links tbody {
+  display: block;
+  border-top: none;
+  margin-top: 10px;
+}
+
+.field-name-field-project-links tbody a {
+  display: none;
+}
+
+.field-name-field-project-links tbody td {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.field-name-field-project-links tbody td.field-multiple-drag {
+  width: 0;
+}
+
+.field-name-field-project-links th {
+  border: none;
 }
