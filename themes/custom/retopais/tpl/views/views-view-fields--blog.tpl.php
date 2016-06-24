@@ -33,6 +33,8 @@
     <h3 class="blog-item--title"><?php print $fields['title']->content; ?></h3>
     <span class="blog-item--date"><?php print $fields['created']->content; ?></span>
     <div class="blog-item--body"><?php print $fields['body']->content; ?></div>
+    <?php if (!empty($fields['view_node'])): ?>
     <div class="blog-item--link"><?php print $fields['view_node']->content; ?></div>
+    <?php endif; ?>
   </section>
 </article>
