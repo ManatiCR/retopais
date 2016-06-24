@@ -272,12 +272,14 @@ function retopais_feature_blog_default_page_manager_pages() {
     'name' => 'panel',
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'retopais_sidebar';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -287,11 +289,23 @@ function retopais_feature_blog_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-7cb3dd80-abf1-4b1b-a0c3-3d902e0c45c5';
-    $pane->panel = 'middle';
+    $pane->panel = 'left';
     $pane->type = 'page_breadcrumb';
     $pane->subtype = 'page_breadcrumb';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'blog',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
@@ -303,10 +317,10 @@ function retopais_feature_blog_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '7cb3dd80-abf1-4b1b-a0c3-3d902e0c45c5';
     $display->content['new-7cb3dd80-abf1-4b1b-a0c3-3d902e0c45c5'] = $pane;
-    $display->panels['middle'][0] = 'new-7cb3dd80-abf1-4b1b-a0c3-3d902e0c45c5';
+    $display->panels['left'][0] = 'new-7cb3dd80-abf1-4b1b-a0c3-3d902e0c45c5';
     $pane = new stdClass();
     $pane->pid = 'new-4c9e8910-0987-4608-a748-cf75b4d84c69';
-    $pane->panel = 'middle';
+    $pane->panel = 'left';
     $pane->type = 'views_panes';
     $pane->subtype = 'blog-panel_pane_1';
     $pane->shown = TRUE;
@@ -329,10 +343,10 @@ function retopais_feature_blog_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '4c9e8910-0987-4608-a748-cf75b4d84c69';
     $display->content['new-4c9e8910-0987-4608-a748-cf75b4d84c69'] = $pane;
-    $display->panels['middle'][1] = 'new-4c9e8910-0987-4608-a748-cf75b4d84c69';
+    $display->panels['left'][1] = 'new-4c9e8910-0987-4608-a748-cf75b4d84c69';
     $pane = new stdClass();
     $pane->pid = 'new-c61252a4-a18c-4d17-98ff-7953e5f0e9e8';
-    $pane->panel = 'middle';
+    $pane->panel = 'right';
     $pane->type = 'views_panes';
     $pane->subtype = 'blog_categories-panel_pane_1';
     $pane->shown = TRUE;
@@ -344,14 +358,14 @@ function retopais_feature_blog_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'c61252a4-a18c-4d17-98ff-7953e5f0e9e8';
     $display->content['new-c61252a4-a18c-4d17-98ff-7953e5f0e9e8'] = $pane;
-    $display->panels['middle'][2] = 'new-c61252a4-a18c-4d17-98ff-7953e5f0e9e8';
+    $display->panels['right'][0] = 'new-c61252a4-a18c-4d17-98ff-7953e5f0e9e8';
     $pane = new stdClass();
     $pane->pid = 'new-376038c7-2317-4a09-ad01-3eef65afa073';
-    $pane->panel = 'middle';
+    $pane->panel = 'right';
     $pane->type = 'problematicas_cta';
     $pane->subtype = 'problematicas_cta';
     $pane->shown = TRUE;
@@ -363,11 +377,11 @@ function retopais_feature_blog_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '376038c7-2317-4a09-ad01-3eef65afa073';
     $display->content['new-376038c7-2317-4a09-ad01-3eef65afa073'] = $pane;
-    $display->panels['middle'][3] = 'new-376038c7-2317-4a09-ad01-3eef65afa073';
+    $display->panels['right'][1] = 'new-376038c7-2317-4a09-ad01-3eef65afa073';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4c9e8910-0987-4608-a748-cf75b4d84c69';
   $handler->conf['display'] = $display;
