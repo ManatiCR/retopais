@@ -12,7 +12,6 @@ include_once 'retopais_feature_proposals.features.inc';
 function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_state) {
   $current_step_name = $form['#multistep']['current'];
   if (isset($form['#groups'][$current_step_name])) {
-    drupal_set_title(t('Proponé Ideas'));
     // Blacklist locale_field_node_form_submit.
     if (isset($form['#submit'])) {
       foreach ($form['#submit'] as $index => $submit) {

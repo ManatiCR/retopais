@@ -75,14 +75,6 @@ function retopais_feature_pages_menu() {
     'page arguments' => array('retopais_feature_pages_homepage_form'),
   );
 
-  $items['admin/config/retopais/propuestas-form'] = array(
-    'title' => 'Configuración de Form de Propuestas',
-    'description' => 'Configuración del Form de Propuestas',
-    'access arguments' => array('configure reto pais pages'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('retopais_feature_pages_propuestas_form'),
-  );
-
   return $items;
 }
 
@@ -482,27 +474,4 @@ function retopais_feature_pages_homepage_form_submit($form, &$form_state) {
   $existing_image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   $new_image = $values['retopais_feature_pages_homepage_que_es_reto_pais_image'];
   retopais_feature_pages_handle_file_submit($existing_image, $new_image);
-}
-
-/**
- * Form builder for propuestas config.
- */
-function retopais_feature_pages_propuestas_form($form, $form_state) {
-  $form['retopais_feature_pages_propuestas_intro_text'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Texto introductorio para el formulario'),
-    '#default_value' => variable_get('retopais_feature_pages_propuestas_intro_text', 'Proponer una idea es muy sencillo, sólo sigue los siguientes pasos:'),
-    '#required' => TRUE,
-  );
-
-  for ($number = 1; $number <= 4; $number++) {
-    $form['retopais_feature_pages_propuestas_form_step_' . $number] = array(
-      '#type' => 'textfield',
-      '#title' => t('Texto para el paso # @number', array('@number' => $number)),
-      '#default_value' => variable_get('retopais_feature_pages_propuestas_form_step_' . $number, 'Text for step number ' . $number),
-      '#required' => TRUE,
-    );
-  }
-
-  return system_settings_form($form);
 }
