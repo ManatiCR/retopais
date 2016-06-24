@@ -1,15 +1,14 @@
 <?php
 /**
  * @file
- * Reto Pais Page full width layout definition.
+ * Reto Pais Page fullwidth layout definition.
  */
 
 $plugin = array(
-  'title'       => t('Simple page with sidebar'),
+  'title'       => t('4 columns page to use with full width blocks'),
   'category'    => t('Reto País'),
   'icon'        => 'icon.png',
-  'theme'       => 'retopais_sidebar',
-  'admin css'   => '../../css/panels-layouts/retopais_sidebar.admin.css',
+  'theme'       => 'retopais_fullwidth',
   'regions'     => array(
     'first-full'     => t('First full'),
     'second'         => t('Second'),
