@@ -1,0 +1,24 @@
+//////////////////////////////
+// Proposal list.
+// @_proposal-list.scss
+//////////////////////////////
+
+.pane-proposal-progress {
+  background-color: $azure;
+
+}
+.proposal-progress-list {
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.proposal-progress-item-current {
+  font-family: $oswald;
+  @include font-size(1.8);
+  color: $red;
+  margin: 5px 0;
+}
+
+.form-actions {
+  margin: 3rem 0;
+}
