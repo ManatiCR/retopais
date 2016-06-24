@@ -211,12 +211,21 @@ function retopais_feature_pages_que_es_reto_pais_form($form, $form_state) {
     '#required' => TRUE,
   );
 
-  $retopais_feature_pages_que_es_reto_pais_premios_text = variable_get('retopais_feature_pages_que_es_reto_pais_premios_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
-  $form['retopais_feature_pages_que_es_reto_pais_premios_text'] = array(
+  $retopais_feature_pages_que_es_reto_pais_premios_bottom_text = variable_get('retopais_feature_pages_que_es_reto_pais_premios_bottom_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_que_es_reto_pais_premios_bottom_text'] = array(
     '#type' => 'text_format',
-    '#title' => t('Texto acerca de los premios'),
-    '#format' => $retopais_feature_pages_que_es_reto_pais_premios_text['format'],
-    '#default_value' => $retopais_feature_pages_que_es_reto_pais_premios_text['value'],
+    '#title' => t('Texto principal acerca de los premios'),
+    '#format' => $retopais_feature_pages_que_es_reto_pais_premios_bottom_text['format'],
+    '#default_value' => $retopais_feature_pages_que_es_reto_pais_premios_bottom_text['value'],
+    '#required' => TRUE,
+  );
+
+  $retopais_feature_pages_que_es_reto_pais_premios_sidebar_text = variable_get('retopais_feature_pages_que_es_reto_pais_premios_sidebar_text', array('value' => 'Información acerca de los premios', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_que_es_reto_pais_premios_sidebar_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto acerca de los premios para el sidebar'),
+    '#format' => $retopais_feature_pages_que_es_reto_pais_premios_sidebar_text['format'],
+    '#default_value' => $retopais_feature_pages_que_es_reto_pais_premios_sidebar_text['value'],
     '#required' => TRUE,
   );
 
