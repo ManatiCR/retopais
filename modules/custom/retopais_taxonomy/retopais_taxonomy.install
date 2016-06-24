@@ -42,7 +42,7 @@ function retopais_taxonomy_install() {
         'abstract' => 'Solamente el 46.3% de los jóvenes entre los 17 y 21 años completa la educación secundaria y solamente el 34,2% de los jóvenes entre 18 y 24 años van a la universidad.',
         'image' => 'education.png',
         'prize_text' => 'Consultoría de Ernst&Young',
-        'prize_image' => 'ey.png',
+        'prize_image' => 'ey2.png',
       ),
       'Tasa de obesidad' => array(
         'description' => 'En Costa Rica hemos cometido el error de no ver la obesidad como un tema de urgencia. Actualmente somos el sexto país de América Latina con más sobrepeso y nos encontramos entre los 25 países más obesos del mundo. El 60% de los adultos costarricenses son obesos. Y la obesidad es uno de los factores principales de riesgo de muerte en el mundo. ¿Cuántas enfermedades podremos evitar si nos encontramos en un peso saludable? Urge la promoción de iniciativas que resuelvan esta problemática y que velen por el bienestar de los ciudadanos.',
@@ -72,11 +72,13 @@ function retopais_taxonomy_install() {
 
       $destination = $folder_name . '/' . $value['image'];
       $source = drupal_get_path('module', 'retopais_taxonomy') . '/data/' . $value['image'];
-      $term['field_featured_image'][LANGUAGE_NONE][0]['target_id'] = retopais_taxonomy_create_image_node($source, $destination);
+      $name = $value['image'];
+      $term['field_featured_image'][LANGUAGE_NONE][0]['target_id'] = retopais_taxonomy_create_image_node($source, $destination, $name);
 
       $destination = $folder_name . '/' . $value['prize_image'];
       $source = drupal_get_path('module', 'retopais_taxonomy') . '/data/' . $value['prize_image'];
-      $term['field_prize_image'][LANGUAGE_NONE][0]['target_id'] = retopais_taxonomy_create_image_node($source, $destination);
+      $name = $value['prize_image'];
+      $term['field_prize_image'][LANGUAGE_NONE][0]['target_id'] = retopais_taxonomy_create_image_node($source, $destination, $name);
 
       $term = (object) $term;
       taxonomy_term_save($term);
@@ -103,18 +105,18 @@ function retopais_taxonomy_install() {
 /**
  * Helper function to create new image node.
  */
-function retopais_taxonomy_create_image_node($source, $destination) {
+function retopais_taxonomy_create_image_node($source, $destination, $name) {
   file_unmanaged_copy($source, $destination, FILE_EXISTS_RENAME);
   $file = new stdClass();
   $file->uid = 1;
-  $file->filename = $value['image'];
+  $file->filename = $name;
   $file->uri = $destination;
   $file->status = 1;
   $file->timestamp = REQUEST_TIME;
   file_save($file);
 
   $node = new stdClass();
-  $node->title = $value['image'];
+  $node->title = $name;
   $node->type = 'image';
   node_object_prepare($node);
   $node->status = NODE_PUBLISHED;
