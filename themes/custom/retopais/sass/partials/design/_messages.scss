@@ -11,6 +11,7 @@
     background-position: 18px 50%;
   }
   &.status {
+    display: none;
     background-image: url(../img/icons/check.png);
     background-color: $message-green;
     color: $white;
