@@ -5,7 +5,7 @@
  */
 ?>
 
-<section class="page page-sidebar clearfix">
+<section class="page page-fullwidth clearfix">
 
   <?php if (!empty($content['first-full'])): ?>
     <div class="page-fullwidth-first-full">
