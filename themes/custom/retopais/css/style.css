@@ -46,6 +46,14 @@ main, .container {
   }
 }
 
+.page-que-es-reto-pais .page-sidebar-primary-content {
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+}
+
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
