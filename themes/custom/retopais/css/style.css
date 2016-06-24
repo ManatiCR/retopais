@@ -198,6 +198,7 @@ div:not(#foo) input[type="checkbox"]:checked + label {
 }
 
 .messages.status {
+  display: none;
   background-image: url(../img/icons/check.png);
   background-color: #6BC690;
   color: #fff;
