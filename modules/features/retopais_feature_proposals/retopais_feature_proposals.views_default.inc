@@ -254,7 +254,7 @@ function retopais_feature_proposals_views_default_views() {
     t('Image, Name and Abstract'),
     t('Problems (titles and classes)'),
     t('Only titles and css classes.'),
-    t('CTA Proponé Ideas'),
+    t('Proposal CTA'),
     t('<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>'),
     t('Problem Prizes'),
     t('Content entity referenced from field_prize_image'),
