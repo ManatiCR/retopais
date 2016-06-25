@@ -378,6 +378,7 @@ input[type='submit'] + #edit-cancel {
 .button-red,
 .button-dark {
   border: none;
+  display: inline-block;
   padding: 20px 60px 18px 60px;
   margin-bottom: 2px;
 }
@@ -401,6 +402,7 @@ input[type='submit'] + #edit-cancel {
 .button-yellow {
   border: 2px solid #ffcb50;
   color: #353e42;
+  display: inline-block;
 }
 
 .button-yellow:hover {
