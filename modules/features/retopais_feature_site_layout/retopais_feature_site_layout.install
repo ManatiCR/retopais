@@ -167,8 +167,15 @@ function retopais_feature_site_layout_install() {
   foreach ($menu_links as $menu_link) {
     menu_link_save($menu_link);
     if ($menu_link['menu_name'] === 'main-menu') {
-      $menu_link['menu_name'] = 'footer-menu';
-      menu_link_save($menu_link);
+      $footer_link = array(
+        'link_title' => $menu_link['link_title'],
+        'link_path' => $menu_link['link_path'],
+        'menu_name' => 'footer-menu',
+        'weight' => $menu_link['weight'],
+        'plid' => 0,
+        'customized' => 1,
+      );
+      menu_link_save($footer_link);
     }
   }
 
