@@ -156,6 +156,13 @@ function retopais_feature_proposals_views_default_views() {
   /* Display: Problems (titles and classes) */
   $handler = $view->new_display('panel_pane', 'Problems (titles and classes)', 'problems_only_names');
   $handler->display->display_options['display_description'] = 'Only titles and css classes.';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['label'] = 'Proposal CTA';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
@@ -247,6 +254,8 @@ function retopais_feature_proposals_views_default_views() {
     t('Image, Name and Abstract'),
     t('Problems (titles and classes)'),
     t('Only titles and css classes.'),
+    t('Proposal CTA'),
+    t('<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>'),
     t('Problem Prizes'),
     t('Content entity referenced from field_prize_image'),
     t('View panes'),
