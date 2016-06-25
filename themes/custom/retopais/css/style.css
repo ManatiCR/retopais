@@ -54,6 +54,26 @@ main, .container {
   clear: none;
 }
 
+@media (min-width: 768px) {
+  .pane-proposal-progress {
+    width: 18.64407%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .pane-form {
+    width: 79.66102%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
@@ -178,6 +198,7 @@ div:not(#foo) input[type="checkbox"]:checked + label {
 }
 
 .messages.status {
+  display: none;
   background-image: url(../img/icons/check.png);
   background-color: #6BC690;
   color: #fff;
@@ -193,6 +214,10 @@ div:not(#foo) input[type="checkbox"]:checked + label {
   background-image: url(../img/icons/error.png);
   background-color: #DF3C32;
   color: #fff;
+}
+
+.pane-page-messages {
+  margin: 20px 0;
 }
 
 a {
@@ -286,6 +311,11 @@ textarea {
   max-width: 600px;
 }
 
+.form-type-textarea label, .form-type-textfield label {
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
 input[type="text"]:focus,
 .form-text:focus,
 textarea:focus {
@@ -329,6 +359,15 @@ input[type='submit'] + #edit-cancel:hover {
   cursor: pointer;
   padding: 18px 60px 16px 60px;
   margin-bottom: 2px;
+}
+
+button:focus,
+.button:focus,
+.more-link a:focus,
+.more-help-link a:focus,
+input[type='submit']:focus,
+input[type='submit'] + #edit-cancel:focus {
+  outline-style: none;
 }
 
 input[type='submit'] + #edit-cancel {
@@ -761,12 +800,12 @@ hr {
 .pane-que-es-retopais-cta .button:after, .pane-que-es-retopais-cta .more-link a:after, .more-link .pane-que-es-retopais-cta a:after, .pane-que-es-retopais-cta
 .more-help-link a:after,
 .more-help-link .pane-que-es-retopais-cta a:after {
+  content: '';
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 5px 0 5px 10px;
   border-color: transparent transparent transparent #ffffff;
-  content: '';
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-48%);
@@ -776,4 +815,152 @@ hr {
 
 .media-kit-download img {
   width: 100%;
+}
+
+.pane-proposal-progress {
+  background-color: #f0f7f7;
+}
+
+.proposal-progress-list {
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.proposal-progress-list-item {
+  margin: 5px 0;
+}
+
+.proposal-progress-item-current {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  font-size: 1.7rem;
+  color: #e13e32;
+  margin: 8px 0;
+}
+
+.form-actions {
+  margin: 3rem 0;
+}
+
+.select-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.select-buttons li {
+  list-style-type: none;
+}
+
+.select-buttons li a {
+  margin: 0 10px 20px 0;
+  text-align: center;
+  display: inline-block;
+  width: 220px;
+  height: 60px;
+  color: #353e42;
+  font-weight: 400;
+  font-size: 13px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  padding: 12px 30px 18px 30px;
+  background-color: #f2f2f2;
+  box-shadow: 0 3px 0 #5d5d5d;
+}
+
+.select-buttons li a:hover {
+  text-decoration: none;
+}
+
+.select-buttons li a.picked {
+  background-color: #dddddd;
+}
+
+.page-node-add-proposal .select-buttons li:first-child, .form-item-field-project-running-und .select-buttons li:first-child {
+  display: none;
+}
+
+.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(2) a {
+  box-shadow: 0 3px 0 #8D519F;
+}
+
+.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(3) a {
+  box-shadow: 0 3px 0 #ffcb50;
+}
+
+.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(4) a {
+  box-shadow: 0 3px 0 #91C73E;
+}
+
+.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(5) a {
+  box-shadow: 0 3px 0 #008ECE;
+}
+
+.form-item-field-problem-und ul li:nth-child(1) a {
+  box-shadow: 0 3px 0 #8D519F;
+}
+
+.form-item-field-problem-und ul li:nth-child(2) a {
+  box-shadow: 0 3px 0 #ffcb50;
+}
+
+.form-item-field-problem-und ul li:nth-child(3) a {
+  box-shadow: 0 3px 0 #91C73E;
+}
+
+.form-item-field-problem-und ul li:nth-child(4) a {
+  box-shadow: 0 3px 0 #008ECE;
+}
+
+#edit-previous {
+  padding: 0;
+  border: 0;
+  margin: 0 50px;
+  color: #4ba3bf;
+}
+
+#edit-previous:hover {
+  background-color: #fff;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.field-name-field-project-links {
+  display: block;
+}
+
+.field-name-field-project-links .draggable {
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.field-name-field-project-links tbody {
+  display: block;
+  border-top: none;
+  margin-top: 10px;
+}
+
+.field-name-field-project-links tbody a {
+  display: none;
+}
+
+.field-name-field-project-links tbody td {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.field-name-field-project-links tbody td.field-multiple-drag {
+  width: 0;
+}
+
+.field-name-field-project-links th {
+  border: none;
+}
+
+.form-item {
+  margin: 0 0 30px 0;
 }
