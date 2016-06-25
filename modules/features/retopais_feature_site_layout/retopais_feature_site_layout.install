@@ -33,12 +33,12 @@ function retopais_feature_site_layout_install() {
     'description' => 'Social Links.',
   );
 
-    // Footer Menu.
-    $menus[] = array(
-      'menu_name' => 'footer-menu',
-      'title' => 'Footer Menu',
-      'description' => 'Footer Menu.',
-    );
+  // Footer Menu.
+  $menus[] = array(
+    'menu_name' => 'footer-menu',
+    'title' => 'Footer Menu',
+    'description' => 'Footer Menu.',
+  );
 
   // Save menus.
   foreach ($menus as $menu) {
