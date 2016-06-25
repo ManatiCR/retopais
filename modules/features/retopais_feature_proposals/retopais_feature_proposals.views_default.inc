@@ -161,7 +161,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['label'] = 'CTA Proponé Ideas';
+  $handler->display->display_options['header']['area_text_custom']['label'] = 'Proposal CTA';
   $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
