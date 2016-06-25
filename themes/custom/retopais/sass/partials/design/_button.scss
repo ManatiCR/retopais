@@ -39,6 +39,7 @@ input[type='submit'] + #edit-cancel {
   margin-bottom: 2px;
   &:hover {
     padding: 20px 60px 18px 60px;
+    text-decoration: none;
   }
 }
 
@@ -59,6 +60,7 @@ input[type='submit'] + #edit-cancel {
   &:hover {
     background-color: $yellow;
     box-shadow: 0 2px 0 $darkyellow;
+    text-decoration: none;
   }
 }
 
