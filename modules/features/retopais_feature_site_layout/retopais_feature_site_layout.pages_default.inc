@@ -49,6 +49,69 @@ function retopais_feature_site_layout_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-26d03b53-c41c-43bd-a020-1d511c2f8385';
+    $pane->panel = 'footer';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-footer-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => 'nav',
+          'class_enable' => 1,
+          'class' => 'nav-footer',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '26d03b53-c41c-43bd-a020-1d511c2f8385';
+    $display->content['new-26d03b53-c41c-43bd-a020-1d511c2f8385'] = $pane;
+    $display->panels['footer'][0] = 'new-26d03b53-c41c-43bd-a020-1d511c2f8385';
+    $pane = new stdClass();
     $pane->pid = 'new-f7cdb9d1-f2e1-4c3a-8458-726f6e5893bc';
     $pane->panel = 'footer';
     $pane->type = 'views_panes';
@@ -62,11 +125,11 @@ function retopais_feature_site_layout_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'f7cdb9d1-f2e1-4c3a-8458-726f6e5893bc';
     $display->content['new-f7cdb9d1-f2e1-4c3a-8458-726f6e5893bc'] = $pane;
-    $display->panels['footer'][0] = 'new-f7cdb9d1-f2e1-4c3a-8458-726f6e5893bc';
+    $display->panels['footer'][1] = 'new-f7cdb9d1-f2e1-4c3a-8458-726f6e5893bc';
     $pane = new stdClass();
     $pane->pid = 'new-e9e05085-6184-4597-b08f-a3cdae206e59';
     $pane->panel = 'footer';
@@ -81,11 +144,30 @@ function retopais_feature_site_layout_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'e9e05085-6184-4597-b08f-a3cdae206e59';
     $display->content['new-e9e05085-6184-4597-b08f-a3cdae206e59'] = $pane;
-    $display->panels['footer'][1] = 'new-e9e05085-6184-4597-b08f-a3cdae206e59';
+    $display->panels['footer'][2] = 'new-e9e05085-6184-4597-b08f-a3cdae206e59';
+    $pane = new stdClass();
+    $pane->pid = 'new-f9e13231-465b-47f8-83c0-264fcd054027';
+    $pane->panel = 'footer';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'f9e13231-465b-47f8-83c0-264fcd054027';
+    $display->content['new-f9e13231-465b-47f8-83c0-264fcd054027'] = $pane;
+    $display->panels['footer'][3] = 'new-f9e13231-465b-47f8-83c0-264fcd054027';
     $pane = new stdClass();
     $pane->pid = 'new-26f3ca8a-8fd6-45ec-a468-2b9a8d984169';
     $pane->panel = 'header';
