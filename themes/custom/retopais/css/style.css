@@ -799,7 +799,7 @@ hr {
   }
 }
 
-.nav-main .menu-item-propone:hover {
+.nav-main .menu-item-propone:hover, .nav-main .menu-item-propone.active {
   background-color: #ffcb50;
 }
 
@@ -939,6 +939,49 @@ hr {
 
 .pane-problems-panel-pane-1 .icon-tasa-de-obesidad {
   color: #008ECE;
+}
+
+.pane-problems-panel-pane-2 {
+  margin-top: 50px;
+}
+
+.pane-problems-panel-pane-2 .field-image,
+.pane-problems-panel-pane-2 .views-field-name {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.pane-problems-panel-pane-2 h3 {
+  color: #5d5d5d;
+  margin: 0;
+  padding: 30px 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+.pane-problems-panel-pane-2 .views-field-description {
+  clear: both;
+}
+
+.pane-problems-panel-pane-2 .views-row {
+  margin-bottom: 50px;
+}
+
+.pane-problems-panel-pane-2 .views-row-1 h3 {
+  color: #91C73E;
+}
+
+.pane-problems-panel-pane-2 .views-row-2 h3 {
+  color: #8D519F;
+}
+
+.pane-problems-panel-pane-2 .views-row-3 h3 {
+  color: #008ECE;
+}
+
+.pane-problems-panel-pane-2 .views-row-4 h3 {
+  color: #ffcb50;
 }
 
 @media (min-width: 768px) {
@@ -1450,6 +1493,22 @@ hr {
 .blog-item--date.blog-full:after {
   content: "/";
   margin: 0 5px;
+}
+
+.blog-cta {
+  margin-top: 30px;
+}
+
+.blog-cta .button-yellow {
+  padding: 18px 30px;
+  text-transform: none;
+}
+
+.blog-cta .button-yellow:after {
+  content: "▶";
+  margin-left: 8px;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .pane-back-to-blog {
