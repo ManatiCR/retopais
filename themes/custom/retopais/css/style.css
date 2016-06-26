@@ -1436,3 +1436,15 @@ hr {
 .pane-back-to-blog a:after {
   content: " >";
 }
+
+.ckeditor-entity-embed--left {
+  text-align: left;
+}
+
+.ckeditor-entity-embed--right {
+  text-align: right;
+}
+
+.ckeditor-entity-embed--center {
+  text-align: center;
+}
