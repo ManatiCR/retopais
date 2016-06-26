@@ -32,6 +32,22 @@ function retopais_feature_blog_views_api($module = NULL, $api = NULL) {
 function retopais_feature_blog_image_default_styles() {
   $styles = array();
 
+  // Exported image style: blog_full.
+  $styles['blog_full'] = array(
+    'label' => 'Blog full',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 900,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: blog_teaser.
   $styles['blog_teaser'] = array(
     'label' => 'Blog teaser',

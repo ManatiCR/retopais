@@ -26,6 +26,7 @@ features[field_instance][] = node-blog-body
 features[field_instance][] = node-blog-field_category
 features[field_instance][] = node-blog-field_featured_image
 features[field_instance][] = node-image-field_image
+features[image][] = blog_full
 features[image][] = blog_teaser
 features[node][] = blog
 features[node][] = image

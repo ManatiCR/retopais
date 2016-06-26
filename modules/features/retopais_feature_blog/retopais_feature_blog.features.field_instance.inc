@@ -170,9 +170,13 @@ function retopais_feature_blog_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'ckeditor_embed' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'blog_full',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'default' => array(
