@@ -77,7 +77,47 @@ function retopais_feature_blog_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => 'span',
+          'class_enable' => 1,
+          'class' => 'blog-item--date blog-full',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -98,7 +138,10 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'breadcrumbs-blog-full',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -188,7 +231,10 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'recent-articles-sidebar',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -214,7 +260,7 @@ function retopais_feature_blog_default_page_manager_handlers() {
     $pane->uuid = '81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
     $display->content['new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9'] = $pane;
     $display->panels['right'][1] = 'new-81ba4d50-4ee0-45c1-ad9b-8c177b6810b9';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_7ced7ec8-3ec2-4adf-966e-192d5c81107c'] = $handler;

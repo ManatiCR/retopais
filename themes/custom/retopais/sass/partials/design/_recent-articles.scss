@@ -1,16 +1,18 @@
 ///////////////////////////////
 // Latest articles.
-// @_latest-articles.scss
+// @_recent-articles.scss
 ///////////////////////////////
 
 .pane-blog-recent-articles {
   h2 {
-    color: red;
+    color: $red;
     margin: 0;
     text-transform: uppercase;
     @include font-size(2);
   }
-
+  h3 {
+    @include font-size(1.6);
+  }
   .views-row {
     border-bottom: 1px solid $dark-gray;
     padding: 15px 0;
@@ -18,20 +20,23 @@
       border-bottom: none;
     }
   }
-
   .blog-item--title {
     margin: 0;
   }
-
-  .blog-item--date {
-    color: $dark-gray;
-    @include font-size(1.2);
-  }
-
   .blog-item--body {
     p {
       margin: 0;
       @include font-size(1.4);
+    }
+  }
+  &.recent-articles-sidebar {
+    background-color: $background-gray;
+    padding: 20px;
+    margin-bottom: 30px;
+    h2 {
+      font-weight: 400;
+      text-transform: none;
+      @include font-size(2.4);
     }
   }
 }

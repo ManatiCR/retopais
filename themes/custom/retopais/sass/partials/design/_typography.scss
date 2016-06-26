@@ -52,11 +52,7 @@ h1, h2, h4, h5, h6 {
   color: $dark;
 }
 
-a {
-  @include font-size(1.6);
-}
-
-p, div {
+p, div, li {
   @include font-size(1.6);
 }
 

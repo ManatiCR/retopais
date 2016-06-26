@@ -1,0 +1,12 @@
+//////////////////////////////////////
+// Styles for "back to blog" link.
+// @_pane-back-to-blog.scss
+//////////////////////////////////////
+
+.pane-back-to-blog {
+  margin-top: 20px;
+  text-align: right;
+  a:after {
+    content: " >";
+  }
+}

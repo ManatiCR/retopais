@@ -22,6 +22,7 @@ img {
 }
 
 main, .container {
+  overflow: hidden;
   padding: 0 20px;
 }
 
@@ -30,6 +31,10 @@ main, .container {
     max-width: 1200px;
     margin: 0 auto;
   }
+}
+
+main {
+  margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -251,12 +256,7 @@ h1, h2, h4, h5, h6 {
   color: #353e42;
 }
 
-a {
-  font-size: 16px;
-  font-size: 1.6rem;
-}
-
-p, div {
+p, div, li {
   font-size: 16px;
   font-size: 1.6rem;
 }
@@ -556,6 +556,26 @@ hr {
 
 .breadcrumb {
   color: #4ba3bf;
+}
+
+.breadcrumbs-blog-full {
+  display: inline;
+}
+
+.breadcrumbs-blog-full .breadcrumb {
+  color: #5d5d5d;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.breadcrumbs-blog-full div {
+  display: inline;
+}
+
+.breadcrumbs-blog-full a {
+  color: #5d5d5d;
+  font-weight: 400;
 }
 
 .more-link a,
@@ -1192,11 +1212,16 @@ hr {
 }
 
 .pane-blog-recent-articles h2 {
-  color: red;
+  color: #e13e32;
   margin: 0;
   text-transform: uppercase;
   font-size: 20px;
   font-size: 2rem;
+}
+
+.pane-blog-recent-articles h3 {
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .pane-blog-recent-articles .views-row {
@@ -1212,16 +1237,23 @@ hr {
   margin: 0;
 }
 
-.pane-blog-recent-articles .blog-item--date {
-  color: #afafaf;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-
 .pane-blog-recent-articles .blog-item--body p {
   margin: 0;
   font-size: 14px;
   font-size: 1.4rem;
+}
+
+.pane-blog-recent-articles.recent-articles-sidebar {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.pane-blog-recent-articles.recent-articles-sidebar h2 {
+  font-weight: 400;
+  text-transform: none;
+  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .pane-problems-problems-only-names .cta-propone {
@@ -1362,12 +1394,6 @@ hr {
   font-size: 2rem;
 }
 
-.blog-list-page .blog-item--date {
-  color: #afafaf;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-
 .blog-list-page .blog-item--body p {
   font-size: 14px;
   font-size: 1.4rem;
@@ -1389,4 +1415,36 @@ hr {
   background-color: #4ba3bf;
   color: #fff;
   text-decoration: none;
+}
+
+.blog-item--date {
+  color: #afafaf;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.blog-item--date.blog-full:after {
+  content: "/";
+  margin: 0 5px;
+}
+
+.pane-back-to-blog {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.pane-back-to-blog a:after {
+  content: " >";
+}
+
+.ckeditor-entity-embed--left {
+  text-align: left;
+}
+
+.ckeditor-entity-embed--right {
+  text-align: right;
+}
+
+.ckeditor-entity-embed--center {
+  text-align: center;
 }
