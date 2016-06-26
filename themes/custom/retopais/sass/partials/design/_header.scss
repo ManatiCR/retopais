@@ -11,9 +11,10 @@
 .container-header {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 0;
-  flex-direction: column;
+  position: relative;
   @include breakpoint($medium) {
     flex-direction: row;
   }

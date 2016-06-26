@@ -29,6 +29,22 @@ function retopais_feature_alliances_views_api($module = NULL, $api = NULL) {
 function retopais_feature_alliances_image_default_styles() {
   $styles = array();
 
+  // Exported image style: logos_mesainnovacion.
+  $styles['logos_mesainnovacion'] = array(
+    'label' => 'Logos Mesa de Innovación',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 40,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: sponsor1.
   $styles['sponsor1'] = array(
     'label' => 'Sponsor Level 1',

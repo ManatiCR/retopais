@@ -19,6 +19,7 @@ $blue: #4ba3bf;
 
 // Neutral colors.
 $azure: #f0f7f7;
+$background-gray: #f9f9f9;
 $light-gray: #dddddd;
 $dark-gray: #afafaf;
 $darker-gray: #5d5d5d;
@@ -26,7 +27,7 @@ $white: #fff;
 $black: #000;
 
 // Modified colors.
-$lineblue: #f0f7f7;
+$lineblue: $azure;
 $darkred: #cc2925;
 $darkerred: #b21b1b;
 $darkblue: #318da3;
@@ -38,6 +39,11 @@ $icon-purple: #8D519F;
 $icon-green: #91C73E;
 $icon-blue: #008ECE;
 $icon-yellow: $yellow;
+
+// Messages colors.
+$message-green: #6BC690;
+$message-yellow: $yellow;
+$message-red: #DF3C32;
 
 /// Widths and base sizing.
 $max-width: 1200px;

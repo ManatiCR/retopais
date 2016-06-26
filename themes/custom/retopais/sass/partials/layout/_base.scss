@@ -4,7 +4,7 @@
 ///////////////////////////////
 
 // Singularity.gs configuration.
-@include add-grid(12);
+@include add-grid(15);
 @include add-gutter(1/3);
 
 * {
@@ -14,6 +14,11 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 main, .container {

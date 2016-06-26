@@ -1,0 +1,17 @@
+////////////////////////////////////////////
+// Styles for blog page problems CTA.
+// @_blog-problems-cta.scss
+////////////////////////////////////////////
+
+.problematicas-cta-link {
+  margin-top: 30px;
+  .button-yellow {
+    text-transform: none;
+    padding: 18px 30px;
+    &:after {
+      content: "▶";
+      margin-left: 8px;
+      @include font-size(1.3);
+    }
+  }
+}
