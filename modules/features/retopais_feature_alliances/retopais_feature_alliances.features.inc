@@ -45,15 +45,32 @@ function retopais_feature_alliances_image_default_styles() {
     ),
   );
 
+  // Exported image style: main_alliances.
+  $styles['main_alliances'] = array(
+    'label' => 'Main Alliances',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 200,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: sponsor1.
   $styles['sponsor1'] = array(
     'label' => 'Sponsor Level 1',
     'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
+      3 => array(
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 220,
-          'height' => 100,
+          'width' => '',
+          'height' => 120,
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),
@@ -64,11 +81,12 @@ function retopais_feature_alliances_image_default_styles() {
   $styles['sponsor2'] = array(
     'label' => 'Sponsor Level 2',
     'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
+      5 => array(
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 160,
-          'height' => 100,
+          'width' => '',
+          'height' => 90,
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),
@@ -79,11 +97,12 @@ function retopais_feature_alliances_image_default_styles() {
   $styles['sponsor3'] = array(
     'label' => 'Sponsor Level 3',
     'effects' => array(
-      3 => array(
-        'name' => 'image_scale_and_crop',
+      7 => array(
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 125,
-          'height' => 100,
+          'width' => '',
+          'height' => 60,
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),
