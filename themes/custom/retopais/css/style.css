@@ -16,6 +16,11 @@ body {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 main, .container {
   padding: 0 20px;
 }
@@ -153,6 +158,35 @@ main, .container {
 .site-footer .pane-alianzas-panel-pane-4 {
   width: 100%;
   clear: both;
+}
+
+.blog-list-page .views-row {
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.blog-list-page .views-row:last-child {
+  border-bottom: none;
+  padding: 0;
+}
+
+.blog-list-page .blog-item {
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .blog-list-page .blog-item--image {
+    float: left;
+    width: 48%;
+  }
+}
+
+@media (min-width: 480px) {
+  .blog-list-page .blog-item--content {
+    float: right;
+    width: 48%;
+  }
 }
 
 html, body {
@@ -1223,4 +1257,82 @@ hr {
 
 .pane-alianzas-panel-pane-4 .views-row {
   margin: 0 15px 30px 15px;
+}
+
+.pane-blog-categories-panel-pane-1 h2 {
+  color: #e13e32;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+.pane-blog-categories-panel-pane-1 ul {
+  margin: 0;
+  padding: 0;
+}
+
+.pane-blog-categories-panel-pane-1 li {
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.pane-blog-categories-panel-pane-1 a {
+  color: #5d5d5d;
+}
+
+.problematicas-cta-link {
+  margin-top: 30px;
+}
+
+.problematicas-cta-link .button-yellow {
+  text-transform: none;
+  padding: 18px 30px;
+}
+
+.problematicas-cta-link .button-yellow:after {
+  content: "▶";
+  margin-left: 8px;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+.blog-list-page .blog-item--title {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+}
+
+.blog-list-page .blog-item--title a {
+  color: #5d5d5d;
+  font-weight: 400;
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+.blog-list-page .blog-item--date {
+  color: #afafaf;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.blog-list-page .blog-item--body p {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.blog-list-page .blog-item--link a {
+  border: 2px solid #4ba3bf;
+  border-radius: 3px;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.blog-list-page .blog-item--link a:hover {
+  background-color: #4ba3bf;
+  color: #fff;
+  text-decoration: none;
 }
