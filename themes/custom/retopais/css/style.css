@@ -572,14 +572,15 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -771,6 +772,50 @@ hr {
 
 .nav-main .menu-item-propone:hover {
   background-color: #ffcb50;
+}
+
+.social-links {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .social-links {
+    right: 18px;
+    top: 30px;
+  }
+}
+
+.social-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  margin: 0 0 5px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (min-width: 768px) {
+  .social-links li {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.social-links a {
+  display: block;
+  height: 25px;
+  overflow: hidden;
+  text-indent: 100%;
+  width: 25px;
+  white-space: nowrap;
+}
+
+.social-links .social-fb {
+  background-image: url(../img/nav/icon-facebook.svg);
 }
 
 .nav-footer ul {

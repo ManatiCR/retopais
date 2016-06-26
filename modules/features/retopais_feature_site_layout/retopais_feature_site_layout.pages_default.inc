@@ -233,6 +233,69 @@ function retopais_feature_site_layout_default_page_manager_handlers() {
     $display->content['new-26f3ca8a-8fd6-45ec-a468-2b9a8d984169'] = $pane;
     $display->panels['header'][0] = 'new-26f3ca8a-8fd6-45ec-a468-2b9a8d984169';
     $pane = new stdClass();
+    $pane->pid = 'new-f1cd393d-09f1-4ff4-bac1-7f3fd0bb0d8f';
+    $pane->panel = 'header';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-social-links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => 'nav',
+          'class_enable' => 1,
+          'class' => 'social-links',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f1cd393d-09f1-4ff4-bac1-7f3fd0bb0d8f';
+    $display->content['new-f1cd393d-09f1-4ff4-bac1-7f3fd0bb0d8f'] = $pane;
+    $display->panels['header'][1] = 'new-f1cd393d-09f1-4ff4-bac1-7f3fd0bb0d8f';
+    $pane = new stdClass();
     $pane->pid = 'new-a7b1201f-8cff-4d90-8047-b28d9c9fe0ec';
     $pane->panel = 'main';
     $pane->type = 'page_messages';

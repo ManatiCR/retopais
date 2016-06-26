@@ -163,6 +163,21 @@ function retopais_feature_site_layout_install() {
     ),
   );
 
+  // Facebook page link.
+  $menu_links[] = array(
+    'link_title' => 'Facebook',
+    'link_path' => 'https://www.facebook.com/RetoPaisCR',
+    'menu_name' => 'social-links',
+    'weight' => 0,
+    'plid' => 0,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('social-fb'),
+        'target' => '_blank',
+      ),
+    ),
+  );
+
   // Save menu links.
   foreach ($menu_links as $menu_link) {
     menu_link_save($menu_link);
@@ -178,7 +193,6 @@ function retopais_feature_site_layout_install() {
       menu_link_save($footer_link);
     }
   }
-
 }
 
 /**
@@ -287,5 +301,27 @@ function retopais_feature_site_layout_update_7000() {
   foreach ($menu_links as $menu_link) {
     menu_link_save($menu_link);
   }
+}
 
+/**
+ * Add Facebook page link.
+ */
+function retopais_feature_site_layout_update_7001() {
+
+  // Facebook page link.
+  $menu_link = array(
+    'link_title' => 'Facebook',
+    'link_path' => 'https://www.facebook.com/RetoPaisCR',
+    'menu_name' => 'social-links',
+    'weight' => 0,
+    'plid' => 0,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('social-fb'),
+        'target' => '_blank',
+      ),
+    ),
+  );
+
+  menu_link_save($menu_link);
 }
