@@ -23,10 +23,18 @@ function blog_cta_render($subtype, $conf, $panel_args, $context) {
   $block->title = '';
 
   $block->content['cta'] = array(
-    '#type' => 'item',
+    '#theme' => 'link',
+    '#text' => check_plain(variable_get('retopais_feature_pages_problematicas_sidebar_cta_text', 'Conocé más en nuestro Blog')),
+    '#path' => 'blog',
     '#prefix' => '<div class="blog-cta">',
     '#suffix' => '</div>',
-    '#markup' => l(check_plain(variable_get('retopais_feature_pages_problematicas_sidebar_cta_text', 'Conocé más en nuestro Blog')), 'blog'),
+    '#options' => array(
+      'attributes' => array(
+        'class' => array('button', 'button-yellow'),
+      ),
+      'html' => FALSE,
+    ),
   );
+
   return $block;
 }
