@@ -27,6 +27,30 @@ function retopais_feature_blog_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function retopais_feature_blog_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: blog_teaser.
+  $styles['blog_teaser'] = array(
+    'label' => 'Blog teaser',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 390,
+          'height' => 260,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function retopais_feature_blog_node_info() {
