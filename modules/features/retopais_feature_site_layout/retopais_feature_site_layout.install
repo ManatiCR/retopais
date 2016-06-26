@@ -193,7 +193,6 @@ function retopais_feature_site_layout_install() {
       menu_link_save($footer_link);
     }
   }
-
 }
 
 /**
@@ -303,6 +302,7 @@ function retopais_feature_site_layout_update_7000() {
     menu_link_save($menu_link);
   }
 }
+
 /**
  * Add Facebook page link.
  */
