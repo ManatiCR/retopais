@@ -1043,6 +1043,8 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -1052,15 +1054,13 @@ hr {
 }
 
 .view-alianzas .views-row {
-  margin-right: 30px;
+  margin: 0 20px 20px 0;
 }
 
-.view-display-id-panel_pane_3 .views-row {
-  width: 25;
-}
-
-.view-display-id-panel_pane_3 .field-image {
-  text-align: center;
+@media (min-width: 768px) {
+  .view-alianzas .views-row {
+    margin: 0 40px 40px 0;
+  }
 }
 
 .media-kit-download img {
