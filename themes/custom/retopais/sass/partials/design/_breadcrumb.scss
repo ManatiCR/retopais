@@ -6,3 +6,21 @@
 .breadcrumb {
   color: $blue;
 }
+
+// Blog entry full page view.
+
+.breadcrumbs-blog-full {
+  display: inline;
+  .breadcrumb {
+    color: $darker-gray;
+    font-family: $oswald;
+    @include font-size(1.4);
+  }
+  div {
+    display: inline;
+  }
+  a {
+    color: $darker-gray;
+    font-weight: 400;
+  }
+}
