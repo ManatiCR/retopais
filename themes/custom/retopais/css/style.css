@@ -1133,7 +1133,7 @@ hr {
   margin-top: 30px;
 }
 
-.pane-problems-problems-only-names .view-content .field-content {
+.pane-problems-problems-only-names .field-content {
   background-repeat: no-repeat;
   background-position: center bottom;
   display: block;
@@ -1146,26 +1146,26 @@ hr {
   font-size: 1.3rem;
 }
 
-.icon-acceso-a-la-educacion-superior {
+.pane-problems-problems-only-names .icon-acceso-a-la-educacion-superior {
   background-image: url(../img/icons/icon-educacion.svg);
   color: #8D519F;
 }
 
-.icon-accidentes-de-transito {
+.pane-problems-problems-only-names .icon-accidentes-de-transito {
   background-image: url(../img/icons/icon-transito.svg);
   color: #ffcb50;
-  padding-top: 18px;
+  padding: 18px 78px 0 30px;
 }
 
-.icon-separacion-y-recoleccion-de-residuos {
+.pane-problems-problems-only-names .icon-separacion-y-recoleccion-de-residuos {
   background-image: url(../img/icons/icon-residuos.svg);
   color: #91C73E;
 }
 
-.icon-tasa-de-obesidad {
+.pane-problems-problems-only-names .icon-tasa-de-obesidad {
   background-image: url(../img/icons/icon-obesidad.svg);
   color: #008ECE;
-  padding-top: 18px;
+  padding: 18px 78px 0 30px;
 }
 
 .pane-alianzas-panel-pane-4 {
