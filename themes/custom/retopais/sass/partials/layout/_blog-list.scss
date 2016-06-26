@@ -4,6 +4,9 @@
 /////////////////////////////////
 
 .blog-list-page {
+  .view-header {
+    margin-bottom: 40px;
+  }
   .views-row {
     border-bottom: 1px solid $light-gray;
     margin-bottom: 30px;
@@ -17,8 +20,10 @@
     overflow: hidden;
   }
   .blog-item--image {
+    margin-bottom: 10px;
     @include breakpoint($small) {
       float: left;
+      margin-bottom: 0;
       width: 48%;
     }
   }

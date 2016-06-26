@@ -160,6 +160,10 @@ main, .container {
   clear: both;
 }
 
+.blog-list-page .view-header {
+  margin-bottom: 40px;
+}
+
 .blog-list-page .views-row {
   border-bottom: 1px solid #dddddd;
   margin-bottom: 30px;
@@ -175,9 +179,14 @@ main, .container {
   overflow: hidden;
 }
 
+.blog-list-page .blog-item--image {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 480px) {
   .blog-list-page .blog-item--image {
     float: left;
+    margin-bottom: 0;
     width: 48%;
   }
 }
