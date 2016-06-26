@@ -42,3 +42,37 @@
     color: $icon-blue;
   }
 }
+
+.pane-problems-panel-pane-2 {
+  margin-top: 50px;
+  .field-image,
+  .views-field-name {
+    float: left;
+    margin-bottom: 20px;
+  }
+  h3 {
+    color: $darker-gray;
+    margin:0;
+    padding: 30px 20px;
+    font-family: $oswald;
+    @include font-size(2.2);
+  }
+  .views-field-description {
+    clear: both;
+  }
+  .views-row {
+    margin-bottom: 50px;
+  }
+  .views-row-1 h3 {
+    color: $icon-green;
+  }
+  .views-row-2 h3 {
+    color: $icon-purple;
+  }
+  .views-row-3 h3 {
+    color: $icon-blue;
+  }
+  .views-row-4 h3 {
+    color: $icon-yellow;
+  }
+}

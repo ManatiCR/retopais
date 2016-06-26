@@ -1,0 +1,17 @@
+/////////////////////////////////
+// Blog CTA styles.
+// @_blog-cta.scss
+/////////////////////////////////
+
+.blog-cta {
+  margin-top: 30px;
+  .button-yellow {
+    padding: 18px 30px;
+    text-transform: none;
+    &:after {
+      content: "▶";
+      margin-left: 8px;
+      @include font-size(1.3);
+    }
+  }
+}
