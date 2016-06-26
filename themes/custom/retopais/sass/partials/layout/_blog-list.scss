@@ -1,0 +1,31 @@
+/////////////////////////////////
+// Layout for blog teaser.
+// @_blog-list.scss
+/////////////////////////////////
+
+.blog-list-page {
+  .views-row {
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    &:last-child {
+      border-bottom: none;
+      padding: 0;
+    }
+  }
+  .blog-item {
+    overflow: hidden;
+  }
+  .blog-item--image {
+    @include breakpoint($small) {
+      float: left;
+      width: 48%;
+    }
+  }
+  .blog-item--content {
+    @include breakpoint($small) {
+      float: right;
+      width: 48%;
+    }
+  }
+}
