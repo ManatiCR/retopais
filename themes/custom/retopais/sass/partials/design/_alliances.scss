@@ -1,0 +1,19 @@
+//////////////////////////////
+// Alliances
+// @_alliances.scss
+//////////////////////////////
+
+.view-alianzas {
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .views-row {
+    margin: 0 20px 20px 0;
+    @include breakpoint($medium) {
+      margin: 0 40px 40px 0;
+    }
+  }
+}

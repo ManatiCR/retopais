@@ -1059,6 +1059,30 @@ hr {
   margin-left: 10px;
 }
 
+.view-alianzas .view-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-alianzas .views-row {
+  margin: 0 20px 20px 0;
+}
+
+@media (min-width: 768px) {
+  .view-alianzas .views-row {
+    margin: 0 40px 40px 0;
+  }
+}
+
 .media-kit-download img {
   width: 100%;
 }
