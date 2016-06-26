@@ -29,7 +29,9 @@ function problematicas_cta_render($subtype, $conf, $panel_args, $context) {
     '#prefix' => '<div class="problematicas-cta-link">',
     '#suffix' => '</div>',
     '#options' => array(
-      'attributes' => array(),
+      'attributes' => array(
+        'class' => array('button', 'button-yellow'),
+      ),
       'html' => FALSE,
     ),
   );
