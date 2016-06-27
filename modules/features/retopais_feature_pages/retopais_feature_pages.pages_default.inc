@@ -664,7 +664,10 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'premios',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
