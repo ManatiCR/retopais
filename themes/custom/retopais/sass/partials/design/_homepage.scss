@@ -93,10 +93,6 @@
 
 .que-es-reto-pais--image {
   width: 100%;
-  img {
-    width: 100%;
-    max-height: 400px;
-  }
 }
 
 .pane-problems-panel-pane-3 {
@@ -180,6 +176,7 @@
 
 .pane-homepage-participa {
   width: 100%;
+  margin-bottom: 80px;
   background-image: url(../img/backgrounds/hp-bg-participa.jpg);
   background-repeat: no-repeat;
   background-size: cover;
