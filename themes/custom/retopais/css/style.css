@@ -22,6 +22,7 @@ img {
 }
 
 main, .container {
+  display: block;
   overflow: hidden;
   padding: 0 20px;
 }
@@ -1057,6 +1058,10 @@ hr {
           align-items: center;
   margin-left: 10px;
   text-indent: 0;
+}
+
+.stages-list li div {
+  width: inherit;
 }
 
 .stages-list li:before {
