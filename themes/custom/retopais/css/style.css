@@ -1841,7 +1841,8 @@ hr {
 
 .homepage-participa-en-el-reto--list {
   list-style-type: none;
-  color: #e13e32;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .homepage-participa-en-el-reto--list li {
@@ -1856,9 +1857,8 @@ hr {
   border-radius: 16px;
   padding: 4px 10px;
   background-color: #353e42;
-  color: #fff;
 }
 
 .homepage-participa-en-el-reto--container {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
 }
