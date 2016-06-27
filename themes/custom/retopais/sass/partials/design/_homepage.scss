@@ -99,8 +99,11 @@
   margin: 40px 0;
   .view-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include breakpoint ($large) {
+      flex-wrap: nowrap;
+    }
   }
   .views-row {
     text-align: center;
