@@ -16,6 +16,9 @@
     align-items: center;
     margin-left: 10px;
     text-indent: 0;
+    div {
+      width: inherit;
+    }
     &:before {
       font-family: $oswald;
       background-color: $blue;
