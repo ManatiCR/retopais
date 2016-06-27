@@ -1,0 +1,60 @@
+/////////////////////////////////
+// Styles for prizes.
+// @_prizes.scss
+/////////////////////////////////
+
+.pane-problems-panel-pane-4 {
+  .views-row {
+    background-color: $background-gray;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    @include breakpoint($medium) {
+      width: 48%;
+      margin: 0 1% 20px 1%;
+      float: left;
+    }
+    &:nth-child(2n+1) {
+      @include breakpoint($medium) {
+        margin: 0 1% 20px 0;
+      }
+    }
+    &:nth-child(2n) {
+      @include breakpoint($medium) {
+        margin: 0 0 20px 1%;
+      }
+    }
+  }
+  .field-content {
+    font-family: $oswald;
+    height: 115px;
+    background-repeat: no-repeat;
+    background-position: right top;
+    width: 100%;
+    display: block;
+    padding: 0 120px 0 0;
+    @include font-size(2);
+  }
+  .field-prize-text {
+    font-family: $oswald;
+    margin-bottom: 20px;
+    margin-top: -40px;
+    padding-right: 120px;
+
+  }
+  .icon-acceso-a-la-educacion-superior {
+    background-image: url(../img/icons/icon-educacion2.svg);
+    color: $icon-purple;
+  }
+  .icon-accidentes-de-transito {
+    background-image: url(../img/icons/icon-transito2.svg);
+    color: $icon-yellow;
+  }
+  .icon-separacion-y-recoleccion-de-residuos {
+    background-image: url(../img/icons/icon-residuos2.svg);
+    color: $icon-green;
+  }
+  .icon-tasa-de-obesidad {
+    background-image: url(../img/icons/icon-obesidad2.svg);
+    color: $icon-blue;
+  }
+}
