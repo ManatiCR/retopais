@@ -44,7 +44,7 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
 
   $block->content['que-es-reto-pais'] = array(
     '#theme' => 'homepage_que_es_reto_pais',
-    '#link' => l(t('Descubrí más sobre El Reto'), 'que-es-reto-pais'),
+    '#link' => l(t('Descubrí más sobre El Reto'), 'que-es-reto-pais', array('attributes' => array('class' => array('button')))),
     '#video' => $video,
     '#image' => $image,
   );

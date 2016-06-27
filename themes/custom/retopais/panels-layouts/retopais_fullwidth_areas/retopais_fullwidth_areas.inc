@@ -5,10 +5,10 @@
  */
 
 $plugin = array(
-  'title'       => t('4 columns page to use with full width blocks'),
+  'title'       => t('4 rows page to use with full width blocks'),
   'category'    => t('Reto País'),
   'icon'        => 'icon.png',
-  'theme'       => 'retopais_fullwidth',
+  'theme'       => 'retopais_fullwidth_areas',
   'regions'     => array(
     'first-full'     => t('First full'),
     'second'         => t('Second'),
