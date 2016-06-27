@@ -30,7 +30,6 @@ function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
       '#theme' => 'image',
       '#path' => $image_path,
       '#attributes' => array(),
-      '#prefix' => '<h3 class="timeline-image-title">' . t('Fechas importantes') . '</h3>',
     );
   }
   return $block;
