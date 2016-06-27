@@ -27,8 +27,7 @@ function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
     $image_path = $image->uri;
 
     $block->content['timeline-image'] = array(
-      '#theme' => 'image_style',
-      '#style_name' => RETOPAIS_FEATURE_PAGES_HOMEPAGE_TIMELINE_IMAGE,
+      '#theme' => 'image',
       '#path' => $image_path,
       '#attributes' => array(),
       '#prefix' => '<h3 class="timeline-image-title">' . t('Fechas importantes') . '</h3>',
