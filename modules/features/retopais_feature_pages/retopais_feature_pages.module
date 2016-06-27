@@ -8,7 +8,6 @@ include_once 'retopais_feature_pages.features.inc';
 
 define('RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE', 'sidebar');
 define('RETOPAIS_FEATURE_PAGES_BLOG_PROBLEMATICAS_CTA_IMAGE', 'medium');
-define('RETOPAIS_FEATURE_PAGES_HOMEPAGE_TIMELINE_IMAGE', 'medium');
 
 /**
  * Implements hook_init().
