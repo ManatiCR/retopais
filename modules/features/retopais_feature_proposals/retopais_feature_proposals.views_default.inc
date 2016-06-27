@@ -211,7 +211,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_1']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'prize_logo',
     'image_link' => '',
   );
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
