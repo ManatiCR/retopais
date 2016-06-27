@@ -220,7 +220,8 @@ function retopais_feature_proposals_preprocess_views_view_fields(&$vars) {
   $view = $vars['view'];
   if ($view->name === 'problems' &&
   ($view->current_display === 'problems_only_names' ||
-  $view->current_display === 'panel_pane_1')) {
+  $view->current_display === 'panel_pane_1' ||
+  $view->current_display === 'panel_pane_4')) {
     $raw = $vars['fields']['name']->raw;
     $class = drupal_html_class($raw);
     $class = str_replace('á', 'a', $class);
