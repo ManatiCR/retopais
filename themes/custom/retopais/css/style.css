@@ -1108,9 +1108,8 @@ hr {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1124,6 +1123,10 @@ hr {
   .view-alianzas .views-row {
     margin: 0 40px 40px 0;
   }
+}
+
+.pane-alianzas-panel-pane-3 {
+  margin-bottom: 30px;
 }
 
 .media-kit-download img {
@@ -1637,11 +1640,6 @@ hr {
   width: 100%;
 }
 
-.que-es-reto-pais--image img {
-  width: 100%;
-  max-height: 400px;
-}
-
 .pane-problems-panel-pane-3 {
   margin: 40px 0;
 }
@@ -1769,6 +1767,7 @@ hr {
 
 .pane-homepage-participa {
   width: 100%;
+  margin-bottom: 80px;
   background-image: url(../img/backgrounds/hp-bg-participa.jpg);
   background-repeat: no-repeat;
   background-size: cover;
