@@ -181,32 +181,17 @@ function retopais_feature_proposals_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Problem Prizes', 'panel_pane_4');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_featured_image_target_id']['id'] = 'field_featured_image_target_id';
-  $handler->display->display_options['relationships']['field_featured_image_target_id']['table'] = 'field_data_field_featured_image';
-  $handler->display->display_options['relationships']['field_featured_image_target_id']['field'] = 'field_featured_image_target_id';
-  $handler->display->display_options['relationships']['field_featured_image_target_id']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_prize_image_target_id']['id'] = 'field_prize_image_target_id';
   $handler->display->display_options['relationships']['field_prize_image_target_id']['table'] = 'field_data_field_prize_image';
   $handler->display->display_options['relationships']['field_prize_image_target_id']['field'] = 'field_prize_image_target_id';
   $handler->display->display_options['relationships']['field_prize_image_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_featured_image_target_id';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Prize Text */
   $handler->display->display_options['fields']['field_prize_text']['id'] = 'field_prize_text';
   $handler->display->display_options['fields']['field_prize_text']['table'] = 'field_data_field_prize_text';
@@ -229,6 +214,8 @@ function retopais_feature_proposals_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
+  $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $translatables['problems'] = array(
     t('Master'),
     t('more'),
@@ -259,7 +246,6 @@ function retopais_feature_proposals_views_default_views() {
     t('<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>'),
     t('Problem Prizes'),
     t('Content entity referenced from field_prize_image'),
-    t('View panes'),
   );
   $export['problems'] = $view;
 
