@@ -226,7 +226,8 @@
 
 .homepage-participa-en-el-reto--list {
   list-style-type: none;
-  color: $red;
+  color: $white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   li {
     margin: 15px 0;
     &:nth-child(3) {
@@ -242,9 +243,8 @@
   border-radius: 16px;
   padding: 4px 10px;
   background-color: $dark;
-  color: $white;
 }
 
 .homepage-participa-en-el-reto--container {
-  background-color: transparentize($white, 0.5);
+  background-color: transparentize($white, 0.6);
 }
