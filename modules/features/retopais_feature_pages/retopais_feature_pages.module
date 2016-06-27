@@ -115,10 +115,7 @@ function retopais_feature_pages_theme() {
     'homepage_premios' => array(
       'variables' => array(
         'link' => '',
-        'ideas_title' => '',
-        'ideas_description' => '',
-        'solution_title' => '',
-        'solution_description' => '',
+        'description_premio' => '',
       ),
       'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
       'template' => 'homepage-premios',
@@ -400,35 +397,12 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
     '#upload_location' => 'public://homepage/',
   );
 
-  $form['retopais_feature_pages_homepage_premio_idea_titulo'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Título del premio para ideas'),
-    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_idea_titulo', '1 ganador(a) por cada problemática (4)'),
-    '#required' => TRUE,
-  );
-
-  $retopais_feature_pages_homepage_premio_idea_descripcion = variable_get('retopais_feature_pages_homepage_premio_idea_descripcion', array('value' => 'Alguna descripción del premio', 'format' => 'filtered_html'));
-  $form['retopais_feature_pages_homepage_premio_idea_descripcion'] = array(
+  $retopais_feature_pages_homepage_premio_descripcion = variable_get('retopais_feature_pages_homepage_premio_descripcion', array('value' => 'Alguna descripción del premio', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_homepage_premio_descripcion'] = array(
     '#type' => 'text_format',
-    '#title' => t('Descripción del premio para ideas'),
-    '#default_value' => $retopais_feature_pages_homepage_premio_idea_descripcion['value'],
-    '#format' => $retopais_feature_pages_homepage_premio_idea_descripcion['format'],
-    '#required' => TRUE,
-  );
-
-  $form['retopais_feature_pages_homepage_premio_solucion_titulo'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Título del premio para soluciones'),
-    '#default_value' => variable_get('retopais_feature_pages_homepage_premio_solucion_titulo', '1 ganador(a)'),
-    '#required' => TRUE,
-  );
-
-  $retopais_feature_pages_homepage_premio_solucion_descripcion = variable_get('retopais_feature_pages_homepage_premio_solucion_descripcion', array('value' => 'Alguna descripción del premio', 'format' => 'filtered_html'));
-  $form['retopais_feature_pages_homepage_premio_solucion_descripcion'] = array(
-    '#type' => 'text_format',
-    '#title' => t('Descripción del premio para soluciones'),
-    '#default_value' => $retopais_feature_pages_homepage_premio_solucion_descripcion['value'],
-    '#format' => $retopais_feature_pages_homepage_premio_solucion_descripcion['format'],
+    '#title' => t('Descripción de los premios.'),
+    '#default_value' => $retopais_feature_pages_homepage_premio_descripcion['value'],
+    '#format' => $retopais_feature_pages_homepage_premio_descripcion['format'],
     '#required' => TRUE,
   );
 
