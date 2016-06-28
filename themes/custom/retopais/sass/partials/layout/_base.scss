@@ -22,12 +22,13 @@ img {
 }
 
 main, .container {
+  display: block;
   overflow: hidden;
-  padding: 0 20px;
   @include breakpoint($desktop) {
     max-width: $max-width;
     margin: 0 auto;
   }
+  padding: 0 20px;
 }
 
 main {

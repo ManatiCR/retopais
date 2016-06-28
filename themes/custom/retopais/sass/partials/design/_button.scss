@@ -58,6 +58,7 @@ input[type='submit'] + #edit-cancel {
   color: $dark;
   display: inline-block;
   &:hover {
+    color: $dark;
     background-color: $yellow;
     box-shadow: 0 2px 0 $darkyellow;
     text-decoration: none;

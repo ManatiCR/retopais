@@ -99,8 +99,11 @@
   margin: 40px 0;
   .view-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include breakpoint ($large) {
+      flex-wrap: nowrap;
+    }
   }
   .views-row {
     text-align: center;
@@ -163,8 +166,7 @@
     }
     &:hover {
       &:after {
-        top: 52%;
-        @include triangle($white);
+        top: 50%;
       }
     }
   }
@@ -232,7 +234,6 @@
     margin: 15px 0;
     &:nth-child(3) {
       .homepage-particpa-en-el-reto--list-number {
-        // margin-left: -3px;
         padding: 4px 6px;
       }
     }

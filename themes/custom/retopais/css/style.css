@@ -22,6 +22,7 @@ img {
 }
 
 main, .container {
+  display: block;
   overflow: hidden;
   padding: 0 20px;
 }
@@ -39,7 +40,7 @@ main {
 
 @media (min-width: 768px) {
   .page-sidebar-primary-content {
-    width: 72.88136%;
+    width: 66.10169%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -531,6 +532,7 @@ input[type='submit'] + #edit-cancel {
 }
 
 .button-yellow:hover {
+  color: #353e42;
   background-color: #ffcb50;
   box-shadow: 0 2px 0 #e5a72c;
   text-decoration: none;
@@ -636,6 +638,12 @@ hr {
   text-indent: 100%;
   white-space: nowrap;
   width: 150px;
+}
+
+.site-name a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -751,10 +759,10 @@ hr {
   .nav-main a {
     border-top: none;
     color: #fff;
-    padding: 6px 18px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    font-size: 17px;
-    font-size: 1.7rem;
+    padding: 5px 11px;
+    text-shadow: 2px 1.7px 0px rgba(47, 14, 14, 0.73);
+    font-size: 20px;
+    font-size: 2rem;
   }
 }
 
@@ -1059,6 +1067,10 @@ hr {
   text-indent: 0;
 }
 
+.stages-list li div {
+  width: inherit;
+}
+
 .stages-list li:before {
   font-family: "Oswald", sans-serif;
   background-color: #4ba3bf;
@@ -1170,12 +1182,13 @@ hr {
 
 .select-buttons li {
   list-style-type: none;
+  margin: 0 10px 20px 0;
 }
 
 .select-buttons li a {
-  margin: 0 10px 20px 0;
   text-align: center;
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
   width: 220px;
   height: 60px;
   color: #353e42;
@@ -1183,7 +1196,6 @@ hr {
   font-size: 13px;
   font-size: 1.3rem;
   border-radius: 5px;
-  padding: 12px 30px 18px 30px;
   background-color: #f2f2f2;
   box-shadow: 0 3px 0 #5d5d5d;
 }
@@ -1196,7 +1208,15 @@ hr {
   background-color: #dddddd;
 }
 
-.page-node-add-proposal .select-buttons li:first-child, .form-item-field-project-running-und .select-buttons li:first-child {
+.page-node-add-proposal .select-buttons li:first-child {
+  display: none;
+}
+
+.form-item-field-project-running-und .select-buttons li:nth-child(1):nth-last-child(3) {
+  display: none;
+}
+
+.tabledrag-toggle-weight-wrapper {
   display: none;
 }
 
@@ -1648,11 +1668,18 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  .pane-problems-panel-pane-3 .view-content {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .pane-problems-panel-pane-3 .views-row {
@@ -1747,18 +1774,7 @@ hr {
 .pane-homepage-premios .button:hover:after, .pane-homepage-premios .more-link a:hover:after, .more-link .pane-homepage-premios a:hover:after, .pane-homepage-premios
 .more-help-link a:hover:after,
 .more-help-link .pane-homepage-premios a:hover:after {
-  top: 52%;
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 10px;
-  border-color: transparent transparent transparent #fff;
-  position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
-  margin-left: 10px;
 }
 
 .homepage-premios--description {
