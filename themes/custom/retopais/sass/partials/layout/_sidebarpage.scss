@@ -5,7 +5,7 @@
 
 .page-sidebar-primary-content {
   @include layout-at(15, $medium) {
-    @include grid-span(11, 1);
+    @include grid-span(10, 1);
   }
 }
 
