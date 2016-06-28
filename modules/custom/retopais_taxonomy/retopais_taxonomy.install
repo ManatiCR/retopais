@@ -37,7 +37,7 @@ function retopais_taxonomy_install() {
         'prize_text' => 'Consultoría de Ernst&Young',
         'prize_image' => 'ey.png',
       ),
-      'Acceso a la educación superior' => array(
+      'Acceso a la educación superior y técnica' => array(
         'description' => 'Una innovación social que nos enorgullece muchísimo a los ticos es la abolición del ejército y el uso de esos recursos para la educación, esto nos ha permitido tener un alto índice de alfabetización y de escolaridad. Pero, que pasa con la educación superior? En este momento, solamente el 46.3% de los jóvenes entre los 17 y 21 años completa la educación secundaria. Y solamente el 34,2% de los jóvenes entre 18 y 24 años van a la universidad. Necesitamos cambiar este paradigma. La educación es clave para el progreso de un país, y la falta de ella se traduce a problemas sociales y desigualdad. ¿Qué se puede hacer para apoyar a todos estos jóvenes en el estudio y pelear contra la deserción estudiantil?',
         'abstract' => 'Solamente el 46.3% de los jóvenes entre los 17 y 21 años completa la educación secundaria y solamente el 34,2% de los jóvenes entre 18 y 24 años van a la universidad.',
         'image' => 'education.png',
@@ -123,4 +123,16 @@ function retopais_taxonomy_create_image_node($source, $destination, $name) {
   $node->field_image[LANGUAGE_NONE][0]['fid'] = $file->fid;
   node_save($node);
   return $node->nid;
+}
+
+/**
+ * Change problem name.
+ */
+function retopais_taxonomy_update_7000() {
+  $terms = taxonomy_get_term_by_name('Acceso a la educación superior', 'problems');
+  $term = array_pop($terms);
+  if ($term) {
+    $term->name = 'Acceso a la educación superior y técnica';
+  }
+  taxonomy_term_save($term);
 }
