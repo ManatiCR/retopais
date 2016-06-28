@@ -166,8 +166,7 @@
     }
     &:hover {
       &:after {
-        top: 52%;
-        @include triangle($white);
+        top: 50%;
       }
     }
   }
@@ -235,7 +234,6 @@
     margin: 15px 0;
     &:nth-child(3) {
       .homepage-particpa-en-el-reto--list-number {
-        // margin-left: -3px;
         padding: 4px 6px;
       }
     }
