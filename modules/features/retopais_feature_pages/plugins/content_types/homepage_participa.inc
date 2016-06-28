@@ -26,7 +26,7 @@ function homepage_participa_render($subtype, $conf, $panel_args, $context) {
 
   $block->content['participa_en_el_reto'] = array(
     '#theme' => 'homepage_participa_en_el_reto',
-    '#link' => l($participa_cta_title, 'que-es-reto-pais', array('attributes' => array('class' => array('button', 'button-red')))),
+    '#link' => l($participa_cta_title, 'propone-idea', array('attributes' => array('class' => array('button', 'button-red')))),
   );
 
   return $block;
