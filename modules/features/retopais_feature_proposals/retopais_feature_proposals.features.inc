@@ -27,6 +27,31 @@ function retopais_feature_proposals_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function retopais_feature_proposals_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: prize_logo.
+  $styles['prize_logo'] = array(
+    'label' => 'Prize logo',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 100,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function retopais_feature_proposals_node_info() {

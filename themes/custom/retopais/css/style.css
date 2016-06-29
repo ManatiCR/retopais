@@ -934,7 +934,7 @@ hr {
   }
 }
 
-.pane-problems-panel-pane-1 .icon-acceso-a-la-educacion-superior {
+.pane-problems-panel-pane-1 .icon-acceso-a-la-educacion-superior-y-tecnica {
   color: #8D519F;
 }
 
@@ -1395,7 +1395,7 @@ hr {
   font-size: 1.3rem;
 }
 
-.pane-problems-problems-only-names .icon-acceso-a-la-educacion-superior {
+.pane-problems-problems-only-names .icon-acceso-a-la-educacion-superior-y-tecnica {
   background-image: url(../img/icons/icon-educacion.svg);
   color: #8D519F;
 }
@@ -1904,4 +1904,69 @@ hr {
 
 .homepage-participa-en-el-reto--container {
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+.pane-problems-panel-pane-4 .views-row {
+  background-color: #f2f2f2;
+  margin: 0 0 20px 0;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .pane-problems-panel-pane-4 .views-row {
+    width: 48%;
+    margin: 0 1% 20px 1%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .pane-problems-panel-pane-4 .views-row:nth-child(2n+1) {
+    margin: 0 1% 20px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .pane-problems-panel-pane-4 .views-row:nth-child(2n) {
+    margin: 0 0 20px 1%;
+  }
+}
+
+.pane-problems-panel-pane-4 .field-content {
+  font-family: "Oswald", sans-serif;
+  height: 115px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  width: 100%;
+  display: block;
+  padding: 0 120px 0 0;
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+.pane-problems-panel-pane-4 .field-prize-text {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 20px;
+  margin-top: -40px;
+  padding-right: 120px;
+}
+
+.pane-problems-panel-pane-4 .icon-acceso-a-la-educacion-superior-y-tecnica {
+  background-image: url(../img/icons/icon-educacion2.svg);
+  color: #8D519F;
+}
+
+.pane-problems-panel-pane-4 .icon-accidentes-de-transito {
+  background-image: url(../img/icons/icon-transito2.svg);
+  color: #ffcb50;
+}
+
+.pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
+  background-image: url(../img/icons/icon-residuos2.svg);
+  color: #91C73E;
+}
+
+.pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
+  background-image: url(../img/icons/icon-obesidad2.svg);
+  color: #008ECE;
 }
