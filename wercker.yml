@@ -109,7 +109,7 @@ deploy:
     - script:
         name: Install Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.12.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -165,7 +165,7 @@ deploy-test:
     - script:
         name: Install Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.12.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -218,7 +218,7 @@ deploy-live:
     - script:
         name: Install Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.12.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -270,7 +270,7 @@ deploy-multidev:
     - script:
         name: Install Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
+            curl https://github.com/pantheon-systems/terminus/releases/download/0.12.0/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
