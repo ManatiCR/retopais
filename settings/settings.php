@@ -52,6 +52,7 @@ $conf['master_modules']['base'] = array(
   'master',
   'maxlength',
   'metatag',
+  'metatag_opengraph',
   'module_filter',
   'page_manager',
   'panels',
