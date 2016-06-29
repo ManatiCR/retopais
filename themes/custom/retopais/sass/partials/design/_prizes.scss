@@ -37,9 +37,10 @@
   .field-prize-text {
     font-family: $oswald;
     margin-bottom: 20px;
-    margin-top: -40px;
     padding-right: 120px;
-
+    @include breakpoint($small) {
+      margin-top: -40px;
+    }
   }
   .icon-acceso-a-la-educacion-superior-y-tecnica {
     color: $icon-purple;
