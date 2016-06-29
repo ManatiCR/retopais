@@ -18,10 +18,10 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '[current-page:title] | [current-page:pager][site:name]',
       ),
       'description' => array(
-        'value' => '',
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
       ),
       'abstract' => array(
-        'value' => '',
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
       ),
       'keywords' => array(
         'value' => '',
@@ -59,7 +59,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'image_src' => array(
-        'value' => '',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
       ),
       'canonical' => array(
         'value' => '[current-page:url:absolute]',
@@ -300,16 +300,16 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:url' => array(
-        'value' => '',
+        'value' => 'retopaiscr.com',
       ),
       'twitter:title' => array(
-        'value' => '',
+        'value' => 'Reto País',
       ),
       'twitter:description' => array(
         'value' => '',
       ),
       'twitter:image' => array(
-        'value' => '',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
       ),
       'twitter:image:width' => array(
         'value' => '',
@@ -318,7 +318,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:image:alt' => array(
-        'value' => '',
+        'value' => 'Images sobre las categorías de Reto País',
       ),
       'twitter:image0' => array(
         'value' => '',
@@ -388,6 +388,43 @@ function retopais_feature_config_metatag_export_default() {
       ),
       'twitter:data2' => array(
         'value' => '',
+      ),
+    ),
+  );
+
+  // Exported Metatag config instance: global:frontpage.
+  $config['global:frontpage'] = array(
+    'instance' => 'global:frontpage',
+    'config' => array(
+      'title' => array(
+        'value' => '[site:name]',
+      ),
+      'description' => array(
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
+      ),
+      'abstract' => array(
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
+      ),
+      'canonical' => array(
+        'value' => '[site:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[site:url]',
+      ),
+      'twitter:card' => array(
+        'value' => 'photo',
+      ),
+      'twitter:url' => array(
+        'value' => 'retopaiscr.com',
+      ),
+      'twitter:title' => array(
+        'value' => 'Reto País',
+      ),
+      'twitter:description' => array(
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
+      ),
+      'twitter:image' => array(
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
       ),
     ),
   );
