@@ -1952,21 +1952,27 @@ hr {
 }
 
 .pane-problems-panel-pane-4 .icon-acceso-a-la-educacion-superior-y-tecnica {
-  background-image: url(../img/icons/icon-educacion2.svg);
   color: #8D519F;
+  background-image: url(../img/icons/icon-ed.svg);
+}
+
+@media (min-width: 1240px) {
+  .pane-problems-panel-pane-4 .icon-acceso-a-la-educacion-superior-y-tecnica {
+    background-image: url(../img/icons/icon-educacion2.svg);
+  }
 }
 
 .pane-problems-panel-pane-4 .icon-accidentes-de-transito {
-  background-image: url(../img/icons/icon-transito2.svg);
+  background-image: url(../img/icons/icon-transit.svg);
   color: #ffcb50;
 }
 
 .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
-  background-image: url(../img/icons/icon-residuos2.svg);
+  background-image: url(../img/icons/icon-recycle.svg);
   color: #91C73E;
 }
 
 .pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
-  background-image: url(../img/icons/icon-obesidad2.svg);
+  background-image: url(../img/icons/icon-obesity.svg);
   color: #008ECE;
 }
