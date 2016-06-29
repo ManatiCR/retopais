@@ -42,19 +42,22 @@
 
   }
   .icon-acceso-a-la-educacion-superior-y-tecnica {
-    background-image: url(../img/icons/icon-educacion2.svg);
     color: $icon-purple;
+    background-image: url(../img/icons/icon-ed.svg);
+    @include breakpoint($desktop) {
+      background-image: url(../img/icons/icon-educacion2.svg);
+    }
   }
   .icon-accidentes-de-transito {
-    background-image: url(../img/icons/icon-transito2.svg);
+    background-image: url(../img/icons/icon-transit.svg);
     color: $icon-yellow;
   }
   .icon-separacion-y-recoleccion-de-residuos {
-    background-image: url(../img/icons/icon-residuos2.svg);
+    background-image: url(../img/icons/icon-recycle.svg);
     color: $icon-green;
   }
   .icon-tasa-de-obesidad {
-    background-image: url(../img/icons/icon-obesidad2.svg);
+    background-image: url(../img/icons/icon-obesity.svg);
     color: $icon-blue;
   }
 }

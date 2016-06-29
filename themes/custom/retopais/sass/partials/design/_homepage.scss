@@ -161,12 +161,14 @@
   }
   .button {
     position: relative;
-    &:after {
-      @include triangle($black);
-    }
-    &:hover {
+    @include breakpoint($small) {
       &:after {
-        top: 50%;
+        @include triangle($black);
+      }
+      &:hover {
+        &:after {
+          top: 50%;
+        }
       }
     }
   }
