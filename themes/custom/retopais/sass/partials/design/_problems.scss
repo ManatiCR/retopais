@@ -45,17 +45,34 @@
 
 .pane-problems-panel-pane-2 {
   margin-top: 50px;
+  .views-field-name {
+    width: 70%;
+    padding: 10px 0 0 20px;
+    @include breakpoint($smallish) {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .field-image {
+    width: 25%;
+    padding: 0;
+  }
   .field-image,
   .views-field-name {
     float: left;
-    margin-bottom: 20px;
+    @include breakpoint(542px) {
+      width: auto;
+    }
   }
   h3 {
     color: $darker-gray;
     margin:0;
-    padding: 30px 20px;
     font-family: $oswald;
     @include font-size(2.2);
+    padding-bottom: 20px;
+    @include breakpoint($smallish) {
+      padding: 30px 20px;
+    }
   }
   .views-field-description {
     clear: both;
