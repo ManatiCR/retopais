@@ -954,19 +954,48 @@ hr {
   margin-top: 50px;
 }
 
+.pane-problems-panel-pane-2 .views-field-name {
+  width: 70%;
+  padding: 10px 0 0 20px;
+}
+
+@media (min-width: 542px) {
+  .pane-problems-panel-pane-2 .views-field-name {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.pane-problems-panel-pane-2 .field-image {
+  width: 25%;
+  padding: 0;
+}
+
 .pane-problems-panel-pane-2 .field-image,
 .pane-problems-panel-pane-2 .views-field-name {
   float: left;
-  margin-bottom: 20px;
+}
+
+@media (min-width: 542px) {
+  .pane-problems-panel-pane-2 .field-image,
+  .pane-problems-panel-pane-2 .views-field-name {
+    width: auto;
+  }
 }
 
 .pane-problems-panel-pane-2 h3 {
   color: #5d5d5d;
   margin: 0;
-  padding: 30px 20px;
   font-family: "Oswald", sans-serif;
   font-size: 22px;
   font-size: 2.2rem;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 542px) {
+  .pane-problems-panel-pane-2 h3 {
+    padding: 30px 20px;
+  }
 }
 
 .pane-problems-panel-pane-2 .views-field-description {
@@ -1947,8 +1976,13 @@ hr {
 .pane-problems-panel-pane-4 .field-prize-text {
   font-family: "Oswald", sans-serif;
   margin-bottom: 20px;
-  margin-top: -40px;
   padding-right: 120px;
+}
+
+@media (min-width: 480px) {
+  .pane-problems-panel-pane-4 .field-prize-text {
+    margin-top: -40px;
+  }
 }
 
 .pane-problems-panel-pane-4 .icon-acceso-a-la-educacion-superior-y-tecnica {
@@ -1967,12 +2001,40 @@ hr {
   color: #ffcb50;
 }
 
+@media (min-width: 1240px) {
+  .pane-problems-panel-pane-4 .icon-accidentes-de-transito {
+    background-image: url(../img/icons/icon-transito2.svg);
+  }
+}
+
 .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
   background-image: url(../img/icons/icon-recycle.svg);
   color: #91C73E;
 }
 
+@media (min-width: 1240px) {
+  .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
+    background-image: url(../img/icons/icon-residuos2.svg);
+  }
+}
+
 .pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
   background-image: url(../img/icons/icon-obesity.svg);
   color: #008ECE;
+}
+
+@media (min-width: 1240px) {
+  .pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
+    background-image: url(../img/icons/icon-obesidad2.svg);
+  }
+}
+
+.pane-problems-panel-pane-4 .views-field-field-image-1 .field-content {
+  padding: 0;
+}
+
+@media (min-width: 480px) {
+  .pane-problems-panel-pane-4 .views-field-field-image-1 .field-content {
+    padding: 0 120px 0 0;
+  }
 }
