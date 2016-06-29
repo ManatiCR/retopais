@@ -81,6 +81,8 @@ projects:
       - "https://www.drupal.org/files/issues/master-2320641-11-Enable-multiple-modules-at-once.patch"
   maxlength:
     version: "3.2"
+  metatag:
+    version: "1.16"
   module_filter:
     version: "2.0"
   multistep:

@@ -51,6 +51,7 @@ $conf['master_modules']['base'] = array(
   'magic',
   'master',
   'maxlength',
+  'metatag',
   'module_filter',
   'page_manager',
   'panels',
