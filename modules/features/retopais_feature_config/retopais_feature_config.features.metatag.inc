@@ -59,7 +59,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'image_src' => array(
-        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio_0.png',
       ),
       'canonical' => array(
         'value' => '[current-page:url:absolute]',
@@ -120,7 +120,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'og:url' => array(
-        'value' => 'retopaiscr.com',
+        'value' => '[site:url]',
       ),
       'og:title' => array(
         'value' => '',
@@ -138,7 +138,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'og:image' => array(
-        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio_0.png',
       ),
       'og:image:url' => array(
         'value' => '',
@@ -150,10 +150,10 @@ function retopais_feature_config_metatag_export_default() {
         'value' => 'image/png',
       ),
       'og:image:width' => array(
-        'value' => 542,
+        'value' => 525,
       ),
       'og:image:height' => array(
-        'value' => 413,
+        'value' => 275,
       ),
       'og:latitude' => array(
         'value' => '',
@@ -174,7 +174,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'og:country_name' => array(
-        'value' => 'Costa Rica',
+        'value' => '',
       ),
       'og:email' => array(
         'value' => '',
@@ -186,7 +186,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'og:locale' => array(
-        'value' => 'es_CR',
+        'value' => '',
       ),
       'og:locale:alternate' => array(
         'value' => '',
@@ -300,7 +300,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:url' => array(
-        'value' => 'retopaiscr.com',
+        'value' => '',
       ),
       'twitter:title' => array(
         'value' => 'Reto País',
@@ -309,7 +309,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:image' => array(
-        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio_0.png',
       ),
       'twitter:image:width' => array(
         'value' => '',
@@ -318,7 +318,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:image:alt' => array(
-        'value' => 'Images sobre las categorías de Reto País',
+        'value' => 'Reto País',
       ),
       'twitter:image0' => array(
         'value' => '',
@@ -415,7 +415,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => 'photo',
       ),
       'twitter:url' => array(
-        'value' => 'retopaiscr.com',
+        'value' => '',
       ),
       'twitter:title' => array(
         'value' => 'Reto País',
@@ -424,7 +424,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
       ),
       'twitter:image' => array(
-        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio.png',
+        'value' => 'http://www.retopaiscr.com/sites/default/files/homepage/home-inicio_0.png',
       ),
     ),
   );

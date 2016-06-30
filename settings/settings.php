@@ -53,6 +53,7 @@ $conf['master_modules']['base'] = array(
   'maxlength',
   'metatag',
   'metatag_opengraph',
+  'metatag_twitter_cards',
   'module_filter',
   'page_manager',
   'panels',
