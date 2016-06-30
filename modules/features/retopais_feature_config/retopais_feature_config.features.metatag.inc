@@ -123,13 +123,13 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '[site:url]',
       ),
       'og:title' => array(
-        'value' => '',
+        'value' => 'Reto País',
       ),
       'og:determiner' => array(
         'value' => '',
       ),
       'og:description' => array(
-        'value' => '',
+        'value' => 'Reto PAÍS es un esfuerzo nacional para invitar a todos los ciudadanos y ciudadanas a proponer soluciones innovadoras para cuatro problemáticas que nos afectan a nivel país.',
       ),
       'og:updated_time' => array(
         'value' => '',
