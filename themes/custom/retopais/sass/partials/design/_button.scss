@@ -57,9 +57,11 @@ input[type='submit'] + #edit-cancel {
   border: 2px solid $yellow;
   color: $dark;
   display: inline-block;
+  padding: 18px 60px 18px 60px;
   &:hover {
     color: $dark;
     background-color: $yellow;
+    padding: 18px 60px 16px 60px;
     box-shadow: 0 2px 0 $darkyellow;
     text-decoration: none;
   }
