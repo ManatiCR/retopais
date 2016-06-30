@@ -117,7 +117,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => 'Reto País',
       ),
       'og:type' => array(
-        'value' => '',
+        'value' => 'cause',
       ),
       'og:url' => array(
         'value' => '[site:url]',
