@@ -285,7 +285,7 @@ function retopais_feature_config_metatag_export_default() {
         'value' => '',
       ),
       'twitter:card' => array(
-        'value' => '',
+        'value' => 'summary',
       ),
       'twitter:site' => array(
         'value' => '',
