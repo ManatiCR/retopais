@@ -121,7 +121,7 @@ projects:
   video_embed_field:
     version: "2.0-beta11"
   views:
-    version: "3.13"
+    version: "3.14"
   views_bulk_operations:
     version: "3.3"
   views_cache_bully:
