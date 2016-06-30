@@ -1,4 +1,4 @@
-# Reto País
+# Reto País.
 
 Reto País Drupal Distribution
 
