@@ -675,6 +675,28 @@ function retopais_feature_pages_default_page_manager_pages() {
     $display->content['new-4dfcf3a0-bf7e-4fa4-87ac-b358c8f8b7fa'] = $pane;
     $display->panels['left'][6] = 'new-4dfcf3a0-bf7e-4fa4-87ac-b358c8f8b7fa';
     $pane = new stdClass();
+    $pane->pid = 'new-edcab7bc-6a87-4c50-ab05-a3e53a58971b';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'alianzas-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alliances-prizes-logos',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = 'edcab7bc-6a87-4c50-ab05-a3e53a58971b';
+    $display->content['new-edcab7bc-6a87-4c50-ab05-a3e53a58971b'] = $pane;
+    $display->panels['left'][7] = 'new-edcab7bc-6a87-4c50-ab05-a3e53a58971b';
+    $pane = new stdClass();
     $pane->pid = 'new-80cad167-6ba0-4ad0-aff7-dffca1d42d68';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
@@ -688,11 +710,11 @@ function retopais_feature_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 7;
+    $pane->position = 8;
     $pane->locks = array();
     $pane->uuid = '80cad167-6ba0-4ad0-aff7-dffca1d42d68';
     $display->content['new-80cad167-6ba0-4ad0-aff7-dffca1d42d68'] = $pane;
-    $display->panels['left'][7] = 'new-80cad167-6ba0-4ad0-aff7-dffca1d42d68';
+    $display->panels['left'][8] = 'new-80cad167-6ba0-4ad0-aff7-dffca1d42d68';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
