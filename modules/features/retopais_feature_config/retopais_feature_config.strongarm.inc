@@ -374,7 +374,7 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_port';
-  $strongarm->value = '465';
+  $strongarm->value = '587';
   $export['smtp_port'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -388,7 +388,7 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_protocol';
-  $strongarm->value = 'ssl';
+  $strongarm->value = 'tls';
   $export['smtp_protocol'] = $strongarm;
 
   $strongarm = new stdClass();
