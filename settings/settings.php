@@ -103,7 +103,9 @@ $conf['master_modules']['local'] = array(
 
 $conf['master_modules']['development'] = $conf['master_modules']['local'];
 $conf['master_modules']['test'] = array();
-$conf['master_modules']['production'] = array();
+$conf['master_modules']['production'] = array(
+  'smtp',
+);
 
 $update_free_access = FALSE;
 
