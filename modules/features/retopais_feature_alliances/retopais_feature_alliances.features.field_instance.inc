@@ -15,7 +15,7 @@ function retopais_feature_alliances_field_default_field_instances() {
     'bundle' => 'alliance',
     'default_value' => array(
       0 => array(
-        'value' => 'sponsor',
+        'value' => 'sponsor1',
       ),
     ),
     'deleted' => 0,
