@@ -53,7 +53,7 @@ function retopais_feature_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_alliance_type'.
   $field_bases['field_alliance_type'] = array(
     'active' => 1,
-    'cardinality' => 4,
+    'cardinality' => 5,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_alliance_type',
@@ -72,6 +72,7 @@ function retopais_feature_field_bases_field_default_field_bases() {
         'sponsor2' => 'Patrocinador Nivel 2',
         'sponsor3' => 'Patrocinador Nivel 3',
         'mesa' => 'Mesa de Innovacion',
+        'prizes' => 'Premios',
       ),
       'allowed_values_function' => '',
     ),
