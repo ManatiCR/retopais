@@ -249,5 +249,122 @@ function retopais_feature_proposals_views_default_views() {
   );
   $export['problems'] = $view;
 
+  $view = new view();
+  $view->name = 'proposals';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Proposals';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Propuestas';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access administration pages';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'elementos por página';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '— Todo(s) —';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Desplazamiento';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« primero';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ anterior';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'siguiente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'última »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: ¿Qué problemática deseás solucionar? */
+  $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['label'] = 'Problemática';
+  $handler->display->display_options['fields']['field_problem']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Qué tipo de solución querés proponer? */
+  $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['field'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['label'] = 'Tipo de solución';
+  $handler->display->display_options['fields']['field_solution_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_solution_type']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Esta solución es individual o grupal? */
+  $handler->display->display_options['fields']['field_organization_way']['id'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['field'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['label'] = 'Individual/grupal';
+  $handler->display->display_options['fields']['field_organization_way']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_organization_way']['field_api_classes'] = TRUE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = '!=';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/propuestas';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Ver propuestas';
+  $handler->display->display_options['menu']['weight'] = '-20';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['proposals'] = array(
+    t('Master'),
+    t('Propuestas'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('elementos por página'),
+    t('— Todo(s) —'),
+    t('Desplazamiento'),
+    t('« primero'),
+    t('‹ anterior'),
+    t('siguiente ›'),
+    t('última »'),
+    t('Title'),
+    t('Problemática'),
+    t('Tipo de solución'),
+    t('Individual/grupal'),
+    t('Page'),
+  );
+  $export['proposals'] = $view;
+
   return $export;
 }
