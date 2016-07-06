@@ -360,14 +360,23 @@ ol {
   list-style-type: none;
 }
 
-ol li {
+ul {
+  list-style-type: disc;
+}
+
+ol > li {
   counter-increment: step;
   margin-bottom: 10px;
   text-indent: -25px;
   padding-left: 30px;
 }
 
-ol li::before {
+ol > li p {
+  text-indent: 0;
+  padding-left: 0;
+}
+
+ol > li::before {
   content: counter(step);
   margin-right: 5px;
   font-size: 80%;
@@ -376,6 +385,11 @@ ol li::before {
   font-weight: bold;
   padding: 2px 7px;
   border-radius: 16px;
+}
+
+ul li {
+  text-indent: 0;
+  padding-left: 0;
 }
 
 li a:hover {
