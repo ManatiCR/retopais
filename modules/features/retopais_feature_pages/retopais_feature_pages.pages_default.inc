@@ -783,8 +783,123 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p>El reglamento estará disponible en los próximos días.</p>
-',
+      'body' => '<ol>
+<li>
+Objetivo de la competencia
+<p>Empoderar a la sociedad civil a proponer y desarrollar soluciones de innovación social para atacar las problemáticas definidas por el Índice de Progreso Social (IPS) en Costa Rica.</p>
+</li>
+
+<li>
+Línea de Tiempo
+<p>El lanzamiento de la competencia será el 27 de junio del 2016. Este día se abrirá el plazo para recibir aplicaciones y estará abierto hasta el 24 de julio. Ese día se cierran las inscripciones. La única forma de aplicar es a través de los formularios en la plataforma.</p>
+
+<p>Se llevará a cabo la Maratón de Ideas el 16 de julio. Será un día donde se unirán participantes invitados de diferentes sectores para crear propuestas a las problemáticas.</p>
+
+<p>Se anunciarán cuáles ideas o soluciones en marcha pasan a la siguiente etapa el 28 de julio, serán 15 finalistas. Se anunciarán a través de la página web y serán contactados inmediatamente para confirmar su participación en las fases siguientes. Deben contestar teléfonos o correo electrónico, de lo contrario serán descalificados por no contar con un medio de comunicación eficiente.</p>
+
+<p>El 6 y 7 de agosto se llevará a cabo el fin de semana de talleres, donde los finalistas recibirán capacitación y asesoría para sus proyectos, consejos de emprendedores y organizaciones de diferentes sectores. La asistencia es obligatoria para los finalistas.</p>
+
+<p>Ellos tendrán una semana para mejorar su propuesta y el 11 de agosto se llevará a cabo el Evento de Premiación. Los finalistas tendrán la oportunidad de exponer sus ideas mejoradas una última vez frente a un jurado e invitados al evento y al final del día se nombrarán ganadores.</p>
+
+<p>Dependiendo de la cantidad de personas que sean por grupo finalista, Impactico y la Mesa de Innovación Social definirán cuantas personas por equipo pueden participar en el Evento de Premiación. El jurado será definido por Impactico y la Mesa de Innovación Social. Habrán miembros del sector público, de la academia, del sector privado y sociedad civil.</p>
+</li>
+
+<li>
+Premios
+
+<p>Habrán dos categorías de premios: Ideas y Soluciones en Marcha y se seleccionarán 15 finalistas, 12 para la categoría de ideas (3 por problemática) y 3 finalistas para la categoría de Soluciones en Marcha, para que participen en la siguiente etapa.</p>
+
+<p>Los premios serán mentoría, capacitaciones e incubación para llevar a cabo la propuesta, además de apoyo del gobierno para el desarrollo de la idea.</p>
+
+<p>Todos los ganadores recibirán:</p>
+
+<ul>
+	<li>
+	Proceso de aceleración del Instituto de Desarrollo Empresarial y Acción Social (IDEAS).
+	</li>
+	<li>
+	Mentoría de Global Shapers San José.
+	</li>
+	<li>
+	$1000 de crédito para ser utilizados en el espacio de coworking para emprendedores, Impactico.
+	</li>
+	<li>
+	Guía y acompañamiento de gerentes de proyectos de IBM que facilitarán la implementación de las grandes ideas y proyectos.
+	</li>
+	<li>
+	Serán destacados en el curso U.Lab de la Universidad MIT en Estados Unidos, este septiembre.
+	</li>
+</ul>
+
+<p>El ganador de la categoría Solución en Marcha recibirá consultoría de Ernst&amp;Young.</p>
+
+<p>Además, el ganador de la idea para la Tasa de Obesidad recibirá un proceso de incubación del Central American Healthcare Iniciative (CAHI), el de Accidentes de Tránsito recibirá acompañamiento técnico de Toyota y los ganadores de las soluciones para el Acceso a la Educación Superior y Manejo de Residuos recibirán consultorías de Ernst&amp;Young.</p>
+
+<p>No habrán desembolsos económicos para el desarrollo de la idea o solución.</p>
+</li>
+
+<li>
+Condiciones generales. Elegibilidad
+
+<p>Con respecto a las aplicaciones en la etapa inicial, deben ser ideas originales y las aplicaciones deben estar en español. Pueden ser ideas o soluciones que ya están en marcha y deben atacar alguna de las cuatro problemáticas establecidas en Reto PAIS, que salen del Índice de Progreso Social Cantonal.</p>
+
+<p>La sociedad civil de Costa Rica puede aplicar, desde cualquier parte del país y se permiten múltiples aplicaciones por persona. En caso de que alguien aplique en las dos categorías, solamente podrá ganar en una. Se aceptan aplicaciones individuales y grupales también. En este caso, la aplicación llevará el nombre del representante del grupo. Los miembros de la Mesa de Innovación Social no pueden participar.</p>
+
+<p>La única forma de aplicar es a través de los formularios en la plataforma y no se aceptarán aplicaciones después del 24 de julio.</p>
+
+<p>La participación de los finalistas en el fin de semana de talleres y evento final de premiación es obligatoria. En caso de no asistir, serán eliminados de la competencia.</p>
+
+<p>En caso de que alguno de los participantes viva fuera del Gran Área Metropolitana, se les dará transporte y hospedaje para el fin de semana de talleres, y el transporte para el Evento de Premiación.</p>
+
+<p>Pueden aplicar condiciones aceptables por ley y/o dispuestas en la legislación vigente de la República de Costa Rica.</p>
+</li>
+
+<li>
+Criterios para evaluar aplicaciones
+
+<p>Se evaluarán a través de todo el proceso y durante las distintas fases los siguientes criterios técnicos:</p>
+
+<p>Grado de innovación de la idea: ¿El modelo de negocios, producto o idea es innovadora? ¿Cuál es su ventaja competitiva? ¿Existe algo similar en el mercado?</p>
+
+<p>En qué medida solventa una problemática social: ¿Está claro quiénes y cómo se verán beneficiados por la idea o propuesta? ¿En qué grado ataca directamente la problemática a la cual va dirigida?</p>
+
+<p>Sostenibilidad y escalabilidad: ¿Está claro cómo la solución generaría ingresos para ser sostenible en el tiempo? ¿La solución es escalable? ¿Qué tan convincentes son sus proyecciones?</p>
+
+<p>Presupuesto realístico primer año: ¿La persona o el equipo tiene claro los recursos financieros necesarios para poner en marcha su idea o solución?</p>
+
+<p>Equipo: ¿La persona o el equipo tiene experiencia en el área asociada a la propuesta y tienen habilidades comprobadas para liderar y ejecutar? ¿Han recibido algún tipo de reconocimiento?</p>
+
+<p>Identificación de necesidades: ¿Han identificado debilidades o necesidades? ¿Puede Reto PÁIS a través de su proceso y premios ayudar a solventar estas debilidades o necesidades?</p>
+
+<p>Uso propuesto de recursos financieros: ¿La persona o el equipo está activamente buscando capital para poner en marcha su idea o solución? ¿Está claro cómo utilizarían estos recursos?</p>
+
+<p>Plan para la evaluación de impacto: ¿La propuesta cuenta con un plan viable para medir el éxito respecto a sus objetivos de impacto relacionados a la problemática en específico? ¿La propuesta explica qué será medido, cuándo será medido y cómo será medido?</p>
+
+<p>La decisión final será tomada por el jurado determinado previamente, que pertenecen al sector público, privado, academia y sociedad civil.</p>
+</li>
+
+<li>
+Propiedad, uso de la información suministrada
+
+<p>El dueño de la idea o solución en marcha y su desarrollo será siempre el participante, pero la competencia tiene derecho a exponer la información en su página web y comunicarla a través de otros medios de comunicación.</p>
+
+<p>Reto PAIS es una alianza público privada, de manera que la idea o proyecto ganador contará con el compromiso del gobierno de apoyar el desarrollo y la implementación de la propuesta, pero el responsable será siempre el participante.</p>
+
+</li>
+
+<li>
+Información personal
+<p>La información personal suministrada por los participantes será utilizada para fines de la competencia y solamente los participantes y los organizadores tendrán acceso a ella.</p>
+
+<p>Los organizadores podrán hacer uso de fotografías de las actividades y logos de los concursantes para promoción y documentación de la competencia.</p>
+</li>
+
+<li>
+Aceptación del Reglamento
+<p>Los concursantes, por el solo hecho de la participación se darán por enterados del presente Reglamento, aceptando adherirse a éste; asimismo exoneran a Impactico de toda responsabilidad e indemnización por el uso de su imagen.</p>
+</li>
+
+</ol>',
       'format' => 'filtered_html',
       'substitute' => TRUE,
     );
