@@ -286,6 +286,13 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'siguiente ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'última »';
   $handler->display->display_options['style_plugin'] = 'table';
+  /* Relationship: Flags: invalidar_propuesta */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -320,6 +327,13 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_organization_way']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_organization_way']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_organization_way']['field_api_classes'] = TRUE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = 'Preaprobación';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -407,10 +421,12 @@ function retopais_feature_proposals_views_default_views() {
     t('‹ anterior'),
     t('siguiente ›'),
     t('última »'),
+    t('flag'),
     t('Title'),
     t('Problemática'),
     t('Tipo de solución'),
     t('Individual/grupal'),
+    t('Preaprobación'),
     t('Tipo de organización'),
     t('Page'),
   );
