@@ -2052,3 +2052,22 @@ hr {
     padding: 0 120px 0 0;
   }
 }
+
+.node-type-proposal .panel-pane {
+  margin: 15px 0;
+}
+
+.node-type-proposal h4, .node-type-proposal .pane-content {
+  display: inline-block;
+  margin: 0;
+}
+
+.pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content {
+  display: block;
+}
+
+.pane-node-field-organization-way, .pane-node-field-project-audience, .pane-node-field-project-links,
+.pane-node-field-organization-address, .pane-node-field-idea-features {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(53, 62, 66, 0.2);
+}
