@@ -43,6 +43,7 @@ $conf['master_modules']['base'] = array(
   'entityreference',
   'features',
   'fences',
+  'flag',
   'honeypot',
   'inline_entity_form',
   'l10n_update',

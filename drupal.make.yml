@@ -56,12 +56,14 @@ projects:
     version: "1.0"
   environment_indicator:
     version: "2.8"
-  field_group:
-    version: "1.5"
   features:
     version: "2.10"
   fences:
     version: "1.2"
+  field_group:
+    version: "1.5"
+  flag:
+    version: "3.7"
   honeypot:
     version: "1.22"
   inline_entity_form:
