@@ -2062,6 +2062,10 @@ hr {
   margin: 0;
 }
 
+.node-type-proposal .panel-col > div {
+  position: relative;
+}
+
 .pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content {
   display: block;
 }
@@ -2070,4 +2074,10 @@ hr {
 .pane-node-field-organization-address, .pane-node-field-idea-features {
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(53, 62, 66, 0.2);
+}
+
+.pane-flag-link {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
