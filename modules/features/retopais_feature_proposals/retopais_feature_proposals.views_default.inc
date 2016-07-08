@@ -396,12 +396,182 @@ function retopais_feature_proposals_views_default_views() {
     3 => 0,
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Proposals review */
+  $handler = $view->new_display('page', 'Proposals review', 'page');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = '!=';
+  /* Filter criterion: Content: ¿Qué tipo de solución querés proponer? (field_solution_type) */
+  $handler->display->display_options['filters']['field_solution_type_value']['id'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['filters']['field_solution_type_value']['field'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator_id'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['label'] = 'Tipo de solución';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['identifier'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: ¿Qué problemática deseás solucionar? (field_problem) */
+  $handler->display->display_options['filters']['field_problem_tid']['id'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['filters']['field_problem_tid']['field'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator_id'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['label'] = 'Problemática';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['identifier'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_problem_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_problem_tid']['vocabulary'] = 'problems';
+  /* Filter criterion: Content: ¿Esta solución es individual o grupal? (field_organization_way) */
+  $handler->display->display_options['filters']['field_organization_way_value']['id'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['filters']['field_organization_way_value']['field'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator_id'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['label'] = 'Tipo de organización';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['identifier'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/propuestas';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ver propuestas';
   $handler->display->display_options['menu']['weight'] = '-20';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Final proposals */
+  $handler = $view->new_display('page', 'Final proposals', 'page_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'view final proposals';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: ¿Qué problemática deseás solucionar? */
+  $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['label'] = 'Problemática';
+  $handler->display->display_options['fields']['field_problem']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Qué tipo de solución querés proponer? */
+  $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['field'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['label'] = 'Tipo de solución';
+  $handler->display->display_options['fields']['field_solution_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_solution_type']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Esta solución es individual o grupal? */
+  $handler->display->display_options['fields']['field_organization_way']['id'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['field'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['label'] = 'Individual/grupal';
+  $handler->display->display_options['fields']['field_organization_way']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_organization_way']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = '!=';
+  /* Filter criterion: Content: ¿Qué tipo de solución querés proponer? (field_solution_type) */
+  $handler->display->display_options['filters']['field_solution_type_value']['id'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['filters']['field_solution_type_value']['field'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator_id'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['label'] = 'Tipo de solución';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['identifier'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: ¿Qué problemática deseás solucionar? (field_problem) */
+  $handler->display->display_options['filters']['field_problem_tid']['id'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['filters']['field_problem_tid']['field'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator_id'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['label'] = 'Problemática';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['identifier'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_problem_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_problem_tid']['vocabulary'] = 'problems';
+  /* Filter criterion: Content: ¿Esta solución es individual o grupal? (field_organization_way) */
+  $handler->display->display_options['filters']['field_organization_way_value']['id'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['filters']['field_organization_way_value']['field'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator_id'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['label'] = 'Tipo de organización';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['identifier'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  $handler->display->display_options['path'] = 'admin/propuestas-finales';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Ver propuestas finales';
+  $handler->display->display_options['menu']['weight'] = '-19';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
@@ -428,7 +598,8 @@ function retopais_feature_proposals_views_default_views() {
     t('Individual/grupal'),
     t('Preaprobación'),
     t('Tipo de organización'),
-    t('Page'),
+    t('Proposals review'),
+    t('Final proposals'),
   );
   $export['proposals'] = $view;
 
