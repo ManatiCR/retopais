@@ -2,7 +2,11 @@ name = Reto Pais Proposals
 description = Proposals functionality for Reto Pais.
 core = 7.x
 package = Reto Pais
+<<<<<<< HEAD
 version = 7.x-2.1
+=======
+version = 7.x-1.8
+>>>>>>> 040d49e2ea536523dd0b6344ac9ee5fd6f749320
 dependencies[] = ctools
 dependencies[] = email
 dependencies[] = features
