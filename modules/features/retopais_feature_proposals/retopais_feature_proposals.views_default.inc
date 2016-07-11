@@ -268,6 +268,11 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Aplicar';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordenar por';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -332,6 +337,50 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = '!=';
+  /* Filter criterion: Content: ¿Qué tipo de solución querés proponer? (field_solution_type) */
+  $handler->display->display_options['filters']['field_solution_type_value']['id'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['filters']['field_solution_type_value']['field'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator_id'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['label'] = 'Tipo de solución';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['operator'] = 'field_solution_type_value_op';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['identifier'] = 'field_solution_type_value';
+  $handler->display->display_options['filters']['field_solution_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: ¿Qué problemática deseás solucionar? (field_problem) */
+  $handler->display->display_options['filters']['field_problem_tid']['id'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['filters']['field_problem_tid']['field'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator_id'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['label'] = 'Problemática';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['operator'] = 'field_problem_tid_op';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['identifier'] = 'field_problem_tid';
+  $handler->display->display_options['filters']['field_problem_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_problem_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_problem_tid']['vocabulary'] = 'problems';
+  /* Filter criterion: Content: ¿Esta solución es individual o grupal? (field_organization_way) */
+  $handler->display->display_options['filters']['field_organization_way_value']['id'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['filters']['field_organization_way_value']['field'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator_id'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['label'] = 'Tipo de organización';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['operator'] = 'field_organization_way_value_op';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['identifier'] = 'field_organization_way_value';
+  $handler->display->display_options['filters']['field_organization_way_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -362,6 +411,7 @@ function retopais_feature_proposals_views_default_views() {
     t('Problemática'),
     t('Tipo de solución'),
     t('Individual/grupal'),
+    t('Tipo de organización'),
     t('Page'),
   );
   $export['proposals'] = $view;
