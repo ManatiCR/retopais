@@ -394,3 +394,19 @@ function retopais_feature_proposals_get_steps_info() {
 
   return $steps;
 }
+
+/**
+ * Implements hook_permission().
+ */
+function retopais_feature_proposals_permission() {
+  return array(
+    'view final proposals' => array(
+      'title' => t('View final proposals'),
+      'description' => t('Be able to see the final proposals view.'),
+    ),
+    'view proposals' => array(
+      'title' => t('View proposals'),
+      'description' => t('Be able to see the proposals view.'),
+    ),
+  );
+}

@@ -16,6 +16,8 @@ function retopais_feature_input_formats_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
+      'judge' => 'judge',
     ),
     'module' => 'filter',
   );

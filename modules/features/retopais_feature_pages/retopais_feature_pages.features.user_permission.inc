@@ -17,6 +17,8 @@ function retopais_feature_pages_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
+      'judge' => 'judge',
     ),
     'module' => 'contact',
   );

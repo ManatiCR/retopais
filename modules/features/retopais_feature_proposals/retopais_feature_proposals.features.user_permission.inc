@@ -17,6 +17,8 @@ function retopais_feature_proposals_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
+      'judge' => 'judge',
     ),
     'module' => 'node',
   );
@@ -36,6 +38,7 @@ function retopais_feature_proposals_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
     ),
     'module' => 'node',
   );
@@ -46,6 +49,7 @@ function retopais_feature_proposals_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
     ),
     'module' => 'node',
   );
@@ -56,6 +60,7 @@ function retopais_feature_proposals_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
     ),
     'module' => 'flag',
   );
@@ -66,6 +71,7 @@ function retopais_feature_proposals_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content admin' => 'content admin',
     ),
     'module' => 'flag',
   );

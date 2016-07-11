@@ -39,11 +39,11 @@ function retopais_feature_proposals_flag_default_flags() {
     'types' => array(
       0 => 'proposal',
     ),
-    'flag_short' => 'Sí',
-    'flag_long' => 'Haga click para marcar esta propuesta como inválida.',
+    'flag_short' => 'No',
+    'flag_long' => 'Haga click para marcar esta propuesta como válida.',
     'flag_message' => '',
-    'unflag_short' => 'No',
-    'unflag_long' => 'Haga click para marcar esta propuesta como válida.',
+    'unflag_short' => 'Sí',
+    'unflag_long' => 'Haga click para marcar esta propuesta como inválida.',
     'unflag_message' => '',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
@@ -61,11 +61,11 @@ function retopais_feature_proposals_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'retopais_feature_proposals',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
