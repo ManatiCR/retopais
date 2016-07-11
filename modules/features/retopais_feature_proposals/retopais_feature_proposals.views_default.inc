@@ -397,7 +397,7 @@ function retopais_feature_proposals_views_default_views() {
   );
 
   /* Display: Proposals review */
-  $handler = $view->new_display('page', 'Proposals review', 'page');
+  $handler = $view->new_display('page', 'Proposals review', 'proposals');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -465,7 +465,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Final proposals */
-  $handler = $view->new_display('page', 'Final proposals', 'page_1');
+  $handler = $view->new_display('page', 'Final proposals', 'final_proposals');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view final proposals';
