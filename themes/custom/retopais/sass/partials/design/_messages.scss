@@ -31,3 +31,11 @@
 .pane-page-messages{
   margin: 20px 0;
 }
+
+.logged-in {
+  .messages {
+    &.status {
+      display: block;
+    }
+  }
+}
