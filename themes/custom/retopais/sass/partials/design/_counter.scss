@@ -1,0 +1,37 @@
+/////////////////////////////////////////
+// Styles for the counters
+// @_counter.scss
+/////////////////////////////////////////
+
+.sidebar-counter{
+  display: flex;
+}
+
+.ideas-column {
+  flex: 1 0 50%;
+  text-align: center;
+}
+.ideas-column .ideas-row{
+  padding: 20px;
+  color: white;
+}
+.ideas-column {
+  .ideas-row:nth-child(2) {
+    padding: 10px;
+  }
+}
+.ideas-row:first-child {
+  @include font-size(3.6);
+}
+.ideas-column:first-child {
+  background-color: $blue;
+  .ideas-row:nth-child(2) {
+    background-color: $dark;
+  }
+}
+.ideas-column:nth-child(2) {
+  background-color: $yellow;
+  .ideas-row:nth-child(2) {
+    background-color: $darker-gray;
+  }
+}
