@@ -166,6 +166,18 @@ function retopais_feature_proposals_theme() {
       'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
       'template' => 'proposal-progress',
     ),
+    'proposal_counter_hp' => array(
+      'variables' => array(
+        'link' => '',
+        'cantidad_ideas' => '',
+        'cantidad_soluciones' => '',
+        'video' => '',
+        'image' => '',
+        'text' => array(),
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
+      'template' => 'proposal-counter-hp',
+    ),
   );
 }
 
