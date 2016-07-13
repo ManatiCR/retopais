@@ -5,33 +5,34 @@
 
 .sidebar-counter{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @include breakpoint($medium) {
+    justify-content: flex-start;
+  }
 }
 
 .ideas-column {
-  flex: 1 0 50%;
+  width: 150px;
+  height: 150px;
   text-align: center;
 }
-.ideas-column .ideas-row{
-  padding: 20px;
-  color: white;
-}
-.ideas-column {
-  .ideas-row:nth-child(2) {
-    padding: 10px;
-  }
-}
+
 .ideas-row:first-child {
   @include font-size(3.6);
 }
-.ideas-column:first-child {
-  background-color: $blue;
-  .ideas-row:nth-child(2) {
-    background-color: $dark;
-  }
+
+.ideas-column {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  color: $white;
+  border: 10px solid $azure;
+  border-radius: 75px;
+  background-color: $red;
 }
-.ideas-column:nth-child(2) {
-  background-color: $yellow;
-  .ideas-row:nth-child(2) {
-    background-color: $darker-gray;
-  }
+
+.pane-proposal-counter {
+  margin-bottom: 30px;
 }
