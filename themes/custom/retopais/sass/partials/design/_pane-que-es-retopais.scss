@@ -23,7 +23,7 @@
       content: '*';
     }
   }
-  @include breakpoint($medium) {
+  @include breakpoint($desktop) {
     p {
       width: auto;
       display: inline-block;
