@@ -5,18 +5,12 @@
 
 .page-sidebar-primary-content {
   @include layout-at(15, $medium) {
-    @include grid-span(10, 1);
+    @include grid-span(11, 1);
   }
 }
 
 .page-sidebar-secondary-content {
   @include layout-at(15, $medium) {
     @include grid-span(4, 12);
-  }
-}
-
-.page-que-es-reto-pais {
-  .page-sidebar-primary-content {
-    @include grid-span(15, 1);
   }
 }
