@@ -39,7 +39,7 @@ main {
 
 @media (min-width: 768px) {
   .page-sidebar-primary-content {
-    width: 66.10169%;
+    width: 72.88136%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -55,14 +55,6 @@ main {
     margin-right: 0;
     clear: none;
   }
-}
-
-.page-que-es-reto-pais .page-sidebar-primary-content {
-  width: 100%;
-  float: right;
-  margin-left: 0;
-  margin-right: 0;
-  clear: none;
 }
 
 @media (min-width: 768px) {
@@ -342,6 +334,10 @@ div:not(#foo) input[type="checkbox"]:checked + label {
 
 .pane-page-messages {
   margin: 20px 0;
+}
+
+.logged-in .messages.status {
+  display: block;
 }
 
 a {
@@ -1059,7 +1055,7 @@ hr {
   content: '*';
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1240px) {
   .pane-que-es-retopais-proposals p {
     width: auto;
     display: inline-block;
@@ -1949,29 +1945,30 @@ hr {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.pane-problems-panel-pane-4 .view-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .pane-problems-panel-pane-4 .views-row {
   background-color: #f2f2f2;
   margin: 0 0 20px 0;
   padding: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
 }
 
 @media (min-width: 768px) {
   .pane-problems-panel-pane-4 .views-row {
-    width: 48%;
-    margin: 0 1% 20px 1%;
-    float: left;
-  }
-}
-
-@media (min-width: 768px) {
-  .pane-problems-panel-pane-4 .views-row:nth-child(2n+1) {
-    margin: 0 1% 20px 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .pane-problems-panel-pane-4 .views-row:nth-child(2n) {
-    margin: 0 0 20px 1%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 48%;
+            flex: 0 1 48%;
   }
 }
 
@@ -2004,21 +2001,9 @@ hr {
   background-image: url(../img/icons/icon-ed.svg);
 }
 
-@media (min-width: 1240px) {
-  .pane-problems-panel-pane-4 .icon-acceso-a-la-educacion-superior-y-tecnica {
-    background-image: url(../img/icons/icon-educacion2.svg);
-  }
-}
-
 .pane-problems-panel-pane-4 .icon-accidentes-de-transito {
   background-image: url(../img/icons/icon-transit.svg);
   color: #ffcb50;
-}
-
-@media (min-width: 1240px) {
-  .pane-problems-panel-pane-4 .icon-accidentes-de-transito {
-    background-image: url(../img/icons/icon-transito2.svg);
-  }
 }
 
 .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
@@ -2026,21 +2011,9 @@ hr {
   color: #91C73E;
 }
 
-@media (min-width: 1240px) {
-  .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
-    background-image: url(../img/icons/icon-residuos2.svg);
-  }
-}
-
 .pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
   background-image: url(../img/icons/icon-obesity.svg);
   color: #008ECE;
-}
-
-@media (min-width: 1240px) {
-  .pane-problems-panel-pane-4 .icon-tasa-de-obesidad {
-    background-image: url(../img/icons/icon-obesidad2.svg);
-  }
 }
 
 .pane-problems-panel-pane-4 .views-field-field-image-1 .field-content {
@@ -2080,4 +2053,48 @@ hr {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.sidebar-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .sidebar-counter {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.ideas-column {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+
+.ideas-row:first-child {
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+
+.ideas-column {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  color: #fff;
+  border: 10px solid #f0f7f7;
+  border-radius: 75px;
+  background-color: #e13e32;
+}
+
+.pane-proposal-counter {
+  margin-bottom: 30px;
 }

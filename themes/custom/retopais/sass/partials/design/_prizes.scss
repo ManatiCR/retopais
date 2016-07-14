@@ -3,25 +3,23 @@
 // @_prizes.scss
 /////////////////////////////////
 
+.page-que-es-reto-pais {
+
+}
+
 .pane-problems-panel-pane-4 {
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   .views-row {
     background-color: $background-gray;
     margin: 0 0 20px 0;
     padding: 20px;
+    flex: 0 1 100%;
     @include breakpoint($medium) {
-      width: 48%;
-      margin: 0 1% 20px 1%;
-      float: left;
-    }
-    &:nth-child(2n+1) {
-      @include breakpoint($medium) {
-        margin: 0 1% 20px 0;
-      }
-    }
-    &:nth-child(2n) {
-      @include breakpoint($medium) {
-        margin: 0 0 20px 1%;
-      }
+      flex: 0 1 48%;
     }
   }
   .field-content {
@@ -45,29 +43,17 @@
   .icon-acceso-a-la-educacion-superior-y-tecnica {
     color: $icon-purple;
     background-image: url(../img/icons/icon-ed.svg);
-    @include breakpoint($desktop) {
-      background-image: url(../img/icons/icon-educacion2.svg);
-    }
   }
   .icon-accidentes-de-transito {
     background-image: url(../img/icons/icon-transit.svg);
-    @include breakpoint($desktop) {
-      background-image: url(../img/icons/icon-transito2.svg);
-    }
     color: $icon-yellow;
   }
   .icon-separacion-y-recoleccion-de-residuos {
     background-image: url(../img/icons/icon-recycle.svg);
-    @include breakpoint($desktop) {
-      background-image: url(../img/icons/icon-residuos2.svg);
-    }
     color: $icon-green;
   }
   .icon-tasa-de-obesidad {
     background-image: url(../img/icons/icon-obesity.svg);
-    @include breakpoint($desktop) {
-      background-image: url(../img/icons/icon-obesidad2.svg);
-    }
     color: $icon-blue;
   }
   .views-field-field-image-1 {
