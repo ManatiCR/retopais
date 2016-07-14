@@ -20,13 +20,18 @@
 
 .ideas-row:first-child {
   @include font-size(3.6);
+  font-weight: bold;
+}
+
+.ideas-row:nth-child(2) {
+  @include font-size(1.4);
 }
 
 .ideas-column {
   position: relative;
   margin-top: 20px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 25px;
   color: $white;
   border: 10px solid $azure;
   border-radius: 75px;

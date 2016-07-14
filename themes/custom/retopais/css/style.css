@@ -2082,13 +2082,19 @@ hr {
 .ideas-row:first-child {
   font-size: 36px;
   font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.ideas-row:nth-child(2) {
+  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .ideas-column {
   position: relative;
   margin-top: 20px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 25px;
   color: #fff;
   border: 10px solid #f0f7f7;
   border-radius: 75px;
