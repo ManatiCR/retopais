@@ -21,7 +21,7 @@ function proposal_counter_hp_render($subtype, $conf, $panel_args, $context) {
   // Build the content type block.
   $block = new stdClass();
   $block->title = '';
-  $cantidad_propuestas = retopais_feature_proposals_counter('idea') + retopais_feature_proposals_counter('running_solution');
+  $cantidad_propuestas = retopais_feature_proposals_counter();
   $video = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', '');
   $image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   if ($video) {

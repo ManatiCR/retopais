@@ -430,17 +430,15 @@ function retopais_feature_proposals_permission() {
  * @return result->amount
  *         Ammount of nodes of that content type.
  */
-function retopais_feature_proposals_counter($solution_type) {
+function retopais_feature_proposals_counter() {
   $query = db_select('node', 'n');
   $query->join('field_data_field_representative_email', 'f', 'n.nid = f.entity_id');
   $query->leftJoin('flagging', 'fg', 'n.nid = fg.entity_id');
-  $query->join('field_data_field_solution_type', 'st', 'n.nid = st.entity_id');
   $query->fields('n', array(
     'nid',
   ));
   $query->condition('n.type', 'proposal');
   $query->condition('fg.fid', '1');
-  $query->condition('st.field_solution_type_value', $solution_type);
   $result = $query->execute();
   $result->fetchAll();
   $count = $result->rowCount();
