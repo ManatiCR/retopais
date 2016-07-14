@@ -169,8 +169,7 @@ function retopais_feature_proposals_theme() {
     'proposal_counter_hp' => array(
       'variables' => array(
         'link' => '',
-        'cantidad_ideas' => '',
-        'cantidad_soluciones' => '',
+        'cantidad_propuestas' => '',
         'video' => '',
         'image' => '',
         'text' => array(),
