@@ -216,6 +216,49 @@ function retopais_feature_proposals_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Problems with Abstract - Finalistas */
+  $handler = $view->new_display('panel_pane', 'Problems with Abstract - Finalistas', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '¿En cuáles problemáticas nos enfocamos?';
+  $handler->display->display_options['display_description'] = 'Image, Name and Abstract';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_featured_image_target_id';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Abstract */
+  $handler->display->display_options['fields']['field_abstract']['id'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['table'] = 'field_data_field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['field'] = 'field_abstract';
+  $handler->display->display_options['fields']['field_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_abstract']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_abstract']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_abstract']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_abstract']['field_api_classes'] = TRUE;
+  $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $translatables['problems'] = array(
     t('Master'),
     t('more'),
@@ -246,6 +289,8 @@ function retopais_feature_proposals_views_default_views() {
     t('<a href="propone-idea" class="cta-propone button-red">Proponé ideas</a>'),
     t('Problem Prizes'),
     t('Content entity referenced from field_prize_image'),
+    t('Problems with Abstract - Finalistas'),
+    t('¿En cuáles problemáticas nos enfocamos?'),
   );
   $export['problems'] = $view;
 
