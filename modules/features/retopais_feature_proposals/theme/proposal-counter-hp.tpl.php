@@ -7,7 +7,7 @@
 <div class="que-es-reto-pais--container">
   <div class="que-es-reto-pais--container-inner">
     <div class="que-es-reto-pais--left">
-      <h2 class="que-es-reto-pais--title">¡<?php print $cantidad_propuestas; ?> propuestas han sido enviadas!</h2>
+      <h2 class="que-es-reto-pais--title"><?php print $cantidad_propuestas; ?></h2>
       <p class="que-es-reto-pais--description">
         <?php print $text; ?>
       </p>
