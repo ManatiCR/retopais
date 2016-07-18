@@ -468,19 +468,8 @@ function retopais_feature_proposals_action_info() {
  * Each node of the type proposal can be assigned to a user with the judge role.
  */
 function retopais_feature_proposals_judge_assignment_views_bulk_operations_form($options) {
-  $form = array();
-  $judges = retopais_feature_proposals_users_by_role('judge');
-  $judges_names = array();
-  foreach ($judges as $judge) {
-    $judges_names[] = $judge->name;
-  }
-  $form['judge_name'] = array(
-    '#type' => 'select',
-    '#title' => 'Elija el juez que desea asignar',
-    '#options' => $judges_names,
-    '#default_value' => 'Seleccione...',
-  );
-  return $form;
+  $settings = array();
+  return retopais_feature_proposals_judge_assignment_form($settings);
 }
 
 /**
