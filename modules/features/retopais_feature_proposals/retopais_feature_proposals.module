@@ -125,6 +125,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     $form['options']['#access'] = FALSE;
     $form['menu']['#access'] = FALSE;
     $form['path']['#access'] = FALSE;
+    // $form['field_juez_asignado']['#access'] = FALSE;
   }
 }
 
