@@ -484,6 +484,44 @@ function retopais_feature_proposals_judge_assignment_views_bulk_operations_form(
 }
 
 /**
+ * Form for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_form($settings) {
+  $form = array();
+  $judges = retopais_feature_proposals_users_by_role('judge');
+  $judges_names = array();
+  foreach ($judges as $judge) {
+    $judges_names[$judge->uid] = $judge->name;
+  }
+  $form['judge_name'] = array(
+    '#type' => 'select',
+    '#title' => 'Elija el juez que desea asignar',
+    '#options' => $judges_names,
+    '#default_value' => 'Seleccione...',
+  );
+  return $form;
+}
+
+/**
+ * Submit for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_submit($form, $form_state) {
+  $return = array();
+  $selected_judge = $form_state['values']['judge_name'];
+  foreach ($form_state['selection'] as $nid) {
+    try {
+      $wrapper = entity_metadata_wrapper('node', $nid);
+      $wrapper->field_juez_asignado = array($selected_judge);
+      $wrapper->save();
+    }
+    catch (EntityMedataWrapperException $e) {
+      watchdog_exception('Reto Pais proposal error', $e);
+    }
+  }
+  return $return;
+}
+
+/**
  * Returns a list of the users by role.
  */
 function retopais_feature_proposals_users_by_role($role_name) {
