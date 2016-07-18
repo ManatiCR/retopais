@@ -812,7 +812,7 @@ Objetivo de la competencia
 Línea de Tiempo
 <p>El lanzamiento de la competencia será el 27 de junio del 2016. Este día se abrirá el plazo para recibir aplicaciones y estará abierto hasta el 24 de julio. Ese día se cierran las inscripciones. La única forma de aplicar es a través de los formularios en la plataforma.</p>
 
-<p>Se llevará a cabo la Maratón de Ideas el 16 de julio. Será un día donde se unirán participantes invitados de diferentes sectores para crear propuestas a las problemáticas.</p>
+<p>Se llevará a cabo la Maratón de Ideas el 20 de julio. Será un día donde se unirán participantes invitados de diferentes sectores para crear propuestas a las problemáticas.</p>
 
 <p>Se anunciarán cuáles ideas o soluciones en marcha pasan a la siguiente etapa el 28 de julio, serán 15 finalistas. Se anunciarán a través de la página web y serán contactados inmediatamente para confirmar su participación en las fases siguientes. Deben contestar teléfonos o correo electrónico, de lo contrario serán descalificados por no contar con un medio de comunicación eficiente.</p>
 
