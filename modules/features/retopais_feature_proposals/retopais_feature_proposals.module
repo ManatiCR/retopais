@@ -453,7 +453,7 @@ function retopais_feature_proposals_action_info() {
   return array(
     'retopais_feature_proposals_judge_assignment' => array(
       'type' => 'node',
-      'label' => t('Asign a proposal to a judge.'),
+      'label' => t('Assign a proposal to a judge.'),
       'behavior' => array('changes_property'),
       'configurable' => FALSE,
       'vbo_configurable' => TRUE,
