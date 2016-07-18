@@ -451,7 +451,7 @@ function retopais_feature_proposals_counter() {
  */
 function retopais_feature_proposals_action_info() {
   return array(
-    'retopais_proposal_judge_asignement' => array(
+    'retopais_feature_proposals_judge_asignement' => array(
       'type' => 'node',
       'label' => t('Asign a proposal to a judge.'),
       'behavior' => array('changes_property'),
@@ -467,7 +467,7 @@ function retopais_feature_proposals_action_info() {
  *
  * Each node of the type proposal can be assigned to a user with the judge role.
  */
-function retopais_feature_proposals_judge_asignement_bulk_operations_form($options) {
+function retopais_feature_proposals_judge_asignement_views_bulk_operations_form($options) {
   $form = array();
   $judges = retopais_feature_proposals_users_by_role('judge');
   $judges_names = array();
