@@ -375,6 +375,54 @@ people|Amigo, familiar',
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_juez_asignado'.
+  $field_instances['node-proposal-field_juez_asignado'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_juez_asignado',
+    'label' => 'Juez asignado',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_org_rep_email'.
   $field_instances['node-proposal-field_org_rep_email'] = array(
     'bundle' => 'proposal',
@@ -1412,6 +1460,7 @@ people|Amigo, familiar',
   t('Dirección');
   t('Dirección de la organización');
   t('Explicá cómo tu idea es innovadora');
+  t('Juez asignado');
   t('Nombre completo del representante');
   t('Nombre del representante legal de la organización');
   t('Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada');
