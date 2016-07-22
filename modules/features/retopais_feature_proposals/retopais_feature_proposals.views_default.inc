@@ -403,6 +403,83 @@ function retopais_feature_proposals_views_default_views() {
 
   /* Display: Proposals review */
   $handler = $view->new_display('page', 'Proposals review', 'proposals');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '20';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::retopais_feature_proposals_judge_assignment' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Asignar a un juez',
+      'settings' => array(
+        'judge_name' => '0',
+      ),
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: ¿Qué problemática deseás solucionar? */
+  $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
+  $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
+  $handler->display->display_options['fields']['field_problem']['label'] = 'Problemática';
+  $handler->display->display_options['fields']['field_problem']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Qué tipo de solución querés proponer? */
+  $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['field'] = 'field_solution_type';
+  $handler->display->display_options['fields']['field_solution_type']['label'] = 'Tipo de solución';
+  $handler->display->display_options['fields']['field_solution_type']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_solution_type']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_solution_type']['field_api_classes'] = TRUE;
+  /* Field: Content: ¿Esta solución es individual o grupal? */
+  $handler->display->display_options['fields']['field_organization_way']['id'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['table'] = 'field_data_field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['field'] = 'field_organization_way';
+  $handler->display->display_options['fields']['field_organization_way']['label'] = 'Individual/grupal';
+  $handler->display->display_options['fields']['field_organization_way']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_organization_way']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_organization_way']['field_api_classes'] = TRUE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = 'Preaprobación';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Juez asignado */
+  $handler->display->display_options['fields']['field_juez_asignado']['id'] = 'field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['table'] = 'field_data_field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['field'] = 'field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_juez_asignado']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_juez_asignado']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -466,6 +543,24 @@ function retopais_feature_proposals_views_default_views() {
     1 => 0,
     3 => 0,
   );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = 'All';
+  $handler->display->display_options['filters']['flagged']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['flagged']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['flagged']['expose']['label'] = 'Preaprobado';
+  $handler->display->display_options['filters']['flagged']['expose']['operator'] = 'flagged_op';
+  $handler->display->display_options['filters']['flagged']['expose']['identifier'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/propuestas';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ver propuestas';
@@ -479,6 +574,19 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view final proposals';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: invalidar_propuesta */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_juez_asignado_target_id']['id'] = 'field_juez_asignado_target_id';
+  $handler->display->display_options['relationships']['field_juez_asignado_target_id']['table'] = 'field_data_field_juez_asignado';
+  $handler->display->display_options['relationships']['field_juez_asignado_target_id']['field'] = 'field_juez_asignado_target_id';
+  $handler->display->display_options['relationships']['field_juez_asignado_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -584,6 +692,12 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['relationship'] = 'field_juez_asignado_target_id';
+  $handler->display->display_options['filters']['uid_current']['value'] = '1';
   $handler->display->display_options['path'] = 'admin/propuestas-finales';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ver propuestas finales';
@@ -615,7 +729,12 @@ function retopais_feature_proposals_views_default_views() {
     t('Preaprobación'),
     t('Tipo de organización'),
     t('Proposals review'),
+    t('- Choose an operation -'),
+    t('Asignar a un juez'),
+    t('Juez asignado'),
+    t('Preaprobado'),
     t('Final proposals'),
+    t('User entity referenced from field_juez_asignado'),
   );
   $export['proposals'] = $view;
 

@@ -29,6 +29,7 @@ features[field_base][] = field_idea_motivation
 features[field_base][] = field_idea_susteinability
 features[field_base][] = field_image
 features[field_base][] = field_innovative_idea
+features[field_base][] = field_juez_asignado
 features[field_base][] = field_org_rep_email
 features[field_base][] = field_org_rep_name
 features[field_base][] = field_org_rep_phone

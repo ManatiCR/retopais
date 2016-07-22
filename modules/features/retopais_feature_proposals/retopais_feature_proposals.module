@@ -125,6 +125,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     $form['options']['#access'] = FALSE;
     $form['menu']['#access'] = FALSE;
     $form['path']['#access'] = FALSE;
+    $form['field_juez_asignado']['#access'] = FALSE;
   }
 }
 
@@ -443,4 +444,85 @@ function retopais_feature_proposals_counter() {
   $result->fetchAll();
   $count = $result->rowCount();
   return $count;
+}
+
+/**
+ * Implements hook_action_info().
+ */
+function retopais_feature_proposals_action_info() {
+  return array(
+    'retopais_feature_proposals_judge_assignment' => array(
+      'type' => 'node',
+      'label' => t('Assign a proposal to a judge.'),
+      'behavior' => array('changes_property'),
+      'configurable' => FALSE,
+      'vbo_configurable' => TRUE,
+      'triggers' => array('any'),
+    ),
+  );
+}
+
+/**
+ * VBO form for the assignment of judges.
+ *
+ * Each node of the type proposal can be assigned to a user with the judge role.
+ */
+function retopais_feature_proposals_judge_assignment_views_bulk_operations_form($options) {
+  $settings = array();
+  return retopais_feature_proposals_judge_assignment_form($settings);
+}
+
+/**
+ * Form for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_form($settings) {
+  $form = array();
+  $judges = retopais_feature_proposals_users_by_role('judge');
+  $judges_names = array();
+  foreach ($judges as $judge) {
+    $judges_names[$judge->uid] = $judge->name;
+  }
+  $form['judge_name'] = array(
+    '#type' => 'select',
+    '#title' => 'Elija el juez que desea asignar',
+    '#options' => $judges_names,
+    '#default_value' => 'Seleccione...',
+  );
+  return $form;
+}
+
+/**
+ * Submit for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_submit($form, $form_state) {
+  $return = array();
+  $selected_judge = $form_state['values']['judge_name'];
+  foreach ($form_state['selection'] as $nid) {
+    try {
+      $wrapper = entity_metadata_wrapper('node', $nid);
+      $wrapper->field_juez_asignado = array($selected_judge);
+      $wrapper->save();
+    }
+    catch (EntityMedataWrapperException $e) {
+      watchdog_exception('Reto Pais proposal error', $e);
+    }
+  }
+  return $return;
+}
+
+/**
+ * Returns a list of the users by role.
+ */
+function retopais_feature_proposals_users_by_role($role_name) {
+  $role = user_role_load_by_name($role_name);
+  $query = db_select('users', 'u');
+  $query->join('users_roles', 'ur', 'u.uid = ur.uid');
+  $query->condition('ur.rid', $role->rid)
+    ->fields('u', array(
+      'name',
+      'uid',
+    ));
+  $result = $query->execute()
+    ->fetchAll();
+  return $result;
 }

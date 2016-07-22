@@ -27,6 +27,9 @@ function retopais_feature_proposals_strongarm() {
         'rabbit_hole' => array(
           'weight' => '7',
         ),
+        'metatags' => array(
+          'weight' => '9',
+        ),
       ),
       'display' => array(),
     ),
