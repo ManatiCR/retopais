@@ -468,6 +468,18 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = 'Preaprobación';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Juez asignado */
+  $handler->display->display_options['fields']['field_juez_asignado']['id'] = 'field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['table'] = 'field_data_field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['field'] = 'field_juez_asignado';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_juez_asignado']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_juez_asignado']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_juez_asignado']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -530,6 +542,24 @@ function retopais_feature_proposals_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+  );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = 'All';
+  $handler->display->display_options['filters']['flagged']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['flagged']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['flagged']['expose']['label'] = 'Preaprobado';
+  $handler->display->display_options['filters']['flagged']['expose']['operator'] = 'flagged_op';
+  $handler->display->display_options['filters']['flagged']['expose']['identifier'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
   );
   $handler->display->display_options['path'] = 'admin/propuestas';
   $handler->display->display_options['menu']['type'] = 'normal';
@@ -701,6 +731,8 @@ function retopais_feature_proposals_views_default_views() {
     t('Proposals review'),
     t('- Choose an operation -'),
     t('Asignar a un juez'),
+    t('Juez asignado'),
+    t('Preaprobado'),
     t('Final proposals'),
     t('User entity referenced from field_juez_asignado'),
   );
