@@ -15,7 +15,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '200 palabras máximo',
+    'description' => '1400 caracteres máximo',
     'display' => array(
       'ckeditor_embed' => array(
         'label' => 'above',
@@ -54,7 +54,7 @@ function retopais_feature_proposals_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => 200,
+        'maxlength_js' => 1400,
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'maxlength_js_label_summary' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -1454,7 +1454,7 @@ people|Amigo, familiar',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('200 palabras máximo');
+  t('1400 caracteres máximo');
   t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática');
   t('Correo electrónico');
   t('Dirección');
