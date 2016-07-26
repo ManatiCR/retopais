@@ -43,7 +43,7 @@ function proposal_counter_hp_fin_render($subtype, $conf, $panel_args, $context) 
   $text = 'Luego de una gran selección de ' . retopais_feature_proposals_counter() . ' ideas y soluciones, hemos seleccionado a 16 propuestas.';
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
-    '#link' => l(t('Quiero proponer mi idea o solución'), 'blog/conoce-a-los-finalistas', array('attributes' => array('class' => array('button')))),
+    '#link' => l(t('Conoce a los finalistas'), 'blog/conoce-a-los-finalistas', array('attributes' => array('class' => array('button')))),
     '#cantidad_propuestas' => $cantidad_propuestas,
     '#video' => $video,
     '#image' => $image,

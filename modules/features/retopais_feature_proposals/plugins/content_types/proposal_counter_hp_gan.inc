@@ -40,10 +40,11 @@ function proposal_counter_hp_gan_render($subtype, $conf, $panel_args, $context) 
     );
     $image = theme_image($variables);
   }
-  $text = variable_get('retopais_feature_pages_homepage_cantidad_ideas')['value'];
+  $retopais_feature_pages_homepage_cantidad_ideas = variable_get('retopais_feature_pages_homepage_cantidad_ideas', array('value' => '¡Ya tenemos los ganadores! Entrá y descubrí cuales fueron las ideas que se premiarán. ¡Gracias a todos por participar!', 'format' => 'filtered_html'));
+  $text = check_markup($retopais_feature_pages_homepage_cantidad_ideas['value'], $retopais_feature_pages_homepage_cantidad_ideas['format']);
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
-    '#link' => l(t('Quiero proponer mi idea o solución'), 'blog/conoce-a-los-ganadores', array('attributes' => array('class' => array('button')))),
+    '#link' => l(t('Conoce a los ganadores'), 'blog/conoce-a-los-ganadores', array('attributes' => array('class' => array('button')))),
     '#cantidad_propuestas' => $cantidad_propuestas,
     '#video' => $video,
     '#image' => $image,
