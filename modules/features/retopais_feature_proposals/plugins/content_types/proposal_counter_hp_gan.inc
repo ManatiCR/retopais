@@ -40,8 +40,7 @@ function proposal_counter_hp_gan_render($subtype, $conf, $panel_args, $context) 
     );
     $image = theme_image($variables);
   }
-  $retopais_feature_pages_homepage_cantidad_ideas = variable_get('retopais_feature_pages_homepage_cantidad_ideas', array('value' => '¡Ya tenemos los ganadores! Entrá y descubrí cuales fueron las ideas que se premiarán. ¡Gracias a todos por participar!', 'format' => 'filtered_html'));
-  $text = check_markup($retopais_feature_pages_homepage_cantidad_ideas['value'], $retopais_feature_pages_homepage_cantidad_ideas['format']);
+  $retopais_feature_pages_homepage_cantidad_ideas = 'En una emocionante noche de premiación, se nombraron las 5 soluciones ganadoras de esta primera edición de Reto PAIS. ¡Muchas gracias a todos los que participaron e hicieron esto posible! Hoy comenzamos una nueva etapa con la puesta en marcha de los proyectos.';
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
     '#link' => l(t('Conoce a los ganadores'), 'blog/conoce-a-los-ganadores', array('attributes' => array('class' => array('button')))),

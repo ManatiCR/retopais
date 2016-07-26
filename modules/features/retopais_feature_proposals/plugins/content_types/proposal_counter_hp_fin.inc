@@ -21,7 +21,7 @@ function proposal_counter_hp_fin_render($subtype, $conf, $panel_args, $context) 
   // Build the content type block.
   $block = new stdClass();
   $block->title = '';
-  $cantidad_propuestas = '¡16 finalistas fueron seleccionados!';
+  $cantidad_propuestas = '¡Tenemos finalistas!';
   $video = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', '');
   $image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   if ($video) {
@@ -40,7 +40,7 @@ function proposal_counter_hp_fin_render($subtype, $conf, $panel_args, $context) 
     );
     $image = theme_image($variables);
   }
-  $text = 'Luego de una gran selección de ' . retopais_feature_proposals_counter() . ' ideas y soluciones, hemos seleccionado a 16 propuestas.';
+  $retopais_feature_pages_homepage_cantidad_ideas = 'El jurado compuesto por miembros del sector público, privado y sociedad civil tuvo varios días de deliberación, se evaluaron las 739 propuestas y se seleccionaron 15 finalistas.';
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
     '#link' => l(t('Conoce a los finalistas'), 'blog/conoce-a-los-finalistas', array('attributes' => array('class' => array('button')))),
