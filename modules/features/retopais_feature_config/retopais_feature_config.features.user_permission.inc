@@ -70,22 +70,14 @@ function retopais_feature_config_user_default_permissions() {
   // Exported permission: 'create proposal content'.
   $permissions['create proposal content'] = array(
     'name' => 'create proposal content',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'content admin' => 'content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own proposal content'.
   $permissions['edit own proposal content'] = array(
     'name' => 'edit own proposal content',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'content admin' => 'content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
