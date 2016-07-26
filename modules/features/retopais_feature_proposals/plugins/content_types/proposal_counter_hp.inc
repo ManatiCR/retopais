@@ -44,7 +44,7 @@ function proposal_counter_hp_render($subtype, $conf, $panel_args, $context) {
   $text = check_markup($retopais_feature_pages_homepage_cantidad_ideas['value'], $retopais_feature_pages_homepage_cantidad_ideas['format']);
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
-    '#link' => l(t('Quiero proponer mi idea o solución'), 'propone-idea', array('attributes' => array('class' => array('button')))),
+    '#link' => '',
     '#cantidad_propuestas' => $cantidad_propuestas,
     '#video' => $video,
     '#image' => $image,
