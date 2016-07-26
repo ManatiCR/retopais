@@ -490,7 +490,10 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-problems-panel-pane-3',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -559,10 +562,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-daa04d34-d915-44ce-aa1f-db126c91995c';
+    $pane->pid = 'new-31f118ca-1975-4e26-b67f-bc91a71d2036';
     $pane->panel = 'first-full';
-    $pane->type = 'proposal_counter_hp_fin';
-    $pane->subtype = 'proposal_counter_hp_fin';
+    $pane->type = 'proposal_counter_hp_gan';
+    $pane->subtype = 'proposal_counter_hp_gan';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -574,9 +577,9 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'daa04d34-d915-44ce-aa1f-db126c91995c';
-    $display->content['new-daa04d34-d915-44ce-aa1f-db126c91995c'] = $pane;
-    $display->panels['first-full'][0] = 'new-daa04d34-d915-44ce-aa1f-db126c91995c';
+    $pane->uuid = '31f118ca-1975-4e26-b67f-bc91a71d2036';
+    $display->content['new-31f118ca-1975-4e26-b67f-bc91a71d2036'] = $pane;
+    $display->panels['first-full'][0] = 'new-31f118ca-1975-4e26-b67f-bc91a71d2036';
     $pane = new stdClass();
     $pane->pid = 'new-2e6251ab-f281-4d4d-b621-95803a993f5c';
     $pane->panel = 'fourth';
@@ -686,7 +689,10 @@ function retopais_feature_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-problems-panel-pane-3',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
