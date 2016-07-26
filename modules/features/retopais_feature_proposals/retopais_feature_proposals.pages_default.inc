@@ -162,7 +162,21 @@ function retopais_feature_proposals_default_page_manager_handlers() {
     $pane->type = 'flag_link';
     $pane->subtype = 'node';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 4,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'flag_name' => 'invalidar_propuesta',
       'context' => 'argument_entity_id:node_1',

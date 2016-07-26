@@ -40,10 +40,11 @@ function proposal_counter_hp_render($subtype, $conf, $panel_args, $context) {
     );
     $image = theme_image($variables);
   }
-  $text = variable_get('retopais_feature_pages_homepage_cantidad_ideas')['value'];
+  $retopais_feature_pages_homepage_cantidad_ideas = variable_get('retopais_feature_pages_homepage_cantidad_ideas', array('value' => 'Hemos recibido muchas propuestas muy buenas y las estamos evaluando. Pero todavía hay tiempo de aplicar. Si crees que con tu idea o solución podemos resolver alguna de estas cuatro problemáticas que tiene el país, entrá al formulario y contanos tu propuesta.', 'format' => 'filtered_html'));
+  $text = check_markup($retopais_feature_pages_homepage_cantidad_ideas['value'], $retopais_feature_pages_homepage_cantidad_ideas['format']);
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
-    '#link' => l(t('Quiero proponer mi idea o solución'), 'propone-idea', array('attributes' => array('class' => array('button')))),
+    '#link' => '',
     '#cantidad_propuestas' => $cantidad_propuestas,
     '#video' => $video,
     '#image' => $image,

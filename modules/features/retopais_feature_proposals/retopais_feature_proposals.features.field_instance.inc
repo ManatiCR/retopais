@@ -15,7 +15,7 @@ function retopais_feature_proposals_field_default_field_instances() {
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '200 palabras máximo',
+    'description' => '1400 caracteres máximo',
     'display' => array(
       'ckeditor_embed' => array(
         'label' => 'above',
@@ -54,7 +54,7 @@ function retopais_feature_proposals_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => 200,
+        'maxlength_js' => 1400,
         'maxlength_js_enforce' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'maxlength_js_label_summary' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -372,6 +372,54 @@ people|Amigo, familiar',
       ),
       'type' => 'text_textarea',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_juez_asignado'.
+  $field_instances['node-proposal-field_juez_asignado'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_juez_asignado',
+    'label' => 'Juez asignado',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
     ),
   );
 
@@ -1406,12 +1454,13 @@ people|Amigo, familiar',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('200 palabras máximo');
+  t('1400 caracteres máximo');
   t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática');
   t('Correo electrónico');
   t('Dirección');
   t('Dirección de la organización');
   t('Explicá cómo tu idea es innovadora');
+  t('Juez asignado');
   t('Nombre completo del representante');
   t('Nombre del representante legal de la organización');
   t('Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada');

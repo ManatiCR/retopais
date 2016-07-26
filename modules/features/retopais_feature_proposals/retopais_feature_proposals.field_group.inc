@@ -21,7 +21,7 @@ function retopais_feature_proposals_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Datos del representante',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_heard',
       1 => 'field_representative_address',
@@ -79,14 +79,14 @@ function retopais_feature_proposals_field_group_info() {
     'label' => 'Contanos más sobre tu organización',
     'weight' => '3',
     'children' => array(
-      0 => 'field_organization_address',
-      1 => 'field_organization_name',
-      2 => 'field_org_rep_name',
-      3 => 'field_org_rep_phone',
-      4 => 'field_org_rep_email',
-      5 => 'field_proj_resp_name',
-      6 => 'field_proj_resp_phone',
-      7 => 'field_proj_resp_email',
+      0 => 'field_org_rep_email',
+      1 => 'field_org_rep_name',
+      2 => 'field_org_rep_phone',
+      3 => 'field_organization_address',
+      4 => 'field_organization_name',
+      5 => 'field_proj_resp_email',
+      6 => 'field_proj_resp_name',
+      7 => 'field_proj_resp_phone',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
@@ -138,6 +138,7 @@ function retopais_feature_proposals_field_group_info() {
       0 => 'field_organization_way',
       1 => 'field_problem',
       2 => 'field_solution_type',
+      3 => 'field_juez_asignado',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(
