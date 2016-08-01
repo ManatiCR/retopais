@@ -173,7 +173,7 @@ function retopais_feature_proposals_theme() {
         'cantidad_propuestas' => '',
         'video' => '',
         'image' => '',
-        'text' => array(),
+        'text' => '',
       ),
       'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
       'template' => 'proposal-counter-hp',

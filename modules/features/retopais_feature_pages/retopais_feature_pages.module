@@ -409,7 +409,7 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
   $retopais_feature_pages_homepage_cantidad_ideas = variable_get('retopais_feature_pages_homepage_cantidad_ideas', array('value' => 'Hemos recibido muchas propuestas muy buenas y las estamos evaluando. Pero todavía hay tiempo de aplicar. Si crees que con tu idea o solución podemos resolver alguna de estas cuatro problemáticas que tiene el país, entrá al formulario y contanos tu propuesta.', 'format' => 'filtered_html'));
   $form['retopais_feature_pages_homepage_cantidad_ideas'] = array(
     '#type' => 'text_format',
-    '#title' => t('Texto sobre la cantidad de ideas y soluciones propuestas.'),
+    '#title' => t('Texto que irá en el banner principal, bajo el título.'),
     '#default_value' => $retopais_feature_pages_homepage_cantidad_ideas['value'],
     '#format' => $retopais_feature_pages_homepage_cantidad_ideas['format'],
     '#required' => TRUE,
