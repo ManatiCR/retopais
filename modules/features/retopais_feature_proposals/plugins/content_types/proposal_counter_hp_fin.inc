@@ -40,7 +40,7 @@ function proposal_counter_hp_fin_render($subtype, $conf, $panel_args, $context) 
     );
     $image = theme_image($variables);
   }
-  $retopais_feature_pages_homepage_cantidad_ideas = 'El jurado compuesto por miembros del sector público, privado y sociedad civil tuvo varios días de deliberación, se evaluaron las 739 propuestas y se seleccionaron 15 finalistas.';
+  $text = 'El jurado compuesto por miembros del sector público, privado y sociedad civil tuvo varios días de deliberación, se evaluaron las 739 propuestas y se seleccionaron 15 finalistas.';
   $block->content['proposal_counter_hp'] = array(
     '#theme' => 'proposal_counter_hp',
     '#link' => l(t('Conoce a los finalistas'), 'blog/conoce-a-los-finalistas', array('attributes' => array('class' => array('button')))),
