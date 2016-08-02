@@ -470,6 +470,14 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Correo electrónico */
+  $handler->display->display_options['fields']['field_representative_email']['id'] = 'field_representative_email';
+  $handler->display->display_options['fields']['field_representative_email']['table'] = 'field_data_field_representative_email';
+  $handler->display->display_options['fields']['field_representative_email']['field'] = 'field_representative_email';
+  $handler->display->display_options['fields']['field_representative_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_representative_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_representative_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_representative_email']['field_api_classes'] = TRUE;
   /* Field: Content: ¿Qué problemática deseás solucionar? */
   $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
   $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
@@ -505,18 +513,6 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = 'Preaprobación';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  /* Field: Content: Juez asignado */
-  $handler->display->display_options['fields']['field_juez_asignado']['id'] = 'field_juez_asignado';
-  $handler->display->display_options['fields']['field_juez_asignado']['table'] = 'field_data_field_juez_asignado';
-  $handler->display->display_options['fields']['field_juez_asignado']['field'] = 'field_juez_asignado';
-  $handler->display->display_options['fields']['field_juez_asignado']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_juez_asignado']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_juez_asignado']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_juez_asignado']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_juez_asignado']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_juez_asignado']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -768,7 +764,7 @@ function retopais_feature_proposals_views_default_views() {
     t('Proposals review'),
     t('- Choose an operation -'),
     t('Asignar a un juez'),
-    t('Juez asignado'),
+    t('Correo electrónico'),
     t('Preaprobado'),
     t('Final proposals'),
     t('User entity referenced from field_juez_asignado'),
