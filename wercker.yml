@@ -1,40 +1,18 @@
-box: linode/lamp
+box: kporras07/drupal-wercker
 build:
     steps:
     - script:
         name: Install Dependencies
         code: |
-            apt-get update -y
-            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd
-            wget -q https://deb.nodesource.com/setup_4.x
-            chmod +x setup_4.x
-            ./setup_4.x
-            rm setup_4.x
-            apt-get install nodejs -y
             npm install
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/bin/composer
             composer install --prefer-source --no-interaction
     - script:
         name: Setup Global Stuff
         code: |
-            # Aquifer will fail unless Drush is installed globally.
-            composer global require drush/drush:7.1.* --no-interaction
-            # Configure Drush.
-            mkdir -p ~/.drush
             cp ./wercker/retopais.aliases.drushrc.php ~/.drush
-            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
             # Drupal settings.
             cp ./wercker/wercker.settings.secret.php ./settings/settings.secret.php
             cp ./wercker/wercker.settings.local.php ./settings/settings.local.php
-            # Configure Solr.
-            #cp -R /opt/solr-4.3.1 $HOME/solr
-            #curl http://ftp.drupal.org/files/projects/apachesolr-7.x-1.x-dev.tar.gz | tar -xz
-            #cp -r apachesolr/solr-conf/solr-4.x/* $HOME/solr/example/solr/collection1/conf
-            #cd $HOME/solr/example/; java -jar start.jar >> $HOME/solr.log:
-            # Install and start Selenium.
-            #wget http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar
-            #java -jar selenium-server-standalone-2.48.2.jar:
             # Configure Apache.
             cp ./wercker/retopais.dev.conf /etc/apache2/sites-available/
             a2ensite retopais.dev
@@ -95,21 +73,11 @@ deploy:
         code: |
             eval `ssh-agent`
             ssh-add /tmp/tmp.*
-            wget -q https://deb.nodesource.com/setup_4.x
-            chmod +x setup_4.x
-            ./setup_4.x
-            rm setup_4.x
-            apt-get install nodejs -y
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/bin/composer
             composer install --prefer-source --no-interaction
             npm install
-            composer global require drush/drush:7.1.* --no-interaction
-            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
     - script:
-        name: Install Pantheon CLI
+        name: Login Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.2/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -139,11 +107,6 @@ deploy:
             terminus drush --site=retopais --env=dev "en -y pantheon_api --strict=0"
 deploy-test:
     steps:
-    - script:
-        name: Install ssh and other dependencies
-        code: |
-            apt-get update -y
-            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
@@ -151,21 +114,11 @@ deploy-test:
         code: |
             eval `ssh-agent`
             ssh-add /tmp/tmp.*
-            wget -q https://deb.nodesource.com/setup_4.x
-            chmod +x setup_4.x
-            ./setup_4.x
-            rm setup_4.x
-            apt-get install nodejs -y
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/bin/composer
             composer install --prefer-source --no-interaction
             npm install
-            composer global require drush/drush:7.1.* --no-interaction
-            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
     - script:
-        name: Install Pantheon CLI
+        name: Login Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.2/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -192,11 +145,6 @@ deploy-test:
             terminus drush --site=retopais --env=test "l10n-update --strict=0"
 deploy-live:
     steps:
-    - script:
-        name: Install ssh and other dependencies
-        code: |
-            apt-get update -y
-            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
@@ -204,21 +152,11 @@ deploy-live:
         code: |
             eval `ssh-agent`
             ssh-add /tmp/tmp.*
-            wget -q https://deb.nodesource.com/setup_4.x
-            chmod +x setup_4.x
-            ./setup_4.x
-            rm setup_4.x
-            apt-get install nodejs -y
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/bin/composer
             composer install --prefer-source --no-interaction
             npm install
-            composer global require drush/drush:7.1.* --no-interaction
-            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
     - script:
-        name: Install Pantheon CLI
+        name: Login Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.2/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -244,11 +182,6 @@ deploy-live:
             terminus drush --site=retopais --env=live "l10n-update --strict=0"
 deploy-multidev:
     steps:
-    - script:
-        name: Install ssh and other dependencies
-        code: |
-            apt-get update -y
-            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
@@ -256,21 +189,11 @@ deploy-multidev:
         code: |
             eval `ssh-agent`
             ssh-add /tmp/tmp.*
-            wget -q https://deb.nodesource.com/setup_4.x
-            chmod +x setup_4.x
-            ./setup_4.x
-            rm setup_4.x
-            apt-get install nodejs -y
-            curl -sS https://getcomposer.org/installer | php
-            mv composer.phar /usr/bin/composer
             composer install --prefer-source --no-interaction
             npm install
-            composer global require drush/drush:7.1.* --no-interaction
-            ln -s ~/.composer/vendor/bin/drush /usr/bin/drush
     - script:
-        name: Install Pantheon CLI
+        name: Login Pantheon CLI
         code: |
-            curl https://github.com/pantheon-systems/terminus/releases/download/0.11.2/terminus.phar -L -o /usr/local/bin/terminus && chmod +x /usr/local/bin/terminus
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
     - script:
@@ -284,7 +207,7 @@ deploy-multidev:
             NEWBRANCH=${NEWBRANCH,,}
             aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
     - script:
-        name: Deploy steps to pantheon dev
+        name: Deploy steps to pantheon multidev
         code: |
             echo 'Host *' >> /root/.ssh/config
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
