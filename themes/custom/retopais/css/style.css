@@ -157,44 +157,6 @@ main {
   clear: both;
 }
 
-.blog-list-page .view-header {
-  margin-bottom: 40px;
-}
-
-.blog-list-page .views-row {
-  border-bottom: 1px solid #dddddd;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-}
-
-.blog-list-page .views-row:last-child {
-  border-bottom: none;
-  padding: 0;
-}
-
-.blog-list-page .blog-item {
-  overflow: hidden;
-}
-
-.blog-list-page .blog-item--image {
-  margin-bottom: 10px;
-}
-
-@media (min-width: 480px) {
-  .blog-list-page .blog-item--image {
-    float: left;
-    margin-bottom: 0;
-    width: 48%;
-  }
-}
-
-@media (min-width: 480px) {
-  .blog-list-page .blog-item--content {
-    float: right;
-    width: 48%;
-  }
-}
-
 html, body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
@@ -569,26 +531,6 @@ hr {
 
 .breadcrumb {
   color: #4ba3bf;
-}
-
-.breadcrumbs-blog-full {
-  display: inline;
-}
-
-.breadcrumbs-blog-full .breadcrumb {
-  color: #5d5d5d;
-  font-family: "Oswald", sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-}
-
-.breadcrumbs-blog-full div {
-  display: inline;
-}
-
-.breadcrumbs-blog-full a {
-  color: #5d5d5d;
-  font-weight: 400;
 }
 
 .more-link a,
@@ -1214,8 +1156,10 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   padding: 0;
   margin-bottom: 30px;
 }
@@ -1341,51 +1285,6 @@ hr {
   margin: 0 0 30px 0;
 }
 
-.pane-blog-recent-articles h2 {
-  color: #e13e32;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-size: 2rem;
-}
-
-.pane-blog-recent-articles h3 {
-  font-size: 16px;
-  font-size: 1.6rem;
-}
-
-.pane-blog-recent-articles .views-row {
-  border-bottom: 1px solid #afafaf;
-  padding: 15px 0;
-}
-
-.pane-blog-recent-articles .views-row:last-child {
-  border-bottom: none;
-}
-
-.pane-blog-recent-articles .blog-item--title {
-  margin: 0;
-}
-
-.pane-blog-recent-articles .blog-item--body p {
-  margin: 0;
-  font-size: 14px;
-  font-size: 1.4rem;
-}
-
-.pane-blog-recent-articles.recent-articles-sidebar {
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-.pane-blog-recent-articles.recent-articles-sidebar h2 {
-  font-weight: 400;
-  text-transform: none;
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-
 .pane-problems-problems-only-names .cta-propone {
   position: relative;
   border-radius: 4px;
@@ -1486,126 +1385,6 @@ hr {
 
 .pane-alianzas-panel-pane-4 .views-row {
   margin: 0 15px 30px 15px;
-}
-
-.pane-blog-categories-panel-pane-1 h2 {
-  color: #e13e32;
-  font-weight: 400;
-  margin: 0 0 20px 0;
-}
-
-.pane-blog-categories-panel-pane-1 ul {
-  margin: 0;
-  padding: 0;
-}
-
-.pane-blog-categories-panel-pane-1 li {
-  list-style-type: none;
-  margin: 0 0 10px 0;
-  padding: 0;
-}
-
-.pane-blog-categories-panel-pane-1 a {
-  color: #5d5d5d;
-}
-
-.blog-list-page .blog-item--title {
-  font-family: "Oswald", sans-serif;
-  margin: 0;
-}
-
-.blog-list-page .blog-item--title a {
-  color: #5d5d5d;
-  font-weight: 400;
-  font-size: 20px;
-  font-size: 2rem;
-}
-
-.blog-list-page .blog-item--body p {
-  font-size: 14px;
-  font-size: 1.4rem;
-}
-
-.blog-list-page .blog-item--link a {
-  border: 2px solid #4ba3bf;
-  border-radius: 3px;
-  display: inline-block;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-size: 1.4rem;
-}
-
-.blog-list-page .blog-item--link a:hover {
-  background-color: #4ba3bf;
-  color: #fff;
-  text-decoration: none;
-}
-
-.blog-item--date {
-  color: #afafaf;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-
-.blog-item--date.blog-full:after {
-  content: "/";
-  margin: 0 5px;
-}
-
-.problematicas-cta-link, .blog-cta {
-  position: relative;
-  margin-top: 30px;
-}
-
-.problematicas-cta-link .button-yellow, .blog-cta .button-yellow {
-  padding: 18px 30px;
-  text-transform: none;
-  text-align: left;
-  position: relative;
-}
-
-.problematicas-cta-link .button-yellow:after, .blog-cta .button-yellow:after {
-  content: "";
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 10px;
-  border-color: transparent transparent transparent #000;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
-  margin-left: 10px;
-  top: 48%;
-  right: 10px;
-}
-
-.problematicas-cta-link .button-yellow:after:hover, .blog-cta .button-yellow:after:hover {
-  top: 48%;
-}
-
-@media (min-width: 1024px) {
-  .problematicas-cta-link .button-yellow, .blog-cta .button-yellow {
-    text-indent: -10px;
-    text-align: center;
-  }
-}
-
-.problematicas-cta-link .button-yellow:hover, .blog-cta .button-yellow:hover {
-  padding: 18px 30px 16px 30px;
-}
-
-.pane-back-to-blog {
-  margin-top: 20px;
-  text-align: right;
-}
-
-.pane-back-to-blog a:after {
-  content: " >";
 }
 
 .ckeditor-entity-embed--left {
