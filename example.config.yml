@@ -162,6 +162,8 @@ installed_extras:
 # Add any extra apt or yum packages you would like installed.
 extra_packages:
   - unzip
+  - php7.1-gd
+  - php7.1-mysql
 
 # `nodejs` must be in installed_extras for this to work.
 nodejs_version: "0.12"
