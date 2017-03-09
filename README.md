@@ -31,7 +31,6 @@ Prepare the local site:
 
 * `composer install`
 * `npm install`
-* `node_modules/.bin/aquifer extensions-load`
 
 Prepare for local development:
 
@@ -49,10 +48,14 @@ Create local settings files:
 
 Build the site with aquifer:
 
+**Every time you're going to run this command, please rename vendor folder to something else to avoid a known aquifer bug where it tries to build in your root folder**
+
 * `node_modules/.bin/aquifer build`
 
-Prepare the site:
+**After running build, ensure you restore vendor folder so that the install script works.**
 
+Prepare the site:
+* In case you have not done before restore `vendor` folder name before run the following command:
 * `./scripts/retopais_local_install.sh`
 
 ## Structure
