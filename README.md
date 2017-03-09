@@ -27,6 +27,9 @@ vagrant plugin install vagrant-auto_network
 
 ## Getting started
 
+* Rename the `vendor` folder to `vendor2`, to run the following commands. Rename again
+to `vendor` before building the site (`./scripts/retopais_local_install.sh`).
+
 Prepare the local site:
 
 * `composer install`
@@ -52,7 +55,7 @@ Build the site with aquifer:
 * `node_modules/.bin/aquifer build`
 
 Prepare the site:
-
+* In case you have not done before rename `vendor2` to `vendor` before run the following command:
 * `./scripts/retopais_local_install.sh`
 
 ## Structure
