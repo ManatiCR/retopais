@@ -541,10 +541,6 @@ hr {
   }
 }
 
-.site-footer {
-  background-color: #f2f2f2;
-}
-
 .nav-top-bar ul {
   margin: 0;
   padding: 0;
@@ -1732,4 +1728,94 @@ hr {
 
 .pane-proposal-counter {
   margin-bottom: 30px;
+}
+
+.page-blog .pane-title {
+  font-weight: normal;
+  margin: 0;
+}
+
+.page-blog .view-header p {
+  margin: 5px 0;
+}
+
+.page-blog .view-content {
+  margin-top: 2em;
+}
+
+.page-blog .page-sidebar-secondary-content .pane-title {
+  color: #e13e32;
+}
+
+.page-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.page-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li {
+  margin: 5px 0;
+}
+
+.page-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li a {
+  text-decoration: none;
+}
+
+.page-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li a:hover {
+  color: #353e42;
+}
+
+.page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--title {
+  color: #353e42;
+}
+
+.page-blog .view-display-id-panel_pane_1 div.views-row {
+  display: inline-block;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 2px solid #dddddd;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--image {
+  float: left;
+  padding: 0.5em 0;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content {
+  float: right;
+  width: 50%;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--title {
+  margin-top: 0;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--title a {
+  color: #353e42;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--date {
+  color: #dddddd;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--link {
+  margin-top: 2em;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--link a {
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 0.5em 2em;
+  border: 1px solid #4ba3bf;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--link a:hover {
+  background: #4ba3bf;
+  color: #ffffff;
 }
