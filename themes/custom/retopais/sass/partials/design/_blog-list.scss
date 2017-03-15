@@ -1,0 +1,90 @@
+.page-blog {
+  // General page styles
+  .pane-title {
+    font-weight: normal;
+    margin: 0;
+  }
+  .view-header {
+    p {
+      margin: 5px 0;
+    }
+  }
+  .view-content {
+    margin-top: 2em;
+  }
+  // Sidebar styles
+  .page-sidebar-secondary-content {
+    .pane-title {
+      color: $red;
+    }
+    .view-blog-categories {
+      .view-content {
+        ul {
+          padding: 0;
+          list-style: none;
+          li {
+            margin: 5px 0;
+            a {
+              text-decoration: none;
+              &:hover {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+    }
+    .panel-pane.pane-problematicas-cta {
+      .problematicas-cta-link {
+        a {
+          text-decoration: none;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+  // Main View content Styles
+  .view-display-id-panel_pane_1 {
+    .blog-item--title {
+      color: $dark;
+    }
+    div.views-row {
+      display: inline-block;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      border-bottom: 2px solid $light-gray;
+    }
+    .blog-item--image {
+      float: left;
+      padding: 0.5em 0;
+    }
+    .blog-item--content {
+      float: right;
+      width: 50%;
+      .blog-item--title {
+        margin-top: 0;
+        a {
+          color: $dark;
+        }
+      }
+      .blog-item--date {
+        color: $light-gray;
+      }
+      .blog-item--link {
+        margin-top: 2em;
+        a {
+          text-transform: uppercase;
+          font-weight: normal;
+          padding: 0.5em 2em;
+          border: 1px solid $blue;
+          border-radius: 5px;
+          text-decoration: none;
+          &:hover {
+            background: $blue;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
