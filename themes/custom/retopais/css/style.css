@@ -1729,3 +1729,168 @@ hr {
 .pane-proposal-counter {
   margin-bottom: 30px;
 }
+
+.node-type-blog .blog-item--date {
+  float: left;
+  color: #dddddd;
+  font-size: 12px;
+  line-height: 22px;
+  position: relative;
+}
+
+.node-type-blog .blog-item--date:after {
+  content: '/';
+  position: absolute;
+  left: 105%;
+  top: 0;
+}
+
+.node-type-blog .pane-page-breadcrumb {
+  float: left;
+  margin-left: 15px;
+  font-size: 14px;
+  font-family: "Oswald", sans-serif;
+}
+
+.node-type-blog .pane-page-breadcrumb span, .node-type-blog .pane-page-breadcrumb a {
+  color: #000;
+  font-weight: normal;
+}
+
+.node-type-blog .pane-node-title h1 {
+  font-size: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5em;
+}
+
+.node-type-blog .pane-back-to-blog {
+  text-align: right;
+}
+
+.node-type-blog .pane-back-to-blog .blog-link a {
+  text-decoration: none;
+  position: relative;
+  padding-right: 20px;
+}
+
+.node-type-blog .pane-back-to-blog .blog-link a:after {
+  content: '>';
+  position: absolute;
+  left: 90%;
+  top: 5%;
+  color: #4ba3bf;
+}
+
+.node-type-blog .recent-articles-sidebar {
+  background: #f2f2f2;
+  padding: 1em;
+}
+
+.node-type-blog .recent-articles-sidebar .pane-title {
+  margin-top: 0;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #dddddd;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row .blog-item--title {
+  margin: 0;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row .blog-item--title a {
+  text-decoration: none;
+  color: #353e42;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row .blog-item--title a:hover {
+  color: #4ba3bf;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row .blog-item--date {
+  display: none;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.node-type-blog .recent-articles-sidebar .views-row-last {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.node-type-blog .page-sidebar-secondary-content .pane-title {
+  color: #e13e32;
+  font-family: "Oswald", sans-serif;
+}
+
+.node-type-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.node-type-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li {
+  margin: 5px 0;
+}
+
+.node-type-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li a {
+  text-decoration: none;
+}
+
+.node-type-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul li a:hover {
+  color: #353e42;
+}
+
+.node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+  text-decoration: none;
+  text-transform: capitalize;
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+    font-size: 16px;
+  }
+}
+
+.node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover {
+  position: relative;
+}
+
+.node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:after, .node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover::before {
+  left: 90%;
+  top: 55%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:after {
+  border-color: transparent;
+  border-left-color: #000;
+  border-width: 12px;
+  margin-top: -14px;
+}
+
+.node-type-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:before {
+  border-color: transparent;
+  border-left-color: #000;
+  border-width: 10px;
+  margin-top: -12px;
+}
