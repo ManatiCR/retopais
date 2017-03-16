@@ -1779,11 +1779,11 @@ hr {
   text-transform: capitalize;
   display: inline-block;
   width: 100%;
+  padding: 1em;
 }
 
 @media only screen and (min-width: 768px) {
   .page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
-    padding: 1em;
     font-size: 14px;
   }
 }
