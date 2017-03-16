@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
 .page-admin-appearance-styleguide {
   max-width: 1200px;
   margin: 0 auto;
@@ -1730,13 +1731,21 @@ hr {
   margin-bottom: 30px;
 }
 
+.page-blog p {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .page-blog .pane-title {
   font-weight: normal;
   margin: 0;
+  font-size: 20.39px;
+  font-family: "Oswald", sans-serif;
 }
 
 .page-blog .view-header p {
   margin: 5px 0;
+  font-size: 16px;
 }
 
 .page-blog .view-content {
@@ -1745,6 +1754,7 @@ hr {
 
 .page-blog .page-sidebar-secondary-content .pane-title {
   color: #e13e32;
+  font-family: "Oswald", sans-serif;
 }
 
 .page-blog .page-sidebar-secondary-content .view-blog-categories .view-content ul {
@@ -1767,10 +1777,56 @@ hr {
 .page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
   text-decoration: none;
   text-transform: capitalize;
+  display: inline-block;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+    padding: 1em;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a {
+    font-size: 16px;
+  }
+}
+
+.page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover {
+  position: relative;
+}
+
+.page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:after, .page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover::before {
+  left: 90%;
+  top: 55%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:after {
+  border-color: transparent;
+  border-left-color: #000;
+  border-width: 12px;
+  margin-top: -14px;
+}
+
+.page-blog .page-sidebar-secondary-content .panel-pane.pane-problematicas-cta .problematicas-cta-link a:hover:before {
+  border-color: transparent;
+  border-left-color: #000;
+  border-width: 10px;
+  margin-top: -12px;
 }
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--title {
   color: #353e42;
+  font-family: "Oswald", sans-serif;
+  font-size: 17.48px;
 }
 
 .page-blog .view-display-id-panel_pane_1 div.views-row {
@@ -1782,12 +1838,32 @@ hr {
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--image {
   float: left;
-  padding: 0.5em 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-blog .view-display-id-panel_pane_1 .blog-item--image {
+    width: 50%;
+    padding: 0.5em 0;
+  }
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--image .field-image {
+  max-width: 360px;
+}
+
+.page-blog .view-display-id-panel_pane_1 .blog-item--image img {
+  border: 1px solid #ddd;
 }
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--content {
   float: right;
-  width: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-blog .view-display-id-panel_pane_1 .blog-item--content {
+    width: 50%;
+    padding: 0 1em;
+  }
 }
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--title {
@@ -1800,6 +1876,7 @@ hr {
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--date {
   color: #dddddd;
+  font-size: 12px;
 }
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--link {
@@ -1813,9 +1890,101 @@ hr {
   border: 1px solid #4ba3bf;
   border-radius: 5px;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .page-blog .view-display-id-panel_pane_1 .blog-item--content .blog-item--link a:hover {
   background: #4ba3bf;
   color: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+  #footer .container .panel-pane {
+    width: 33%;
+    float: left;
+    padding: 2em;
+  }
+}
+
+#footer .container .view-blog .views-row {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+#footer .container .view-blog .views-row .blog-item--title a {
+  text-decoration: none;
+  color: #353e42;
+}
+
+#footer .container .view-blog .views-row .blog-item--title a:hover {
+  color: #4ba3bf;
+}
+
+#footer .container .view-blog .views-row .blog-item--date {
+  display: none;
+}
+
+#footer .container .view-problems .views-row {
+  height: 100px;
+  background-size: 100% !important;
+}
+
+@media only screen and (min-width: 768px) {
+  #footer .container .view-problems .views-row {
+    height: 70px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #footer .container .view-problems .views-row {
+    background-size: auto !important;
+  }
+}
+
+#footer .container .view-problems .views-row span {
+  font-size: 12px;
+  display: block;
+  padding-right: 2em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  #footer .container .view-problems .views-row span {
+    width: 50%;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+}
+
+#footer .container .view-problems .views-row-1 {
+  background: url(../img/icons/icon-educacion.svg) no-repeat 100% 100%;
+}
+
+#footer .container .view-problems .views-row-1 span {
+  color: #8D519F;
+}
+
+#footer .container .view-problems .views-row-2 {
+  background: url(../img/icons/icon-transito.svg) no-repeat 100% 50%;
+}
+
+#footer .container .view-problems .views-row-2 span {
+  color: #ffcb50;
+}
+
+#footer .container .view-problems .views-row-3 {
+  background: url(../img/icons/icon-residuos.svg) no-repeat 100% 100%;
+}
+
+#footer .container .view-problems .views-row-3 span {
+  color: #91C73E;
+}
+
+#footer .container .view-problems .views-row-4 {
+  background: url(../img/icons/icon-obesidad.svg) no-repeat 100% 50%;
+}
+
+#footer .container .view-problems .views-row-4 span {
+  color: #008ECE;
 }
