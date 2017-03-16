@@ -1,0 +1,153 @@
+.node-type-blog {
+  // breadcom section
+  .blog-item--date {
+    float: left;
+    color: $light-gray;
+    font-size: 12px;
+    line-height: 22px;
+    position: relative;
+    &:after {
+      content: '/';
+      position: absolute;
+      left: 105%;
+      top: 0;
+
+    }
+  }
+  .pane-page-breadcrumb {
+    float: left;
+    margin-left: 15px;
+    font-size: 14px;
+    font-family: $oswald;
+    span, a {
+      color: $black;
+      font-weight: normal;
+    }
+  }
+  .pane-node-title {
+    h1 {
+      font-size: 40px; // 32pt = 40px
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5em;
+    }
+  }
+  .pane-back-to-blog {
+    text-align: right;
+    .blog-link {
+      a {
+        text-decoration: none;
+        position: relative;
+        padding-right: 20px;
+        &:after {
+          content: '>';
+          position: absolute;
+          left: 90%;
+          top: 5%;
+          color: $blue;
+        }
+      }
+    }
+  }
+  .recent-articles-sidebar {
+    background: #f2f2f2;
+    padding: 1em;
+    .pane-title {
+      margin-top: 0;
+    }
+    .views-row {
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $light-gray;
+      .blog-item--title {
+        margin: 0;
+        a {
+          text-decoration: none;
+          color: $dark;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+      .blog-item--date {
+        display: none;
+      }
+      p {
+        font-size: 1.4rem; // 14px
+        margin: 0;
+      }
+    }
+    .views-row-last {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  // this can be a global style
+  .page-sidebar-secondary-content {
+    .pane-title {
+      color: $red;
+      font-family: $oswald;
+    }
+    .view-blog-categories {
+      .view-content {
+        ul {
+          padding: 0;
+          list-style: none;
+          li {
+            margin: 5px 0;
+            a {
+              text-decoration: none;
+              &:hover {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+    }
+    .panel-pane.pane-problematicas-cta {
+      .problematicas-cta-link {
+        a {
+          text-decoration: none;
+          text-transform: capitalize;
+          display: inline-block;
+          width: 100%;
+          padding: 1em;
+          @media only screen and (min-width: $medium) {
+            font-size: 14px;
+          }
+          @media only screen and (min-width: $large) {
+            font-size: 16px;
+          }
+          &:hover {
+            position: relative;
+            &:after, &::before {
+              left: 90%;
+              top: 55%;
+              border: solid transparent;
+              content: " ";
+              height: 0;
+              width: 0;
+              position: absolute;
+              pointer-events: none;
+            }
+
+            &:after {
+              border-color: rgba(0, 0, 0, 0);
+              border-left-color: #000;
+              border-width: 12px;
+              margin-top: -14px;
+            }
+            &:before {
+              border-color: rgba(0, 0, 0, 0);
+              border-left-color: #000;
+              border-width: 10px;
+              margin-top: -12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
