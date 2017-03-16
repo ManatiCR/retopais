@@ -1,12 +1,24 @@
+// import google fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+$oswald: 'Oswald', sans-serif;
+$opens: 'Open Sans', sans-serif;
+
 .page-blog {
   // General page styles
+  p {
+    font-size: 14px;
+    font-family: $opens;
+  }
   .pane-title {
     font-weight: normal;
     margin: 0;
+    font-size: 20.39px;
+    font-family: $oswald;
   }
   .view-header {
     p {
       margin: 5px 0;
+      font-size: 16px;
     }
   }
   .view-content {
@@ -16,6 +28,7 @@
   .page-sidebar-secondary-content {
     .pane-title {
       color: $red;
+      font-family: $oswald;
     }
     .view-blog-categories {
       .view-content {
@@ -39,6 +52,41 @@
         a {
           text-decoration: none;
           text-transform: capitalize;
+          display: inline-block;
+          width: 100%;
+          @media only screen and (min-width: $medium) {
+            padding: 1em;
+            font-size: 14px;
+          }
+          @media only screen and (min-width: $large) {
+            font-size: 16px;
+          }
+          &:hover {
+            position: relative;
+            &:after, &::before {
+            	left: 90%;
+            	top: 55%;
+            	border: solid transparent;
+            	content: " ";
+            	height: 0;
+            	width: 0;
+            	position: absolute;
+            	pointer-events: none;
+            }
+
+            &:after {
+            	border-color: rgba(0, 0, 0, 0);
+            	border-left-color: #000;
+            	border-width: 12px;
+            	margin-top: -14px;
+            }
+            &:before {
+            	border-color: rgba(0, 0, 0, 0);
+            	border-left-color: #000;
+            	border-width: 10px;
+            	margin-top: -12px;
+            }
+          }
         }
       }
     }
@@ -47,6 +95,8 @@
   .view-display-id-panel_pane_1 {
     .blog-item--title {
       color: $dark;
+      font-family: $oswald;
+      font-size: 17.48px;
     }
     div.views-row {
       display: inline-block;
@@ -56,11 +106,23 @@
     }
     .blog-item--image {
       float: left;
-      padding: 0.5em 0;
+      @media only screen and (min-width: $medium) {
+        width: 50%;
+        padding: 0.5em 0;
+      }
+      .field-image {
+        max-width: 360px;
+      }
+      img {
+        border: 1px solid #ddd;
+      }
     }
     .blog-item--content {
       float: right;
-      width: 50%;
+      @media only screen and (min-width: $medium) {
+        width: 50%;
+        padding: 0 1em;
+      }
       .blog-item--title {
         margin-top: 0;
         a {
@@ -69,6 +131,7 @@
       }
       .blog-item--date {
         color: $light-gray;
+        font-size: 12px;
       }
       .blog-item--link {
         margin-top: 2em;
@@ -79,10 +142,90 @@
           border: 1px solid $blue;
           border-radius: 5px;
           text-decoration: none;
+          font-size: 12px;
           &:hover {
             background: $blue;
             color: #ffffff;
           }
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  .container {
+    .panel-pane {
+      @media only screen and (min-width: $medium) {
+        width: 33%;
+        float: left;
+        padding: 2em;
+      }
+    }
+    .view-blog {
+      .views-row {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #ddd;
+        .blog-item--title {
+          a {
+            text-decoration: none;
+            color: $dark;
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+        .blog-item--date {
+          display: none;
+        }
+      }
+    }
+    .view-problems {
+      .views-row {
+        height: 100px;
+        background-size: 100% !important;
+
+        @media only screen and (min-width: $medium) {
+          height: 70px;
+        }
+        @media only screen and (min-width: $large) {
+          background-size: auto !important;
+        }
+        span {
+          font-size: 12px;
+          display: block;
+          padding-right: 2em;
+          text-align: center;
+          @media only screen and (min-width: $large) {
+            width: 50%;
+            margin: 0 auto;
+            padding-right: 0;
+          }
+        }
+      }
+      .views-row-1 {
+        background: url(../img/icons/icon-educacion.svg) no-repeat 100% 100%;
+        span {
+          color: $icon-purple;
+        }
+      }
+      .views-row-2 {
+        background: url(../img/icons/icon-transito.svg) no-repeat 100% 50%;
+        span {
+          color: $icon-yellow;
+        }
+      }
+      .views-row-3 {
+        background: url(../img/icons/icon-residuos.svg) no-repeat 100% 100%;
+        span {
+          color: $icon-green;
+        }
+      }
+      .views-row-4 {
+        background: url(../img/icons/icon-obesidad.svg) no-repeat 100% 50%;
+        span {
+          color: $icon-blue;
         }
       }
     }
