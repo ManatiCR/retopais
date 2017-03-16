@@ -1729,3 +1729,98 @@ hr {
 .pane-proposal-counter {
   margin-bottom: 30px;
 }
+
+.site-footer {
+  background: #f0f7f7;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer .container .panel-pane {
+    width: 33%;
+    float: left;
+    padding: 2em;
+  }
+}
+
+.site-footer .container .view-blog .views-row {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-footer .container .view-blog .views-row .blog-item--title a {
+  text-decoration: none;
+  color: #353e42;
+}
+
+.site-footer .container .view-blog .views-row .blog-item--title a:hover {
+  color: #4ba3bf;
+}
+
+.site-footer .container .view-blog .views-row .blog-item--date {
+  display: none;
+}
+
+.site-footer .container .view-problems .views-row {
+  height: 100px;
+  background-size: 100% !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer .container .view-problems .views-row {
+    height: 70px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .site-footer .container .view-problems .views-row {
+    background-size: auto !important;
+  }
+}
+
+.site-footer .container .view-problems .views-row span {
+  font-size: 12px;
+  display: block;
+  padding-right: 2em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .site-footer .container .view-problems .views-row span {
+    width: 50%;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+}
+
+.site-footer .container .view-problems .views-row-1 {
+  background: url(../img/icons/icon-educacion.svg) no-repeat 100% 100%;
+}
+
+.site-footer .container .view-problems .views-row-1 span {
+  color: #8D519F;
+}
+
+.site-footer .container .view-problems .views-row-2 {
+  background: url(../img/icons/icon-transito.svg) no-repeat 100% 50%;
+}
+
+.site-footer .container .view-problems .views-row-2 span {
+  color: #ffcb50;
+}
+
+.site-footer .container .view-problems .views-row-3 {
+  background: url(../img/icons/icon-residuos.svg) no-repeat 100% 100%;
+}
+
+.site-footer .container .view-problems .views-row-3 span {
+  color: #91C73E;
+}
+
+.site-footer .container .view-problems .views-row-4 {
+  background: url(../img/icons/icon-obesidad.svg) no-repeat 100% 50%;
+}
+
+.site-footer .container .view-problems .views-row-4 span {
+  color: #008ECE;
+}
