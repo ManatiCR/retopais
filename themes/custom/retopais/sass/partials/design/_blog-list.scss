@@ -54,8 +54,8 @@ $opens: 'Open Sans', sans-serif;
           text-transform: capitalize;
           display: inline-block;
           width: 100%;
+          padding: 1em;
           @media only screen and (min-width: $medium) {
-            padding: 1em;
             font-size: 14px;
           }
           @media only screen and (min-width: $large) {
