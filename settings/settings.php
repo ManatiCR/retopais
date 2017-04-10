@@ -90,18 +90,7 @@ $conf['master_modules']['base'] = array(
   'retopais_feature_proposals',
   'retopais_feature_site_layout',
   'retopais_taxonomy',
-  'retopais_theme',,
-);
-
-// Local environment.
-$conf['master_modules']['local'] = array(
-  'dblog',
-  'devel',
-  'diff',
-  'field_ui',
-  'memcache_admin',
-  'migrate_ui',
-  'views_ui',
+  'retopais_theme',
 );
 
 // Local environment.
@@ -113,11 +102,13 @@ $conf['master_modules']['local'] = array(
   'path_breadcrumbs_ui',
   'views_ui',
 );
+
 $conf['master_modules']['development'] = $conf['master_modules']['local'];
 $conf['master_modules']['test'] = array();
 $conf['master_modules']['production'] = array(
   'smtp',
 );
+
 
 $update_free_access = FALSE;
 
