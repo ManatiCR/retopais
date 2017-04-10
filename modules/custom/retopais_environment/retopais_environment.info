@@ -1,7 +1,0 @@
-name = Reto Pais Environment
-description = Environment functionality
-package = Reto Pais
-version = 7.x-1.0
-core = 7.x
-dependencies[] = environment
-dependencies[] = retopais_feature_config
