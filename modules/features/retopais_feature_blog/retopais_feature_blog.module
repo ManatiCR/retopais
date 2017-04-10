@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Code for the Reto Pais Blog feature.
+ */
+
+include_once 'retopais_feature_blog.features.inc';
+
+/**
+ * Implements hook_date_formats().
+ */
+function retopais_feature_blog_date_formats() {
+  return array(
+    // Blog date format.
+    array(
+      'type' => 'blog_date',
+      'format' => 'd \d\e F \d\e Y',
+    ),
+  );
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function retopais_feature_blog_date_format_types() {
+  return array(
+    'blog_date' => t('Blog date: d de F de Y'),
+  );
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function retopais_feature_blog_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner === 'ctools' && $plugin_type === 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function retopais_feature_blog_node_insert($node) {
+  $view_names = array();
+  if ($node->type === 'blog') {
+    // Clear blog views cache.
+    $view_names = array(
+      'blog',
+    );
+  }
+  elseif ($node->type === 'alliance') {
+    // Clear blog views cache.
+    $view_names = array(
+      'alianzas',
+    );
+  }
+  foreach ($view_names as $view_name) {
+    cache_clear_all('ctools_export:views_view:' . $view_name, 'cache_views', TRUE);
+    cache_clear_all($view_name . ':', 'cache_views_data', TRUE);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function retopais_feature_blog_node_update($node) {
+  retopais_feature_blog_node_insert($node);
+}

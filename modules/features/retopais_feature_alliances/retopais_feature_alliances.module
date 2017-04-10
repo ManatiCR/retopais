@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * Code for the Reto Pais Alliances feature.
+ */
+
+include_once 'retopais_feature_alliances.features.inc';
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function retopais_feature_alliances_views_pre_execute(&$view) {
+  if ($view->name === 'alianzas' && $view->current_display === 'panel_pane_3') {
+    $alliance_type = $view->filter['field_alliance_type_value']->value[0];
+    // Set right image style according to alliance type value.
+    $view->field['field_image']->options['settings']['image_style'] = $alliance_type;
+  }
+}

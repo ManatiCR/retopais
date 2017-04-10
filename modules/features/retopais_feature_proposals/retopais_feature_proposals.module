@@ -1,0 +1,528 @@
+<?php
+/**
+ * @file
+ * Code for the Reto Pais Proposals feature.
+ */
+
+include_once 'retopais_feature_proposals.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_state) {
+  $current_step_name = $form['#multistep']['current'];
+  if (isset($form['#groups'][$current_step_name])) {
+    drupal_set_title(t('Proponé Ideas'));
+    // Blacklist locale_field_node_form_submit.
+    if (isset($form['#submit'])) {
+      foreach ($form['#submit'] as $index => $submit) {
+        if ($submit === 'locale_field_node_form_submit') {
+          array_splice($form['#submit'], $index, 1);
+        }
+      }
+    }
+    // Add extra submit for access control.
+    if ($current_step_name === 'group_inicio') {
+      $form['actions']['next']['#submit'][] = 'retopais_feature_proposals_access_control_submit';
+    }
+    // Ensure right title.
+    if ($current_step_name !== 'group_inicio') {
+      $node_wrapper = entity_metadata_wrapper('node', $form_state['node']);
+      $solution_type = $node_wrapper->field_solution_type->value();
+      $organization_way = $node_wrapper->field_organization_way->value();
+      // For internal use.
+      $organization_way = $organization_way === 'organization' ? $organization_way : 'other';
+      $steps = retopais_feature_proposals_get_steps_info();
+      if (isset($steps[$solution_type][$organization_way][$current_step_name]['long'])) {
+        $form['#groups'][$current_step_name]->label = $steps[$solution_type][$organization_way][$current_step_name]['long'];
+      }
+    }
+
+    // Change fields to buttons as required.
+    if ($current_step_name === 'group_inicio' ||
+      $current_step_name === 'group_info_solucion_info') {
+      $fields_to_replace = array(
+        'field_problem',
+        'field_solution_type',
+        'field_organization_way',
+        'field_project_running',
+      );
+      $form['#attached']['js'][] = array(
+        'data' => libraries_get_path('select2buttons') . '/jQuery.select2Buttons.js',
+        'type' => 'file',
+      );
+      $form['#attached']['js'][] = array(
+        'data' => array(
+          'proposalsOptionsToButtons' => $fields_to_replace,
+        ),
+        'type' => 'setting',
+      );
+      $form['#attached']['js'][] = array(
+        'data' => drupal_get_path('module', 'retopais_feature_proposals') . '/js/proposal_options_to_buttons.js',
+        'type' => 'file',
+      );
+    }
+    $current_step = $form['#groups'][$current_step_name];
+    $current_step_fields = $current_step->children;
+
+    // Which button do we have in this step?
+    $button = FALSE;
+    if (isset($form['actions']['next'])) {
+      $button = &$form['actions']['next'];
+    }
+    elseif (isset($form['actions']['done'])) {
+      $button = &$form['actions']['done'];
+    }
+    if ($button) {
+      foreach ($current_step_fields as $field) {
+        if ($current_step_name === 'group_info_organizacion') {
+          if ($field === 'field_org_rep_email' ||
+            $field === 'field_proj_resp_email') {
+            $form[$field][LANGUAGE_NONE][0]['email']['#required'] = TRUE;
+          }
+          else {
+            $form[$field][LANGUAGE_NONE][0]['value']['#required'] = TRUE;
+          }
+        }
+        // Only validate the fields in current step.
+        $button['#limit_validation_errors'][] = array($field);
+      }
+    }
+    // Terms of Service.
+    if ($current_step_name === 'group_datos_representante') {
+      $form['tos'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('He leído y acepto los !tos', array('!tos' => l(t('términos del reglamento'), 'reglamento'))),
+        '#required' => TRUE,
+        '#weight' => 50,
+      );
+      $button['#limit_validation_errors'][] = array('tos');
+      $button['#submit'][] = 'retopais_feature_proposals_final_submit';
+    }
+
+    // Don't validate on previous button because nothing is being saved.
+    if (isset($form['actions']['previous'])) {
+      $form['actions']['previous']['#limit_validation_errors'] = array();
+    }
+
+    // Remove unwanted buttons.
+    if (isset($form['actions']['save'])) {
+      $form['actions']['save']['#access'] = FALSE;
+    }
+    if (isset($form['actions']['preview'])) {
+      $form['actions']['preview']['#access'] = FALSE;
+    }
+    if (isset($form['actions']['preview_changes'])) {
+      $form['actions']['preview_changes']['#access'] = FALSE;
+    }
+    if (isset($form['actions']['delete'])) {
+      $form['actions']['delete']['#access'] = FALSE;
+    }
+
+    // Clean form.
+    $form['revision_information']['#access'] = FALSE;
+    $form['author']['#access'] = FALSE;
+    $form['options']['#access'] = FALSE;
+    $form['menu']['#access'] = FALSE;
+    $form['path']['#access'] = FALSE;
+    $form['field_juez_asignado']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_multistep_step_alter().
+ */
+function retopais_feature_proposals_multistep_step_alter(&$step, $direction, $form, $form_state) {
+  $node = $form_state['node'];
+  $current_step = $form['#multistep']['current'];
+  $node_wrapper = entity_metadata_wrapper('node', $node);
+  $solution_type = $node_wrapper->field_solution_type->value();
+  $organization_way = $node_wrapper->field_organization_way->value();
+  $new_step = retopais_feature_proposals_get_step($current_step, $direction, $solution_type, $organization_way);
+  // If we get something logic.
+  if ($new_step) {
+    $step = $new_step;
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function retopais_feature_proposals_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner === 'ctools' && $plugin_type === 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function retopais_feature_proposals_theme() {
+  return array(
+    'proposal_progress' => array(
+      'variables' => array(
+        'steps' => array(),
+        'current_step' => '',
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
+      'template' => 'proposal-progress',
+    ),
+    'proposal_counter_hp' => array(
+      'variables' => array(
+        'link' => '',
+        'cantidad_propuestas' => '',
+        'video' => '',
+        'image' => '',
+        'text' => '',
+      ),
+      'path' => drupal_get_path('module', 'retopais_feature_proposals') . '/theme',
+      'template' => 'proposal-counter-hp',
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_proposal_progress().
+ */
+function retopais_feature_proposals_preprocess_proposal_progress(&$variables) {
+  $steps = array();
+  $passed_current = FALSE;
+  foreach ($variables['steps'] as $step_name => $titles) {
+    $steps[$step_name] = array(
+      'title' => $titles['short'],
+    );
+    if ($step_name === $variables['current_step']) {
+      $steps[$step_name]['class'] = 'proposal-progress-item-current';
+      $passed_current = TRUE;
+    }
+    elseif (!$passed_current) {
+      $steps[$step_name]['class'] = 'proposal-progress-item-done';
+    }
+    else {
+      $steps[$step_name]['class'] = 'proposal-progress-item-pending';
+    }
+  }
+  $variables['steps'] = $steps;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function retopais_feature_proposals_node_access($node, $op, $account) {
+  if ($op !== 'update' || $account->uid) {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  // Only affect anonymous user and update op.
+  $session_id = session_id();
+  $id = db_query('SELECT id FROM {retopais_feature_proposals_nid_session} WHERE nid = :nid AND session_id = :session_id', array(
+    ':nid' => $node->nid,
+    ':session_id' => $session_id,
+  ))->fetchField();
+  if ($id) {
+    return NODE_ACCESS_ALLOW;
+  }
+  return NODE_ACCESS_DENY;
+}
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ */
+function retopais_feature_proposals_preprocess_views_view_fields(&$vars) {
+  $view = $vars['view'];
+  if ($view->name === 'problems' &&
+  ($view->current_display === 'problems_only_names' ||
+  $view->current_display === 'panel_pane_1' ||
+  $view->current_display === 'panel_pane_4')) {
+    $raw = $vars['fields']['name']->raw;
+    $class = drupal_html_class($raw);
+    $class = str_replace('á', 'a', $class);
+    $class = str_replace('é', 'e', $class);
+    $class = str_replace('í', 'i', $class);
+    $class = str_replace('ó', 'o', $class);
+    $class = str_replace('ú', 'u', $class);
+    $vars['fields']['name']->content = '<span class="field-content icon-' . $class . '">' . check_plain($raw) . '</span>';
+  }
+}
+
+/**
+ * Extra submit for access control.
+ */
+function retopais_feature_proposals_access_control_submit($form, &$form_state) {
+  $node = $form_state['node'];
+  $_SESSION['save'] = TRUE;
+  $session_id = session_id();
+  $record = array(
+    'nid' => $node->nid,
+    'session_id' => $session_id,
+  );
+  drupal_write_record('retopais_feature_proposals_nid_session', $record);
+}
+
+/**
+ * Final submit for proposal form.
+ */
+function retopais_feature_proposals_final_submit($form, &$form_state) {
+  $form_state['redirect'] = 'propuesta-enviada';
+}
+
+/**
+ * Return next or previous step according to conditions given.
+ */
+function retopais_feature_proposals_get_step($actual_step, $direction, $solution_type, $organization_way) {
+  // Sanity check.
+  if ($direction !== 'next' && $direction !== 'previous') {
+    return NULL;
+  }
+
+  $steps = retopais_feature_proposals_get_steps_info();
+  // For internal use.
+  $organization_way = $organization_way === 'organization' ? $organization_way : 'other';
+
+  $index = 0;
+  $previous_step = NULL;
+  $get_next = FALSE;
+  foreach ($steps[$solution_type][$organization_way] as $group_name => $titles) {
+    // If next was requested in previous iteration.
+    if ($get_next) {
+      return $group_name;
+    }
+
+    if ($actual_step === $group_name) {
+      if ($direction === 'next') {
+        $get_next = TRUE;
+      }
+      else {
+        return $previous_step;
+      }
+    }
+
+    // Still not requested? Update previous_step.
+    $previous_step = $group_name;
+  }
+
+  // We never should get here, but let's keep it sane.
+  return NULL;
+}
+
+/**
+ * Return steps info.
+ */
+function retopais_feature_proposals_get_steps_info() {
+  $steps = array(
+    'idea' => array(
+      'organization' => array(
+        'group_inicio' => array(
+          'short' => t('¿Qué deseás proponer?'),
+          'long' => t('¿Qué deseás proponer?'),
+        ),
+        'group_info_idea' => array(
+          'short' => t('Sobre la idea'),
+          'long' => t('Contanos de tu idea'),
+        ),
+        'group_info_organizacion' => array(
+          'short' => t('Sobre la Organización'),
+          'long' => t('Contanos más sobre tu organización'),
+        ),
+        'group_porque_debo_ganar' => array(
+          'short' => t('¿Por qué debo ganar?'),
+          'long' => t('Contanos más sobre por qué deberías ganar este reto'),
+        ),
+        'group_datos_representante' => array(
+          'short' => t('Datos del representante'),
+          'long' => t('Datos del representante'),
+        ),
+      ),
+      'other' => array(
+        'group_inicio' => array(
+          'short' => t('¿Qué deseás proponer?'),
+          'long' => t('¿Qué deseás proponer?'),
+        ),
+        'group_info_idea' => array(
+          'short' => t('Sobre la idea'),
+          'long' => t('Contanos de tu idea'),
+        ),
+        'group_porque_debo_ganar' => array(
+          'short' => t('¿Por qué debo ganar?'),
+          'long' => t('Contanos más sobre por qué deberías ganar este reto'),
+        ),
+        'group_datos_representante' => array(
+          'short' => t('Datos del representante'),
+          'long' => t('Datos del representante'),
+        ),
+      ),
+    ),
+    'running_solution' => array(
+      'organization' => array(
+        'group_inicio' => array(
+          'short' => t('¿Qué deseás proponer?'),
+          'long' => t('¿Qué deseás proponer?'),
+        ),
+        'group_info_idea' => array(
+          'short' => t('Solución en Marcha'),
+          'long' => t('Contanos de tu solución en marcha'),
+        ),
+        'group_info_solucion_info' => array(
+          'short' => t('Sobre el Proyecto'),
+          'long' => t('Contanos más sobre el proyecto'),
+        ),
+        'group_info_organizacion' => array(
+          'short' => t('Sobre la Organización'),
+          'long' => t('Contanos más sobre tu organización'),
+        ),
+        'group_porque_debo_ganar' => array(
+          'short' => t('¿Por qué debo ganar?'),
+          'long' => t('Contanos más sobre por qué deberías ganar este reto'),
+        ),
+        'group_datos_representante' => array(
+          'short' => t('Datos del representante'),
+          'long' => t('Datos del representante'),
+        ),
+      ),
+      'other' => array(
+        'group_inicio' => array(
+          'short' => t('¿Qué deseás proponer?'),
+          'long' => t('¿Qué deseás proponer?'),
+        ),
+        'group_info_idea' => array(
+          'short' => t('Solución en Marcha'),
+          'long' => t('Contanos de tu solución en marcha'),
+        ),
+        'group_info_solucion_info' => array(
+          'short' => t('Sobre el Proyecto'),
+          'long' => t('Contanos más sobre el proyecto'),
+        ),
+        'group_porque_debo_ganar' => array(
+          'short' => t('¿Por qué debo ganar?'),
+          'long' => t('Contanos más sobre por qué deberías ganar este reto'),
+        ),
+        'group_datos_representante' => array(
+          'short' => t('Datos del representante'),
+          'long' => t('Datos del representante'),
+        ),
+      ),
+    ),
+  );
+
+  return $steps;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function retopais_feature_proposals_permission() {
+  return array(
+    'view final proposals' => array(
+      'title' => t('View final proposals'),
+      'description' => t('Be able to see the final proposals view.'),
+    ),
+    'view proposals' => array(
+      'title' => t('View proposals'),
+      'description' => t('Be able to see the proposals view.'),
+    ),
+  );
+}
+
+/**
+ * Counter of the proposals.
+ *
+ * @method retopais_feature_proposals_counter
+ *
+ * @return result->amount
+ *         Ammount of nodes of that content type.
+ */
+function retopais_feature_proposals_counter() {
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_representative_email', 'f', 'n.nid = f.entity_id');
+  $query->leftJoin('flagging', 'fg', 'n.nid = fg.entity_id');
+  $query->fields('n', array(
+    'nid',
+  ));
+  $query->condition('n.type', 'proposal');
+  $query->condition('fg.fid', '1');
+  $result = $query->execute();
+  $result->fetchAll();
+  $count = $result->rowCount();
+  return $count;
+}
+
+/**
+ * Implements hook_action_info().
+ */
+function retopais_feature_proposals_action_info() {
+  return array(
+    'retopais_feature_proposals_judge_assignment' => array(
+      'type' => 'node',
+      'label' => t('Assign a proposal to a judge.'),
+      'behavior' => array('changes_property'),
+      'configurable' => FALSE,
+      'vbo_configurable' => TRUE,
+      'triggers' => array('any'),
+    ),
+  );
+}
+
+/**
+ * VBO form for the assignment of judges.
+ *
+ * Each node of the type proposal can be assigned to a user with the judge role.
+ */
+function retopais_feature_proposals_judge_assignment_views_bulk_operations_form($options) {
+  $settings = array();
+  return retopais_feature_proposals_judge_assignment_form($settings);
+}
+
+/**
+ * Form for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_form($settings) {
+  $form = array();
+  $judges = retopais_feature_proposals_users_by_role('judge');
+  $judges_names = array();
+  foreach ($judges as $judge) {
+    $judges_names[$judge->uid] = $judge->name;
+  }
+  $form['judge_name'] = array(
+    '#type' => 'select',
+    '#title' => 'Elija el juez que desea asignar',
+    '#options' => $judges_names,
+    '#default_value' => 'Seleccione...',
+  );
+  return $form;
+}
+
+/**
+ * Submit for the assignment of judges.
+ */
+function retopais_feature_proposals_judge_assignment_submit($form, $form_state) {
+  $return = array();
+  $selected_judge = $form_state['values']['judge_name'];
+  foreach ($form_state['selection'] as $nid) {
+    try {
+      $wrapper = entity_metadata_wrapper('node', $nid);
+      $wrapper->field_juez_asignado = array($selected_judge);
+      $wrapper->save();
+    }
+    catch (EntityMedataWrapperException $e) {
+      watchdog_exception('Reto Pais proposal error', $e);
+    }
+  }
+  return $return;
+}
+
+/**
+ * Returns a list of the users by role.
+ */
+function retopais_feature_proposals_users_by_role($role_name) {
+  $role = user_role_load_by_name($role_name);
+  $query = db_select('users', 'u');
+  $query->join('users_roles', 'ur', 'u.uid = ur.uid');
+  $query->condition('ur.rid', $role->rid)
+    ->fields('u', array(
+      'name',
+      'uid',
+    ));
+  $result = $query->execute()
+    ->fetchAll();
+  return $result;
+}
