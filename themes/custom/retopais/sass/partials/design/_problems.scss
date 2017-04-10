@@ -1,0 +1,95 @@
+//////////////////////////////
+// Problems views
+// @_pager.scss
+//////////////////////////////
+
+.pane-problems-panel-pane-1 {
+  margin: 40px 0 0 0;
+  .view-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: $oswald;
+    @include breakpoint($medium) {
+      justify-content: center;
+    }
+    @include breakpoint($large) {
+      width: 70%;
+    }
+  }
+  .views-row {
+    text-align: center;
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+    @include breakpoint($small) {
+      flex: 1 1 40%;
+    }
+    @include breakpoint($large) {
+      flex: 1 1 25%;
+    }
+  }
+  .icon-acceso-a-la-educacion-superior-y-tecnica {
+    color: $icon-purple;
+  }
+  .icon-accidentes-de-transito {
+    color: $icon-yellow;
+  }
+  .icon-separacion-y-recoleccion-de-residuos {
+    color: $icon-green;
+  }
+  .icon-tasa-de-obesidad {
+    color: $icon-blue;
+  }
+}
+
+.pane-problems-panel-pane-2 {
+  margin-top: 50px;
+  .views-field-name {
+    width: 70%;
+    padding: 10px 0 0 20px;
+    @include breakpoint($smallish) {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .field-image {
+    width: 25%;
+    padding: 0;
+  }
+  .field-image,
+  .views-field-name {
+    float: left;
+    @include breakpoint(542px) {
+      width: auto;
+    }
+  }
+  h3 {
+    color: $darker-gray;
+    margin:0;
+    font-family: $oswald;
+    @include font-size(2.2);
+    padding-bottom: 20px;
+    @include breakpoint($smallish) {
+      padding: 30px 20px;
+    }
+  }
+  .views-field-description {
+    clear: both;
+  }
+  .views-row {
+    margin-bottom: 50px;
+  }
+  .views-row-1 h3 {
+    color: $icon-green;
+  }
+  .views-row-2 h3 {
+    color: $icon-purple;
+  }
+  .views-row-3 h3 {
+    color: $icon-blue;
+  }
+  .views-row-4 h3 {
+    color: $icon-yellow;
+  }
+}

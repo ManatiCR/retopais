@@ -1,0 +1,28 @@
+/////////////////////
+// Mixins
+// @_mixins.scss
+/////////////////////
+
+//////////////////////////////
+// Rem font-size Mixins
+//////////////////////////////
+// Adds px value for fallback - then rem value
+// use example =   @include font-size(1.6); = 1.6rem / 16px
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin triangle($color) {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 10px;
+  border-color: transparent transparent transparent $color;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-48%);
+  margin-left: 10px;
+}

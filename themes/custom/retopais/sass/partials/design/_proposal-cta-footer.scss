@@ -1,0 +1,62 @@
+/////////////////////////////////
+// Proposal CTA Footer.
+// @_proposal-cta-footer.scss
+/////////////////////////////////
+
+.pane-problems-problems-only-names {
+  .cta-propone {
+    position: relative;
+    border-radius: 4px;
+    font-family: $oswald;
+    font-weight: 400;
+    padding: 20px 60px 18px 90px;
+    text-indent: -40px;
+    text-transform: uppercase;
+    width: 244px;
+    &:hover {
+      padding: 20px 60px 18px 90px;
+    }
+    &:after {
+      content: "";
+      @include triangle($white);
+      margin-left: 30px;
+    }
+  }
+  .view-content {
+    margin-top: 30px;
+  }
+
+  .field-content {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: block;
+    height: 80px;
+    font-family: $oswald;
+    padding: 0 78px 0 30px;
+    text-align: center;
+    width: 244px;
+    @include font-size(1.3);
+  }
+
+  .icon-acceso-a-la-educacion-superior-y-tecnica {
+    background-image: url(../img/icons/icon-educacion.svg);
+    color: $icon-purple;
+  }
+
+  .icon-accidentes-de-transito {
+    background-image: url(../img/icons/icon-transito.svg);
+    color: $icon-yellow;
+    padding: 18px 78px 0 30px;
+  }
+
+  .icon-separacion-y-recoleccion-de-residuos {
+    background-image: url(../img/icons/icon-residuos.svg);
+    color: $icon-green;
+  }
+
+  .icon-tasa-de-obesidad {
+    background-image: url(../img/icons/icon-obesidad.svg);
+    color: $icon-blue;
+    padding: 18px 78px 0 30px;
+  }
+}

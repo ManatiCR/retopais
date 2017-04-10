@@ -1,0 +1,41 @@
+///////////////////////////////////////////////
+// Checkbox
+// @_checkbox.scss
+// Styles for input[type="checkbox"]
+// Note that these styles don't work in IE8, so the :not(#foo) selector string
+// (which IE8 also doesn't support) keeps these rules from applying to that
+// browser
+///////////////////////////////////////////////
+
+input[type="checkbox"] {
+
+  // Custom styling fpr checkbox inputs using SVG background-images.
+  div:not(#foo) & {
+    opacity: 0;
+    float: left;
+    width: 1px;
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    & + label {
+      clear: none;
+      padding: 0 0 0 26px;
+      display: inline-block;
+      cursor: pointer;
+      background-size: 20px;
+      background-position: left center;
+      background-image: url('../img/icons/squared.svg');
+      background-repeat: no-repeat;
+      &.required {
+        border-color: $red;
+        color: $red;
+      }
+    }
+
+    &:checked + label {
+      cursor: pointer;
+      background-size: 23px 20px;
+      background-image: url('../img/icons/squared-checked.svg');
+    }
+  }
+}
