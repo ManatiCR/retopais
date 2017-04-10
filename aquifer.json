@@ -1,0 +1,95 @@
+{
+  "name": "Reto País",
+  "core": 7,
+  "build": {
+    "method": "drush make",
+    "directory": "build",
+    "makeFile": "drupal.make.yml"
+  },
+  "sync": {
+    "directories": {
+      "root": {
+        "destination": "",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "modules/custom": {
+        "destination": "sites/all/modules/custom",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "modules/features": {
+        "destination": "sites/all/modules/features",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "themes/custom": {
+        "destination": "sites/all/themes/custom",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "profiles/retopais": {
+        "destination": "profiles/retopais",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "files": {
+        "destination": "sites/default/files",
+        "method": "symlink",
+        "conflict": "overwrite"
+      }
+    },
+    "files": {
+      "settings/settings.php": {
+        "destination": "sites/default/settings.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "settings/settings.secret.php": {
+        "destination": "sites/default/settings.secret.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "settings/settings.local.php": {
+        "destination": "sites/default/settings.local.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      }
+    }
+  },
+  "run": {
+    "scripts": {
+      "refresh": [
+        "drush updb -y",
+        "drush cc all",
+        "drush en -y master",
+        "drush master-execute -y --scope=local",
+        "drush fra -y"
+      ]
+    },
+    "postBuild": []
+  },
+  "extensions": {
+    "aquifer-git": {
+      "source": "aquifer-git",
+      "remote": "",
+      "branch": "master",
+      "name": "CI Bot",
+      "email": "ci@estudiomanati.com",
+      "deploymentFiles": [
+        {
+          "src": "root/.gitignore",
+          "dest": ".gitignore"
+        },
+        {
+          "src": "root/.htaccess",
+          "dest": ".htaccess"
+        }
+      ],
+      "excludeLinks": ["sites/default/files"],
+      "addlinks": [],
+      "delPatterns": ["*", "!.git"]
+    }
+  },
+  "environments": {}
+}
