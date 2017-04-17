@@ -13,7 +13,6 @@ projects:
     download:
       type: "git"
       url: "https://github.com/pantheon-systems/drops-7.git"
-      branch: "master"
       tag: "7.54"
 
   # Projects.
@@ -155,4 +154,4 @@ libraries:
       type: "git"
       url: "https://github.com/o-sam-o/jquery.select2Buttons.git"
       branch: "master"
-revision: "6a41a9673d86b289acd2948037cea8b9d3eb8fe3"
+      revision: "6a41a9673d86b289acd2948037cea8b9d3eb8fe3"
