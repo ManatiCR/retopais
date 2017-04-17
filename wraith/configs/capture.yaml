@@ -17,7 +17,7 @@ browser: "phantomjs"
 
 # (required) The domains to take screenshots of.
 domains:
-  current:  "http://prod.retopais.com"
+  current:  "http://www.retopaiscr.com"
   new:      "http://retopais.dev"
 
 # (required) The paths to capture. All paths should exist for both of the domains specified above.
