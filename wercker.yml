@@ -104,7 +104,7 @@ deploy:
             composer install --prefer-source --no-interaction
             npm install
     - script:
-        name: Install Pantheon CLI
+        name: Login Pantheon CLI
         code: |
             terminus auth login --machine-token=$PANTHEON_TOKEN
             terminus sites aliases
