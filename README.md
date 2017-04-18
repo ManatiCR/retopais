@@ -62,12 +62,6 @@ Prepare for local development:
 
 * `vagrant up`
 
-
-Configure Solr search (adapted from
-  [Solr for Drupal Developers](http://www.midwesternmac.com/blogs/jeff-geerling/solr-drupal-developers-part-3)):
-
-* `./scripts/drupalvm_solr.sh`
-
 Prepare the site:
 
 * `./scripts/retopais_local_install.sh`

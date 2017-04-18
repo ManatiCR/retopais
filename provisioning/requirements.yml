@@ -61,7 +61,5 @@
   version: 2.4.0
 - src: geerlingguy.security
   version: 1.4.0
-- src: geerlingguy.solr
-  version: 3.4.1
 - src: geerlingguy.varnish
   version: 1.8.1
