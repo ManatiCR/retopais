@@ -72,23 +72,25 @@
   "extensions": {
     "aquifer-git": {
       "source": "aquifer-git",
-      "remote": "ssh://codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418@codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418.drush.in:2222/~/repository.git",
-      "branch": "master",
-      "name": "CI Bot",
-      "email": "ci@estudiomanati.com",
-      "deploymentFiles": [
-        {
-          "src": "root/.gitignore",
-          "dest": ".gitignore"
-        },
-        {
-          "src": "root/.htaccess",
-          "dest": ".htaccess"
-        }
-      ],
-      "excludeLinks": ["sites/default/files"],
-      "addlinks": [],
-      "delPatterns": ["*", "!.git"]
+      "config": {
+        "remote": "ssh://codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418@codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418.drush.in:2222/~/repository.git",
+        "branch": "master",
+        "name": "CI Bot",
+        "email": "ci@estudiomanati.com",
+        "deploymentFiles": [
+          {
+            "src": "root/.gitignore",
+            "dest": ".gitignore"
+          },
+          {
+            "src": "root/.htaccess",
+            "dest": ".htaccess"
+          }
+        ],
+        "excludeLinks": ["sites/default/files"],
+        "addlinks": [],
+        "delPatterns": ["*", "!.git"]
+      }
     }
   },
   "environments": {}
