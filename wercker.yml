@@ -111,8 +111,7 @@ deploy:
     - script:
         name: Deploy code to pantheon
         code: |
-            npm install -g aquifer aquifer-git
-            aquifer deploy-git -m "Auto deploy triggered from master branch"
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch"
     - script:
         name: Deploy steps to pantheon dev
         code: |
@@ -238,13 +237,12 @@ deploy-multidev:
     - script:
         name: Deploy code to pantheon
         code: |
-            npm install -g aquifer/aquifer aquifer/aquifer-git
             NEWBRANCH=$WERCKER_GIT_BRANCH
             LENGTH=${#NEWBRANCH}
             if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:6} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
-            aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
     - script:
         name: Deploy steps to pantheon multidev
         code: |
