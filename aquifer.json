@@ -89,7 +89,7 @@
       "excludeLinks": ["sites/default/files"],
       "addlinks": [],
       "delPatterns": ["*", "!.git"]
-    }  
+    }
   },
   "environments": {}
 }
