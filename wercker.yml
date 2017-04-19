@@ -230,7 +230,6 @@ deploy-multidev:
         code: |
             eval `ssh-agent`
             npm install
-            composer global require drush/drush:7.1.* --no-interaction
     - script:
         name: Login Pantheon CLI
         code: |
