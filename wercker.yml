@@ -244,6 +244,8 @@ deploy-multidev:
             if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:6} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
+            git config --global user.email "ci@estudiomanati.com"
+            git config --global user.name "CI Bot"
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
     - script:
         name: Deploy steps to pantheon multidev
