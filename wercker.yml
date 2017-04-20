@@ -113,6 +113,8 @@ deploy:
         code: |
             echo 'Host *' >> /root/.ssh/config
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            git config --global user.email "ci@estudiomanati.com"
+            git config --global user.name "CI Bot"
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch"
     - script:
         name: Deploy steps to pantheon dev
