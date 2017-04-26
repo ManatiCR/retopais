@@ -4,8 +4,8 @@ Reto País Drupal Distribution
 
 ## Dependencies
 
-* VirtualBox
-* Vagrant: >=1.7.x
+* VirtualBox: 5.x
+* Vagrant: 1.7.x
 * Ansible (optional, but recommended): 1.9.x
 
 ### Mac
@@ -25,37 +25,45 @@ vagrant plugin install vagrant-hostsupdater
 vagrant plugin install vagrant-auto_network
 ```
 
+### Wraith
+In this generator we include Wraith for visual regression testing, to use it go to `wraith/configs/capture.yaml` and change the domains urls, the paths you want to test and the breakpoints if needed, then go back to the root path of your project and run:
+
+```
+./scripts/retopais_wraith_testing.sh
+```
+Once finished the execution of the script go to:
+
+```
+wraith/shots
+```
+And that's it, now you can make sure everything looks as expected just by opening the generated gallery in your browser.
+
 ## Getting started
 
-Prepare the local site:
+### Prepare the local site:
 
+Create local settings files:
+
+* `./scripts/local_settings.sh`
+
+Install Dependencies:
 * `composer install`
 * `npm install`
+
+Build Site:
+* `node_modules/.bin/aquifer build`
 
 Prepare for local development:
 
 * Visit http://editorconfig.org/ for instructions on how to configure your IDE or editor to use the included `.editorconfig` file.
-* `cp example.config.yml default.config.yml`
 * Edit default.config.yml and update the following:
     * vagrant_synced_folders - local_path: `your-path` (modify as necessary)
 * [Mac/Linux only] Install Ansible Galaxy roles required for this VM: `sudo ansible-galaxy install -r provisioning/requirements.yml --force`
 
 * `vagrant up`
 
-Create local settings files:
-
-* `./scripts/local_settings.sh`
-
-Build the site with aquifer:
-
-**Every time you're going to run this command, please rename vendor folder to something else to avoid a known aquifer bug where it tries to build in your root folder**
-
-* `node_modules/.bin/aquifer build`
-
-**After running build, ensure you restore vendor folder so that the install script works.**
-
 Prepare the site:
-* In case you have not done before restore `vendor` folder name before run the following command:
+
 * `./scripts/retopais_local_install.sh`
 
 ## Structure

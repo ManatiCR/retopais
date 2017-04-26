@@ -24,7 +24,7 @@ files/*
 !files/.gitkeep
 
 # Composer
-vendor
+.vendor
 
 # Settings
 settings.secret.php
@@ -44,4 +44,6 @@ docs/*.pdf
 # Drupal VM
 default.config.yml
 .vagrant
-provisioning/roles
+
+# Wraith shots.
+wraith/shots

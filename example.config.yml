@@ -1,7 +1,7 @@
 ---
 # `vagrant_box` can also be set to geerlingguy/centos6, geerlingguy/centos7,
 # geerlingguy/ubuntu1204, parallels/ubuntu-14.04, etc.
-vagrant_box: geerlingguy/ubuntu1404
+vagrant_box: geerlingguy/ubuntu1604
 vagrant_user: vagrant
 vagrant_synced_folder_default_type: nfs
 
@@ -150,11 +150,10 @@ installed_extras:
   # - drupalconsole
   - mailhog
   - memcached
-  # - nodejs
+  - nodejs
   - pimpmylog
-  # - ruby
+  - ruby
   - selenium
-  - solr
   - varnish
   # - xdebug
   # - xhprof
@@ -162,20 +161,23 @@ installed_extras:
 # Add any extra apt or yum packages you would like installed.
 extra_packages:
   - unzip
-  - php7.1-gd
-  - php7.1-mysql
 
 # `nodejs` must be in installed_extras for this to work.
-nodejs_version: "0.12"
+nodejs_version: "4.x"
 nodejs_npm_global_packages: []
 
 # `ruby` must be in installed_extras for this to work.
-ruby_install_gems: []
+ruby_install_gems_user: "vagrant"
+ruby_install_from_source: true
+ruby_download_url: http://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.0.tar.gz
+ruby_version: 2.3.0
+ruby_install_gems:
+  - wraith
 
 # You can configure almost anything else on the server in the rest of this file.
 extra_security_enabled: false
 
-drush_version: master
+drush_version: 8.x
 drush_keep_updated: true
 drush_composer_cli_options: "--prefer-dist --no-interaction"
 
@@ -193,32 +195,33 @@ firewall_allowed_tcp_ports:
 firewall_log_dropped_packets: false
 
 # PHP Configuration. Currently-supported versions: 5.5, 5.6, 7.0.
-php_version: "5.6"
+php_version: "7.0"
 php_packages:
-  - php5.6
-  - php5.6-apcu
-  - php5.6-mcrypt
-  - php5.6-cli
-  - php5.6-common
-  - php5.6-curl
-  - php5.6-dev
-  - php5.6-fpm
-  - php5.6-gd
+  - php7.0
+  - php-apcu
+  - php7.0-mcrypt
+  - php7.0-cli
+  - php7.0-common
+  - php7.0-curl
+  - php7.0-dev
+  - php7.0-fpm
+  - php7.0-gd
+  - php7.0-sqlite3
+  - php7.0-xml
   - php-pear
   - libpcre3-dev
 php_conf_paths:
-  - /etc/php/5.6/fpm
-  - /etc/php/5.6/apache2
-  - /etc/php/5.6/cli
+  - /etc/php/7.0/fpm
+  - /etc/php/7.0/apache2
+  - /etc/php/7.0/cli
 php_extension_conf_paths:
-  - /etc/php/5.6/fpm/conf.d
-  - /etc/php/5.6/apache2/conf.d
-  - /etc/php/5.6/cli/conf.d
-php_fpm_daemon: php5.6-fpm
-php_fpm_conf_path: "/etc/php/5.6/fpm"
-php_fpm_pool_conf_path: "/etc/php/5.6/fpm/pool.d/www.conf"
-php_mysql_package: php5-mysql
-php_memcached_package: php5.6-memcached
+  - /etc/php/7.0/fpm/conf.d
+  - /etc/php/7.0/apache2/conf.d
+  - /etc/php/7.0/cli/conf.d
+php_fpm_daemon: php7.0-fpm
+php_fpm_conf_path: "/etc/php/7.0/fpm"
+php_fpm_pool_conf_path: "/etc/php/7.0/fpm/pool.d/www.conf"
+php_mysql_package: php7.0-mysql
 php_memory_limit: "192M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
@@ -272,13 +275,8 @@ php_xdebug_remote_connect_back: 1
 php_xdebug_idekey: PHPSTORM
 php_xdebug_max_nesting_level: 256
 
-# Solr Configuration (if enabled above).
-solr_version: "4.10.4"
-solr_xms: "64M"
-solr_xmx: "128M"
-
 # Selenium configuration
-selenium_version: 2.46.0
+selenium_version: 2.53.0
 
 # Other configuration.
 known_hosts_path: ~/.ssh/known_hosts

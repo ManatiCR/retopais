@@ -11,6 +11,8 @@ A story is considered complete when:
     * Each deployment will include: `aquifer build`, `updb`, `master-execute`, `features-revert-all`, `cc all`
 * Steps for demoing are documented in the story.
 * The pull request links to the story and the story links to the pull request.
+* All Behat tests pass.
+    * New functionality should have a corresponding test.
 * No Drupal Features are overridden.
 * Pull request passes code review.
     * Uses Drupal and development best practices.

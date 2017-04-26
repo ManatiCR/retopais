@@ -12,7 +12,22 @@ build:
             cp ./wercker/retopais.aliases.drushrc.php ~/.drush
             # Drupal settings.
             cp ./wercker/wercker.settings.secret.php ./settings/settings.secret.php
-            cp ./wercker/wercker.settings.local.php ./settings/settings.local.php
+            # Install xvfb.
+            sudo apt-get install xvfb -y
+            # Install Chrome.
+            mkdir -p $HOME/google-chrome && cd $HOME/google-chrome && curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i $HOME/google-chrome/google-chrome.deb || sudo apt-get update -y && sudo apt-get install -f -y
+            # Install Java.
+            sudo apt-get install software-properties-common python-software-properties -y
+            sudo add-apt-repository ppa:openjdk-r/ppa -y
+            sudo apt-get update -y
+            sudo apt-get install openjdk-8-jdk -y
+            # Download Selenium.
+            wget http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
+            # Start Selenium
+            xvfb-run java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>&1 &
+            # Restore current folder.
+            cd $WERCKER_ROOT
             # Configure Apache.
             cp ./wercker/retopais.dev.conf /etc/apache2/sites-available/
             a2ensite retopais.dev
@@ -44,6 +59,16 @@ build:
             drush master-execute -y
             drush cc all
 
+            # Install dependencies for running visual regression tests with Wraith.
+            \curl -sSL https://get.rvm.io | bash -s stable
+            \curl -sSL https://get.rvm.io | bash -s -- --ignore-dotfiles
+            source /usr/local/rvm/scripts/rvm
+            rvm install 2.4
+            rvm use 2.4
+            sudo apt-get install libicu-dev imagemagick rake -y
+            sudo npm install -g casperjs phantomjs
+            gem install wraith
+
     - script:
         name: Test all the things!
         code: |
@@ -58,7 +83,11 @@ build:
             # Available updates.
             drush @retopais.retopais.dev ups | grep -qi "update available" && (echo 'Updates available FAIL' && exit 1) || (echo 'No updates available PASS' && exit 0)
             # Behat tests.
-            ./vendor/bin/behat -p wercker
+            ./.vendor/bin/behat -p wercker
+            # Visual regression tests.
+            # cd wraith && wraith capture capture
+            # Store wraith shots in wercker artifacts folder.
+            # cp -r shots $WERCKER_REPORT_ARTIFACTS_DIR/
 deploy:
     steps:
     - script:
@@ -72,7 +101,6 @@ deploy:
         name: Install other dependencies
         code: |
             eval `ssh-agent`
-            ssh-add /tmp/tmp.*
             composer install --prefer-source --no-interaction
             npm install
     - script:
@@ -83,13 +111,14 @@ deploy:
     - script:
         name: Deploy code to pantheon
         code: |
-            npm install -g aquifer aquifer-git
-            aquifer deploy-git -m "Auto deploy triggered from master branch"
+            echo 'Host *' >> /root/.ssh/config
+            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            git config --global user.email "ci@estudiomanati.com"
+            git config --global user.name "CI Bot"
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch"
     - script:
         name: Deploy steps to pantheon dev
         code: |
-            echo 'Host *' >> /root/.ssh/config
-            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
             echo 'Set sftp'
@@ -107,13 +136,17 @@ deploy:
             terminus drush --site=retopais --env=dev "en -y pantheon_api --strict=0"
 deploy-test:
     steps:
+    - script:
+        name: Install ssh and other dependencies
+        code: |
+            apt-get update -y
+            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
         name: Install other dependencies
         code: |
             eval `ssh-agent`
-            ssh-add /tmp/tmp.*
             composer install --prefer-source --no-interaction
             npm install
     - script:
@@ -137,7 +170,7 @@ deploy-test:
             terminus drush --site=retopais --env=test "cc drush --strict=0"
             terminus drush --site=retopais --env=test "master-set-current-scope test --strict=0"
             terminus drush --site=retopais --env=test "master-execute -y --strict=0"
-            terminus drush --site=retopais --env=test "environment-switch test --force --strict=0"
+             terminus drush --site=retopais --env=test "environment-switch test --force --strict=0"
             terminus drush --site=retopais --env=test "updb -y --strict=0"
             terminus drush --site=retopais --env=test "cc all --strict=0"
             terminus drush --site=retopais --env=test "en -y pantheon_api --strict=0"
@@ -145,13 +178,17 @@ deploy-test:
             terminus drush --site=retopais --env=test "l10n-update --strict=0"
 deploy-live:
     steps:
+    - script:
+        name: Install ssh and other dependencies
+        code: |
+            apt-get update -y
+            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
         name: Install other dependencies
         code: |
             eval `ssh-agent`
-            ssh-add /tmp/tmp.*
             composer install --prefer-source --no-interaction
             npm install
     - script:
@@ -182,14 +219,17 @@ deploy-live:
             terminus drush --site=retopais --env=live "l10n-update --strict=0"
 deploy-multidev:
     steps:
+    - script:
+        name: Install ssh and other dependencies
+        code: |
+            apt-get update -y
+            apt-get install -y build-essential curl wget git php5-curl unzip php5-mysql php5-gd ssh-client openssh-client keychain
     - add-ssh-key:
         keyname: DEPLOYMENT_KEY
     - script:
         name: Install other dependencies
         code: |
             eval `ssh-agent`
-            ssh-add /tmp/tmp.*
-            composer install --prefer-source --no-interaction
             npm install
     - script:
         name: Login Pantheon CLI
@@ -199,18 +239,19 @@ deploy-multidev:
     - script:
         name: Deploy code to pantheon
         code: |
-            npm install -g aquifer aquifer-git
+            echo 'Host *' >> /root/.ssh/config
+            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             NEWBRANCH=$WERCKER_GIT_BRANCH
             LENGTH=${#NEWBRANCH}
             if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:6} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
-            aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
+            git config --global user.email "ci@estudiomanati.com"
+            git config --global user.name "CI Bot"
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $WERCKER_GIT_BRANCH branch" -b $NEWBRANCH
     - script:
         name: Deploy steps to pantheon multidev
         code: |
-            echo 'Host *' >> /root/.ssh/config
-            echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
             terminus site create-env --site=retopais --to-env=$NEWBRANCH --from-env=dev

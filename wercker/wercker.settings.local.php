@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Local configuration settings for the site.

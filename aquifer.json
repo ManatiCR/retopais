@@ -1,34 +1,77 @@
 {
   "name": "Reto País",
-  "paths": {
-    "make": "drupal.make.yml",
-    "lock": false,
-    "settings": "settings",
-    "build": "build",
-    "root": "root",
-    "drush": "drush",
-    "themes": {
-      "root": "themes/",
-      "contrib": "themes/contrib",
-      "custom": "themes/custom"
-    },
-    "modules": {
-      "root": "modules",
-      "contrib": "modules/contrib",
-      "custom": "modules/custom",
-      "features": "modules/features"
-    },
-    "profiles": {
-      "retopais": "profiles/retopais"
+  "core": 7,
+  "build": {
+    "method": "drush make",
+    "directory": "build",
+    "makeFile": "drupal.make.yml"
+  },
+  "sync": {
+    "directories": {
+      "root": {
+        "destination": "",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "modules/custom": {
+        "destination": "sites/all/modules/custom",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "modules/features": {
+        "destination": "sites/all/modules/features",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "themes/custom": {
+        "destination": "sites/all/themes/custom",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "profiles/retopais": {
+        "destination": "profiles/retopais",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "files": {
+        "destination": "sites/default/files",
+        "method": "symlink",
+        "conflict": "overwrite"
+      }
     },
     "files": {
-      "root": "files"
+      "settings/settings.php": {
+        "destination": "sites/default/settings.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "settings/settings.secret.php": {
+        "destination": "sites/default/settings.secret.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      },
+      "settings/settings.local.php": {
+        "destination": "sites/default/settings.local.php",
+        "method": "symlink",
+        "conflict": "overwrite"
+      }
+    }
+  },
+  "run": {
+    "scripts": {
+      "refresh": [
+        "drush updb -y",
+        "drush cc all",
+        "drush en -y master",
+        "drush master-execute -y --scope=local",
+        "drush fra -y"
+      ]
     },
-    "builds": "artifacts/"
+    "postBuild": []
   },
   "extensions": {
     "aquifer-git": {
-      "source": "aquifer-git",
+      "source": "aquifer/aquifer-git#51b2730",
       "remote": "ssh://codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418@codeserver.dev.8d35c420-771d-4398-aa93-71ae88f47418.drush.in:2222/~/repository.git",
       "branch": "master",
       "name": "CI Bot",
@@ -48,28 +91,5 @@
       "delPatterns": ["*", "!.git"]
     }
   },
-  "refreshCommands": [
-    [
-      "updb"
-    ],
-    [
-      "cc",
-      "all"
-    ],
-    [
-      "en",
-      "master"
-    ],
-    [
-      "master-execute"
-    ],
-    [
-      "fra"
-    ],
-    [
-      "environment-switch",
-      "local",
-      "--force"
-    ]
-  ]
+  "environments": {}
 }

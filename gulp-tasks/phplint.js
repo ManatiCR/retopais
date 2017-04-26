@@ -12,6 +12,7 @@ var phplint = require('phplint').lint;
 var gutil = require('gulp-util');
 
 gulp.task('phplint', function (cb) {
+
   var extensions = '{php,module,inc,install,test,profile,theme}';
   var sourcePatterns = [
     'modules/**/*.' + extensions,
