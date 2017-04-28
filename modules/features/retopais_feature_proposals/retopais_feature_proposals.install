@@ -23,7 +23,7 @@ function retopais_feature_proposals_install() {
     'link_path' => 'admin/propuestas/exportar-propuestas',
     'menu_name' => 'management',
     'weight' => 6,
-    'plid' => 1,
+    'plid' => 0,
     'customized' => 1,
   ];
   retopais_feature_proposals_create_menu_links($menu_links);
@@ -81,7 +81,7 @@ function retopais_feature_proposals_update_7000() {
     'link_path' => 'admin/propuestas/exportar-propuestas',
     'menu_name' => 'management',
     'weight' => 6,
-    'plid' => 1,
+    'plid' => 0,
     'customized' => 1,
   ];
   retopais_feature_proposals_create_menu_links($menu_links);
