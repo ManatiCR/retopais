@@ -78,6 +78,7 @@ $conf['master_modules']['base'] = array(
   'views_content',
   'views_bulk_operations',
   'views_cache_bully',
+  'views_data_export',
 
   // Custom modules.
   'retopais_environment',
