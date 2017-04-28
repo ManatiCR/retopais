@@ -15,6 +15,18 @@ function retopais_feature_proposals_install() {
     'alias' => 'propone-idea',
   );
   path_save($path);
+
+  // Create menu links for the proposals export.
+  $menu_links = [];
+  $menu_links[] = [
+    'link_title' => 'Exportar propuestas',
+    'link_path' => 'admin/propuestas/exportar-propuestas',
+    'menu_name' => 'management',
+    'weight' => 6,
+    'plid' => 1,
+    'customized' => 1,
+  ];
+  retopais_feature_proposals_create_menu_links($menu_links);
 }
 
 /**
@@ -57,4 +69,32 @@ function retopais_feature_proposals_schema() {
   );
 
   return $schema;
+}
+
+/**
+ * Create menu item for the proposal export.
+ */
+function retopais_feature_proposals_update_7000() {
+  $menu_links = [];
+  $menu_links[] = [
+    'link_title' => 'Exportar propuestas',
+    'link_path' => 'admin/propuestas/exportar-propuestas',
+    'menu_name' => 'management',
+    'weight' => 6,
+    'plid' => 1,
+    'customized' => 1,
+  ];
+  retopais_feature_proposals_create_menu_links($menu_links);
+}
+
+/**
+ * Helper function to create menu links.
+ *
+ * @param array $menu_links
+ *   The menu links to save and assign into an existing menu.
+ */
+function retopais_feature_proposals_create_menu_links(array $menu_links) {
+  foreach ($menu_links as $menu_link) {
+    menu_link_save($menu_link);
+  }
 }
