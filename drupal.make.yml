@@ -131,6 +131,8 @@ projects:
     version: "3.4"
   views_cache_bully:
     version: "3.1"
+  views_data_export:
+    version: "3.2"
   # Themes.
   adminimal_theme:
     version: "1.24"
