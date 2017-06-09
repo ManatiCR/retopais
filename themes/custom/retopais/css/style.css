@@ -1021,7 +1021,7 @@ hr {
 }
 
 .pane-problems-panel-pane-2 .views-row-2 h3 {
-  color: #8D519F;
+  color: #ffcb50;
 }
 
 .pane-problems-panel-pane-2 .views-row-3 h3 {
@@ -1029,7 +1029,7 @@ hr {
 }
 
 .pane-problems-panel-pane-2 .views-row-4 h3 {
-  color: #ffcb50;
+  color: #8D519F;
 }
 
 @media (min-width: 768px) {
@@ -1214,8 +1214,10 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   padding: 0;
   margin-bottom: 30px;
 }
@@ -1787,7 +1789,7 @@ hr {
 }
 
 .pane-problems-panel-pane-3 .views-row-2 .views-field-name {
-  color: #8D519F;
+  color: #ffcb50;
 }
 
 .pane-problems-panel-pane-3 .views-row-3 .views-field-name {
@@ -1795,7 +1797,7 @@ hr {
 }
 
 .pane-problems-panel-pane-3 .views-row-4 .views-field-name {
-  color: #ffcb50;
+  color: #8D519F;
 }
 
 .pane-problems-panel-pane-3 h2 {
