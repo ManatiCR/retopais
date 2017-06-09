@@ -1436,9 +1436,10 @@ hr {
   font-size: 1.3rem;
 }
 
-.pane-problems-problems-only-names .icon-acceso-a-la-educacion-superior-y-tecnica {
-  background-image: url(../img/icons/icon-educacion.svg);
+.pane-problems-problems-only-names .icon-paridad-de-genero {
+  background-image: url(../img/icons/icon-paridad.svg);
   color: #8D519F;
+  padding: 18px 78px 0 30px;
 }
 
 .pane-problems-problems-only-names .icon-accidentes-de-transito {
@@ -1452,10 +1453,9 @@ hr {
   color: #91C73E;
 }
 
-.pane-problems-problems-only-names .icon-tasa-de-obesidad {
-  background-image: url(../img/icons/icon-obesidad.svg);
+.pane-problems-problems-only-names .icon-acceso-a-cultura-y-recreacion {
+  background-image: url(../img/icons/icon-cultura.svg);
   color: #008ECE;
-  padding: 18px 78px 0 30px;
 }
 
 .pane-alianzas-panel-pane-4 {
