@@ -157,7 +157,7 @@ deploy-test:
     - script:
         name: Deploy code to test
         code: |
-            terminus site deploy --site=retopais --env=test --sync-content --note="Deployed from wercker UI"
+            terminus site deploy --site=retopais --env=test --note="Deployed from wercker UI"
     - script:
         name: Deploy steps to pantheon test
         code: |
@@ -170,7 +170,7 @@ deploy-test:
             terminus drush --site=retopais --env=test "cc drush --strict=0"
             terminus drush --site=retopais --env=test "master-set-current-scope test --strict=0"
             terminus drush --site=retopais --env=test "master-execute -y --strict=0"
-             terminus drush --site=retopais --env=test "environment-switch test --force --strict=0"
+            terminus drush --site=retopais --env=test "environment-switch test --force --strict=0"
             terminus drush --site=retopais --env=test "updb -y --strict=0"
             terminus drush --site=retopais --env=test "cc all --strict=0"
             terminus drush --site=retopais --env=test "en -y pantheon_api --strict=0"
