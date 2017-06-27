@@ -61,6 +61,9 @@ projects:
     version: "1.2"
   field_group:
     version: "1.5"
+    patch:
+      # https://www.drupal.org/node/2649648
+      - "https://www.drupal.org/files/issues/php7_uniform_variable-2649648-5.patch"
   flag:
     version: "3.9"
   honeypot:
