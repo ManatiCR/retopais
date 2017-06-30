@@ -129,10 +129,10 @@ function retopais_feature_proposals_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 24,
+        'type' => 'list_default',
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -147,26 +147,13 @@ function retopais_feature_proposals_field_default_field_instances() {
     'label' => '¿Cómo te enteraste de esta iniciativa?',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
-      'settings' => array(
-        'available_options' => 'work|Trabajo
-social|Redes Sociales
-media|Medios Masivos
-people|Amigo, familiar',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => '',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
-      ),
-      'type' => 'select_or_other_buttons',
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
       'weight' => 12,
     ),
   );
@@ -420,6 +407,65 @@ people|Amigo, familiar',
       ),
       'type' => 'options_select',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-proposal-field_needs'.
+  $field_instances['node-proposal-field_needs'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 36,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_needs',
+    'label' => '¿Qué necesitás para hacer tu idea realidad?',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'select_or_other',
+      'settings' => array(
+        'available_options' => 'Asesoría legal|Asesoría legal
+Incubación|Incubación
+Aceleración|Aceleración
+Espacio de trabajo|Espacio de trabajo
+Financiamiento|Financiamiento
+Mentoría|Mentoría',
+        'available_options_php' => '',
+        'markup_available_options_php' => '&lt;ninguno&gt;',
+        'other' => 'Otro',
+        'other_size' => 60,
+        'other_title' => '',
+        'other_unknown_defaults' => 'other',
+        'sort_options' => 0,
+      ),
+      'type' => 'select_or_other_buttons',
+      'weight' => 13,
     ),
   );
 
@@ -1164,12 +1210,12 @@ people|Amigo, familiar',
     ),
   );
 
-  // Exported field_instance: 'node-proposal-field_representative_address'.
-  $field_instances['node-proposal-field_representative_address'] = array(
+  // Exported field_instance: 'node-proposal-field_representative_age'.
+  $field_instances['node-proposal-field_representative_age'] = array(
     'bundle' => 'proposal',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Indique su edad en años.',
     'display' => array(
       'ckeditor_embed' => array(
         'label' => 'above',
@@ -1179,10 +1225,15 @@ people|Amigo, familiar',
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 22,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1193,22 +1244,21 @@ people|Amigo, familiar',
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
-    'field_name' => 'field_representative_address',
-    'label' => 'Dirección',
+    'field_name' => 'field_representative_age',
+    'label' => 'Edad',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
       'weight' => 11,
     ),
   );
@@ -1406,6 +1456,50 @@ people|Amigo, familiar',
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_representative_sex'.
+  $field_instances['node-proposal-field_representative_sex'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 33,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_representative_sex',
+    'label' => 'Sexo',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_solution_type'.
   $field_instances['node-proposal-field_solution_type'] = array(
     'bundle' => 'proposal',
@@ -1456,9 +1550,10 @@ people|Amigo, familiar',
   // Included for use with string extractors like potx.
   t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática');
   t('Correo electrónico');
-  t('Dirección');
   t('Dirección de la organización');
+  t('Edad');
   t('Explicá cómo tu idea es innovadora');
+  t('Indique su edad en años.');
   t('Juez asignado');
   t('Nombre completo del representante');
   t('Nombre del representante legal de la organización');
@@ -1466,6 +1561,7 @@ people|Amigo, familiar',
   t('Número de cédula');
   t('Número de teléfono');
   t('Persona responsable del proyecto presentado');
+  t('Sexo');
   t('Sitio web, Redes Sociales');
   t('Teléfono');
   t('¿Cuál es el nombre de la organización?');
@@ -1476,6 +1572,7 @@ people|Amigo, familiar',
   t('¿Esta solución es individual o grupal?');
   t('¿Quién y cómo se verá beneficiado por la idea?');
   t('¿Qué destrezas y características tenés que te diferencien y te permitan incidir sobre el problema con la idea que planteás?');
+  t('¿Qué necesitás para hacer tu idea realidad?');
   t('¿Qué problemática deseás solucionar?');
   t('¿Qué te motivó a proponer esta idea o a emprender en este tema?');
   t('¿Qué tipo de solución querés proponer?');

@@ -319,14 +319,14 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'última »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relación: Marcas: invalidar_propuesta */
+  /* Relationship: Flags: invalidar_propuesta */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  /* Campo: Contenido: Título */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -335,11 +335,10 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Nodo: Body */
+  /* Field: Content: Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática';
   $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
@@ -348,7 +347,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Correo electrónico */
+  /* Field: Content: Correo electrónico */
   $handler->display->display_options['fields']['field_representative_email']['id'] = 'field_representative_email';
   $handler->display->display_options['fields']['field_representative_email']['table'] = 'field_data_field_representative_email';
   $handler->display->display_options['fields']['field_representative_email']['field'] = 'field_representative_email';
@@ -361,7 +360,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_representative_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_representative_email']['type'] = 'email_plain';
   $handler->display->display_options['fields']['field_representative_email']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Correo electrónico */
+  /* Field: Content: Correo electrónico */
   $handler->display->display_options['fields']['field_proj_resp_email']['id'] = 'field_proj_resp_email';
   $handler->display->display_options['fields']['field_proj_resp_email']['table'] = 'field_data_field_proj_resp_email';
   $handler->display->display_options['fields']['field_proj_resp_email']['field'] = 'field_proj_resp_email';
@@ -374,7 +373,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_proj_resp_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_proj_resp_email']['type'] = 'email_plain';
   $handler->display->display_options['fields']['field_proj_resp_email']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Correo electrónico */
+  /* Field: Content: Correo electrónico */
   $handler->display->display_options['fields']['field_org_rep_email']['id'] = 'field_org_rep_email';
   $handler->display->display_options['fields']['field_org_rep_email']['table'] = 'field_data_field_org_rep_email';
   $handler->display->display_options['fields']['field_org_rep_email']['field'] = 'field_org_rep_email';
@@ -387,20 +386,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_org_rep_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_org_rep_email']['type'] = 'email_plain';
   $handler->display->display_options['fields']['field_org_rep_email']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Dirección */
-  $handler->display->display_options['fields']['field_representative_address']['id'] = 'field_representative_address';
-  $handler->display->display_options['fields']['field_representative_address']['table'] = 'field_data_field_representative_address';
-  $handler->display->display_options['fields']['field_representative_address']['field'] = 'field_representative_address';
-  $handler->display->display_options['fields']['field_representative_address']['label'] = 'Dirección del representante';
-  $handler->display->display_options['fields']['field_representative_address']['alter']['trim_whitespace'] = TRUE;
-  $handler->display->display_options['fields']['field_representative_address']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_representative_address']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_representative_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_representative_address']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_representative_address']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_representative_address']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_representative_address']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Dirección de la organización */
+  /* Field: Content: Dirección de la organización */
   $handler->display->display_options['fields']['field_organization_address']['id'] = 'field_organization_address';
   $handler->display->display_options['fields']['field_organization_address']['table'] = 'field_data_field_organization_address';
   $handler->display->display_options['fields']['field_organization_address']['field'] = 'field_organization_address';
@@ -412,7 +398,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_organization_address']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_organization_address']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_organization_address']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Explicá cómo tu idea es innovadora */
+  /* Field: Content: Explicá cómo tu idea es innovadora */
   $handler->display->display_options['fields']['field_innovative_idea']['id'] = 'field_innovative_idea';
   $handler->display->display_options['fields']['field_innovative_idea']['table'] = 'field_data_field_innovative_idea';
   $handler->display->display_options['fields']['field_innovative_idea']['field'] = 'field_innovative_idea';
@@ -424,7 +410,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_innovative_idea']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_innovative_idea']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_innovative_idea']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Nombre completo del representante */
+  /* Field: Content: Nombre completo del representante */
   $handler->display->display_options['fields']['field_representative_full_name']['id'] = 'field_representative_full_name';
   $handler->display->display_options['fields']['field_representative_full_name']['table'] = 'field_data_field_representative_full_name';
   $handler->display->display_options['fields']['field_representative_full_name']['field'] = 'field_representative_full_name';
@@ -436,7 +422,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_representative_full_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_representative_full_name']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_representative_full_name']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Nombre del representante legal de la organización */
+  /* Field: Content: Nombre del representante legal de la organización */
   $handler->display->display_options['fields']['field_org_rep_name']['id'] = 'field_org_rep_name';
   $handler->display->display_options['fields']['field_org_rep_name']['table'] = 'field_data_field_org_rep_name';
   $handler->display->display_options['fields']['field_org_rep_name']['field'] = 'field_org_rep_name';
@@ -448,7 +434,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_org_rep_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_org_rep_name']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_org_rep_name']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada */
+  /* Field: Content: Nombrá el cantón(es) o comunidad(es) donde tu idea o solución será ejecutada */
   $handler->display->display_options['fields']['field_canton']['id'] = 'field_canton';
   $handler->display->display_options['fields']['field_canton']['table'] = 'field_data_field_canton';
   $handler->display->display_options['fields']['field_canton']['field'] = 'field_canton';
@@ -461,7 +447,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_canton']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_canton']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_canton']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Número de cédula */
+  /* Field: Content: Número de cédula */
   $handler->display->display_options['fields']['field_representative_id_number']['id'] = 'field_representative_id_number';
   $handler->display->display_options['fields']['field_representative_id_number']['table'] = 'field_data_field_representative_id_number';
   $handler->display->display_options['fields']['field_representative_id_number']['field'] = 'field_representative_id_number';
@@ -474,7 +460,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_representative_id_number']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_representative_id_number']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_representative_id_number']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Número de teléfono */
+  /* Field: Content: Número de teléfono */
   $handler->display->display_options['fields']['field_representative_phone']['id'] = 'field_representative_phone';
   $handler->display->display_options['fields']['field_representative_phone']['table'] = 'field_data_field_representative_phone';
   $handler->display->display_options['fields']['field_representative_phone']['field'] = 'field_representative_phone';
@@ -487,7 +473,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_representative_phone']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_representative_phone']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_representative_phone']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Persona responsable del proyecto presentado */
+  /* Field: Content: Persona responsable del proyecto presentado */
   $handler->display->display_options['fields']['field_proj_resp_name']['id'] = 'field_proj_resp_name';
   $handler->display->display_options['fields']['field_proj_resp_name']['table'] = 'field_data_field_proj_resp_name';
   $handler->display->display_options['fields']['field_proj_resp_name']['field'] = 'field_proj_resp_name';
@@ -499,7 +485,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_proj_resp_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_proj_resp_name']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_proj_resp_name']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Sitio web, Redes Sociales */
+  /* Field: Content: Sitio web, Redes Sociales */
   $handler->display->display_options['fields']['field_project_links']['id'] = 'field_project_links';
   $handler->display->display_options['fields']['field_project_links']['table'] = 'field_data_field_project_links';
   $handler->display->display_options['fields']['field_project_links']['field'] = 'field_project_links';
@@ -514,7 +500,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_project_links']['type'] = 'link_plain';
   $handler->display->display_options['fields']['field_project_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_project_links']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Teléfono */
+  /* Field: Content: Teléfono */
   $handler->display->display_options['fields']['field_proj_resp_phone']['id'] = 'field_proj_resp_phone';
   $handler->display->display_options['fields']['field_proj_resp_phone']['table'] = 'field_data_field_proj_resp_phone';
   $handler->display->display_options['fields']['field_proj_resp_phone']['field'] = 'field_proj_resp_phone';
@@ -526,7 +512,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_proj_resp_phone']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_proj_resp_phone']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_proj_resp_phone']['field_api_classes'] = TRUE;
-  /* Field: Nodo: Teléfono */
+  /* Field: Content: Teléfono */
   $handler->display->display_options['fields']['field_org_rep_phone']['id'] = 'field_org_rep_phone';
   $handler->display->display_options['fields']['field_org_rep_phone']['table'] = 'field_data_field_org_rep_phone';
   $handler->display->display_options['fields']['field_org_rep_phone']['field'] = 'field_org_rep_phone';
@@ -539,7 +525,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_org_rep_phone']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_org_rep_phone']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_org_rep_phone']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Cuál es el nombre de la organización? */
+  /* Field: Content: ¿Cuál es el nombre de la organización? */
   $handler->display->display_options['fields']['field_organization_name']['id'] = 'field_organization_name';
   $handler->display->display_options['fields']['field_organization_name']['table'] = 'field_data_field_organization_name';
   $handler->display->display_options['fields']['field_organization_name']['field'] = 'field_organization_name';
@@ -551,7 +537,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_organization_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_organization_name']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_organization_name']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Cuáles son los logros alcanzados por el proyecto hasta el momento? */
+  /* Field: Content: ¿Cuáles son los logros alcanzados por el proyecto hasta el momento? */
   $handler->display->display_options['fields']['field_project_achievements']['id'] = 'field_project_achievements';
   $handler->display->display_options['fields']['field_project_achievements']['table'] = 'field_data_field_project_achievements';
   $handler->display->display_options['fields']['field_project_achievements']['field'] = 'field_project_achievements';
@@ -563,7 +549,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_project_achievements']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_achievements']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_project_achievements']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Cómo generaría ingresos tu solución para ser sostenible en el tiempo? */
+  /* Field: Content: ¿Cómo generaría ingresos tu solución para ser sostenible en el tiempo? */
   $handler->display->display_options['fields']['field_idea_susteinability']['id'] = 'field_idea_susteinability';
   $handler->display->display_options['fields']['field_idea_susteinability']['table'] = 'field_data_field_idea_susteinability';
   $handler->display->display_options['fields']['field_idea_susteinability']['field'] = 'field_idea_susteinability';
@@ -575,7 +561,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_idea_susteinability']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_idea_susteinability']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_idea_susteinability']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Cómo te enteraste de esta iniciativa? */
+  /* Field: Content: ¿Cómo te enteraste de esta iniciativa? */
   $handler->display->display_options['fields']['field_heard']['id'] = 'field_heard';
   $handler->display->display_options['fields']['field_heard']['table'] = 'field_data_field_heard';
   $handler->display->display_options['fields']['field_heard']['field'] = 'field_heard';
@@ -587,7 +573,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_heard']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_heard']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_heard']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Cómo y cuándo se originó el proyecto? */
+  /* Field: Content: ¿Cómo y cuándo se originó el proyecto? */
   $handler->display->display_options['fields']['field_project_origin']['id'] = 'field_project_origin';
   $handler->display->display_options['fields']['field_project_origin']['table'] = 'field_data_field_project_origin';
   $handler->display->display_options['fields']['field_project_origin']['field'] = 'field_project_origin';
@@ -599,7 +585,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_project_origin']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_origin']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_project_origin']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Esta solución es individual o grupal? */
+  /* Field: Content: ¿Esta solución es individual o grupal? */
   $handler->display->display_options['fields']['field_organization_way']['id'] = 'field_organization_way';
   $handler->display->display_options['fields']['field_organization_way']['table'] = 'field_data_field_organization_way';
   $handler->display->display_options['fields']['field_organization_way']['field'] = 'field_organization_way';
@@ -610,7 +596,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_organization_way']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_organization_way']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_organization_way']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Quién y cómo se verá beneficiado por la idea? */
+  /* Field: Content: ¿Quién y cómo se verá beneficiado por la idea? */
   $handler->display->display_options['fields']['field_project_audience']['id'] = 'field_project_audience';
   $handler->display->display_options['fields']['field_project_audience']['table'] = 'field_data_field_project_audience';
   $handler->display->display_options['fields']['field_project_audience']['field'] = 'field_project_audience';
@@ -622,7 +608,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_project_audience']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_project_audience']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_project_audience']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Qué destrezas y características tenés que te diferencien y te permitan incidir sobre el problema con la idea que planteás? */
+  /* Field: Content: ¿Qué destrezas y características tenés que te diferencien y te permitan incidir sobre el problema con la idea que planteás? */
   $handler->display->display_options['fields']['field_idea_features']['id'] = 'field_idea_features';
   $handler->display->display_options['fields']['field_idea_features']['table'] = 'field_data_field_idea_features';
   $handler->display->display_options['fields']['field_idea_features']['field'] = 'field_idea_features';
@@ -634,7 +620,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_idea_features']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_idea_features']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_idea_features']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Qué problemática deseás solucionar? */
+  /* Field: Content: ¿Qué problemática deseás solucionar? */
   $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
   $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
   $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
@@ -646,7 +632,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Qué te motivó a proponer esta idea o a emprender en este tema? */
+  /* Field: Content: ¿Qué te motivó a proponer esta idea o a emprender en este tema? */
   $handler->display->display_options['fields']['field_idea_motivation']['id'] = 'field_idea_motivation';
   $handler->display->display_options['fields']['field_idea_motivation']['table'] = 'field_data_field_idea_motivation';
   $handler->display->display_options['fields']['field_idea_motivation']['field'] = 'field_idea_motivation';
@@ -658,7 +644,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_idea_motivation']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_idea_motivation']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_idea_motivation']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Qué tipo de solución querés proponer? */
+  /* Field: Content: ¿Qué tipo de solución querés proponer? */
   $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
   $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
   $handler->display->display_options['fields']['field_solution_type']['field'] = 'field_solution_type';
@@ -669,7 +655,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_solution_type']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_solution_type']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_solution_type']['field_api_classes'] = TRUE;
-  /* Field: Nodo: ¿Se encuentra en ejecución? */
+  /* Field: Content: ¿Se encuentra en ejecución? */
   $handler->display->display_options['fields']['field_project_running']['id'] = 'field_project_running';
   $handler->display->display_options['fields']['field_project_running']['table'] = 'field_data_field_project_running';
   $handler->display->display_options['fields']['field_project_running']['field'] = 'field_project_running';
@@ -919,7 +905,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;

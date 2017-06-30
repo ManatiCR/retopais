@@ -88,6 +88,26 @@ function retopais_feature_proposals_update_7000() {
 }
 
 /**
+ * Delete 'field_representative_address' and 'field_heard' fields.
+ */
+function retopais_feature_proposals_update_7001() {
+  $instances_to_erase = [
+    field_info_instance('node', 'field_representative_address', 'proposal'),
+    field_info_instance('node', 'field_heard', 'proposal'),
+  ];
+  $fields_to_erase = [
+    'field_representative_address',
+    'field_heard',
+  ];
+  foreach ($instances_to_erase as $instance) {
+    field_delete_instance($instance, $field_cleanup = TRUE);
+  }
+  foreach ($fields_to_erase as $field) {
+    field_delete_field($field);
+  }
+}
+
+/**
  * Helper function to create menu links.
  *
  * @param array $menu_links

@@ -944,7 +944,7 @@ hr {
   }
 }
 
-.pane-problems-panel-pane-1 .icon-paridad-de-genero {
+.pane-problems-panel-pane-1 .icon-paridad-de-genero-en-educacion {
   color: #8D519F;
 }
 
@@ -1436,10 +1436,9 @@ hr {
   font-size: 1.3rem;
 }
 
-.pane-problems-problems-only-names .icon-paridad-de-genero {
+.pane-problems-problems-only-names .icon-paridad-de-genero-en-educacion {
   background-image: url(../img/icons/icon-paridad.svg);
   color: #8D519F;
-  padding: 18px 78px 0 30px;
 }
 
 .pane-problems-problems-only-names .icon-accidentes-de-transito {
@@ -2041,7 +2040,7 @@ hr {
   position: relative;
 }
 
-.pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content {
+.pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content, .pane-node-field-needs .pane-content {
   display: block;
 }
 
