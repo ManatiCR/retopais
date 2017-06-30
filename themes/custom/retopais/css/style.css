@@ -2040,7 +2040,7 @@ hr {
   position: relative;
 }
 
-.pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content {
+.pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content, .pane-node-field-needs .pane-content {
   display: block;
 }
 
