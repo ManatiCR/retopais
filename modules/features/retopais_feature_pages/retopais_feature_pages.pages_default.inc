@@ -171,10 +171,10 @@ function retopais_feature_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-b2f7a4c0-954f-4e9e-97a2-8c15787a535b';
+  $pane->pid = 'new-a762b644-b7e9-4f98-9c5c-75a7dab75fad';
   $pane->panel = 'first-full';
-  $pane->type = 'proposal_counter_hp';
-  $pane->subtype = 'proposal_counter_hp';
+  $pane->type = 'homepage_que_es_reto_pais';
+  $pane->subtype = 'homepage_que_es_reto_pais';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
@@ -186,9 +186,9 @@ function retopais_feature_pages_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'b2f7a4c0-954f-4e9e-97a2-8c15787a535b';
-  $display->content['new-b2f7a4c0-954f-4e9e-97a2-8c15787a535b'] = $pane;
-  $display->panels['first-full'][0] = 'new-b2f7a4c0-954f-4e9e-97a2-8c15787a535b';
+  $pane->uuid = 'a762b644-b7e9-4f98-9c5c-75a7dab75fad';
+  $display->content['new-a762b644-b7e9-4f98-9c5c-75a7dab75fad'] = $pane;
+  $display->panels['first-full'][0] = 'new-a762b644-b7e9-4f98-9c5c-75a7dab75fad';
   $pane = new stdClass();
   $pane->pid = 'new-2e6251ab-f281-4d4d-b621-95803a993f5c';
   $pane->panel = 'fourth';
