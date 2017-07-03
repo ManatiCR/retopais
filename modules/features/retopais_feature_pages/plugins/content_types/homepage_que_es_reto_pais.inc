@@ -22,6 +22,23 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
   $block = new stdClass();
   $block->title = '';
 
+  // Get title, replace proposal count if needed.
+  $title = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_title', '');
+  $title = str_replace('COUNT', strval(retopais_feature_proposals_counter()), $title);
+
+  // Get text.
+  $text_array = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_text', array('value' => '¿Qué es reto país? placeholder text.', 'format' => 'filtered_html'));
+  $text = check_markup($text_array['value'], $text_array['format']);
+
+  // Get link text and destination.
+  $link_text = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_link_text', '');
+  $link_url = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_link_url', '');
+  $link = '';
+  if ($link_text) {
+    $link = l($link_text, $link_url, array('attributes' => array('class' => array('button'))));
+  }
+
+  // Get image or video.
   $video = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', '');
   $image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   if ($video) {
@@ -44,9 +61,11 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
 
   $block->content['que-es-reto-pais'] = array(
     '#theme' => 'homepage_que_es_reto_pais',
-    '#link' => l(t('Descubrí más sobre El Reto'), 'que-es-reto-pais', array('attributes' => array('class' => array('button')))),
+    '#link' => $link,
     '#video' => $video,
     '#image' => $image,
+    '#title' => $title,
+    '#text' => $text,
   );
   return $block;
 }

@@ -108,6 +108,8 @@ function retopais_feature_pages_theme() {
         'link' => '',
         'video' => '',
         'image' => '',
+        'title' => '',
+        'text' => '',
       ),
       'path' => drupal_get_path('module', 'retopais_feature_pages') . '/theme',
       'template' => 'homepage-que-es-reto-pais',
@@ -380,6 +382,34 @@ function retopais_feature_pages_blog_form($form, $form_state) {
  * Form builder for homepage config.
  */
 function retopais_feature_pages_homepage_form($form, $form_state) {
+
+  $form['retopais_feature_pages_homepage_que_es_reto_pais_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título del componente Qué es Reto País'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_que_es_reto_pais_title', ''),
+  );
+
+  $retopais_feature_pages_homepage_que_es_reto_pais_text = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_text', array('value' => '¿Qué es reto país? placeholder text.', 'format' => 'filtered_html'));
+  $form['retopais_feature_pages_homepage_que_es_reto_pais_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto del componente Qué es Reto País'),
+    '#default_value' => $retopais_feature_pages_homepage_que_es_reto_pais_text['value'],
+    '#format' => $retopais_feature_pages_homepage_que_es_reto_pais_text['format'],
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_pages_homepage_que_es_reto_pais_link_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Texto del enlace del componente Qué es Reto País'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_que_es_reto_pais_link_text', ''),
+  );
+
+  $form['retopais_feature_pages_homepage_que_es_reto_pais_link_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('URL del enlace del componente Qué es Reto País'),
+    '#default_value' => variable_get('retopais_feature_pages_homepage_que_es_reto_pais_link_url', ''),
+  );
+
   $form['retopais_feature_pages_homepage_que_es_reto_pais_video'] = array(
     '#type' => 'textfield',
     '#title' => t('Video del componente Qué es Reto País'),
