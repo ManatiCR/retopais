@@ -392,7 +392,7 @@ function retopais_feature_pages_homepage_form($form, $form_state) {
   $retopais_feature_pages_homepage_que_es_reto_pais_text = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_text', array('value' => '¿Qué es reto país? placeholder text.', 'format' => 'filtered_html'));
   $form['retopais_feature_pages_homepage_que_es_reto_pais_text'] = array(
     '#type' => 'text_format',
-    '#title' => t('Descripción de los premios.'),
+    '#title' => t('Texto del componente Qué es Reto País'),
     '#default_value' => $retopais_feature_pages_homepage_que_es_reto_pais_text['value'],
     '#format' => $retopais_feature_pages_homepage_que_es_reto_pais_text['format'],
     '#required' => TRUE,
