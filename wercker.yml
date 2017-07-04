@@ -166,7 +166,7 @@ deploy-test:
             mkdir -p ~/.drush
             cp ./wercker/policy.drush.inc ~/.drush/
             # Post build configuration.
-            terminus drush --site=retopais --env=test "sqlsan -y --strict=0"
+            # terminus drush --site=retopais --env=test "sqlsan -y --strict=0"
             terminus drush --site=retopais --env=test "cc drush --strict=0"
             terminus drush --site=retopais --env=test "master-set-current-scope test --strict=0"
             terminus drush --site=retopais --env=test "master-execute -y --strict=0"
