@@ -30,10 +30,14 @@ function problematicas_sidebar_render($subtype, $conf, $panel_args, $context) {
   $image = file_load(variable_get('retopais_feature_pages_problematicas_sidebar_image', 0));
   if ($image) {
     $image_path = $image->uri;
+    $image_resized = image_style_path(RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE, $image->uri);
+    $dimensions = getimagesize($image_resized);
 
     $variables = array(
       'style_name' => RETOPAIS_FEATURE_PAGES_PROBLEMS_SIDEBAR_IMAGE,
       'path' => $image_path,
+      'width' => $dimensions[0],
+      'height' => $dimensions[1],
       'attributes' => array(),
     );
 

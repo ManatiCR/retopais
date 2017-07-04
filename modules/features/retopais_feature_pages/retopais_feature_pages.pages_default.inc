@@ -690,7 +690,7 @@ function retopais_feature_pages_default_page_manager_pages() {
   $pane->panel = 'right';
   $pane->type = 'proposal_counter';
   $pane->subtype = 'proposal_counter';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
