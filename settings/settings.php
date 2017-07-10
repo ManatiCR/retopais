@@ -74,6 +74,7 @@ $conf['master_modules']['base'] = array(
   'strongarm',
   'styleguide',
   'token',
+  'transliteration',
   'views',
   'views_content',
   'views_bulk_operations',
