@@ -567,6 +567,10 @@ hr {
   margin: 1.4em 0;
 }
 
+.field-name-field-representative-prov-canton select {
+  margin-right: 20px;
+}
+
 .breadcrumb {
   color: #4ba3bf;
 }
@@ -2043,6 +2047,10 @@ hr {
 
 .node-type-proposal .panel-col > div {
   position: relative;
+}
+
+.node-type-proposal.page-node-edit .panel-pane {
+  margin: 0;
 }
 
 .pane-node-field-project-links .pane-content, .pane-node-field-canton .pane-content, .pane-node-field-project-running .pane-content, .pane-node-field-needs .pane-content {
