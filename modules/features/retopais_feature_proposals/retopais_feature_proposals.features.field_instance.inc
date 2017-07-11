@@ -469,6 +469,58 @@ Mentoría|Mentoría',
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_org_prov_canton'.
+  $field_instances['node-proposal-field_org_prov_canton'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 38,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_org_prov_canton',
+    'label' => 'Provincia y cantón',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+          'use_chosen' => 'always',
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_org_rep_email'.
   $field_instances['node-proposal-field_org_rep_email'] = array(
     'bundle' => 'proposal',
@@ -610,55 +662,6 @@ Mentoría|Mentoría',
       ),
       'type' => 'text_textfield',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-proposal-field_organization_address'.
-  $field_instances['node-proposal-field_organization_address'] = array(
-    'bundle' => 'proposal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'ckeditor_embed' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_organization_address',
-    'label' => 'Dirección de la organización',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
     ),
   );
 
@@ -845,7 +848,7 @@ Mentoría|Mentoría',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -943,7 +946,7 @@ Mentoría|Mentoría',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -1603,7 +1606,6 @@ Mentoría|Mentoría',
   // Included for use with string extractors like potx.
   t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática');
   t('Correo electrónico');
-  t('Dirección de la organización');
   t('Edad');
   t('Explicá cómo tu idea es innovadora');
   t('Indique su edad en años.');
@@ -1614,6 +1616,7 @@ Mentoría|Mentoría',
   t('Número de cédula');
   t('Número de teléfono');
   t('Persona responsable del proyecto presentado');
+  t('Provincia y cantón');
   t('Provincia y cantón de nacimiento');
   t('Sexo');
   t('Sitio web, Redes Sociales');
