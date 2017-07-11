@@ -33,5 +33,13 @@ function retopais_feature_field_bases_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'provinces_cantons' => array(
+      'name' => 'Provinces and Cantons',
+      'machine_name' => 'provinces_cantons',
+      'description' => 'Contains Costa Rica Provinces and Cantons',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
