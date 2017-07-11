@@ -71,6 +71,7 @@ $conf['master_modules']['base'] = array(
   'rh_taxonomy',
   'select_or_other',
   'semantic_panels',
+  'shs',
   'strongarm',
   'styleguide',
   'token',
