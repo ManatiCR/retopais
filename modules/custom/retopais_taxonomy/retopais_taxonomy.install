@@ -85,7 +85,7 @@ function retopais_taxonomy_install() {
     }
   }
 
-  // Create problems terms.
+  // Create cantons terms.
   $cantons_vocabulary = taxonomy_vocabulary_machine_name_load('cantons');
   if ($cantons_vocabulary) {
     if (file_exists(drupal_get_path('module', 'retopais_taxonomy') . '/data/cantons.csv')) {
@@ -100,6 +100,9 @@ function retopais_taxonomy_install() {
       }
     }
   }
+
+  // Create provinces and cantons terms.
+  retopais_taxonomy_create_prov_cantons();
 }
 
 /**
@@ -126,6 +129,46 @@ function retopais_taxonomy_create_image_node($source, $destination, $name) {
 }
 
 /**
+ * Helper function to create provinces_cantons terms.
+ */
+function retopais_taxonomy_create_prov_cantons() {
+  $prov_cantons_vocabulary = taxonomy_vocabulary_machine_name_load('provinces_cantons');
+  if ($prov_cantons_vocabulary) {
+    // Create Provinces
+    $provinces = [
+      'San José' => 0,
+      'Alajuela' => 0,
+      'Cartago' => 0,
+      'Heredia' => 0,
+      'Guanacaste' => 0,
+      'Puntarenas' => 0,
+      'Limón' => 0,
+    ];
+    foreach ($provinces as $prov => $tid) {
+      $term = (object) array(
+        'name' => $prov,
+        'vid' => $prov_cantons_vocabulary->vid,
+      );
+      taxonomy_term_save($term);
+      $provinces[$prov] = $term->tid;
+    }
+    if (file_exists(drupal_get_path('module', 'retopais_taxonomy') . '/data/provinces-cantons.csv')) {
+      $file = fopen(drupal_get_path('module', 'retopais_taxonomy') . '/data/provinces-cantons.csv', 'r');
+      while ($data = fgetcsv($file)) {
+        $prov = $data[0];
+        $canton = $data[1];
+        $term = (object) array(
+          'name' => $canton,
+          'vid' => $prov_cantons_vocabulary->vid,
+          'parent' => $provinces[$prov],
+        );
+        taxonomy_term_save($term);
+      }
+    }
+  }
+}
+
+/**
  * Change problem name.
  */
 function retopais_taxonomy_update_7000() {
@@ -135,4 +178,12 @@ function retopais_taxonomy_update_7000() {
     $term->name = 'Acceso a la educación superior y técnica';
   }
   taxonomy_term_save($term);
+}
+
+
+/**
+ * Create provinces_cantons vocabulary terms.
+ */
+function retopais_taxonomy_update_7001() {
+  retopais_taxonomy_create_prov_cantons();
 }
