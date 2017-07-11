@@ -108,6 +108,16 @@ function retopais_feature_proposals_update_7001() {
 }
 
 /**
+ * Delete 'field_organization_address'.
+ */
+function retopais_feature_proposals_update_7002() {
+  $instance_to_erase = field_info_instance('node', 'field_organization_address', 'proposal');
+  $field_to_erase = 'field_organization_address';
+  field_delete_instance($instance_to_erase, $field_cleanup = TRUE);
+  field_delete_field($field_to_erase);
+}
+
+/**
  * Helper function to create menu links.
  *
  * @param array $menu_links
