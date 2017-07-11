@@ -154,7 +154,7 @@ function retopais_feature_proposals_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -465,7 +465,7 @@ Mentoría|Mentoría',
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1456,6 +1456,59 @@ Mentoría|Mentoría',
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_representative_prov_canton'.
+  $field_instances['node-proposal-field_representative_prov_canton'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 37,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_representative_prov_canton',
+    'label' => 'Provincia y cantón de nacimiento',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+          'use_chosen' => 'always',
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_representative_sex'.
   $field_instances['node-proposal-field_representative_sex'] = array(
     'bundle' => 'proposal',
@@ -1561,6 +1614,7 @@ Mentoría|Mentoría',
   t('Número de cédula');
   t('Número de teléfono');
   t('Persona responsable del proyecto presentado');
+  t('Provincia y cantón de nacimiento');
   t('Sexo');
   t('Sitio web, Redes Sociales');
   t('Teléfono');

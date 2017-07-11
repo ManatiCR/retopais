@@ -54,6 +54,7 @@ features[field_base][] = field_representative_email
 features[field_base][] = field_representative_full_name
 features[field_base][] = field_representative_id_number
 features[field_base][] = field_representative_phone
+features[field_base][] = field_representative_prov_canton
 features[field_base][] = field_representative_sex
 features[field_base][] = field_solution_type
 features[field_base][] = field_url
