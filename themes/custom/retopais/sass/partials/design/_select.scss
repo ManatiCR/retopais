@@ -2,3 +2,10 @@
 // Select
 // @_select.scss
 //////////////////////////////
+
+.field-name-field-representative-prov-canton,
+.field-name-field-org-prov-canton {
+  select {
+    margin-right: 20px;
+  }
+}

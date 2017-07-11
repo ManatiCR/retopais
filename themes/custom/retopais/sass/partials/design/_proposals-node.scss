@@ -18,6 +18,12 @@
   }
 }
 
+.node-type-proposal.page-node-edit {
+  .panel-pane {
+    margin: 0;
+  }
+}
+
 .pane-node-field-project-links, .pane-node-field-canton, .pane-node-field-project-running, .pane-node-field-needs {
   .pane-content {
     display: block;

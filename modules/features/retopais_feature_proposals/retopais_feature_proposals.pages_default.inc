@@ -1358,7 +1358,7 @@ function retopais_feature_proposals_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '¡Felicidades, su propuesta ha sido enviada!';
+  $display->title = '¡Felicidades y gracias por haber aportado tu propuesta a Reto PAÍS! ';
   $display->uuid = 'ec7c90bc-e929-4166-ab79-fc4856b900de';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_propuesta_enviada__panel';
@@ -1374,12 +1374,17 @@ function retopais_feature_proposals_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Mensaje Final',
     'title' => '',
-    'body' => '<p>Los finalistas serán anunciados por nuestro sitio web y serán contactados por correo o por teléfono.</p>
+    'body' => '<p>Seguile dando vida a tu idea y compartila a través de redes sociales con <a href="/sites/all/modules/features/retopais_feature_proposals/files/RetoPais-RedesSociales.zip">este&nbsp;material</a>.</p>
 
-<p>Fecha de anuncio: El día 28 de julio</p>
+<p>Recordá que los finalistas serán anunciados por nuestro sitio web y serán contactados por correo electrónico o teléfono.&nbsp;</p>
+
+<p>Fecha de anuncio: El día 16 de agosto</p>
+
+<p>*&nbsp;Los finalistas recibirán un taller de capacitación el 19 y 26 de agosto.</p>
 ',
     'format' => 'full_html',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1392,32 +1397,6 @@ function retopais_feature_proposals_default_page_manager_pages() {
   $pane->uuid = '76f454e0-8a83-4428-911f-e7d59b0c17e2';
   $display->content['new-76f454e0-8a83-4428-911f-e7d59b0c17e2'] = $pane;
   $display->panels['middle'][0] = 'new-76f454e0-8a83-4428-911f-e7d59b0c17e2';
-  $pane = new stdClass();
-  $pane->pid = 'new-b0b98534-2b41-4d77-94bd-a349dad85746';
-  $pane->panel = 'middle';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Nota al pie',
-    'title' => '',
-    'body' => '<p>* Los finalistas recibirán un taller de capacitación el 6 y 7 de Agosto.</p>
-',
-    'format' => 'full_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'b0b98534-2b41-4d77-94bd-a349dad85746';
-  $display->content['new-b0b98534-2b41-4d77-94bd-a349dad85746'] = $pane;
-  $display->panels['middle'][1] = 'new-b0b98534-2b41-4d77-94bd-a349dad85746';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-76f454e0-8a83-4428-911f-e7d59b0c17e2';
   $handler->conf['display'] = $display;
