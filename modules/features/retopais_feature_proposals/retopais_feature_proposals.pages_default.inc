@@ -1374,7 +1374,9 @@ function retopais_feature_proposals_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Mensaje Final',
     'title' => '',
-    'body' => '<p>Seguile dando vida a tu idea y compartila a través de redes sociales con <a href="/sites/all/modules/features/retopais_feature_proposals/files/RetoPais-RedesSociales.zip">este&nbsp;material</a>.</p>
+    'body' => '<p><img alt="" src="/sites/all/modules/features/retopais_feature_proposals/files/retopais-idea.gif" style="height:350px; width:350px" /></p>
+
+<p>Seguile dando vida a tu idea y compartila a través de redes sociales con <a href="/sites/all/modules/features/retopais_feature_proposals/files/RetoPais-RedesSociales.zip">este&nbsp;material</a>.</p>
 
 <p>Recordá que los finalistas serán anunciados por nuestro sitio web y serán contactados por correo electrónico o teléfono.&nbsp;</p>
 
