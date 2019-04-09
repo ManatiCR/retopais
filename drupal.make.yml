@@ -32,7 +32,7 @@ projects:
   ckeditor_entity_embed:
     download:
       type: "git"
-      url: "https://git.drupal.org/sandbox/guschilds/2465359.git"
+      url: "https://git.drupal.org/sandbox/guschilds-2465359.git"
       branch: "7.x-1.x"
       revision: "a97e19dbe30945a441fed7c74e6e0ba9a5ed84ff"
   chosen:
