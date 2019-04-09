@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DRUSH="./.vendor/bin/drush"
-SITE_ALIAS="@retopais.retopais.dev"
+SITE_ALIAS="@retopais.retopais.local"
 DB_FILE="./retopais.sql.gz"
 if [ ! -f $DB_FILE ]; then
   wget `terminus backup:get retopais.live --element=db` -O retopais.sql.gz
