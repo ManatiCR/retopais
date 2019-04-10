@@ -17,8 +17,6 @@
     width: auto;
   }
   ul {
-    margin: 0;
-    padding: 0;
     &.collapsed {
       display: none;
     }
@@ -27,25 +25,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    @include breakpoint($medium) {
-      display: inline-block;
-    }
   }
   a {
-    border-top: 1px solid $light-gray;
-    color: $darker-gray;
-    font-family: $roboto;
-    display: block;
-    padding: 10px 12px;
-    font-weight: 400;
-    @include font-size(1.8);
-    @include breakpoint($medium) {
-      border-top: none;
-      color: $white;
-      padding: 5px 11px;
-      text-shadow: 2px 1.7px 0px rgba(47, 14, 14, 0.73);
-      @include font-size(2);
-    }
+    @include font-size(1.2);
+    font-family: $rubik;
+    color: white;
   }
   .menu-item-propone {
     text-shadow: none;
@@ -62,25 +46,21 @@
   }
   a:hover,
   a.active {
-    background-color: $red;
-    color: $white;
     text-decoration: none;
-    @include breakpoint($medium) {
-      background-color: transparent;
-      color: $red;
-    }
+    border-bottom: 2px solid $main-yellow;
+    color: white;
   }
 
-  .menu-item-propone {
-    background-color: $yellow;
-    color: $dark;
-    @include breakpoint($medium) {
-      border-radius: 5px;
-      border-bottom: 2px solid $darkyellow;
-    }
-    &:hover,
-    &.active {
-      background-color: $yellow;
-    }
-  }
+  // .menu-item-propone {
+  //   background-color: $yellow;
+  //   color: $dark;
+  //   @include breakpoint($medium) {
+  //     border-radius: 5px;
+  //     border-bottom: 2px solid $darkyellow;
+  //   }
+  //   &:hover,
+  //   &.active {
+  //     background-color: $yellow;
+  //   }
+  // }
 }

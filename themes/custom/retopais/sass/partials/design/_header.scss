@@ -8,14 +8,63 @@
 }
 
 .container-header {
-  display: flex;
-  //align-items: center;
-  //flex-direction: column;
-  //justify-content: space-between;
-  padding: 0;
   position: relative;
+  height: 196px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0;
+  background: url("../img/backgrounds/header-bg.jpg") no-repeat bottom right;
+}
+
+.site-name {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 144px;
+  height: 113px;
+  margin: 0;
+  background: url("../img/logo/logo.svg") no-repeat;
+  background-size: 100%;
+  display: block;
+  text-indent: -999px;
+  white-space: nowrap;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 116px;
+    height: 168px;
+    position: absolute;
+    right: -140px;
+    top: -20px;
+    background: url("../img/logo/logo-1820-ideas.png");
+  }
   @include breakpoint($medium) {
-    flex-direction: row;
+  }
+  @include breakpoint($large) {
+  }
+  @include breakpoint($max-width) {
+  }
+}
+
+.nav-main {
+  flex-grow: 1;
+  margin-left: 280px;
+}
+
+.nav-main,
+.social-links {
+  ul {
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -23,32 +72,4 @@
   background-color: $white;
   height: 40px;
   display: none;
-}
-
-.site-name {
-  margin: 0;
-  background: url(../img/logo/logo.svg) no-repeat;
-  background-size: 100%;
-  display: block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  @include breakpoint($medium) {
-    height: 174px;
-    //margin: 40px 10px;
-    width: 215px;
-  }
-  @include breakpoint($large) {
-    height: 223px;
-    width: 276px;
-  }
-  @include breakpoint($max-width) {
-    width: 168px;
-    height: 136px;
-  }
 }
