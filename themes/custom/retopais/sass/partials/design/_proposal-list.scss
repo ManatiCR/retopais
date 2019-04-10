@@ -5,7 +5,6 @@
 
 .pane-proposal-progress {
   background-color: $azure;
-
 }
 .proposal-progress-list {
   list-style-type: none;
@@ -17,8 +16,7 @@
 }
 
 .proposal-progress-item-current {
-  font-family: $oswald;
-  @include font-size(1.7);
+  font-family: $roboto;
   color: $red;
   margin: 8px 0;
 }

@@ -1,0 +1,43 @@
+/////////////////////////////////////////
+// Styles for the counters
+// @_counter.scss
+/////////////////////////////////////////
+
+.sidebar-counter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @include breakpoint($medium) {
+    justify-content: flex-start;
+  }
+}
+
+.ideas-column {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+
+.ideas-row:first-child {
+  @include font-size(3.6);
+  font-weight: bold;
+}
+
+.ideas-row:nth-child(2) {
+  @include font-size(1.4);
+}
+
+.ideas-column {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 25px;
+  color: $white;
+  border: 10px solid $azure;
+  border-radius: 75px;
+  background-color: $red;
+}
+
+.pane-proposal-counter {
+  margin-bottom: 30px;
+}

@@ -3,8 +3,9 @@
 // @_typography.scss
 ///////////////////////
 
-html, body {
-  font-family: $open-sans;
+html,
+body {
+  font-family: $rubik;
   line-height: 1.4;
   color: $darker-gray;
 }
@@ -17,12 +18,14 @@ body {
   @include font-size(1.4);
 }
 
-h1, h2 {
-  font-family: $oswald;
+h1,
+h2 {
+  font-family: $roboto;
   color: $dark;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-weight: bold;
 }
 
@@ -48,15 +51,22 @@ h4 {
   }
 }
 
-h1, h2, h4, h5, h6 {
+h1,
+h2,
+h4,
+h5,
+h6 {
   color: $dark;
 }
 
-p, div, li {
+p,
+div,
+li {
   @include font-size(1.6);
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -66,9 +76,9 @@ i {
 
 button,
 .button,
-input[type='submit'],
-input[type='submit'] + #edit-cancel {
-font-family: $oswald;
-font-weight: 400;
-font-size: 1.6rem;
+input[type="submit"],
+input[type="submit"] + #edit-cancel {
+  font-family: $roboto;
+  font-weight: 400;
+  font-size: 1.6rem;
 }

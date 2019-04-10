@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    font-family: $oswald;
+    font-family: $roboto;
     @include breakpoint($medium) {
       justify-content: center;
     }
@@ -66,8 +66,8 @@
   }
   h3 {
     color: $darker-gray;
-    margin:0;
-    font-family: $oswald;
+    margin: 0;
+    font-family: $roboto;
     @include font-size(2.2);
     padding-bottom: 20px;
     @include breakpoint($smallish) {

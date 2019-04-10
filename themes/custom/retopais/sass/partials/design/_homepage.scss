@@ -12,11 +12,15 @@
   }
 }
 
-.page-fullwidth-first-full, .page-fullwidth-third-full {
+.page-fullwidth-first-full,
+.page-fullwidth-third-full {
   width: 100%;
 }
 
-.page-fullwidth-second, .page-fullwidth-fourth, .que-es-reto-pais--container-inner, .pane-homepage-timeline {
+.page-fullwidth-second,
+.page-fullwidth-fourth,
+.que-es-reto-pais--container-inner,
+.pane-homepage-timeline {
   padding: 0 20px;
   @include breakpoint($desktop) {
     max-width: $max-width;
@@ -61,7 +65,7 @@
 .que-es-reto-pais--left {
   display: block;
   margin-bottom: 40px;
-  @include breakpoint ($medium) {
+  @include breakpoint($medium) {
     display: inline-block;
     float: left;
     width: 50%;
@@ -74,7 +78,7 @@
 
 .que-es-reto-pais--right {
   display: block;
-  @include breakpoint ($medium) {
+  @include breakpoint($medium) {
     display: inline-block;
     float: left;
     width: 50%;
@@ -106,7 +110,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @include breakpoint ($large) {
+    @include breakpoint($large) {
       flex-wrap: nowrap;
     }
   }
@@ -119,42 +123,42 @@
     }
     @include breakpoint($large) {
       flex: 0 1 25%;
+      font-family: $roboto;
     }
-  }
-  .views-field-name {
-    font-size: 2.4rem;
-    font-family: $oswald;
-    margin: 10px 0;
-    min-height: 66px;
-  }
-  .field-abstract {
-    text-align: left;
-  }
-  .views-row-1 {
     .views-field-name {
-      color: $icon-green;
+      font-size: 2.4rem;
+      font-family: $roboto;
+      margin: 10px 0;
+      min-height: 66px;
     }
-  }
-  .views-row-2 {
-    .views-field-name {
-      color: $icon-yellow;
+    .field-abstract {
+      text-align: left;
     }
-  }
-  .views-row-3 {
-    .views-field-name {
-      color: $icon-blue;
+    .views-row-1 {
+      .views-field-name {
+        color: $icon-green;
+      }
     }
-  }
-  .views-row-4 {
-    .views-field-name {
-      color: $icon-purple;
+    .views-row-2 {
+      .views-field-name {
+        color: $icon-yellow;
+      }
     }
-  }
-  h2 {
-    text-align: center;
+    .views-row-3 {
+      .views-field-name {
+        color: $icon-blue;
+      }
+    }
+    .views-row-4 {
+      .views-field-name {
+        color: $icon-purple;
+      }
+    }
+    h2 {
+      text-align: center;
+    }
   }
 }
-
 .pane-homepage-premios {
   margin: 80px 0;
   text-align: center;
@@ -195,7 +199,8 @@
   }
 }
 
-.homepage-participa-en-el-reto--left, .homepage-participa-en-el-reto--right {
+.homepage-participa-en-el-reto--left,
+.homepage-participa-en-el-reto--right {
   position: relative;
   display: inline-block;
 }
@@ -218,7 +223,7 @@
 
 .homepage-participa-en-el-reto--right {
   width: 100%;
-  @include breakpoint ($medium) {
+  @include breakpoint($medium) {
     width: auto;
     position: absolute;
     top: 50%;

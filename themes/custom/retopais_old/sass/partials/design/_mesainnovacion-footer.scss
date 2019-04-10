@@ -1,0 +1,23 @@
+////////////////////////////////////////////////
+// Style for footer Mesa de Innovacion Logos.
+// @_mesainnovacion-footer.scss
+////////////////////////////////////////////////
+
+.pane-alianzas-panel-pane-4 {
+  border-top: 2px solid $light-gray;
+  h2 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    @include font-size(1.8);
+  }
+  .view-content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .views-row {
+    margin: 0 15px 30px 15px;
+  }
+}

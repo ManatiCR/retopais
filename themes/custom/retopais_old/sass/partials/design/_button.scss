@@ -1,0 +1,79 @@
+//////////////////////////////
+// Buttons
+// @_buttons.scss
+//////////////////////////////
+
+button,
+.button,
+input[type='submit'],
+input[type='submit'] + #edit-cancel {
+  border-radius: 5px;
+  padding: 18px 60px;
+  border: 2px solid $blue;
+  color: $blue;
+  background-color: $white;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $blue;
+    box-shadow: 0 2px 0 $darkblue;
+    color: $white;
+    cursor: pointer;
+    padding: 18px 60px 16px 60px;
+    margin-bottom: 2px;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+
+input[type='submit'] + #edit-cancel {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.button-red,
+.button-dark {
+  border: none;
+  display: inline-block;
+  padding: 20px 60px 18px 60px;
+  margin-bottom: 2px;
+  &:hover {
+    padding: 20px 60px 18px 60px;
+    text-decoration: none;
+  }
+}
+
+.button-red {
+  color: $white;
+  background-color: $red;
+  box-shadow: 0 2px 0 $darkred;
+  &:hover {
+    background-color: $darkred;
+    box-shadow: 0 2px 0 $darkerred;
+  }
+}
+
+.button-yellow {
+  border: 2px solid $yellow;
+  color: $dark;
+  display: inline-block;
+  padding: 18px 60px 18px 60px;
+  &:hover {
+    color: $dark;
+    background-color: $yellow;
+    padding: 18px 60px 16px 60px;
+    box-shadow: 0 2px 0 $darkyellow;
+    text-decoration: none;
+  }
+}
+
+.button-dark {
+  background-color: $button-grey;
+  box-shadow: 0 2px 0 $darker-gray;
+  color: $dark;
+  &:hover {
+    color: $white;
+    background-color: $dark;
+    box-shadow: 0 2px 0 $darker-gray;
+  }
+}

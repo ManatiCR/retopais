@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i");
 .page-admin-appearance-styleguide {
   max-width: 1200px;
   margin: 0 auto;
@@ -195,8 +195,9 @@ main {
   }
 }
 
-html, body {
-  font-family: "Open Sans", sans-serif;
+html,
+body {
+  font-family: "Rubik", sans-serif;
   line-height: 1.4;
   color: #5d5d5d;
 }
@@ -210,12 +211,14 @@ body {
   font-size: 1.4rem;
 }
 
-h1, h2 {
-  font-family: "Oswald", sans-serif;
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
   color: #353e42;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-weight: bold;
 }
 
@@ -244,16 +247,23 @@ h4 a:hover {
   color: #4ba3bf;
 }
 
-h1, h2, h4, h5, h6 {
+h1,
+h2,
+h4,
+h5,
+h6 {
   color: #353e42;
 }
 
-p, div, li {
+p,
+div,
+li {
   font-size: 16px;
   font-size: 1.6rem;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -265,9 +275,9 @@ button,
 .button,
 .more-link a,
 .more-help-link a,
-input[type='submit'],
-input[type='submit'] + #edit-cancel {
-  font-family: "Oswald", sans-serif;
+input[type="submit"],
+input[type="submit"] + #edit-cancel {
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
 }
@@ -316,7 +326,7 @@ div:not(#foo) input[type="checkbox"]:checked + label {
 .messages.status {
   display: none;
   background-image: url(../img/icons/check.png);
-  background-color: #6BC690;
+  background-color: #6bc690;
   color: #fff;
 }
 
@@ -328,7 +338,7 @@ div:not(#foo) input[type="checkbox"]:checked + label {
 
 .messages.error {
   background-image: url(../img/icons/error.png);
-  background-color: #DF3C32;
+  background-color: #df3c32;
   color: #fff;
 }
 
@@ -582,7 +592,7 @@ hr {
 
 .breadcrumbs-blog-full .breadcrumb {
   color: #5d5d5d;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -608,52 +618,37 @@ hr {
 }
 
 .site-header {
-  background: url(../img/backgrounds/header-bg.jpg) no-repeat center 40px;
-  background-size: cover;
+  background: black;
 }
 
 .container-header {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 0;
   position: relative;
 }
 
 @media (min-width: 768px) {
   .container-header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 }
 
 .header-top-bar {
   background-color: #fff;
   height: 40px;
+  display: none;
 }
 
 .site-name {
+  margin: 0;
   background: url(../img/logo/logo.svg) no-repeat;
   background-size: 100%;
   display: block;
-  height: 122px;
-  margin: 20px 10px;
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  width: 150px;
 }
 
 .site-name a {
@@ -665,7 +660,6 @@ hr {
 @media (min-width: 768px) {
   .site-name {
     height: 174px;
-    margin: 40px 10px;
     width: 215px;
   }
 }
@@ -679,8 +673,8 @@ hr {
 
 @media (min-width: 1200px) {
   .site-name {
-    height: 248px;
-    width: 307px;
+    width: 168px;
+    height: 136px;
   }
 }
 
@@ -763,7 +757,7 @@ hr {
 .nav-main a {
   border-top: 1px solid #dddddd;
   color: #5d5d5d;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   display: block;
   padding: 10px 12px;
   font-weight: 400;
@@ -791,21 +785,23 @@ hr {
   background: url(../img/icons/menu.svg) no-repeat 12px center;
   color: #5d5d5d;
   display: block;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
   padding: 10px 10px 10px 44px;
   font-size: 20px;
   font-size: 2rem;
 }
 
-.nav-main a:hover, .nav-main a.active {
+.nav-main a:hover,
+.nav-main a.active {
   background-color: #e13e32;
   color: #fff;
   text-decoration: none;
 }
 
 @media (min-width: 768px) {
-  .nav-main a:hover, .nav-main a.active {
+  .nav-main a:hover,
+  .nav-main a.active {
     background-color: transparent;
     color: #e13e32;
   }
@@ -883,7 +879,7 @@ hr {
 }
 
 .nav-footer a {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: #000;
   font-weight: 400;
   font-size: 15px;
@@ -901,21 +897,19 @@ hr {
 
 .pane-problems-panel-pane-1 .view-content {
   width: 100%;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 @media (min-width: 768px) {
   .pane-problems-panel-pane-1 .view-content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 }
 
@@ -927,30 +921,27 @@ hr {
 
 .pane-problems-panel-pane-1 .views-row {
   text-align: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
   margin-bottom: 20px;
 }
 
 @media (min-width: 480px) {
   .pane-problems-panel-pane-1 .views-row {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 40%;
-            flex: 1 1 40%;
+    -ms-flex: 1 1 40%;
+        flex: 1 1 40%;
   }
 }
 
 @media (min-width: 1024px) {
   .pane-problems-panel-pane-1 .views-row {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 25%;
-            flex: 1 1 25%;
+    -ms-flex: 1 1 25%;
+        flex: 1 1 25%;
   }
 }
 
 .pane-problems-panel-pane-1 .icon-paridad-de-genero-en-educacion {
-  color: #8D519F;
+  color: #8d519f;
 }
 
 .pane-problems-panel-pane-1 .icon-accidentes-de-transito {
@@ -958,11 +949,11 @@ hr {
 }
 
 .pane-problems-panel-pane-1 .icon-separacion-y-recoleccion-de-residuos {
-  color: #91C73E;
+  color: #91c73e;
 }
 
 .pane-problems-panel-pane-1 .icon-acceso-a-cultura-y-recreacion {
-  color: #008ECE;
+  color: #008ece;
 }
 
 .pane-problems-panel-pane-2 {
@@ -1001,7 +992,7 @@ hr {
 .pane-problems-panel-pane-2 h3 {
   color: #5d5d5d;
   margin: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 22px;
   font-size: 2.2rem;
   padding-bottom: 20px;
@@ -1022,7 +1013,7 @@ hr {
 }
 
 .pane-problems-panel-pane-2 .views-row-1 h3 {
-  color: #91C73E;
+  color: #91c73e;
 }
 
 .pane-problems-panel-pane-2 .views-row-2 h3 {
@@ -1030,11 +1021,11 @@ hr {
 }
 
 .pane-problems-panel-pane-2 .views-row-3 h3 {
-  color: #008ECE;
+  color: #008ece;
 }
 
 .pane-problems-panel-pane-2 .views-row-4 h3 {
-  color: #8D519F;
+  color: #8d519f;
 }
 
 @media (min-width: 768px) {
@@ -1080,7 +1071,6 @@ hr {
 }
 
 .stages-list {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
@@ -1098,16 +1088,13 @@ hr {
   width: 200px;
   height: 200px;
   border-radius: 100px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   margin-left: 10px;
   text-indent: 0;
 }
@@ -1117,7 +1104,7 @@ hr {
 }
 
 .stages-list li:before {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: #4ba3bf;
   padding: 15px;
   border-radius: 50%;
@@ -1154,22 +1141,19 @@ hr {
   border-color: transparent transparent transparent #fff;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
+  transform: translateY(-48%);
   margin-left: 10px;
 }
 
 .view-alianzas .view-content {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .view-alianzas .views-row {
@@ -1204,9 +1188,7 @@ hr {
 }
 
 .proposal-progress-item-current {
-  font-family: "Oswald", sans-serif;
-  font-size: 17px;
-  font-size: 1.7rem;
+  font-family: "Roboto Condensed", sans-serif;
   color: #e13e32;
   margin: 8px 0;
 }
@@ -1216,13 +1198,10 @@ hr {
 }
 
 .select-buttons {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   padding: 0;
   margin-bottom: 30px;
 }
@@ -1268,7 +1247,7 @@ hr {
 }
 
 .page-node-add-proposal .form-item-field-problem-und ul li:nth-child(2) a {
-  box-shadow: 0 3px 0 #8D519F;
+  box-shadow: 0 3px 0 #8d519f;
 }
 
 .page-node-add-proposal .form-item-field-problem-und ul li:nth-child(3) a {
@@ -1276,15 +1255,15 @@ hr {
 }
 
 .page-node-add-proposal .form-item-field-problem-und ul li:nth-child(4) a {
-  box-shadow: 0 3px 0 #91C73E;
+  box-shadow: 0 3px 0 #91c73e;
 }
 
 .page-node-add-proposal .form-item-field-problem-und ul li:nth-child(5) a {
-  box-shadow: 0 3px 0 #008ECE;
+  box-shadow: 0 3px 0 #008ece;
 }
 
 .form-item-field-problem-und ul li:nth-child(1) a {
-  box-shadow: 0 3px 0 #8D519F;
+  box-shadow: 0 3px 0 #8d519f;
 }
 
 .form-item-field-problem-und ul li:nth-child(2) a {
@@ -1292,11 +1271,11 @@ hr {
 }
 
 .form-item-field-problem-und ul li:nth-child(3) a {
-  box-shadow: 0 3px 0 #91C73E;
+  box-shadow: 0 3px 0 #91c73e;
 }
 
 .form-item-field-problem-und ul li:nth-child(4) a {
-  box-shadow: 0 3px 0 #008ECE;
+  box-shadow: 0 3px 0 #008ece;
 }
 
 #edit-previous {
@@ -1396,7 +1375,7 @@ hr {
 .pane-problems-problems-only-names .cta-propone {
   position: relative;
   border-radius: 4px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
   padding: 20px 60px 18px 90px;
   text-indent: -40px;
@@ -1418,8 +1397,7 @@ hr {
   border-color: transparent transparent transparent #fff;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
+  transform: translateY(-48%);
   margin-left: 10px;
   margin-left: 30px;
 }
@@ -1433,7 +1411,7 @@ hr {
   background-position: center bottom;
   display: block;
   height: 80px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   padding: 0 78px 0 30px;
   text-align: center;
   width: 244px;
@@ -1443,7 +1421,7 @@ hr {
 
 .pane-problems-problems-only-names .icon-paridad-de-genero-en-educacion {
   background-image: url(../img/icons/icon-paridad.svg);
-  color: #8D519F;
+  color: #8d519f;
 }
 
 .pane-problems-problems-only-names .icon-accidentes-de-transito {
@@ -1454,12 +1432,12 @@ hr {
 
 .pane-problems-problems-only-names .icon-separacion-y-recoleccion-de-residuos {
   background-image: url(../img/icons/icon-residuos.svg);
-  color: #91C73E;
+  color: #91c73e;
 }
 
 .pane-problems-problems-only-names .icon-acceso-a-cultura-y-recreacion {
   background-image: url(../img/icons/icon-cultura.svg);
-  color: #008ECE;
+  color: #008ece;
 }
 
 .pane-alianzas-panel-pane-4 {
@@ -1474,16 +1452,12 @@ hr {
 }
 
 .pane-alianzas-panel-pane-4 .view-content {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
+  -ms-flex-align: center;
+      align-items: center;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
@@ -1516,7 +1490,7 @@ hr {
 }
 
 .blog-list-page .blog-item--title {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   margin: 0;
 }
 
@@ -1536,7 +1510,7 @@ hr {
   border: 2px solid #4ba3bf;
   border-radius: 3px;
   display: inline-block;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
   padding: 10px 20px;
   text-transform: uppercase;
@@ -1583,8 +1557,7 @@ hr {
   border-color: transparent transparent transparent #000;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
+  transform: translateY(-48%);
   margin-left: 10px;
   top: 48%;
   right: 10px;
@@ -1633,16 +1606,23 @@ hr {
   padding: 0;
 }
 
-.page-fullwidth-first-full, .page-fullwidth-third-full {
+.page-fullwidth-first-full,
+.page-fullwidth-third-full {
   width: 100%;
 }
 
-.page-fullwidth-second, .page-fullwidth-fourth, .que-es-reto-pais--container-inner, .pane-homepage-timeline {
+.page-fullwidth-second,
+.page-fullwidth-fourth,
+.que-es-reto-pais--container-inner,
+.pane-homepage-timeline {
   padding: 0 20px;
 }
 
 @media (min-width: 1240px) {
-  .page-fullwidth-second, .page-fullwidth-fourth, .que-es-reto-pais--container-inner, .pane-homepage-timeline {
+  .page-fullwidth-second,
+  .page-fullwidth-fourth,
+  .que-es-reto-pais--container-inner,
+  .pane-homepage-timeline {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -1741,12 +1721,10 @@ hr {
 }
 
 .pane-problems-panel-pane-3 .view-content {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1761,55 +1739,53 @@ hr {
 .pane-problems-panel-pane-3 .views-row {
   text-align: center;
   padding: 0 25px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
 }
 
 @media (min-width: 768px) {
   .pane-problems-panel-pane-3 .views-row {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .pane-problems-panel-pane-3 .views-row {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 25%;
-            flex: 0 1 25%;
+    -ms-flex: 0 1 25%;
+        flex: 0 1 25%;
+    font-family: "Roboto Condensed", sans-serif;
   }
 }
 
-.pane-problems-panel-pane-3 .views-field-name {
+.pane-problems-panel-pane-3 .views-row .views-field-name {
   font-size: 2.4rem;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   margin: 10px 0;
   min-height: 66px;
 }
 
-.pane-problems-panel-pane-3 .field-abstract {
+.pane-problems-panel-pane-3 .views-row .field-abstract {
   text-align: left;
 }
 
-.pane-problems-panel-pane-3 .views-row-1 .views-field-name {
-  color: #91C73E;
+.pane-problems-panel-pane-3 .views-row .views-row-1 .views-field-name {
+  color: #91c73e;
 }
 
-.pane-problems-panel-pane-3 .views-row-2 .views-field-name {
+.pane-problems-panel-pane-3 .views-row .views-row-2 .views-field-name {
   color: #ffcb50;
 }
 
-.pane-problems-panel-pane-3 .views-row-3 .views-field-name {
-  color: #008ECE;
+.pane-problems-panel-pane-3 .views-row .views-row-3 .views-field-name {
+  color: #008ece;
 }
 
-.pane-problems-panel-pane-3 .views-row-4 .views-field-name {
-  color: #8D519F;
+.pane-problems-panel-pane-3 .views-row .views-row-4 .views-field-name {
+  color: #8d519f;
 }
 
-.pane-problems-panel-pane-3 h2 {
+.pane-problems-panel-pane-3 .views-row h2 {
   text-align: center;
 }
 
@@ -1843,8 +1819,7 @@ hr {
     border-color: transparent transparent transparent #000;
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-48%);
-            transform: translateY(-48%);
+    transform: translateY(-48%);
     margin-left: 10px;
   }
   .pane-homepage-premios .button:hover:after, .pane-homepage-premios .more-link a:hover:after, .more-link .pane-homepage-premios a:hover:after, .pane-homepage-premios
@@ -1871,7 +1846,8 @@ hr {
   padding: 80px 0;
 }
 
-.homepage-participa-en-el-reto--left, .homepage-participa-en-el-reto--right {
+.homepage-participa-en-el-reto--left,
+.homepage-participa-en-el-reto--right {
   position: relative;
   display: inline-block;
 }
@@ -1904,8 +1880,7 @@ hr {
     width: auto;
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     right: 0;
   }
 }
@@ -1927,8 +1902,7 @@ hr {
   border-color: transparent transparent transparent #fff;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-48%);
-          transform: translateY(-48%);
+  transform: translateY(-48%);
   margin-left: 10px;
 }
 
@@ -1957,7 +1931,6 @@ hr {
 }
 
 .pane-problems-panel-pane-4 .view-content {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -1970,22 +1943,20 @@ hr {
   background-color: #f2f2f2;
   margin: 0 0 20px 0;
   padding: 20px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 100%;
-          flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+      flex: 0 1 100%;
 }
 
 @media (min-width: 768px) {
   .pane-problems-panel-pane-4 .views-row {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 48%;
-            flex: 0 1 48%;
+    -ms-flex: 0 1 48%;
+        flex: 0 1 48%;
   }
 }
 
 .pane-problems-panel-pane-4 .field-content {
-  font-family: "Oswald", sans-serif;
-  height: 115px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   background-repeat: no-repeat;
   background-position: right top;
   width: 100%;
@@ -1996,7 +1967,7 @@ hr {
 }
 
 .pane-problems-panel-pane-4 .field-prize-text {
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   margin-bottom: 20px;
   padding-right: 120px;
 }
@@ -2008,7 +1979,7 @@ hr {
 }
 
 .pane-problems-panel-pane-4 .icon-paridad-de-genero {
-  color: #8D519F;
+  color: #8d519f;
   background-image: url(../img/icons/icon-parity.svg);
 }
 
@@ -2019,12 +1990,12 @@ hr {
 
 .pane-problems-panel-pane-4 .icon-separacion-y-recoleccion-de-residuos {
   background-image: url(../img/icons/icon-recycle.svg);
-  color: #91C73E;
+  color: #91c73e;
 }
 
 .pane-problems-panel-pane-4 .icon-acceso-a-cultura-y-recreacion {
   background-image: url(../img/icons/icon-culture.svg);
-  color: #008ECE;
+  color: #008ece;
 }
 
 .pane-problems-panel-pane-4 .views-field-field-image-1 .field-content {
@@ -2071,7 +2042,6 @@ hr {
 }
 
 .sidebar-counter {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -2082,9 +2052,8 @@ hr {
 
 @media (min-width: 768px) {
   .sidebar-counter {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
 }
 

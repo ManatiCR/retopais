@@ -1,0 +1,36 @@
+///////////////////////////////
+// Base Layout rules.
+// @_base.scss
+///////////////////////////////
+
+// Singularity.gs configuration.
+@include add-grid(15);
+@include add-gutter(1/3);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main, .container {
+  display: block;
+  overflow: hidden;
+  @include breakpoint($desktop) {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  padding: 0 20px;
+}
+
+main {
+  margin-top: 40px;
+}

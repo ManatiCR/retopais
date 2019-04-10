@@ -1,0 +1,38 @@
+.stages-list {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  li {
+    position: relative;
+    background-color: $dark;
+    color: $white;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: 10px;
+    text-indent: 0;
+    div {
+      width: inherit;
+    }
+    &:before {
+      font-family: $oswald;
+      background-color: $blue;
+      padding: 15px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    & .stages-wrapper {
+      margin-left: -30px;
+    }
+  }
+}

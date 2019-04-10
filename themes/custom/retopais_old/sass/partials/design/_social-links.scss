@@ -1,0 +1,38 @@
+//////////////////////////////////
+// Social links styles.
+// @_social-links.scss
+//////////////////////////////////
+
+.social-links {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include breakpoint($large) {
+    right: 18px;
+    top: 30px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0 0 5px 0;
+    padding: 0;
+    list-style-type: none;
+    @include breakpoint($medium) {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+  a {
+    display: block;
+    height: 25px;
+    overflow: hidden;
+    text-indent: 100%;
+    width: 25px;
+    white-space: nowrap;
+  }
+  .social-fb {
+    background-image: url(../img/nav/icon-facebook.svg);
+  }
+}

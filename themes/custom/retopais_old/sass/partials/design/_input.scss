@@ -1,0 +1,51 @@
+//////////////////////////////
+// Input
+// @_input.scss
+//////////////////////////////
+
+input[type="text"],
+.form-text {
+  background-color: white;
+  color: #353e42;
+  padding: 8px 8px;
+  border-radius: 4px;
+  border: solid 1px $dark;
+  width: 100%;
+  max-width: 400px;
+}
+
+textarea {
+  border-radius: 4px;
+  border: solid 1px $dark;
+  overflow: auto;
+  min-height: 128px;
+  max-width: 600px;
+}
+
+.form-type-textarea, .form-type-textfield {
+  label {
+    max-width: 600px;
+    margin-bottom: 10px;
+  }
+}
+
+input[type="text"],
+.form-text,
+textarea {
+  &:focus {
+    border: solid 1px $blue;
+    color: $blue;
+    outline: none;
+  }
+}
+
+.form-item-textfield,
+.form-item-autocomplete {
+  label {
+    text-transform: uppercase;
+  }
+}
+
+.grippie {
+  display: none;
+}
