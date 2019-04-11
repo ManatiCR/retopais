@@ -1077,7 +1077,7 @@ hr {
 .pane-que-es-retopais-cta .button:after, .pane-que-es-retopais-cta .more-link a:after, .more-link .pane-que-es-retopais-cta a:after, .pane-que-es-retopais-cta
 .more-help-link a:after,
 .more-help-link .pane-que-es-retopais-cta a:after {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-style: solid;
@@ -1364,7 +1364,7 @@ hr {
 
 .pane-problems-problems-only-names .cta-propone:after {
   content: "";
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-style: solid;
@@ -1424,11 +1424,13 @@ hr {
 .pane-alianzas-panel-pane-4 h2:before {
   content: "";
   display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #fcb614;
+  text-align: center;
   width: 60px;
   height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .pane-alianzas-panel-pane-4 .view-content {
@@ -1529,7 +1531,7 @@ hr {
 
 .problematicas-cta-link .button-yellow:after, .blog-cta .button-yellow:after {
   content: "";
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-style: solid;
@@ -1591,7 +1593,6 @@ hr {
   width: 100%;
 }
 
-.page-fullwidth-second,
 .page-fullwidth-fourth,
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
@@ -1600,7 +1601,6 @@ hr {
 }
 
 @media (min-width: 1240px) {
-  .page-fullwidth-second,
   .page-fullwidth-fourth,
   .que-es-reto-pais--container-inner,
   .pane-homepage-timeline {
@@ -1620,7 +1620,7 @@ hr {
 
 .page-fullwidth-second {
   margin-bottom: 30px;
-  padding: 65px 0;
+  padding: 40px 0;
   background: #f2f2f2;
 }
 
@@ -1690,22 +1690,49 @@ hr {
 }
 
 .pane-problems-panel-pane-3 {
+  max-width: 1200px;
   margin: 40px 0;
+  margin: 0 auto;
 }
 
 .pane-problems-panel-pane-3 .view-content {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
-  -ms-grid-columns: (minmax(254px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(254px, 1fr));
-  margin-top: 80px;
+  -ms-grid-columns: (minmax(253px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
+  margin-top: 100px;
+}
+
+.pane-problems-panel-pane-3 .pane-title {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  line-height: normal;
+  text-align: center;
+  font-size: 24px;
+  font-size: 2.4rem;
+  margin: 0 0 40px 0;
+}
+
+.pane-problems-panel-pane-3 .pane-title:before {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 40px;
 }
 
 .pane-problems-panel-pane-3 .views-row {
   text-align: center;
-  padding: 0 25px;
+  padding: 0 15px 15px 15px;
   background: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 .pane-problems-panel-pane-3 .views-row .field-image {
@@ -1724,10 +1751,15 @@ hr {
 }
 
 .pane-problems-panel-pane-3 .views-row .views-field-name {
-  font-size: 2.4rem;
-  font-family: "Roboto Condensed", sans-serif;
-  margin: 10px 0;
-  min-height: 66px;
+  color: black;
+  margin: 40px 0;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: normal;
+  text-align: center;
 }
 
 .pane-problems-panel-pane-3 .views-row .field-abstract {
@@ -1776,7 +1808,7 @@ hr {
   .pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
   .more-help-link a:after,
   .more-help-link .pane-homepage-premios a:after {
-    content: '';
+    content: "";
     width: 0;
     height: 0;
     border-style: solid;
@@ -1859,7 +1891,7 @@ hr {
 .homepage-participa-en-el-reto--right .button:after, .homepage-participa-en-el-reto--right .more-link a:after, .more-link .homepage-participa-en-el-reto--right a:after, .homepage-participa-en-el-reto--right
 .more-help-link a:after,
 .more-help-link .homepage-participa-en-el-reto--right a:after {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-style: solid;
