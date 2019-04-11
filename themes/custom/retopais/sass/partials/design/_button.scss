@@ -5,28 +5,45 @@
 
 button,
 .button,
-input[type='submit'],
-input[type='submit'] + #edit-cancel {
-  border-radius: 5px;
-  padding: 18px 60px;
-  border: 2px solid $blue;
-  color: $blue;
-  background-color: $white;
-  text-transform: uppercase;
+input[type="submit"],
+input[type="submit"] + #edit-cancel {
+  height: 58px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 26px;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  background: $main-yellow;
+  color: black;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+  }
+  &:before {
+    left: -10px;
+    border-bottom: 58px solid $main-yellow;
+    border-left: 10px solid transparent;
+  }
+  &:after {
+    transform: rotate(180deg);
+    right: -10px;
+    border-bottom: 58px solid $main-yellow;
+    border-left: 10px solid transparent;
+  }
   &:hover {
-    background-color: $blue;
-    box-shadow: 0 2px 0 $darkblue;
-    color: $white;
-    cursor: pointer;
-    padding: 18px 60px 16px 60px;
-    margin-bottom: 2px;
+    text-decoration: none;
   }
   &:focus {
     outline-style: none;
   }
 }
 
-input[type='submit'] + #edit-cancel {
+input[type="submit"] + #edit-cancel {
   margin-left: 10px;
   text-decoration: none;
 }

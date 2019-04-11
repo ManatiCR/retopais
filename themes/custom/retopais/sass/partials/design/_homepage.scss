@@ -22,6 +22,7 @@
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
   padding: 0 20px;
+  overflow: hidden;
   @include breakpoint($desktop) {
     max-width: $max-width;
     margin: 0 auto;
@@ -29,14 +30,8 @@
 }
 
 .page-fullwidth-first-full {
-  display: inline-block;
   padding: 40px 0;
-  background-color: $red;
-  color: $white;
-  background-image: url(../img/backgrounds/hp-top-bg.png);
-  background-repeat: no-repeat;
-  background-position: 35% 50%;
-  min-height: 324px;
+  min-height: 220px;
   .homepage-highlighted {
     font-weight: bold;
   }
@@ -44,6 +39,8 @@
 
 .page-fullwidth-second {
   margin-bottom: 30px;
+  padding: 65px 0;
+  background: #f2f2f2;
 }
 
 .page-fullwidth-third-full {
@@ -56,7 +53,12 @@
 }
 
 .que-es-reto-pais--title {
-  color: white;
+  font-family: $roboto;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: normal;
   .homepage-highlighted {
     color: $yellow;
   }
@@ -65,14 +67,18 @@
 .que-es-reto-pais--left {
   display: block;
   margin-bottom: 40px;
+  p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: normal;
+  }
   @include breakpoint($medium) {
     display: inline-block;
     float: left;
     width: 50%;
     padding-right: 30px;
-  }
-  p {
-    margin: 30px 0;
   }
 }
 
@@ -87,16 +93,8 @@
 }
 
 .que-es-reto-pais--link {
+  margin-top: 45px;
   .button {
-    display: inline-block;
-    background-color: transparent;
-    color: $white;
-    border-color: $yellow;
-    &:hover {
-      box-shadow: 0 2px 0 $darkyellow;
-      background-color: $yellow;
-      text-decoration: none;
-    }
   }
 }
 
@@ -107,23 +105,25 @@
 .pane-problems-panel-pane-3 {
   margin: 40px 0;
   .view-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    @include breakpoint($large) {
-      flex-wrap: nowrap;
-    }
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(254px, 1fr));
+    margin-top: 80px;
   }
   .views-row {
     text-align: center;
     padding: 0 25px;
-    flex: 1 1 100%;
-    @include breakpoint($medium) {
-      flex: 1 1 50%;
-    }
-    @include breakpoint($large) {
-      flex: 0 1 25%;
-      font-family: $roboto;
+    background: white;
+    .field-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50% 50%;
+      display: block;
+      background: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -60px;
     }
     .views-field-name {
       font-size: 2.4rem;

@@ -13,6 +13,7 @@
 body {
   margin: 0;
   padding: 0;
+  color: #505050;
 }
 
 img {
@@ -20,14 +21,16 @@ img {
   height: auto;
 }
 
-main, .container {
+main,
+.container {
   display: block;
   overflow: hidden;
   padding: 0 20px;
 }
 
 @media (min-width: 1240px) {
-  main, .container {
+  main,
+  .container {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -481,40 +484,81 @@ button,
 .button,
 .more-link a,
 .more-help-link a,
-input[type='submit'],
-input[type='submit'] + #edit-cancel {
-  border-radius: 5px;
-  padding: 18px 60px;
-  border: 2px solid #4ba3bf;
-  color: #4ba3bf;
-  background-color: #fff;
-  text-transform: uppercase;
+input[type="submit"],
+input[type="submit"] + #edit-cancel {
+  height: 58px;
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 26px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  background: #fcb614;
+  color: black;
+}
+
+button:before, button:after,
+.button:before,
+.more-link a:before,
+.more-help-link a:before,
+.button:after,
+.more-link a:after,
+.more-help-link a:after,
+input[type="submit"]:before,
+input[type="submit"]:after,
+input[type="submit"] + #edit-cancel:before,
+input[type="submit"] + #edit-cancel:after {
+  content: "";
+  position: absolute;
+}
+
+button:before,
+.button:before,
+.more-link a:before,
+.more-help-link a:before,
+input[type="submit"]:before,
+input[type="submit"] + #edit-cancel:before {
+  left: -10px;
+  border-bottom: 58px solid #fcb614;
+  border-left: 10px solid transparent;
+}
+
+button:after,
+.button:after,
+.more-link a:after,
+.more-help-link a:after,
+input[type="submit"]:after,
+input[type="submit"] + #edit-cancel:after {
+  transform: rotate(180deg);
+  right: -10px;
+  border-bottom: 58px solid #fcb614;
+  border-left: 10px solid transparent;
 }
 
 button:hover,
 .button:hover,
 .more-link a:hover,
 .more-help-link a:hover,
-input[type='submit']:hover,
-input[type='submit'] + #edit-cancel:hover {
-  background-color: #4ba3bf;
-  box-shadow: 0 2px 0 #318da3;
-  color: #fff;
-  cursor: pointer;
-  padding: 18px 60px 16px 60px;
-  margin-bottom: 2px;
+input[type="submit"]:hover,
+input[type="submit"] + #edit-cancel:hover {
+  text-decoration: none;
 }
 
 button:focus,
 .button:focus,
 .more-link a:focus,
 .more-help-link a:focus,
-input[type='submit']:focus,
-input[type='submit'] + #edit-cancel:focus {
+input[type="submit"]:focus,
+input[type="submit"] + #edit-cancel:focus {
   outline-style: none;
 }
 
-input[type='submit'] + #edit-cancel {
+input[type="submit"] + #edit-cancel {
   margin-left: 10px;
   text-decoration: none;
 }
@@ -1559,6 +1603,7 @@ hr {
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
   padding: 0 20px;
+  overflow: hidden;
 }
 
 @media (min-width: 1240px) {
@@ -1572,14 +1617,8 @@ hr {
 }
 
 .page-fullwidth-first-full {
-  display: inline-block;
   padding: 40px 0;
-  background-color: #e13e32;
-  color: #fff;
-  background-image: url(../img/backgrounds/hp-top-bg.png);
-  background-repeat: no-repeat;
-  background-position: 35% 50%;
-  min-height: 324px;
+  min-height: 220px;
 }
 
 .page-fullwidth-first-full .homepage-highlighted {
@@ -1588,6 +1627,8 @@ hr {
 
 .page-fullwidth-second {
   margin-bottom: 30px;
+  padding: 65px 0;
+  background: #f2f2f2;
 }
 
 .page-fullwidth-third-full {
@@ -1600,7 +1641,12 @@ hr {
 }
 
 .que-es-reto-pais--title {
-  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: normal;
 }
 
 .que-es-reto-pais--title .homepage-highlighted {
@@ -1612,6 +1658,14 @@ hr {
   margin-bottom: 40px;
 }
 
+.que-es-reto-pais--left p {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: normal;
+}
+
 @media (min-width: 768px) {
   .que-es-reto-pais--left {
     display: inline-block;
@@ -1619,10 +1673,6 @@ hr {
     width: 50%;
     padding-right: 30px;
   }
-}
-
-.que-es-reto-pais--left p {
-  margin: 30px 0;
 }
 
 .que-es-reto-pais--right {
@@ -1638,21 +1688,8 @@ hr {
   }
 }
 
-.que-es-reto-pais--link .button, .que-es-reto-pais--link .more-link a, .more-link .que-es-reto-pais--link a, .que-es-reto-pais--link
-.more-help-link a,
-.more-help-link .que-es-reto-pais--link a {
-  display: inline-block;
-  background-color: transparent;
-  color: #fff;
-  border-color: #ffcb50;
-}
-
-.que-es-reto-pais--link .button:hover, .que-es-reto-pais--link .more-link a:hover, .more-link .que-es-reto-pais--link a:hover, .que-es-reto-pais--link
-.more-help-link a:hover,
-.more-help-link .que-es-reto-pais--link a:hover {
-  box-shadow: 0 2px 0 #e5a72c;
-  background-color: #ffcb50;
-  text-decoration: none;
+.que-es-reto-pais--link {
+  margin-top: 45px;
 }
 
 .que-es-reto-pais--image {
@@ -1664,41 +1701,33 @@ hr {
 }
 
 .pane-problems-panel-pane-3 .view-content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-@media (min-width: 1024px) {
-  .pane-problems-panel-pane-3 .view-content {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-columns: (minmax(254px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(254px, 1fr));
+  margin-top: 80px;
 }
 
 .pane-problems-panel-pane-3 .views-row {
   text-align: center;
   padding: 0 25px;
-  -ms-flex: 1 1 100%;
-      flex: 1 1 100%;
+  background: white;
 }
 
-@media (min-width: 768px) {
-  .pane-problems-panel-pane-3 .views-row {
-    -ms-flex: 1 1 50%;
-        flex: 1 1 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .pane-problems-panel-pane-3 .views-row {
-    -ms-flex: 0 1 25%;
-        flex: 0 1 25%;
-    font-family: "Roboto Condensed", sans-serif;
-  }
+.pane-problems-panel-pane-3 .views-row .field-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50% 50%;
+  display: block;
+  background: white;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-top: -60px;
 }
 
 .pane-problems-panel-pane-3 .views-row .views-field-name {
