@@ -27,35 +27,26 @@
   }
 
   .field-content {
-    background-repeat: no-repeat;
-    background-position: center bottom;
     display: block;
-    height: 80px;
-    font-family: $roboto;
-    padding: 0 78px 0 30px;
-    text-align: center;
-    width: 244px;
-    @include font-size(1.3);
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    margin-bottom: 20px;
   }
 
   .icon-paridad-de-genero-en-educacion {
-    background-image: url(../img/icons/icon-paridad.svg);
-    color: $icon-purple;
+    background: url("../img/sprite.png") no-repeat -24px -3285px;
   }
 
   .icon-accidentes-de-transito {
-    background-image: url(../img/icons/icon-transito.svg);
-    color: $icon-yellow;
-    padding: 18px 78px 0 30px;
+    background: url("../img/sprite.png") no-repeat -16px -2997px;
   }
 
   .icon-separacion-y-recoleccion-de-residuos {
-    background-image: url(../img/icons/icon-residuos.svg);
-    color: $icon-green;
+    background: url("../img/sprite.png") no-repeat -14px -2848px;
   }
 
   .icon-acceso-a-cultura-y-recreacion {
-    background-image: url(../img/icons/icon-cultura.svg);
-    color: $icon-blue;
+    background: url("../img/sprite.png") no-repeat -21px -3148px;
   }
 }

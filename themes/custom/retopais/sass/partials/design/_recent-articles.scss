@@ -5,28 +5,53 @@
 
 .pane-blog-recent-articles {
   h2 {
-    color: $red;
-    margin: 0;
-    text-transform: uppercase;
-    @include font-size(2);
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    margin: 20px 0;
+    @include font-size(1.8);
+    line-height: normal;
   }
   h3 {
     @include font-size(1.6);
   }
+  .view-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
   .views-row {
-    border-bottom: 1px solid $dark-gray;
-    padding: 15px 0;
-    &:last-child {
-      border-bottom: none;
-    }
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   }
   .blog-item--title {
     margin: 0;
+    a {
+      text-decoration: none;
+      color: black;
+      font-family: $rubik;
+      font-style: normal;
+      font-weight: bold;
+      @include font-size(1.4);
+      line-height: normal;
+    }
+  }
+  .blog-item--date {
+    display: block;
+    margin-bottom: 15px;
+    color: $yellow-dark;
+    font-family: $rubik;
+    font-style: normal;
+    font-weight: bold;
+    @include font-size(1);
+    line-height: normal;
   }
   .blog-item--body {
     p {
       margin: 0;
-      @include font-size(1.4);
+      color: black;
+      @include font-size(1.2);
     }
   }
   &.recent-articles-sidebar {

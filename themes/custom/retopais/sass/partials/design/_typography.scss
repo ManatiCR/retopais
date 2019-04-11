@@ -19,26 +19,33 @@ body {
 }
 
 h1,
-h2 {
-  font-family: $roboto;
-  color: $dark;
-}
-
+h2,
+h4,
 h5,
 h6 {
+  color: black;
+}
+
+h1,
+h2 {
+  font-family: $rubik;
   font-weight: bold;
 }
 
 h1 {
-  @include font-size(3);
+  font-style: italic;
+  @include font-size(2.4);
+  line-height: normal;
 }
 
 h2 {
-  @include font-size(2.4);
+  font-style: normal;
+  @include font-size(1.8);
+  line-height: normal;
 }
 
 h3 {
-  @include font-size(1.8);
+  @include font-size(1.4);
   color: $blue;
 }
 
@@ -51,18 +58,15 @@ h4 {
   }
 }
 
-h1,
-h2,
-h4,
-h5,
-h6 {
-  color: $dark;
-}
-
 p,
 div,
 li {
-  @include font-size(1.6);
+  color: $gray-dark;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: normal;
+  @include font-size(1.4);
+  line-height: normal;
 }
 
 b,

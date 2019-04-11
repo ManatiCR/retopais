@@ -10,17 +10,19 @@
   }
   li {
     list-style-type: none;
-    margin: 15px 0;
+    margin: 10px 0;
     padding: 0;
   }
   a {
+    @include font-size(1.2);
+    text-decoration: none;
     font-family: $roboto;
-    color: $black;
-    font-weight: 400;
-    @include font-size(1.5);
+    color: black;
+    font-weight: bold;
     &.active,
     &:hover {
-      color: red;
+      color: black;
+      border-bottom: 2px solid $main-yellow;
       text-decoration: none;
     }
   }
