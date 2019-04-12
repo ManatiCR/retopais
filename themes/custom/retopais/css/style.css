@@ -43,8 +43,8 @@ main {
 .page-sidebar {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 300px;
-      grid-template-columns: auto 300px;
+  -ms-grid-columns: auto 340px;
+      grid-template-columns: auto 340px;
   grid-gap: 35px;
 }
 
@@ -1321,6 +1321,26 @@ hr {
   text-transform: none;
   font-size: 24px;
   font-size: 2.4rem;
+}
+
+.page-sidebar-secondary-content .pane-blog-recent-articles .view-content {
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.page-sidebar-secondary-content .pane-blog-recent-articles .views-row {
+  padding: 0 0 20px 0;
+  background: none;
+  box-shadow: none;
+  border-bottom: 1px solid #b0b0b0;
+}
+
+.page-sidebar-secondary-content .pane-blog-recent-articles .views-row:last-child {
+  border: none;
+}
+
+.page-sidebar-secondary-content .pane-blog-recent-articles .blog-item--body p {
+  color: unset;
 }
 
 .pane-problems-problems-only-names .cta-propone {

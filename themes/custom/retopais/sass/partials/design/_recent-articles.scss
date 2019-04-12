@@ -65,3 +65,21 @@
     }
   }
 }
+
+.page-sidebar-secondary-content .pane-blog-recent-articles {
+  .view-content {
+    grid-template-columns: auto;
+  }
+  .views-row {
+    padding: 0 0 20px 0;
+    background: none;
+    box-shadow: none;
+    border-bottom: 1px solid $gray;
+    &:last-child {
+      border: none;
+    }
+  }
+  .blog-item--body p {
+    color: unset;
+  }
+}
