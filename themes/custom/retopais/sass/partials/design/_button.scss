@@ -7,39 +7,9 @@ button,
 .button,
 input[type="submit"],
 input[type="submit"] + #edit-cancel {
-  height: 58px;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 26px;
-  font-family: $rubik;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: normal;
-  background: $main-yellow;
-  color: black;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-  }
-  &:before {
-    left: -10px;
-    border-bottom: 58px solid $main-yellow;
-    border-left: 10px solid transparent;
-  }
-  &:after {
-    transform: rotate(180deg);
-    right: -10px;
-    border-bottom: 58px solid $main-yellow;
-    border-left: 10px solid transparent;
-  }
+  @include btn-parallelogram($main-yellow, black);
   &:hover {
-    text-decoration: none;
-  }
-  &:focus {
-    outline-style: none;
+    color: white;
   }
 }
 
@@ -70,19 +40,8 @@ input[type="submit"] + #edit-cancel {
   }
 }
 
-.button-yellow {
-  border: 2px solid $yellow;
-  color: $dark;
-  display: inline-block;
-  padding: 18px 60px 18px 60px;
-  &:hover {
-    color: $dark;
-    background-color: $yellow;
-    padding: 18px 60px 16px 60px;
-    box-shadow: 0 2px 0 $darkyellow;
-    text-decoration: none;
-  }
-}
+// .button-yellow {
+// }
 
 .button-dark {
   background-color: $button-grey;

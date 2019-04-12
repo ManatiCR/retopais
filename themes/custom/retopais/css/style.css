@@ -441,6 +441,7 @@ button,
 .more-help-link a,
 input[type="submit"],
 input[type="submit"] + #edit-cancel {
+  text-decoration: none;
   height: 58px;
   position: relative;
   display: -ms-inline-flexbox;
@@ -453,8 +454,8 @@ input[type="submit"] + #edit-cancel {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: normal;
-  background: #fcb614;
   color: black;
+  background: #fcb614;
 }
 
 button:before, button:after,
@@ -502,6 +503,25 @@ button:hover,
 input[type="submit"]:hover,
 input[type="submit"] + #edit-cancel:hover {
   text-decoration: none;
+  background: black;
+}
+
+button:hover:before,
+.button:hover:before,
+.more-link a:hover:before,
+.more-help-link a:hover:before,
+input[type="submit"]:hover:before,
+input[type="submit"] + #edit-cancel:hover:before {
+  border-bottom-color: black;
+}
+
+button:hover:after,
+.button:hover:after,
+.more-link a:hover:after,
+.more-help-link a:hover:after,
+input[type="submit"]:hover:after,
+input[type="submit"] + #edit-cancel:hover:after {
+  border-bottom-color: black;
 }
 
 button:focus,
@@ -511,6 +531,15 @@ button:focus,
 input[type="submit"]:focus,
 input[type="submit"] + #edit-cancel:focus {
   outline-style: none;
+}
+
+button:hover,
+.button:hover,
+.more-link a:hover,
+.more-help-link a:hover,
+input[type="submit"]:hover,
+input[type="submit"] + #edit-cancel:hover {
+  color: white;
 }
 
 input[type="submit"] + #edit-cancel {
@@ -541,21 +570,6 @@ input[type="submit"] + #edit-cancel {
 .button-red:hover {
   background-color: #cc2925;
   box-shadow: 0 2px 0 #b21b1b;
-}
-
-.button-yellow {
-  border: 2px solid #ffcb50;
-  color: #353e42;
-  display: inline-block;
-  padding: 18px 60px 18px 60px;
-}
-
-.button-yellow:hover {
-  color: #353e42;
-  background-color: #ffcb50;
-  padding: 18px 60px 16px 60px;
-  box-shadow: 0 2px 0 #e5a72c;
-  text-decoration: none;
 }
 
 .button-dark {
@@ -757,6 +771,7 @@ hr {
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   color: white;
+  text-decoration: none;
 }
 
 .nav-main .menu-item-propone {
@@ -1593,7 +1608,6 @@ hr {
   width: 100%;
 }
 
-.page-fullwidth-fourth,
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
   padding: 0 20px;
@@ -1601,7 +1615,6 @@ hr {
 }
 
 @media (min-width: 1240px) {
-  .page-fullwidth-fourth,
   .que-es-reto-pais--container-inner,
   .pane-homepage-timeline {
     max-width: 1200px;
@@ -1625,7 +1638,8 @@ hr {
 }
 
 .page-fullwidth-third-full {
-  background-color: #f2f2f2;
+  background-color: white;
+  margin-bottom: 80px;
 }
 
 .pane-homepage-timeline {
@@ -1787,47 +1801,118 @@ hr {
 }
 
 .pane-homepage-premios {
-  margin: 80px 0;
+  background: #fcb614;
+  padding: 40px 0;
+}
+
+.pane-homepage-premios .pane-content {
+  margin: auto;
+  max-width: 1200px;
   text-align: center;
-  background-image: url(../img/backgrounds/hp-bg-premios.png);
-  background-repeat: no-repeat;
-  background-position: 0% 50%;
 }
 
 .pane-homepage-premios h2 {
-  font-weight: 400;
+  color: #282828;
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .pane-homepage-premios .button, .pane-homepage-premios .more-link a, .more-link .pane-homepage-premios a, .pane-homepage-premios
 .more-help-link a,
 .more-help-link .pane-homepage-premios a {
+  margin: 40px 0;
+  text-decoration: none;
+  height: 58px;
   position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 26px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  color: black;
+  background: black;
+  color: white;
 }
 
-@media (min-width: 480px) {
-  .pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
-  .more-help-link a:after,
-  .more-help-link .pane-homepage-premios a:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 5px 0 5px 10px;
-    border-color: transparent transparent transparent #000;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-48%);
-    margin-left: 10px;
-  }
-  .pane-homepage-premios .button:hover:after, .pane-homepage-premios .more-link a:hover:after, .more-link .pane-homepage-premios a:hover:after, .pane-homepage-premios
-  .more-help-link a:hover:after,
-  .more-help-link .pane-homepage-premios a:hover:after {
-    top: 50%;
-  }
+.pane-homepage-premios .button:before, .pane-homepage-premios .more-link a:before, .more-link .pane-homepage-premios a:before, .pane-homepage-premios
+.more-help-link a:before,
+.more-help-link .pane-homepage-premios a:before, .pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
+.more-help-link a:after,
+.more-help-link .pane-homepage-premios a:after {
+  content: "";
+  position: absolute;
 }
 
-.homepage-premios--description {
-  margin: 30px 0;
+.pane-homepage-premios .button:before, .pane-homepage-premios .more-link a:before, .more-link .pane-homepage-premios a:before, .pane-homepage-premios
+.more-help-link a:before,
+.more-help-link .pane-homepage-premios a:before {
+  left: -10px;
+  border-bottom: 58px solid black;
+  border-left: 10px solid transparent;
+}
+
+.pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
+.more-help-link a:after,
+.more-help-link .pane-homepage-premios a:after {
+  transform: rotate(180deg);
+  right: -10px;
+  border-bottom: 58px solid black;
+  border-left: 10px solid transparent;
+}
+
+.pane-homepage-premios .button:hover, .pane-homepage-premios .more-link a:hover, .more-link .pane-homepage-premios a:hover, .pane-homepage-premios
+.more-help-link a:hover,
+.more-help-link .pane-homepage-premios a:hover {
+  text-decoration: none;
+  background: white;
+}
+
+.pane-homepage-premios .button:hover:before, .pane-homepage-premios .more-link a:hover:before, .more-link .pane-homepage-premios a:hover:before, .pane-homepage-premios
+.more-help-link a:hover:before,
+.more-help-link .pane-homepage-premios a:hover:before {
+  border-bottom-color: white;
+}
+
+.pane-homepage-premios .button:hover:after, .pane-homepage-premios .more-link a:hover:after, .more-link .pane-homepage-premios a:hover:after, .pane-homepage-premios
+.more-help-link a:hover:after,
+.more-help-link .pane-homepage-premios a:hover:after {
+  border-bottom-color: white;
+}
+
+.pane-homepage-premios .button:focus, .pane-homepage-premios .more-link a:focus, .more-link .pane-homepage-premios a:focus, .pane-homepage-premios
+.more-help-link a:focus,
+.more-help-link .pane-homepage-premios a:focus {
+  outline-style: none;
+}
+
+.pane-homepage-premios .button:hover, .pane-homepage-premios .more-link a:hover, .more-link .pane-homepage-premios a:hover, .pane-homepage-premios
+.more-help-link a:hover,
+.more-help-link .pane-homepage-premios a:hover {
+  color: black;
+}
+
+.homepage-premios--description p {
+  color: #282828;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: normal;
+  text-align: center;
+  width: 234px;
+  margin: 0 auto;
 }
 
 .pane-homepage-participa {

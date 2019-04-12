@@ -17,7 +17,6 @@
   width: 100%;
 }
 
-.page-fullwidth-fourth,
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
   padding: 0 20px;
@@ -43,7 +42,8 @@
 }
 
 .page-fullwidth-third-full {
-  background-color: $background-gray;
+  background-color: white;
+  margin-bottom: 80px;
 }
 
 .pane-homepage-timeline {
@@ -177,31 +177,43 @@
   }
 }
 .pane-homepage-premios {
-  margin: 80px 0;
-  text-align: center;
-  background-image: url(../img/backgrounds/hp-bg-premios.png);
-  background-repeat: no-repeat;
-  background-position: 0% 50%;
+  background: $main-yellow;
+  padding: 40px 0;
+  .pane-content {
+    margin: auto;
+    max-width: $max-width;
+    text-align: center;
+  }
   h2 {
-    font-weight: 400;
+    color: #282828;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(2.4);
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 40px;
   }
   .button {
-    position: relative;
-    @include breakpoint($small) {
-      &:after {
-        @include triangle($black);
-      }
-      &:hover {
-        &:after {
-          top: 50%;
-        }
-      }
+    margin: 40px 0;
+    @include btn-parallelogram(black, white);
+    color: white;
+    &:hover {
+      color: black;
     }
   }
 }
 
-.homepage-premios--description {
-  margin: 30px 0;
+.homepage-premios--description p {
+  color: #282828;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: bold;
+  @include font-size(1.8);
+  line-height: normal;
+  text-align: center;
+  width: 234px;
+  margin: 0 auto;
 }
 
 .pane-homepage-participa {

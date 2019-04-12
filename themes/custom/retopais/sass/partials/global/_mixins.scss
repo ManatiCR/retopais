@@ -40,3 +40,48 @@
     margin-bottom: $margin-bottom;
   }
 }
+
+@mixin btn-parallelogram($color, $hover) {
+  text-decoration: none;
+  height: 58px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 26px;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  color: black;
+  background: $color;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+  }
+  &:before {
+    left: -10px;
+    border-bottom: 58px solid $color;
+    border-left: 10px solid transparent;
+  }
+  &:after {
+    transform: rotate(180deg);
+    right: -10px;
+    border-bottom: 58px solid $color;
+    border-left: 10px solid transparent;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $hover;
+    &:before {
+      border-bottom-color: $hover;
+    }
+    &:after {
+      border-bottom-color: $hover;
+    }
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
