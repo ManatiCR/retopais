@@ -19,5 +19,16 @@
 }
 
 .pane-alianzas-panel-pane-3 {
-  margin-bottom: 30px;
+  padding: 20px 0;
+  .pane-title {
+    text-align: center;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 80px;
+    @include font-size(2.4);
+    @include separator($main-yellow, 20px, 20px);
+  }
 }

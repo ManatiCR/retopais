@@ -45,51 +45,28 @@
 
 .pane-problems-panel-pane-2 {
   margin-top: 50px;
-  .views-field-name {
-    width: 70%;
-    padding: 10px 0 0 20px;
-    @include breakpoint($smallish) {
-      padding: 0;
-      margin-bottom: 20px;
+  .views-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    margin-bottom: 80px;
+    .field-image {
+      grid-row: 1 / 3;
+    }
+    * {
+      margin: 0;
     }
   }
-  .field-image {
-    width: 25%;
-    padding: 0;
-  }
-  .field-image,
-  .views-field-name {
-    float: left;
-    @include breakpoint(542px) {
-      width: auto;
-    }
-  }
-  h3 {
-    color: $darker-gray;
-    margin: 0;
-    font-family: $roboto;
-    @include font-size(2.2);
-    padding-bottom: 20px;
-    @include breakpoint($smallish) {
-      padding: 30px 20px;
-    }
+  .view-content h3 {
+    max-width: 287px;
+    color: black;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(2.4);
+    line-height: 23px;
   }
   .views-field-description {
     clear: both;
-  }
-  .views-row {
-    margin-bottom: 50px;
-  }
-  .views-row-1 h3 {
-    color: $icon-green;
-  }
-  .views-row-2 h3 {
-    color: $icon-yellow;
-  }
-  .views-row-3 h3 {
-    color: $icon-blue;
-  }
-  .views-row-4 h3 {
-    color: $icon-purple;
   }
 }

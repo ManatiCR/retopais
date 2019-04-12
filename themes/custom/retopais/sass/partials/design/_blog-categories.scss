@@ -4,21 +4,37 @@
 //////////////////////////////////////
 
 .pane-blog-categories-panel-pane-1 {
-  h2 {
-    color: $red;
-    font-weight: 400;
-    margin: 0 0 20px 0;
-  }
-  ul {
+  * {
     margin: 0;
     padding: 0;
   }
-  li {
-    list-style-type: none;
-    margin: 0 0 10px 0;
-    padding: 0;
+  h2 {
+    color: black;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(2.4);
+    line-height: 23px;
   }
-  a {
-    color: $darker-gray;
+  ul {
+    margin: 35px 0;
+    li {
+      padding: 0;
+      display: block;
+      a {
+        font-family: $rubik;
+        color: black;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        &:after {
+          content: ">";
+          margin-left: 5px;
+          display: inline;
+        }
+      }
+    }
   }
 }
