@@ -37,10 +37,7 @@
   }
   .blog-item--link {
     a {
-      @include btn-parallelogram($main-yellow, black);
-      &:hover {
-        color: white;
-      }
+      @extend %btn-parallelogram-yellow;
     }
   }
 }

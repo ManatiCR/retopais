@@ -1,5 +1,72 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i");
+.pane-homepage-premios .button, .pane-homepage-premios .more-link a, .more-link .pane-homepage-premios a, .pane-homepage-premios
+.more-help-link a,
+.more-help-link .pane-homepage-premios a, button,
+.button, .more-link a,
+.more-help-link a,
+input[type="submit"],
+input[type="submit"] + #edit-cancel, .blog-list-page .blog-item--link a {
+  background: #fcb614;
+  color: black;
+  border: 2px solid transparent;
+  text-decoration: none;
+  height: 56px;
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 26px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  margin-left: 10px;
+}
+
+button:hover,
+.button:hover, .more-link a:hover,
+.more-help-link a:hover,
+input[type="submit"]:hover,
+input[type="submit"] + #edit-cancel:hover, .blog-list-page .blog-item--link a:hover {
+  text-decoration: none;
+  background: black;
+  color: white;
+}
+
+button:hover span,
+.button:hover span, .more-link a:hover span,
+.more-help-link a:hover span,
+input[type="submit"]:hover span,
+input[type="submit"] + #edit-cancel:hover span, .blog-list-page .blog-item--link a:hover span {
+  color: inherit;
+}
+
+button:focus,
+.button:focus, .more-link a:focus,
+.more-help-link a:focus,
+input[type="submit"]:focus,
+input[type="submit"] + #edit-cancel:focus, .blog-list-page .blog-item--link a:focus {
+  outline-style: none;
+}
+
+.pane-homepage-premios .button, .pane-homepage-premios .more-link a, .more-link .pane-homepage-premios a, .pane-homepage-premios
+.more-help-link a,
+.more-help-link .pane-homepage-premios a {
+  background: black;
+  color: white;
+}
+
+.pane-homepage-premios .button:hover, .pane-homepage-premios .more-link a:hover, .more-link .pane-homepage-premios a:hover, .pane-homepage-premios
+.more-help-link a:hover,
+.more-help-link .pane-homepage-premios a:hover {
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
 .page-admin-appearance-styleguide {
   max-width: 1200px;
   margin: 0 auto;
@@ -202,17 +269,6 @@ i {
   font-style: italic;
 }
 
-button,
-.button,
-.more-link a,
-.more-help-link a,
-input[type="submit"],
-input[type="submit"] + #edit-cancel {
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-}
-
 div:not(#foo) input[type="checkbox"] {
   opacity: 0;
   float: left;
@@ -407,114 +463,6 @@ textarea:focus {
   display: none;
 }
 
-button,
-.button,
-.more-link a,
-.more-help-link a,
-input[type="submit"],
-input[type="submit"] + #edit-cancel {
-  text-decoration: none;
-  height: 58px;
-  position: relative;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center;
-      align-items: center;
-  padding: 0 26px;
-  font-family: "Rubik", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: normal;
-  color: black;
-  background: #fcb614;
-  margin-left: 10px;
-}
-
-button:before, button:after,
-.button:before,
-.more-link a:before,
-.more-help-link a:before,
-.button:after,
-.more-link a:after,
-.more-help-link a:after,
-input[type="submit"]:before,
-input[type="submit"]:after,
-input[type="submit"] + #edit-cancel:before,
-input[type="submit"] + #edit-cancel:after {
-  content: "";
-  position: absolute;
-}
-
-button:before,
-.button:before,
-.more-link a:before,
-.more-help-link a:before,
-input[type="submit"]:before,
-input[type="submit"] + #edit-cancel:before {
-  left: -10px;
-  border-bottom: 58px solid #fcb614;
-  border-left: 10px solid transparent;
-}
-
-button:after,
-.button:after,
-.more-link a:after,
-.more-help-link a:after,
-input[type="submit"]:after,
-input[type="submit"] + #edit-cancel:after {
-  transform: rotate(180deg);
-  right: -10px;
-  border-bottom: 58px solid #fcb614;
-  border-left: 10px solid transparent;
-}
-
-button:hover,
-.button:hover,
-.more-link a:hover,
-.more-help-link a:hover,
-input[type="submit"]:hover,
-input[type="submit"] + #edit-cancel:hover {
-  text-decoration: none;
-  background: black;
-}
-
-button:hover:before,
-.button:hover:before,
-.more-link a:hover:before,
-.more-help-link a:hover:before,
-input[type="submit"]:hover:before,
-input[type="submit"] + #edit-cancel:hover:before {
-  border-bottom-color: black;
-}
-
-button:hover:after,
-.button:hover:after,
-.more-link a:hover:after,
-.more-help-link a:hover:after,
-input[type="submit"]:hover:after,
-input[type="submit"] + #edit-cancel:hover:after {
-  border-bottom-color: black;
-}
-
-button:focus,
-.button:focus,
-.more-link a:focus,
-.more-help-link a:focus,
-input[type="submit"]:focus,
-input[type="submit"] + #edit-cancel:focus {
-  outline-style: none;
-}
-
-button:hover,
-.button:hover,
-.more-link a:hover,
-.more-help-link a:hover,
-input[type="submit"]:hover,
-input[type="submit"] + #edit-cancel:hover {
-  color: white;
-}
-
 input[type="submit"] + #edit-cancel {
   margin-left: 10px;
   text-decoration: none;
@@ -555,6 +503,15 @@ input[type="submit"] + #edit-cancel {
   color: #fff;
   background-color: #353e42;
   box-shadow: 0 2px 0 #5d5d5d;
+}
+
+.parallelogram {
+  transform: skew(-10deg);
+}
+
+.skew-fix {
+  display: inline-block;
+  transform: skew(10deg);
 }
 
 hr {
@@ -1524,64 +1481,6 @@ hr {
   margin: 20px 0;
 }
 
-.blog-list-page .blog-item--link a {
-  text-decoration: none;
-  height: 58px;
-  position: relative;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center;
-      align-items: center;
-  padding: 0 26px;
-  font-family: "Rubik", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: normal;
-  color: black;
-  background: #fcb614;
-  margin-left: 10px;
-}
-
-.blog-list-page .blog-item--link a:before, .blog-list-page .blog-item--link a:after {
-  content: "";
-  position: absolute;
-}
-
-.blog-list-page .blog-item--link a:before {
-  left: -10px;
-  border-bottom: 58px solid #fcb614;
-  border-left: 10px solid transparent;
-}
-
-.blog-list-page .blog-item--link a:after {
-  transform: rotate(180deg);
-  right: -10px;
-  border-bottom: 58px solid #fcb614;
-  border-left: 10px solid transparent;
-}
-
-.blog-list-page .blog-item--link a:hover {
-  text-decoration: none;
-  background: black;
-}
-
-.blog-list-page .blog-item--link a:hover:before {
-  border-bottom-color: black;
-}
-
-.blog-list-page .blog-item--link a:hover:after {
-  border-bottom-color: black;
-}
-
-.blog-list-page .blog-item--link a:focus {
-  outline-style: none;
-}
-
-.blog-list-page .blog-item--link a:hover {
-  color: white;
-}
-
 .blog-item--date {
   color: #afafaf;
   font-size: 12px;
@@ -1888,80 +1787,6 @@ hr {
 .more-help-link a,
 .more-help-link .pane-homepage-premios a {
   margin: 40px 0;
-  text-decoration: none;
-  height: 58px;
-  position: relative;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center;
-      align-items: center;
-  padding: 0 26px;
-  font-family: "Rubik", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: normal;
-  color: black;
-  background: black;
-  margin-left: 10px;
-  color: white;
-}
-
-.pane-homepage-premios .button:before, .pane-homepage-premios .more-link a:before, .more-link .pane-homepage-premios a:before, .pane-homepage-premios
-.more-help-link a:before,
-.more-help-link .pane-homepage-premios a:before, .pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
-.more-help-link a:after,
-.more-help-link .pane-homepage-premios a:after {
-  content: "";
-  position: absolute;
-}
-
-.pane-homepage-premios .button:before, .pane-homepage-premios .more-link a:before, .more-link .pane-homepage-premios a:before, .pane-homepage-premios
-.more-help-link a:before,
-.more-help-link .pane-homepage-premios a:before {
-  left: -10px;
-  border-bottom: 58px solid black;
-  border-left: 10px solid transparent;
-}
-
-.pane-homepage-premios .button:after, .pane-homepage-premios .more-link a:after, .more-link .pane-homepage-premios a:after, .pane-homepage-premios
-.more-help-link a:after,
-.more-help-link .pane-homepage-premios a:after {
-  transform: rotate(180deg);
-  right: -10px;
-  border-bottom: 58px solid black;
-  border-left: 10px solid transparent;
-}
-
-.pane-homepage-premios .button:hover, .pane-homepage-premios .more-link a:hover, .more-link .pane-homepage-premios a:hover, .pane-homepage-premios
-.more-help-link a:hover,
-.more-help-link .pane-homepage-premios a:hover {
-  text-decoration: none;
-  background: white;
-}
-
-.pane-homepage-premios .button:hover:before, .pane-homepage-premios .more-link a:hover:before, .more-link .pane-homepage-premios a:hover:before, .pane-homepage-premios
-.more-help-link a:hover:before,
-.more-help-link .pane-homepage-premios a:hover:before {
-  border-bottom-color: white;
-}
-
-.pane-homepage-premios .button:hover:after, .pane-homepage-premios .more-link a:hover:after, .more-link .pane-homepage-premios a:hover:after, .pane-homepage-premios
-.more-help-link a:hover:after,
-.more-help-link .pane-homepage-premios a:hover:after {
-  border-bottom-color: white;
-}
-
-.pane-homepage-premios .button:focus, .pane-homepage-premios .more-link a:focus, .more-link .pane-homepage-premios a:focus, .pane-homepage-premios
-.more-help-link a:focus,
-.more-help-link .pane-homepage-premios a:focus {
-  outline-style: none;
-}
-
-.pane-homepage-premios .button:hover, .pane-homepage-premios .more-link a:hover, .more-link .pane-homepage-premios a:hover, .pane-homepage-premios
-.more-help-link a:hover,
-.more-help-link .pane-homepage-premios a:hover {
-  color: black;
 }
 
 .homepage-premios--description p {

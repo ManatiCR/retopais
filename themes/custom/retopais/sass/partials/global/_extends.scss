@@ -1,0 +1,39 @@
+%btn-parallelogram-yellow {
+  background: $main-yellow;
+  color: black;
+  border: 2px solid transparent;
+  text-decoration: none;
+  height: 56px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 26px;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  margin-left: 10px;
+  &:hover {
+    text-decoration: none;
+    background: black;
+    color: white;
+    span {
+      color: inherit;
+    }
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+
+%btn-parallelogram-black {
+  @extend %btn-parallelogram-yellow;
+  background: black;
+  color: white;
+  &:hover {
+    background: white;
+    color: black;
+    border: 2px solid black;
+  }
+}

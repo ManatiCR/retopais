@@ -7,10 +7,7 @@ button,
 .button,
 input[type="submit"],
 input[type="submit"] + #edit-cancel {
-  @include btn-parallelogram($main-yellow, black);
-  &:hover {
-    color: white;
-  }
+  @extend %btn-parallelogram-yellow;
 }
 
 input[type="submit"] + #edit-cancel {
@@ -52,4 +49,14 @@ input[type="submit"] + #edit-cancel {
     background-color: $dark;
     box-shadow: 0 2px 0 $darker-gray;
   }
+}
+
+// Parallelogram Buttons
+.parallelogram {
+  transform: skew(-10deg);
+}
+
+.skew-fix {
+  display: inline-block;
+  transform: skew(10deg);
 }

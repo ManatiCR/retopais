@@ -195,12 +195,8 @@
     margin-bottom: 40px;
   }
   .button {
+    @extend %btn-parallelogram-black;
     margin: 40px 0;
-    @include btn-parallelogram(black, white);
-    color: white;
-    &:hover {
-      color: black;
-    }
   }
 }
 
