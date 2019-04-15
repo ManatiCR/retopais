@@ -566,63 +566,154 @@ hr {
 
 .container-header {
   position: relative;
-  height: 196px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
-  background: url("../img/backgrounds/header-bg.jpg") no-repeat bottom right;
+  background: url("../img/backgrounds/header-bg.jpg") no-repeat center top;
+}
+
+@media (min-width: 768px) {
+  .container-header {
+    height: 196px;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    background-position: bottom right;
+  }
 }
 
 .site-name {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  width: 144px;
-  height: 113px;
-  margin: 0;
-  background: url("../img/logo/logo.svg") no-repeat;
-  background-size: 100%;
-  display: block;
-  text-indent: -999px;
-  white-space: nowrap;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 15px 0;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .site-name {
+    width: 40%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .site-name a {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 109px;
+  height: 88px;
+  background: url("../img/logo/reto-pais-logo.png") no-repeat;
+  background-size: 100%;
+  text-indent: -999px;
+  white-space: nowrap;
+  -ms-flex-order: 1;
+      order: 1;
+}
+
+@media (min-width: 768px) {
+  .site-name a {
+    width: 143px;
+    height: 110px;
+  }
+}
+
+.site-name:after, .site-name:before {
+  content: "";
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .site-name:after {
   content: "";
   display: block;
-  width: 116px;
-  height: 168px;
-  position: absolute;
-  right: -140px;
-  top: -20px;
-  background: url("../img/logo/logo-1820-ideas.png");
+  width: 75px;
+  height: 109px;
+  background-image: url("../img/logo/logo-1820-ideas.png");
+  -ms-flex-order: 2;
+      order: 2;
+}
+
+@media (min-width: 768px) {
+  .site-name:after {
+    width: 116px;
+    height: 168px;
+  }
+}
+
+.site-name:before {
+  content: "";
+  display: block;
+  width: 123px;
+  height: 47px;
+  background-image: url("../img/logo/impact-logo.png");
+  -ms-flex-order: 3;
+      order: 3;
+}
+
+@media (min-width: 768px) {
+  .site-name:before {
+    width: 173px;
+    height: 68px;
+  }
 }
 
 .nav-main {
-  -ms-flex-positive: 1;
-      flex-grow: 1;
-  margin-left: 280px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .nav-main {
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    margin-left: 280px;
+  }
 }
 
 .nav-main ul,
 .social-links ul {
-  height: 60px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-main ul,
+  .social-links ul {
+    height: 60px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+
+.social-links {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+@media (min-width: 768px) {
+  .social-links {
+    position: unset;
+  }
 }
 
 .header-top-bar {
@@ -666,10 +757,9 @@ hr {
 }
 
 .nav-main {
-  background-color: #f0f7f7;
-  border-top: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
   width: 100%;
+  background: black;
+  padding: 5px 15px;
 }
 
 @media (min-width: 768px) {
@@ -677,6 +767,7 @@ hr {
     border: none;
     background-color: transparent;
     width: 580px;
+    padding: 0;
   }
 }
 
@@ -693,7 +784,13 @@ hr {
 .nav-main li {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
+}
+
+@media (min-width: 768px) {
+  .nav-main li {
+    padding: 0;
+  }
 }
 
 .nav-main a {
@@ -709,15 +806,25 @@ hr {
 }
 
 .nav-main .toggle-nav {
-  background-size: 30px 24px;
-  background: url(../img/icons/menu.svg) no-repeat 12px center;
-  color: #5d5d5d;
-  display: block;
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 400;
-  padding: 10px 10px 10px 44px;
-  font-size: 20px;
-  font-size: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: normal;
+}
+
+.nav-main .toggle-nav:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(../img/nav/menu-toogle.svg) no-repeat center center;
 }
 
 .nav-main a:hover,

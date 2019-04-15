@@ -4,14 +4,14 @@
 ///////////////////////////////////
 
 .nav-main {
-  background-color: $azure;
-  border-top: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
   width: 100%;
+  background: black;
+  padding: 5px 15px;
   @include breakpoint($medium) {
     border: none;
     background-color: transparent;
     width: 580px;
+    padding: 0;
   }
   @include breakpoint(1090px) {
     width: auto;
@@ -24,7 +24,10 @@
   li {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 8px 0;
+    @include breakpoint($medium) {
+      padding: 0;
+    }
   }
   a {
     @include font-size(1.2);
@@ -36,14 +39,21 @@
     text-shadow: none;
   }
   .toggle-nav {
-    background-size: 30px 24px;
-    background: url(../img/icons/menu.svg) no-repeat 12px center;
-    color: $darker-gray;
-    display: block;
-    font-family: $roboto;
-    font-weight: 400;
-    padding: 10px 10px 10px 44px;
-    @include font-size(2);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(1.8);
+    line-height: normal;
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      background: url(../img/nav/menu-toogle.svg) no-repeat center center;
+    }
   }
   a:hover,
   a.active {

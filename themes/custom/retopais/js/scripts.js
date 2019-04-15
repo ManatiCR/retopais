@@ -2,14 +2,20 @@
   "use strict";
 
   $(document).ready(function parallelogramBtns() {
-    let buttons = document.querySelectorAll(".button");
-    buttons.forEach(button => {
-      const newSpan = document.createElement("span");
-      newSpan.classList.add("skew-fix");
-      newSpan.innerHTML = button.textContent;
-      button.replaceChild(newSpan, button.childNodes[0]);
-      button.classList.add("parallelogram");
-    });
+    const parallelogramMarkup = elements => {
+      elements.forEach(element => {
+        const newSpan = document.createElement("span");
+        newSpan.classList.add("skew-fix");
+        newSpan.innerHTML = element.textContent;
+        element.replaceChild(newSpan, element.childNodes[0]);
+        element.classList.add("parallelogram");
+      });
+    };
+    //selectors
+    const globalBtns = document.querySelectorAll(".button");
+    const blogBtns = document.querySelectorAll(".blog-item--link a");
+    parallelogramMarkup(blogBtns);
+    parallelogramMarkup(globalBtns);
   });
 
   Drupal.behaviors.mobileNav = {

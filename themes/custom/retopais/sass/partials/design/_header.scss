@@ -9,62 +9,109 @@
 
 .container-header {
   position: relative;
-  height: 196px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-wrap: wrap;
   padding: 0;
-  background: url("../img/backgrounds/header-bg.jpg") no-repeat bottom right;
+  background: url("../img/backgrounds/header-bg.jpg") no-repeat center top;
+  @include breakpoint($medium) {
+    height: 196px;
+    flex-direction: row-reverse;
+    background-position: bottom right;
+  }
 }
 
 .site-name {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  width: 144px;
-  height: 113px;
-  margin: 0;
-  background: url("../img/logo/logo.svg") no-repeat;
-  background-size: 100%;
-  display: block;
-  text-indent: -999px;
-  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  justify-content: space-evenly;
+  @include breakpoint($medium) {
+    width: 40%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
   a {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 109px;
+    height: 88px;
+    background: url("../img/logo/reto-pais-logo.png") no-repeat;
+    background-size: 100%;
+    text-indent: -999px;
+    white-space: nowrap;
+    order: 1;
+    @include breakpoint($medium) {
+      width: 143px;
+      height: 110px;
+    }
+  }
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   &:after {
     content: "";
     display: block;
-    width: 116px;
-    height: 168px;
-    position: absolute;
-    right: -140px;
-    top: -20px;
-    background: url("../img/logo/logo-1820-ideas.png");
+    width: 75px;
+    height: 109px;
+    background-image: url("../img/logo/logo-1820-ideas.png");
+    order: 2;
+    @include breakpoint($medium) {
+      width: 116px;
+      height: 168px;
+    }
   }
-  @include breakpoint($medium) {
-  }
-  @include breakpoint($large) {
-  }
-  @include breakpoint($max-width) {
+  &:before {
+    content: "";
+    display: block;
+    width: 123px;
+    height: 47px;
+    background-image: url("../img/logo/impact-logo.png");
+    order: 3;
+    @include breakpoint($medium) {
+      width: 173px;
+      height: 68px;
+    }
   }
 }
 
 .nav-main {
-  flex-grow: 1;
-  margin-left: 280px;
+  align-self: flex-end;
+  @include breakpoint($medium) {
+    align-self: auto;
+    flex-grow: 1;
+    margin-left: 280px;
+  }
 }
 
 .nav-main,
 .social-links {
   ul {
-    height: 60px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
     margin: 0;
     padding: 0;
+    @include breakpoint($medium) {
+      height: 60px;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.social-links {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include breakpoint($medium) {
+    position: unset;
   }
 }
 
