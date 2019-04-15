@@ -10,11 +10,7 @@
   @include breakpoint($medium) {
     border: none;
     background-color: transparent;
-    width: 580px;
     padding: 0;
-  }
-  @include breakpoint(1090px) {
-    width: auto;
   }
   ul {
     &.collapsed {

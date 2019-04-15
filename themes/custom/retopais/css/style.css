@@ -571,15 +571,16 @@ hr {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0;
-  background: url("../img/backgrounds/header-bg.jpg") no-repeat center top;
 }
 
 @media (min-width: 768px) {
   .container-header {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     height: 196px;
     -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
-    background-position: bottom right;
+    background: url("../img/backgrounds/hp-top-bg-full-width.png") no-repeat bottom right/auto 136px;
   }
 }
 
@@ -589,13 +590,15 @@ hr {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  margin: 15px 0;
+  padding: 45px 0;
   -ms-flex-pack: space-evenly;
       justify-content: space-evenly;
+  background: url("../img/backgrounds/hp-mobile-bg.jpg") no-repeat center center/cover;
 }
 
 @media (min-width: 768px) {
   .site-name {
+    background: none;
     width: 40%;
     padding: 0;
     margin: 0;
@@ -677,7 +680,7 @@ hr {
         align-self: auto;
     -ms-flex-positive: 1;
         flex-grow: 1;
-    margin-left: 280px;
+    margin-left: 25%;
   }
 }
 
@@ -766,14 +769,7 @@ hr {
   .nav-main {
     border: none;
     background-color: transparent;
-    width: 580px;
     padding: 0;
-  }
-}
-
-@media (min-width: 1090px) {
-  .nav-main {
-    width: auto;
   }
 }
 
