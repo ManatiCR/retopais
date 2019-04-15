@@ -93,8 +93,6 @@
 
 .que-es-reto-pais--link {
   margin-top: 45px;
-  .button {
-  }
 }
 
 .que-es-reto-pais--image {
@@ -108,8 +106,8 @@
   .view-content {
     display: grid;
     grid-gap: 30px;
+    padding: 0 5%;
     grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
-    margin-top: 100px;
   }
   .pane-title {
     text-align: center;
@@ -124,6 +122,7 @@
   }
   .views-row {
     text-align: center;
+    margin-top: 50px;
     padding: 0 15px 15px 15px;
     background: white;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
