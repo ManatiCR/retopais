@@ -8,24 +8,32 @@
   padding: 20px 0 40px;
   overflow: hidden;
   .container {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas:
-      "footer-menu articles icons"
-      "sponsor sponsor sponsor";
+    @include breakpoint($medium) {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-areas:
+        "footer-menu articles icons"
+        "sponsor sponsor sponsor";
+    }
   }
   .pane-menu-footer-menu {
-    grid-area: footer-menu;
+    @include breakpoint($medium) {
+      grid-area: footer-menu;
+    }
   }
   .pane-blog-recent-articles {
     grid-area: articles;
   }
   .pane-problems-problems-only-names {
-    grid-area: icons;
-    justify-self: end;
+    @include breakpoint($medium) {
+      grid-area: icons;
+      justify-self: end;
+    }
   }
   .pane-alianzas-panel-pane-4 {
-    grid-area: sponsor;
+    @include breakpoint($medium) {
+      grid-area: sponsor;
+    }
   }
 }

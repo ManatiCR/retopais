@@ -24,6 +24,11 @@
   }
   .view-content {
     margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    @include breakpoint($medium) {
+      display: unset;
+    }
   }
 
   .field-content {

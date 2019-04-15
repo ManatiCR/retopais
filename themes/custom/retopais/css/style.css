@@ -146,30 +146,38 @@ main {
   overflow: hidden;
 }
 
-.site-footer .container {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
-  -ms-grid-columns: 1fr 3fr 1fr;
-      grid-template-columns: 1fr 3fr 1fr;
-  grid-template-areas: "footer-menu articles icons" "sponsor sponsor sponsor";
+@media (min-width: 768px) {
+  .site-footer .container {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    -ms-grid-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "footer-menu articles icons" "sponsor sponsor sponsor";
+  }
 }
 
-.site-footer .pane-menu-footer-menu {
-  grid-area: footer-menu;
+@media (min-width: 768px) {
+  .site-footer .pane-menu-footer-menu {
+    grid-area: footer-menu;
+  }
 }
 
 .site-footer .pane-blog-recent-articles {
   grid-area: articles;
 }
 
-.site-footer .pane-problems-problems-only-names {
-  grid-area: icons;
-  justify-self: end;
+@media (min-width: 768px) {
+  .site-footer .pane-problems-problems-only-names {
+    grid-area: icons;
+    justify-self: end;
+  }
 }
 
-.site-footer .pane-alianzas-panel-pane-4 {
-  grid-area: sponsor;
+@media (min-width: 768px) {
+  .site-footer .pane-alianzas-panel-pane-4 {
+    grid-area: sponsor;
+  }
 }
 
 .blog-list-page .view-header {
@@ -1325,9 +1333,14 @@ hr {
 .pane-blog-recent-articles .view-content {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .pane-blog-recent-articles .view-content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 .pane-blog-recent-articles .views-row {
@@ -1435,6 +1448,16 @@ hr {
 
 .pane-problems-problems-only-names .view-content {
   margin-top: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .pane-problems-problems-only-names .view-content {
+    display: unset;
+  }
 }
 
 .pane-problems-problems-only-names .field-content {

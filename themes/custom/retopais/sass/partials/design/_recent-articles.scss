@@ -17,8 +17,10 @@
   }
   .view-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+    @include breakpoint($medium) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .views-row {
     background: white;
