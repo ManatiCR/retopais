@@ -32,6 +32,7 @@ jobs:
             php composer-setup.php && \
             php -r "unlink('composer-setup.php');"
             mv composer.phar /usr/bin/composer
+            composer install
       - run:
           name: Configure Nginx
           command: |
@@ -39,6 +40,9 @@ jobs:
       - run:
           name: Build site.
           command: |
+            # Hack drush.
+            mv /usr/local/bin/drush /usr/local/bin/drush_launcher
+            alias drush=/var/www/html/.vendor/bin/drush --root=/var/www/html/build
             cp ./.circleci/settings.secret.php ./settings/
             composer install
             ./node_modules/.bin/aquifer build
@@ -173,6 +177,7 @@ jobs:
             ln -s $HOME/terminus/vendor/bin/terminus /usr/bin/terminus
             terminus auth:login --machine-token=$PANTHEON_TOKEN
             cd /var/www/retopais
+            composer install
       - add_ssh_keys:
       - run:
           name: Create multidev environment
@@ -195,6 +200,9 @@ jobs:
             git config --global user.name $GIT_NAME
             echo 'Host *' >> /root/.ssh/config
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            # Hack drush.
+            mv /usr/local/bin/drush /usr/local/bin/drush_launcher
+            alias drush=/var/www/html/.vendor/bin/drush --root=/var/www/html/build
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $CIRCLE_BRANCH branch" -b $NEWBRANCH
       - run:
           name: Deploy commands
