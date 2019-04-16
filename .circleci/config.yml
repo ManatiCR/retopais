@@ -142,9 +142,13 @@ jobs:
             ln -s /var/www/retopais/terminus/vendor/bin/terminus /usr/bin/terminus
             terminus auth:login --machine-token=$PANTHEON_TOKEN
             terminus env:deploy retopais.live --note "Autodeploy from Circle" -y
+            terminus drush retopais.live -- cc all
+            terminus drush retopais.live -- en -y master
+            terminus drush retopais.live -- master-scope live
+            terminus drush retopais.live -- master-execute -y
             terminus drush retopais.live -- updb -y
-            terminus drush retopais.live -- cim -y
-            terminus drush retopais.live -- cr
+            terminus drush retopais.live -- fra -y
+            terminus drush retopais.live -- cc all
 
   deploy-multidev:
     docker:
@@ -205,11 +209,14 @@ jobs:
             if [ LENGTH > 10 ] ; then NEWBRANCH=${NEWBRANCH:8:9} ; fi
             NEWBRANCH=${NEWBRANCH//-/}
             NEWBRANCH=${NEWBRANCH,,}
-            terminus drush retopais.$NEWBRANCH -- cr
             terminus drush retopais.$NEWBRANCH -- sqlsan -y
+            terminus drush retopais.$NEWBRANCH -- cc all
+            terminus drush retopais.$NEWBRANCH -- en -y master
+            terminus drush retopais.$NEWBRANCH -- master-scope dev
+            terminus drush retopais.$NEWBRANCH -- master-execute -y
             terminus drush retopais.$NEWBRANCH -- updb -y
-            terminus drush retopais.$NEWBRANCH -- cim -y
-            terminus drush retopais.$NEWBRANCH -- cr
+            terminus drush retopais.$NEWBRANCH -- fra -y
+            terminus drush retopais.$NEWBRANCH -- cc all
             terminus lock:enable retopais.$NEWBRANCH -- $PANTHEON_WEB_AUTH_USER $PANTHEON_WEB_AUTH_PASS
             echo "If everything worked, go to http://$NEWBRANCH-retopais.pantheonsite.io"
 workflows:
