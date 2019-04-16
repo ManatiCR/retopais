@@ -62,7 +62,7 @@ jobs:
             ./node_modules/.bin/gulp phplint
             ./node_modules/.bin/gulp drupalcs
             ./node_modules/.bin/gulp eslint
-     - store_artifacts:
+      - store_artifacts:
           path: /tmp/lighthouse
           destination: lighthouse
       - persist_to_workspace:
