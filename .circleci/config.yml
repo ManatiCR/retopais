@@ -102,7 +102,7 @@ jobs:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             terminus connection:set  retopais.dev git
             ./node_modules/.bin/aquifer extensions-load
-            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch"
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch" || echo 'Nothing to commit?'
             terminus connection:set  retopais.dev sftp
             terminus drush retopais.dev -- si retopais --account-pass=admin -y
             terminus connection:set  retopais.dev git
@@ -196,7 +196,7 @@ jobs:
             ln -s /var/www/retopais/.vendor/bin/drush /usr/local/bin/drush
             alias drush=drush --root=/var/www/html/build
             ./node_modules/.bin/aquifer extensions-load
-            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $CIRCLE_BRANCH branch" -b $NEWBRANCH
+            ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $CIRCLE_BRANCH branch" -b $NEWBRANCH || echo 'Nothing to commit?'
       - run:
           name: Deploy commands
           command: |
