@@ -56,7 +56,6 @@ jobs:
             drush master-execute -y
             drush cc all
             cd /var/www/retopais
-            ./node_modules/.bin/gulp theme
       - run:
           name: Coding Standards Linters
           command: |
