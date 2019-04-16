@@ -46,6 +46,7 @@
 # - Include binary diff in patches instead of "binary files differ."
 *.gif     -text diff
 *.gz      -text diff
+*.zip     -text diff
 *.ico     -text diff
 *.jpg     -text diff
 *.png     -text diff
