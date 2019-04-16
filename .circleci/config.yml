@@ -215,9 +215,6 @@ workflows:
   build-deploys:
     jobs:
       - build
-      - visual-regression:
-          requires:
-            - build
       - deploy:
           requires:
             - build
