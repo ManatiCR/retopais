@@ -11,7 +11,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: drupal
     working_directory: /var/www/retopais
     steps:
-      - run: apt-get update -y && apt-get install python -y
+      - run: apt-get update -y && apt-get install python unzip -y
       - run: echo 127.0.0.1 retopais.local | tee -a /etc/hosts
       - checkout
       - restore_cache:
@@ -164,6 +164,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /var/www
+      - run: apt-get update -y && apt-get install python unzip -y
       - run:
           name: Install Composer and terminus
           command: |
