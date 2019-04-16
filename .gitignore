@@ -6,6 +6,9 @@
 *.tgz
 node_modules
 
+# DB
+retopais.sql.gz
+
 # Aquifer
 .aquifer
 !.aquifer/.gitkeep

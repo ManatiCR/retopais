@@ -55,29 +55,31 @@ commands:
       ahoy drush cc drush
       echo "Installing..."
       ahoy drush site-install retopais --account-pass=admin -y
-      echo "Set site uuid..."
-      ahoy drush config-set "system.site" uuid "$SITE_UUID" -y
-      echo "Importing config..."
-      if [ -f ./config/sync/core.extension.yml ] ; then ahoy drush cim -y ; fi
+      echo "Set master..."
+      ahoy drush en -y master ; ahoy drush master-scope local ; ahoy drush master-execute -y
+      echo "Revert features."
+      ahoy drush fra -y
       echo "Cleaning cache..."
-      ahoy drush cr
+      ahoy drush cc all
   install-from-db:
     usage: Setup site using DB backup
     cmd: |
       if [ ! -f retopais.sql.gz ]; then
         wget `terminus backup:get retopais.live --element=db` -O retopais.sql.gz
       fi
-      ahoy drush cr
+      ahoy drush cc all
       echo "Drop Database..."
       ahoy drush sql-drop -y
       echo "Import database..."
       gunzip -c retopais.sql.gz | ahoy drush sqlc
       echo "Update database..."
       ahoy drush updb -y
-      echo "Importing config..."
-      ahoy drush cim -y
+      echo "Set master..."
+      ahoy drush en -y master ; ahoy drush master-scope local ; ahoy drush master-execute -y
+      echo "Revert features."
+      ahoy drush fra -y
       echo "Cleaning cache..."
-      ahoy drush cr
+      ahoy drush cc all
       echo "Sanitizing database..."
       ahoy drush sqlsan -y
       echo "Generating an admin one time login link..."

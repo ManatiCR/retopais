@@ -21,7 +21,7 @@ commands:
     usage: Run composer commands in the cli service container.
 
   drush:
-    cmd: docker-compose run cli drush --root=/var/www/html/web "$@"
+    cmd: docker-compose run cli /var/www/html/.vendor/bin/drush --root=/var/www/html/build "$@"
     usage: Run drush commands in the cli service container.
 
   bash:
@@ -29,7 +29,7 @@ commands:
     usage: Start a shell in the container (like ssh without actual ssh).
 
   sqlc:
-    cmd: "docker-compose run cli drush --root=/var/www/html/web sqlc"
+    cmd: "docker-compose run cli /var/www/html/.vendor/bin/drush --root=/var/www/html/build sqlc"
     usage: Connect to the default mysql database. Supports piping of data into the command.
 
   up:
