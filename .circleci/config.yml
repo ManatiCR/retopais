@@ -62,18 +62,7 @@ jobs:
             ./node_modules/.bin/gulp phplint
             ./node_modules/.bin/gulp drupalcs
             ./node_modules/.bin/gulp eslint
-      - run:
-          name: Behat Testing
-          command: |
-            /etc/init.d/nginx start > nginx.log &
-            /etc/init.d/php7.2-fpm start > php7.2-fpm.log &
-            ./vendor/bin/behat -p circle
-      - run:
-          name: Lighthouse
-          command: |
-            mkdir /tmp/lighthouse
-            curl -X POST -H "Content-Type: application/json" -H "X-API-KEY: abc123" --data '{"output": "html", "url": "http://retopais.local"}' http://localhost:8080/ci > /tmp/lighthouse/output.html
-      - store_artifacts:
+     - store_artifacts:
           path: /tmp/lighthouse
           destination: lighthouse
       - persist_to_workspace:
