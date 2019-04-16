@@ -1,7 +1,7 @@
 (function($, Drupal, window, document, enquire) {
   "use strict";
 
-  $(document).ready(function parallelogramBtns() {
+  $(document).ready(() => {
     const parallelogramMarkup = elements => {
       elements.forEach(element => {
         const newSpan = document.createElement("span");
@@ -11,11 +11,40 @@
         element.classList.add("parallelogram");
       });
     };
-    //selectors
+    const markupMover = (pageClassName, element, reference) => {
+      if (document.body.classList.contains(pageClassName)) {
+        reference.parentNode.insertBefore(element, reference.nextSibling);
+      }
+      console.log(`Page classname don't match: ${pageClassName}`);
+      return null;
+    };
+    //Parallelogram selectors
     const globalBtns = document.querySelectorAll(".button");
     const blogBtns = document.querySelectorAll(".blog-item--link a");
     parallelogramMarkup(blogBtns);
     parallelogramMarkup(globalBtns);
+    //Problematicas Markup
+    const problematicasPageClass = "page-problematicas";
+    const paneProblematicaIntro = document.querySelector(
+      ".panel-pane.pane-problematicas-intro"
+    );
+    const problematicaParentDiv = document.querySelector(
+      ".panel-pane.pane-page-content > h2.pane-title"
+    );
+    markupMover(
+      problematicasPageClass,
+      paneProblematicaIntro,
+      problematicaParentDiv
+    );
+    // Blog Markup
+    const blogPageClass = "page-blog";
+    const blogIntro = document.querySelector(
+      ".view-dom-id-495054a0ffc8296955a5678e52dcad1c .view-header"
+    );
+    const blogParentDiv = document.querySelector(
+      ".panel-pane.pane-page-content > h2.pane-title"
+    );
+    markupMover(blogPageClass, blogIntro, blogParentDiv);
   });
 
   Drupal.behaviors.mobileNav = {
