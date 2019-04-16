@@ -42,7 +42,8 @@ jobs:
           command: |
             # Hack drush.
             mv /usr/local/bin/drush /usr/local/bin/drush_launcher
-            alias drush=/var/www/html/.vendor/bin/drush --root=/var/www/html/build
+            ln -s /var/www/html/.vendor/bin/drush /usr/local/bin/drush
+            alias drush=drush --root=/var/www/html/build
             cp ./.circleci/settings.secret.php ./settings/
             composer install
             ./node_modules/.bin/aquifer build
@@ -202,7 +203,8 @@ jobs:
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             # Hack drush.
             mv /usr/local/bin/drush /usr/local/bin/drush_launcher
-            alias drush=/var/www/html/.vendor/bin/drush --root=/var/www/html/build
+            ln -s /var/www/html/.vendor/bin/drush /usr/local/bin/drush
+            alias drush=drush --root=/var/www/html/build
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from $CIRCLE_BRANCH branch" -b $NEWBRANCH
       - run:
           name: Deploy commands
