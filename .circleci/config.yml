@@ -71,7 +71,7 @@ jobs:
 
   deploy:
     docker:
-      - image: kporras07/docker-drupal-nginx:php-7.2.x
+      - image: kporras07/docker-drupal-nginx:php-7.2.x-backstop
     working_directory: /var/www/retopais
     steps:
       - attach_workspace:
@@ -101,6 +101,7 @@ jobs:
             echo 'Host *' >> /root/.ssh/config
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
             terminus connection:set  retopais.dev git
+            ./node_modules/.bin/aquifer extensions-load
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch"
             terminus connection:set  retopais.dev sftp
             terminus drush retopais.dev -- si retopais --account-pass=admin -y
