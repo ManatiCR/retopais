@@ -106,9 +106,13 @@ jobs:
             terminus connection:set  retopais.dev sftp
             terminus drush retopais.dev -- si retopais --account-pass=admin -y
             terminus connection:set  retopais.dev git
-            terminus drush retopais.dev -- config-set "system.site" uuid "$SITE_UUID" -y
-            terminus drush retopais.dev -- cim -y
-            terminus drush retopais.dev -- cr
+            terminus drush retopais.dev -- cc all
+            terminus drush retopais.dev -- en -y master
+            terminus drush retopais.dev -- master-scope development
+            terminus drush retopais.dev -- master-execute -y
+            terminus drush retopais.dev -- updb -y
+            terminus drush retopais.dev -- fra -y
+            terminus drush retopais.dev -- cc all
   deploy-test:
     docker:
       - image: kporras07/docker-drupal-nginx:php-7.2.x
@@ -124,9 +128,13 @@ jobs:
             ln -s /var/www/retopais/terminus/vendor/bin/terminus /usr/bin/terminus
             terminus auth:login --machine-token=$PANTHEON_TOKEN
             terminus env:deploy retopais.test --note "Autodeploy from Circle" -y
+            terminus drush retopais.test -- cc all
+            terminus drush retopais.test -- en -y master
+            terminus drush retopais.test -- master-scope test
+            terminus drush retopais.test -- master-execute -y
             terminus drush retopais.test -- updb -y
-            terminus drush retopais.test -- cim -y
-            terminus drush retopais.test -- cr
+            terminus drush retopais.test -- fra -y
+            terminus drush retopais.test -- cc all
   deploy-live:
     docker:
       - image: kporras07/docker-drupal-nginx:php-7.2.x
@@ -144,7 +152,7 @@ jobs:
             terminus env:deploy retopais.live --note "Autodeploy from Circle" -y
             terminus drush retopais.live -- cc all
             terminus drush retopais.live -- en -y master
-            terminus drush retopais.live -- master-scope live
+            terminus drush retopais.live -- master-scope production
             terminus drush retopais.live -- master-execute -y
             terminus drush retopais.live -- updb -y
             terminus drush retopais.live -- fra -y
@@ -212,7 +220,7 @@ jobs:
             terminus drush retopais.$NEWBRANCH -- sqlsan -y
             terminus drush retopais.$NEWBRANCH -- cc all
             terminus drush retopais.$NEWBRANCH -- en -y master
-            terminus drush retopais.$NEWBRANCH -- master-scope dev
+            terminus drush retopais.$NEWBRANCH -- master-scope development
             terminus drush retopais.$NEWBRANCH -- master-execute -y
             terminus drush retopais.$NEWBRANCH -- updb -y
             terminus drush retopais.$NEWBRANCH -- fra -y
