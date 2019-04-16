@@ -32,7 +32,7 @@ files/*
 # Settings
 settings.secret.php
 settings.local.php
-!circle/settings.secret.php
+!.circleci/settings.secret.php
 !wercker/settings.secret.php
 
 # Book build output
