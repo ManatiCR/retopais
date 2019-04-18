@@ -16,9 +16,9 @@ ul {
 
 ol > li {
   counter-increment: step;
-  margin-bottom: 10px;
-  text-indent: -25px;
-  padding-left: 30px;
+  // margin-bottom: 10px;
+  // text-indent: -25px;
+  // padding-left: 30px;
   p {
     text-indent: 0;
     padding-left: 0;
@@ -27,13 +27,13 @@ ol > li {
 
 ol > li::before {
   content: counter(step);
-  margin-right: 5px;
-  font-size: 80%;
-  background-color: $red;
-  color: white;
-  font-weight: bold;
-  padding: 2px 7px;
-  border-radius: 16px;
+  //  margin-right: 5px;
+  // font-size: 80%;
+  // background-color: $red;
+  // color: white;
+  // font-weight: bold;
+  // padding: 2px 7px;
+  // border-radius: 16px;
 }
 
 ul {

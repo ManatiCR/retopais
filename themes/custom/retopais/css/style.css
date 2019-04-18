@@ -67,6 +67,49 @@ input[type="submit"] + #edit-cancel:focus, .blog-list-page .blog-item--link a:fo
   border: 2px solid black;
 }
 
+.page-problematicas main, .page-que-es-reto-pais main, .page-blog main {
+  max-width: unset;
+  background: #f2f2f2;
+  padding: 0;
+  margin: 0;
+}
+
+.page-problematicas main > .pane-page-content, .page-que-es-reto-pais main > .pane-page-content, .page-blog main > .pane-page-content {
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.page-problematicas main > .pane-page-content > .pane-title, .page-que-es-reto-pais main > .pane-page-content > .pane-title, .page-blog main > .pane-page-content > .pane-title {
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: normal;
+  text-align: center;
+}
+
+.page-problematicas main > .pane-page-content > .pane-title:before, .page-que-es-reto-pais main > .pane-page-content > .pane-title:before, .page-blog main > .pane-page-content > .pane-title:before {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page-problematicas main > .pane-page-content > .pane-content, .page-que-es-reto-pais main > .pane-page-content > .pane-content, .page-blog main > .pane-page-content > .pane-content {
+  background: white;
+}
+
+.page-problematicas main > .pane-page-content > .pane-content section, .page-que-es-reto-pais main > .pane-page-content > .pane-content section, .page-blog main > .pane-page-content > .pane-content section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .page-admin-appearance-styleguide {
   max-width: 1200px;
   margin: 0 auto;
@@ -366,9 +409,6 @@ ul {
 
 ol > li {
   counter-increment: step;
-  margin-bottom: 10px;
-  text-indent: -25px;
-  padding-left: 30px;
 }
 
 ol > li p {
@@ -378,13 +418,6 @@ ol > li p {
 
 ol > li::before {
   content: counter(step);
-  margin-right: 5px;
-  font-size: 80%;
-  background-color: #e13e32;
-  color: white;
-  font-weight: bold;
-  padding: 2px 7px;
-  border-radius: 16px;
 }
 
 ul li {
@@ -692,6 +725,11 @@ hr {
   }
 }
 
+.nav-main,
+.social-links {
+  position: relative;
+}
+
 .nav-main ul,
 .social-links ul {
   display: -ms-flexbox;
@@ -891,69 +929,18 @@ hr {
   text-decoration: none;
 }
 
-.pane-problems-panel-pane-1 {
-  margin: 40px 0 0 0;
-}
-
 .pane-problems-panel-pane-1 .view-content {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   font-family: "Roboto Condensed", sans-serif;
-}
-
-@media (min-width: 768px) {
-  .pane-problems-panel-pane-1 .view-content {
-    -ms-flex-pack: center;
-        justify-content: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .pane-problems-panel-pane-1 .view-content {
-    width: 70%;
-  }
 }
 
 .pane-problems-panel-pane-1 .views-row {
   text-align: center;
-  -ms-flex: 1 1 100%;
-      flex: 1 1 100%;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 480px) {
-  .pane-problems-panel-pane-1 .views-row {
-    -ms-flex: 1 1 40%;
-        flex: 1 1 40%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .pane-problems-panel-pane-1 .views-row {
-    -ms-flex: 1 1 25%;
-        flex: 1 1 25%;
-  }
-}
-
-.pane-problems-panel-pane-1 .icon-paridad-de-genero-en-educacion {
-  color: #8d519f;
-}
-
-.pane-problems-panel-pane-1 .icon-accidentes-de-transito {
-  color: #ffcb50;
-}
-
-.pane-problems-panel-pane-1 .icon-separacion-y-recoleccion-de-residuos {
-  color: #91c73e;
-}
-
-.pane-problems-panel-pane-1 .icon-acceso-a-cultura-y-recreacion {
-  color: #008ece;
 }
 
 .pane-problems-panel-pane-2 {
@@ -992,96 +979,94 @@ hr {
   clear: both;
 }
 
-@media (min-width: 768px) {
-  .pane-que-es-retopais-intro, .pane-que-es-retopais-footer {
-    width: 80%;
-  }
+.pane-que-es-retopais-stages .pane-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  line-height: 23px;
 }
 
-@media (min-width: 1024px) {
-  .pane-que-es-retopais-intro, .pane-que-es-retopais-footer {
-    width: 50%;
-  }
-}
-
-.pane-que-es-retopais-proposals p {
-  background-color: #ffcb50;
-  padding: 20px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.pane-que-es-retopais-proposals p:before {
-  content: '*';
-}
-
-@media (min-width: 1240px) {
-  .pane-que-es-retopais-proposals p {
-    width: auto;
-    display: inline-block;
-    padding: 10px 0 10px 10px;
-  }
-  .pane-que-es-retopais-proposals p:after {
-    content: '';
-    position: relative;
-    right: -30px;
-    top: 32px;
-    width: 0;
-    height: 0;
-    border-width: 42px 30px 0 0;
-    border-style: solid;
-    border-color: #ffcb50 transparent transparent transparent;
-  }
+.pane-que-es-retopais-stages .pane-title:before {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .stages-list {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-align: baseline;
+      align-items: baseline;
+  padding: 80px 0 100px;
+  border-bottom: 1px solid #b0b0b0;
 }
 
 .stages-list li {
-  position: relative;
-  background-color: #353e42;
-  color: #fff;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+  -ms-flex: 1;
+      flex: 1;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  text-align: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  margin-left: 10px;
-  text-indent: 0;
-}
-
-.stages-list li div {
-  width: inherit;
-}
-
-.stages-list li:before {
-  font-family: "Roboto Condensed", sans-serif;
-  background-color: #4ba3bf;
-  padding: 15px;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  padding: 0 6%;
 }
 
 .stages-list li .stages-wrapper {
-  margin-left: -30px;
+  color: black;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.stages-list li:before {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background: #fcb614;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: 4px solid black;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  color: black;
+}
+
+.stages-list li:nth-child(1):after, .stages-list li:nth-child(3):after {
+  content: "";
+  background: url("../img/sprite.png") no-repeat -12px -1928px;
+  width: 171px;
+  height: 44px;
+  position: absolute;
+  top: -50px;
+  right: -80px;
+}
+
+.stages-list li:nth-child(2):after {
+  content: "";
+  background: url("../img/sprite.png") no-repeat -12px -2091px;
+  width: 167px;
+  height: 43px;
+  position: absolute;
+  bottom: -50px;
+  right: -40px;
 }
 
 .pane-que-es-retopais-cta {
@@ -2183,4 +2168,146 @@ hr {
 
 .pane-proposal-counter {
   margin-bottom: 30px;
+}
+
+.page-problematicas main > .pane-page-content .pane-problematicas-intro {
+  text-align: center;
+}
+
+.page-problematicas main > .pane-page-content .pane-problematicas-intro * {
+  font-family: "Rubik", sans-serif;
+  color: #505050;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.page-problematicas main > .pane-page-content .pane-problematicas-intro ul {
+  margin-bottom: 30px;
+}
+
+.page-problematicas main > .pane-page-content .pane-problematicas-intro .pane-title,
+.page-problematicas main > .pane-page-content .pane-problematicas-intro ul li {
+  padding: 10px 0;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .introduction-text {
+  max-width: 315px;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .introduction-text * {
+  margin: 0;
+  padding: 0;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .pane-problems-panel-pane-1 {
+  margin: 50px 0 60px;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals {
+  width: 100%;
+  background: #fcb614;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals .pane-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 0;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals .pane-content * {
+  color: black;
+  margin: 0;
+}
+
+.page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals .pane-content p {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content section {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-footer {
+  margin-top: 30px;
+  width: 65%;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main {
+  margin: 90px 0;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 17px;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main * {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .pane-title {
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .pane-title:before {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .form-type-item p {
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .form-type-item ul {
+  padding: 0 15%;
+}
+
+.page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .form-type-item ul li {
+  margin-bottom: 15px;
+}
+
+.page-blog .view-header {
+  text-align: center;
+  max-width: 452px;
+  margin: 30px auto;
+}
+
+.page-blog .view-header * {
+  font-family: "Rubik", sans-serif;
+  color: black;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  font-size: 14px;
+  font-size: 1.4rem;
 }

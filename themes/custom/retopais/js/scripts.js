@@ -11,11 +11,13 @@
         element.classList.add("parallelogram");
       });
     };
-    const markupMover = (pageClassName, element, reference) => {
+    const markupDisplacer = (pageClassName, elements, reference) => {
       if (document.body.classList.contains(pageClassName)) {
-        reference.parentNode.insertBefore(element, reference.nextSibling);
+        console.log(elements);
+        return elements.forEach(element =>
+          reference.parentNode.insertBefore(element, reference.nextSibling)
+        );
       }
-      console.log(`Page classname don't match: ${pageClassName}`);
       return null;
     };
     //Parallelogram selectors
@@ -31,20 +33,39 @@
     const problematicaParentDiv = document.querySelector(
       ".panel-pane.pane-page-content > h2.pane-title"
     );
-    markupMover(
+    markupDisplacer(
       problematicasPageClass,
-      paneProblematicaIntro,
+      [paneProblematicaIntro],
       problematicaParentDiv
     );
     // Blog Markup
     const blogPageClass = "page-blog";
     const blogIntro = document.querySelector(
-      ".view-dom-id-495054a0ffc8296955a5678e52dcad1c .view-header"
+      ".view-display-id-panel_pane_1 .view-header"
     );
     const blogParentDiv = document.querySelector(
       ".panel-pane.pane-page-content > h2.pane-title"
     );
-    markupMover(blogPageClass, blogIntro, blogParentDiv);
+    markupDisplacer(blogPageClass, [blogIntro], blogParentDiv);
+    // Que es Reto Markup
+    const retoPageClass = "page-que-es-reto-pais";
+    const retoIntro = document.querySelector(
+      ".que-es-reto-pais.introduction-text"
+    );
+    const retoProblemasPane = document.querySelector(
+      ".panel-pane.pane-views-panes.pane-problems-panel-pane-1"
+    );
+    const retoProposals = document.querySelector(
+      ".panel-pane.pane-que-es-retopais-proposals"
+    );
+    const retoParentDiv = document.querySelector(
+      ".panel-pane.pane-page-content > h2.pane-title"
+    );
+    markupDisplacer(
+      retoPageClass,
+      [retoProposals, retoProblemasPane, retoIntro],
+      retoParentDiv
+    );
   });
 
   Drupal.behaviors.mobileNav = {

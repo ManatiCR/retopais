@@ -1,0 +1,17 @@
+.page-blog {
+  @extend %gray-top-page-layout;
+  .view-header {
+    text-align: center;
+    max-width: 452px;
+    margin: 30px auto;
+    * {
+      font-family: $rubik;
+      color: black;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+      @include font-size(1.4);
+    }
+  }
+}
