@@ -21,7 +21,7 @@ projects:
   admin_views:
     version: "1.6"
   adminimal_admin_menu:
-    version: "1.7"
+    version: "1.9"
   aurora:
     version: "3.6"
     type: "theme"
