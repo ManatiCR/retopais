@@ -42,7 +42,7 @@ projects:
   date:
     version: "2.10"
   devel:
-    version: "1.5"
+    version: "1.7"
   diff:
     version: "3.3"
   email:
