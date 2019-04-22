@@ -13,6 +13,7 @@ function retopais_feature_config_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [current-page:pager][site:name]',
@@ -395,6 +396,7 @@ function retopais_feature_config_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
