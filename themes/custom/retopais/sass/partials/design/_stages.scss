@@ -10,21 +10,26 @@
 }
 .stages-list {
   display: flex;
-  align-items: baseline;
-  padding: 80px 0 100px;
+  flex-direction: column;
   border-bottom: 1px solid $gray;
+  @include breakpoint($medium) {
+    flex-direction: row;
+    padding: 80px 0 100px;
+    align-items: baseline;
+  }
   li {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 0 6%;
+    padding: 80px 10%;
     .stages-wrapper {
       color: black;
       @include font-size(1.4);
       font-weight: bold;
       text-align: center;
+      max-width: 154px;
     }
     &:before {
       display: flex;
@@ -40,27 +45,64 @@
       border-radius: 100%;
       color: black;
     }
-    &:nth-child(1),
-    &:nth-child(3) {
-      &:after {
-        content: "";
-        background: url("../img/sprite.png") no-repeat -12px -1928px;
-        width: 171px;
-        height: 44px;
-        position: absolute;
-        top: -50px;
-        right: -80px;
+    @include breakpoint(0 $medium) {
+      &:nth-child(1),
+      &:nth-child(3) {
+        &:after {
+          content: "";
+          background: url("../img/sprite.png") no-repeat -11px -2593px;
+          width: 44px;
+          height: 171px;
+          position: absolute;
+          right: 10%;
+          bottom: -20px;
+          @include breakpoint($small) {
+            right: 25%;
+          }
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+          content: "";
+          background: url("../img/sprite.png") no-repeat -12px -2253px;
+          width: 43px;
+          height: 167px;
+          position: absolute;
+          left: 10%;
+          bottom: -20px;
+          @include breakpoint($small) {
+            left: 25%;
+          }
+        }
       }
     }
-    &:nth-child(2) {
-      &:after {
-        content: "";
-        background: url("../img/sprite.png") no-repeat -12px -2091px;
-        width: 167px;
-        height: 43px;
-        position: absolute;
-        bottom: -50px;
-        right: -40px;
+    @include breakpoint($medium) {
+      padding: 0 6%;
+      .stages-wrapper {
+        max-width: auto;
+      }
+      &:nth-child(1),
+      &:nth-child(3) {
+        &:after {
+          content: "";
+          background: url("../img/sprite.png") no-repeat -12px -1928px;
+          width: 171px;
+          height: 44px;
+          position: absolute;
+          top: -50px;
+          right: -80px;
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+          content: "";
+          background: url("../img/sprite.png") no-repeat -12px -2091px;
+          width: 167px;
+          height: 43px;
+          position: absolute;
+          bottom: -50px;
+          right: -40px;
+        }
       }
     }
   }

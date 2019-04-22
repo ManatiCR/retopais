@@ -4,28 +4,11 @@
 //////////////////////////////
 
 .pane-problems-panel-pane-1 {
-  .view-content {
-    max-width: $max-width;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    font-family: $roboto;
-  }
-  .views-row {
-    text-align: center;
-  }
-  .icon-paridad-de-genero-en-educacion {
-  }
-  .icon-accidentes-de-transito {
-  }
-  .icon-separacion-y-recoleccion-de-residuos {
-  }
-  .icon-acceso-a-cultura-y-recreacion {
-  }
+  @extend %taxonomy-layout;
+  margin: 0 auto;
 }
 
 .pane-problems-panel-pane-2 {
-  margin-top: 50px;
   .views-row {
     display: grid;
     grid-template-columns: auto auto;
