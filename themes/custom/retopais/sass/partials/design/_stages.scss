@@ -1,11 +1,12 @@
 .pane-que-es-retopais-stages {
   .pane-title {
     @include font-size(2.4);
+    margin: 0 0 40px 0;
     font-weight: bold;
     font-style: italic;
     text-align: center;
     line-height: 23px;
-    @include separator($main-yellow, 40px, 20px);
+    @include separator($main-yellow, 0, 20px);
   }
 }
 .stages-list {

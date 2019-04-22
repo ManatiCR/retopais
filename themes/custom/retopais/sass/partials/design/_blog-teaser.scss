@@ -6,10 +6,12 @@
 .blog-list-page {
   .blog-item {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 326px auto;
     * {
       margin: 0;
+    }
+    grid-gap: 20px;
+    @include breakpoint($small) {
+      grid-template-columns: 2fr 3fr;
     }
   }
   .blog-item--title {

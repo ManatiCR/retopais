@@ -4,6 +4,9 @@
 //////////////////////////////////////
 
 .pane-blog-categories-panel-pane-1 {
+  background: $gray-light;
+  padding: 24px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   * {
     margin: 0;
     padding: 0;
@@ -17,7 +20,7 @@
     line-height: 23px;
   }
   ul {
-    margin: 35px 0;
+    margin-top: 35px;
     li {
       padding: 0;
       display: block;

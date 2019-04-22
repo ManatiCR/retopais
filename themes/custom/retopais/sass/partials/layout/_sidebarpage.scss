@@ -5,11 +5,15 @@
 
 .page-sidebar {
   display: grid;
-  grid-template-columns: auto 340px;
   grid-gap: 35px;
-  padding-top: 50px;
-  .page-sidebar-secondary-content {
-    padding-left: 35px;
-    border-left: 1px solid $gray;
+  @include breakpoint($medium) {
+    grid-template-columns: auto 340px;
+    .page-sidebar-secondary-content {
+      padding-left: 35px;
+      border-left: 1px solid $gray;
+    }
+  }
+  @include breakpoint($max-width) {
+    padding-top: 50px;
   }
 }

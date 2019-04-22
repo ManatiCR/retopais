@@ -1,6 +1,9 @@
 .page-que-es-reto-pais {
   @extend %gray-top-page-layout;
   main > .pane-page-content {
+    > .pane-title {
+      margin: 40px 0 20px 0;
+    }
     .introduction-text {
       max-width: 315px;
       display: flex;
@@ -37,7 +40,9 @@
     }
     .pane-que-es-retopais-footer {
       margin-top: 30px;
-      width: 65%;
+      @include breakpoint($medium) {
+        width: 65%;
+      }
     }
     .pane-que-es-retopais-premios-main {
       margin: 90px 0;

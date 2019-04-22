@@ -4,6 +4,8 @@
 //////////////////////////////
 
 .view-alianzas {
+  margin: 0 auto;
+  max-width: 80%;
   .view-header {
     text-align: center;
     max-width: 452px;
@@ -34,7 +36,7 @@
 }
 
 .pane-alianzas-panel-pane-3 {
-  padding: 20px 0;
+  padding: 40px 0;
   .pane-title {
     text-align: center;
     font-family: $rubik;
@@ -42,8 +44,8 @@
     font-weight: bold;
     line-height: normal;
     text-align: center;
-    margin-bottom: 80px;
+    margin: 0 0 80px 0;
     @include font-size(2.4);
-    @include separator($main-yellow, 20px, 20px);
+    @include separator($main-yellow, 0, 20px);
   }
 }

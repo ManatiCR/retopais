@@ -8,7 +8,7 @@
     font-family: $rubik;
     font-style: italic;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     @include font-size(1.8);
     line-height: normal;
   }
@@ -57,12 +57,15 @@
     }
   }
   &.recent-articles-sidebar {
-    background-color: $background-gray;
-    padding: 20px;
+    background: $gray-light;
+    padding: 24px;
     margin-bottom: 30px;
     h2 {
-      font-weight: 400;
-      text-transform: none;
+      font-family: $rubik;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 23px;
       @include font-size(2.4);
     }
   }
