@@ -113,7 +113,7 @@ projects:
   recaptcha:
     version: "2.2"
   select_or_other:
-    version: "2.22"
+    version: "2.24"
   semantic_panels:
     version: "1.2"
   shs:
