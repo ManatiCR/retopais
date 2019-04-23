@@ -109,7 +109,7 @@ projects:
   panels_everywhere:
     version: "1.0-rc2"
   rabbit_hole:
-    version: "2.24"
+    version: "2.25"
   recaptcha:
     version: "2.2"
   select_or_other:
