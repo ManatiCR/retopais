@@ -117,7 +117,7 @@ projects:
   semantic_panels:
     version: "1.2"
   shs:
-    version: "1.6"
+    version: "1.8"
   smtp:
     version: "1.4"
   strongarm:
