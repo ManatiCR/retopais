@@ -133,7 +133,7 @@ projects:
   video_embed_field:
     version: "2.0-beta11"
   views:
-    version: "3.16"
+    version: "3.22"
   views_bulk_operations:
     version: "3.4"
   views_cache_bully:
