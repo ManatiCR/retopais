@@ -75,7 +75,7 @@ projects:
   libraries:
     version: "2.3"
   link:
-    version: "1.4"
+    version: "1.6"
   magic:
     version: "2.3"
   master:
