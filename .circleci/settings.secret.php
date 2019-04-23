@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Secret configuration settings for the site.
@@ -10,11 +11,11 @@ $databases = array(
     'default' => array(
       'database' => 'drupal',
       'username' => 'root',
-      'password' => 'Admin2015',
+      'password' => 'drupal',
       'host' => '127.0.0.1',
       'driver' => 'mysql',
     ),
   ),
 );
 
-$drupal_hash_salt = '';
+$settings['hash_salt'] = 'circle';
