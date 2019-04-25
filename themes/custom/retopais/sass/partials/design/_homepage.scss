@@ -71,6 +71,16 @@
 .pane-homepage-timeline {
   text-align: center;
   padding: 30px 20px;
+  @include breakpoint(0 $medium) {
+    .timeline-image-desktop {
+      display: none;
+    }
+  }
+  @include breakpoint($medium) {
+    .timeline-image-mobile {
+      display: none;
+    }
+  }
 }
 
 .que-es-reto-pais--title {
