@@ -56,7 +56,7 @@ button:focus,
 }
 
 .form-actions {
-  background: #fcb614;
+  background: black;
   border: 2px solid transparent;
   text-decoration: none;
   height: 56px;
@@ -80,12 +80,13 @@ button:focus,
   font-weight: bold;
   font-size: 1.2rem;
   padding: 0 26px;
-  color: black;
+  color: white;
 }
 
 .form-actions:hover {
   text-decoration: none;
-  background: black;
+  background: white;
+  border: 2px solid black;
 }
 
 .form-actions:hover span {
@@ -93,7 +94,7 @@ button:focus,
 }
 
 .form-actions:hover input[type="submit"] {
-  color: white;
+  color: black;
 }
 
 .form-actions:focus {
