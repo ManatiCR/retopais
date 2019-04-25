@@ -275,14 +275,14 @@ function retopais_feature_config_strongarm() {
     'language' => 'es',
     'name' => 'Spanish',
     'native' => 'Español',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 0,
+    'direction' => '0',
+    'enabled' => '1',
+    'plurals' => '0',
     'formula' => '',
     'domain' => '',
     'prefix' => 'es',
-    'weight' => 0,
-    'javascript' => '',
+    'weight' => '0',
+    'javascript' => 'TJCq9srd51b0zpYBm2qJBIP7mn_AUjDKhfUmJoI7Jmk',
   );
   $export['language_default'] = $strongarm;
 
