@@ -17,6 +17,28 @@
   width: 100%;
 }
 
+.que-es-reto-pais--container-inner {
+  .que-es-reto-pais--link {
+    text-align: center;
+  }
+  @include breakpoint($medium) {
+    .que-es-reto-pais--full {
+      padding-right: 15%;
+    }
+  }
+  @include breakpoint($large) {
+    .que-es-reto-pais--full {
+      position: relative;
+      padding-right: 55%;
+      .que-es-reto-pais--link {
+        position: absolute;
+        top: 0;
+        right: 30%;
+      }
+    }
+  }
+}
+
 .que-es-reto-pais--container-inner,
 .pane-homepage-timeline {
   padding: 0 20px;
