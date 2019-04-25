@@ -13,6 +13,7 @@ dependencies[] = image
 dependencies[] = link
 dependencies[] = list
 dependencies[] = multistep
+dependencies[] = node
 dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager

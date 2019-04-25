@@ -23,11 +23,20 @@ function retopais_feature_proposals_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'más';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reiniciar';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'elementos por página';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '— Todo(s) —';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Desplazamiento';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« primero';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ anterior';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'siguiente ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'última »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
@@ -762,6 +771,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Propuestas';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'más';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view proposals';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -769,6 +779,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Aplicar';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reiniciar';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordenar por';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
