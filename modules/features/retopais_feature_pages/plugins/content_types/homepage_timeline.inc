@@ -23,14 +23,31 @@ function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
   $block->title = '';
 
   $image = file_load(variable_get('retopais_feature_pages_homepage_timeline_image', 0));
-  if ($image) {
-    $image_path = $image->uri;
+  $image_mobile = file_load(variable_get('retopais_feature_pages_homepage_timeline_image_mobile', 0));
 
+  if ($image) {
     $block->content['timeline-image'] = array(
       '#theme' => 'image',
-      '#path' => $image_path,
-      '#attributes' => array(),
+      '#path' => $image->uri,
+      '#alt' => t('Fechas importantes'),
+      '#title' => t('Fechas importantes'),
+      '#attributes' => array(
+        'class' => array('timeline-image-desktop'),
+      ),
     );
   }
+
+  if ($image_mobile) {
+    $block->content['timeline-image-mobile'] = array(
+      '#theme' => 'image',
+      '#path' => $image_mobile->uri,
+      '#alt' => t('Fechas importantes'),
+      '#title' => t('Fechas importantes'),
+      '#attributes' => array(
+        'class' => array('timeline-image-mobile'),
+      ),
+    );
+  }
+
   return $block;
 }

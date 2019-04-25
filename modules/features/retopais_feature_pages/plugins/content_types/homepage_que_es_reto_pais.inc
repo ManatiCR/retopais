@@ -41,6 +41,7 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
   // Get image or video.
   $video = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_video', '');
   $image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
+
   if ($video) {
     $parts = drupal_parse_url($video);
     if (isset($parts['query'])) {
@@ -50,13 +51,18 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
   }
   elseif ($image) {
     $image_file = file_load($image);
-    $image_path = $image_file->uri;
-    $variables = array(
-      'path' => $image_path,
-      'attributes' => array(),
-    );
+    if ($image_file) {
+      $image_path = $image_file->uri;
+      $variables = array(
+        'path' => $image_path,
+        'attributes' => array(),
+      );
 
-    $image = theme_image($variables);
+      $image = theme_image($variables);
+    }
+    else {
+      $image = NULL;
+    }
   }
 
   $block->content['que-es-reto-pais'] = array(
@@ -67,5 +73,6 @@ function homepage_que_es_reto_pais_render($subtype, $conf, $panel_args, $context
     '#title' => $title,
     '#text' => $text,
   );
+
   return $block;
 }

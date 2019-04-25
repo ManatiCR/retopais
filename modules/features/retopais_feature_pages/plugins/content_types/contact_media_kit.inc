@@ -20,28 +20,40 @@ $plugin = array(
 function media_kit_render($subtype, $conf, $panel_args, $context) {
   // Build the content type block.
   $block = new stdClass();
-  $block->title = t('Descargar Media Kit');
 
   $image = file_load(variable_get('retopais_feature_pages_contacto_media_kit_image', 0));
   $file = file_load(variable_get('retopais_feature_pages_contacto_media_kit_file', 0));
-  if ($image && $file) {
-    $file_path = file_create_url($file->uri);
-    $image_path = $image->uri;
 
-    $variables = array(
-      'path' => $image_path,
-      'attributes' => array(),
-    );
+  if ($file) {
+    $file_path = file_create_url($file->uri);
+
+    if ($image) {
+      $variables = array(
+        'path' => $image->uri,
+        'alt' => t('Descargar Media Kit'),
+        'title' => t('Descargar Media Kit'),
+        'attributes' => array(),
+      );
+
+      $block->title = t('Descargar Media Kit');
+      $text = theme_image($variables);
+      $classes = array('media-kit-download-link');
+    }
+    else {
+      $block->title = '';
+      $text = t('Descargar Media Kit');
+      $classes = array('button', 'parallelogram');
+    }
 
     $block->content['media-kit'] = array(
       '#theme' => 'link',
-      '#text' => theme_image($variables),
+      '#text' => $text,
       '#path' => $file_path,
       '#prefix' => '<div class="media-kit-download">',
       '#suffix' => '</div>',
       '#options' => array(
         'attributes' => array(
-          'class' => array('media-kit-download-link'),
+          'class' => $classes,
           'title' => t('Descargar Media Kit'),
         ),
         'html' => TRUE,

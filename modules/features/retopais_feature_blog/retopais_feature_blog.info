@@ -8,6 +8,7 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = image
 dependencies[] = inline_entity_form
+dependencies[] = node
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = path_breadcrumbs
