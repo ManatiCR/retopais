@@ -25,6 +25,11 @@
     align-items: center;
     position: relative;
     padding: 80px 10%;
+    @include breakpoint(0 $medium) {
+      &:first-child {
+        padding-top: 0;
+      }
+    }
     .stages-wrapper {
       color: black;
       @include font-size(1.4);

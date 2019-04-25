@@ -8,7 +8,14 @@
     margin-bottom: 40px;
   }
   .views-row {
-    margin-bottom: 45px;
+    @include breakpoint(0 $medium) {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $gray;
+    }
+    @include breakpoint($medium) {
+      margin-bottom: 45px;
+    }
     &:last-child {
       border-bottom: none;
       padding: 0;

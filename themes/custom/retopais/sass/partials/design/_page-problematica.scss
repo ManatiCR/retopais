@@ -2,6 +2,7 @@
   @extend %gray-top-page-layout;
   main > .pane-page-content {
     .pane-problematicas-intro {
+      @extend %rwd-padding;
       text-align: center;
       * {
         font-family: $rubik;

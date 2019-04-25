@@ -7,7 +7,7 @@
     .introduction-text {
       max-width: 315px;
       display: flex;
-      margin: 0 auto;
+      margin: 0 auto 60px;
       text-align: center;
       * {
         margin: 0;
@@ -15,8 +15,16 @@
       }
     }
     .pane-que-es-retopais-proposals {
+      text-align: center;
+      padding: 0 7%;
       width: 100%;
       background: $main-yellow;
+      @include breakpoint($medium) {
+        text-align: unset;
+      }
+      @include breakpoint($max-width) {
+        padding: unset;
+      }
       .pane-content {
         max-width: $max-width;
         margin: 0 auto;

@@ -6,10 +6,10 @@
 .blog-list-page {
   .blog-item {
     display: grid;
+    grid-gap: 20px;
     * {
       margin: 0;
     }
-    grid-gap: 20px;
     @include breakpoint($small) {
       grid-template-columns: 2fr 3fr;
     }
@@ -38,6 +38,9 @@
     margin: 20px 0;
   }
   .blog-item--link {
+    @include breakpoint(0 $small) {
+      text-align: center;
+    }
     a {
       @extend %btn-parallelogram-yellow;
     }

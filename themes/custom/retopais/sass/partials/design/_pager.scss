@@ -2,3 +2,43 @@
 // Pager
 // @_pager.scss
 //////////////////////////////
+
+ul.pager {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid $gray;
+  li {
+    display: block;
+    margin: 0 5px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    &.pager-item a,
+    &.pager-current {
+      display: block;
+      border: 2px solid black;
+      border-radius: 3px;
+      padding: 2px 4px;
+    }
+    &.pager-item a:hover,
+    &.pager-current {
+      border-color: $cyan;
+      background: $cyan;
+      color: white;
+    }
+    &.pager-previous,
+    &.pager-next {
+      a {
+        border: none;
+      }
+    }
+    &.pager-first,
+    &.pager-last {
+      display: none;
+    }
+  }
+}

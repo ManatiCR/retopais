@@ -2,6 +2,9 @@
   @extend %gray-top-page-layout;
   main > .pane-page-content {
     margin: 0;
+    .view-header {
+      @extend %rwd-padding;
+    }
   }
   main > .pane-page-content > .pane-title {
     margin: 40px 0;

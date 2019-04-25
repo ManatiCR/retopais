@@ -152,7 +152,7 @@ button:focus,
 
 .page-blog main > .pane-page-content > .pane-content, .page-problematicas main > .pane-page-content > .pane-content, .page-que-es-reto-pais main > .pane-page-content > .pane-content {
   background: white;
-  padding: 5%;
+  padding: 60px 7%;
 }
 
 @media (min-width: 1200px) {
@@ -166,6 +166,16 @@ button:focus,
   margin: 0 auto;
 }
 
+.page-blog main > .pane-page-content .view-header, .page-problematicas main > .pane-page-content .pane-problematicas-intro {
+  padding: 0 10%;
+}
+
+@media (min-width: 768px) {
+  .page-blog main > .pane-page-content .view-header, .page-problematicas main > .pane-page-content .pane-problematicas-intro {
+    padding: unset;
+  }
+}
+
 .pane-problems-panel-pane-1, .pane-problems-panel-pane-3 {
   max-width: 1200px;
   margin: 0 auto;
@@ -174,10 +184,16 @@ button:focus,
 .pane-problems-panel-pane-1 .view-content, .pane-problems-panel-pane-3 .view-content {
   display: -ms-grid;
   display: grid;
-  grid-gap: 30px;
-  padding: 50px 3%;
+  grid-gap: 40px;
+  padding: 0 3% 50px;
   -ms-grid-columns: (minmax(253px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .pane-problems-panel-pane-1 .view-content, .pane-problems-panel-pane-3 .view-content {
+    grid-gap: 30px;
+  }
 }
 
 .pane-problems-panel-pane-1 .pane-title, .pane-problems-panel-pane-3 .pane-title {
@@ -206,7 +222,7 @@ button:focus,
 
 .pane-problems-panel-pane-1 .views-row, .pane-problems-panel-pane-3 .views-row {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 0 15px 15px 15px;
   background: white;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
@@ -285,12 +301,21 @@ main {
   grid-gap: 35px;
 }
 
+.page-sidebar .page-sidebar-secondary-content {
+  border-top: 1px solid #b0b0b0;
+  padding: 40px 0;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .page-sidebar {
     -ms-grid-columns: auto 340px;
         grid-template-columns: auto 340px;
   }
   .page-sidebar .page-sidebar-secondary-content {
+    padding: 0;
+    border: 0;
+    text-align: left;
     padding-left: 35px;
     border-left: 1px solid #b0b0b0;
   }
@@ -366,8 +391,18 @@ main {
   margin-bottom: 40px;
 }
 
-.blog-list-page .views-row {
-  margin-bottom: 45px;
+@media (min-width: 0) and (max-width: 768px) {
+  .blog-list-page .views-row {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #b0b0b0;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-list-page .views-row {
+    margin-bottom: 45px;
+  }
 }
 
 .blog-list-page .views-row:last-child {
@@ -675,6 +710,49 @@ hr {
 .breadcrumbs-blog-full a {
   color: #5d5d5d;
   font-weight: 400;
+}
+
+ul.pager {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: right;
+      justify-content: right;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #b0b0b0;
+}
+
+ul.pager li {
+  display: block;
+  margin: 0 5px;
+}
+
+ul.pager li a {
+  text-decoration: none;
+  color: black;
+}
+
+ul.pager li.pager-item a, ul.pager li.pager-current {
+  display: block;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+ul.pager li.pager-item a:hover, ul.pager li.pager-current {
+  border-color: #008ece;
+  background: #008ece;
+  color: white;
+}
+
+ul.pager li.pager-previous a, ul.pager li.pager-next a {
+  border: none;
+}
+
+ul.pager li.pager-first, ul.pager li.pager-last {
+  display: none;
 }
 
 .more-link a,
@@ -1027,22 +1105,29 @@ hr {
 .pane-problems-panel-pane-2 .views-row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
   grid-gap: 30px;
   margin-bottom: 80px;
 }
 
-.pane-problems-panel-pane-2 .views-row .field-image {
-  grid-row: 1 / 3;
-}
-
 .pane-problems-panel-pane-2 .views-row * {
+  text-align: center;
   margin: 0;
 }
 
+@media (min-width: 480px) {
+  .pane-problems-panel-pane-2 .views-row {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  .pane-problems-panel-pane-2 .views-row * {
+    text-align: unset;
+  }
+  .pane-problems-panel-pane-2 .views-row .field-image {
+    grid-row: 1 / 3;
+  }
+}
+
 .pane-problems-panel-pane-2 .view-content h3 {
-  max-width: 287px;
   color: black;
   font-family: "Rubik", sans-serif;
   font-style: italic;
@@ -1050,6 +1135,12 @@ hr {
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 23px;
+}
+
+@media (min-width: 1024px) {
+  .pane-problems-panel-pane-2 .view-content h3 {
+    max-width: 287px;
+  }
 }
 
 .pane-problems-panel-pane-2 .views-field-description {
@@ -1107,6 +1198,12 @@ hr {
       align-items: center;
   position: relative;
   padding: 80px 10%;
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .stages-list li:first-child {
+    padding-top: 0;
+  }
 }
 
 .stages-list li .stages-wrapper {
@@ -1759,6 +1856,12 @@ hr {
   margin: 20px 0;
 }
 
+@media (min-width: 0) and (max-width: 480px) {
+  .blog-list-page .blog-item--link {
+    text-align: center;
+  }
+}
+
 .blog-item--date {
   color: #afafaf;
   font-size: 12px;
@@ -2231,6 +2334,14 @@ hr {
   margin-bottom: 30px;
 }
 
+.pane-problematicas-sidebar .ips-link {
+  margin: 35px 0;
+}
+
+.pane-problematicas-sidebar .ips-link a {
+  display: block;
+}
+
 .page-alianzas .pane-title {
   font-family: "Rubik", sans-serif;
   font-style: italic;
@@ -2339,7 +2450,7 @@ hr {
   max-width: 315px;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 60px;
   text-align: center;
 }
 
@@ -2349,8 +2460,22 @@ hr {
 }
 
 .page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals {
+  text-align: center;
+  padding: 0 7%;
   width: 100%;
   background: #fcb614;
+}
+
+@media (min-width: 768px) {
+  .page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals {
+    text-align: unset;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals {
+    padding: unset;
+  }
 }
 
 .page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals .pane-content {
