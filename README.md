@@ -52,6 +52,16 @@ In order to run behat tests; you should execute:
 ahoy site behat
 ```
 
+### Special options
+
+The site has a form for users to send their proposals, but this form will be available for a certain time. To activate or deactivate this form, you must enter the permissions configuration page: Users -> Permissions
+
+```bash
+admin/people/permissions
+```
+
+Add or delete the permission: "Proposal: Create new content" to the role you want, according to your needs.
+
 ### Build Environment
 
 To build this environment you need recent docker compose and docker versions.
