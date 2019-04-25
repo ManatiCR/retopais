@@ -20,12 +20,10 @@
       }
       return null;
     };
-    //Parallelogram selectors
     const globalBtns = document.querySelectorAll(".button");
     const blogBtns = document.querySelectorAll(".blog-item--link a");
     parallelogramMarkup(blogBtns);
     parallelogramMarkup(globalBtns);
-    //Problematicas Markup
     const problematicasPageClass = "page-problematicas";
     const paneProblematicaIntro = document.querySelector(
       ".panel-pane.pane-problematicas-intro"
@@ -38,7 +36,6 @@
       [paneProblematicaIntro],
       problematicaParentDiv
     );
-    // Blog Markup
     const blogPageClass = "page-blog";
     const blogIntro = document.querySelector(
       ".view-display-id-panel_pane_1 .view-header"
@@ -47,7 +44,6 @@
       ".panel-pane.pane-page-content > h2.pane-title"
     );
     markupDisplacer(blogPageClass, [blogIntro], blogParentDiv);
-    // Que es Reto Markup
     const retoPageClass = "page-que-es-reto-pais";
     const retoIntro = document.querySelector(
       ".que-es-reto-pais.introduction-text"
