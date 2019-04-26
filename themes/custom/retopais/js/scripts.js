@@ -1,7 +1,6 @@
 (function ($, Drupal, window, document, enquire) {
   "use strict";
-
-  (function () {
+  $(document).ready(function () {
     var parallelogramMarkup = function parallelogramMarkup(elements) {
       elements.forEach(function (element) {
         var newSpan = document.createElement("span");
@@ -71,7 +70,7 @@
       [retoProposals, retoProblemasPane, retoIntro],
       retoParentDiv
     );
-  })();
+  });
 })(jQuery, Drupal, this, this.document, enquire);
 
 (function ($, Drupal, window, document, enquire) {
