@@ -1,6 +1,7 @@
 core: 7.x
 api: 2
 
+
 # Common attributes.
 defaults:
   projects:
