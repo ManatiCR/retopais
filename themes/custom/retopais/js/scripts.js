@@ -1,7 +1,7 @@
 (function($, Drupal, window, document, enquire) {
   "use strict";
 
-  $(document).ready(() => {
+  $(document).ready(function() {
     const parallelogramMarkup = elements => {
       elements.forEach(element => {
         const newSpan = document.createElement("span");
