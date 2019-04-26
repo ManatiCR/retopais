@@ -18,9 +18,10 @@ $plugin = array(
  * Render the custom content type.
  */
 function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
+  $title = t('Fechas importantes');
   // Build the content type block.
   $block = new stdClass();
-  $block->title = '';
+  $block->title = $title;
 
   $image = file_load(variable_get('retopais_feature_pages_homepage_timeline_image', 0));
   $image_mobile = file_load(variable_get('retopais_feature_pages_homepage_timeline_image_mobile', 0));
@@ -29,8 +30,8 @@ function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
     $block->content['timeline-image'] = array(
       '#theme' => 'image',
       '#path' => $image->uri,
-      '#alt' => t('Fechas importantes'),
-      '#title' => t('Fechas importantes'),
+      '#alt' => $title,
+      '#title' => $title,
       '#attributes' => array(
         'class' => array('timeline-image-desktop'),
       ),
@@ -41,8 +42,8 @@ function homepage_timeline_render($subtype, $conf, $panel_args, $context) {
     $block->content['timeline-image-mobile'] = array(
       '#theme' => 'image',
       '#path' => $image_mobile->uri,
-      '#alt' => t('Fechas importantes'),
-      '#title' => t('Fechas importantes'),
+      '#alt' => $title,
+      '#title' => $title,
       '#attributes' => array(
         'class' => array('timeline-image-mobile'),
       ),
