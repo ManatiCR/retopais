@@ -37,9 +37,8 @@
     outline-style: none;
   }
 }
-%btn-parallelogram-black-input {
+%btn-with-input {
   @extend %parallelogram;
-  background: black;
   border: 2px solid transparent;
   text-decoration: none;
   height: 56px;
@@ -64,8 +63,6 @@
   }
   &:hover {
     text-decoration: none;
-    background: white;
-    border: 2px solid black;
     span {
       color: inherit;
     }
@@ -75,6 +72,27 @@
   }
   &:focus {
     outline-style: none;
+  }
+}
+%btn-parallelogram-black-input {
+  @extend %btn-with-input;
+  background: black;
+  &:hover {
+    background: white;
+    border: 2px solid black;
+  }
+}
+%btn-parallelogram-yellow-input {
+  @extend %btn-with-input;
+  background: $main-yellow;
+  input[type="submit"] {
+    color: black;
+  }
+  &:hover {
+    background: black;
+    input[type="submit"] {
+      color: white;
+    }
   }
 }
 

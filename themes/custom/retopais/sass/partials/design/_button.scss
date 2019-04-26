@@ -15,8 +15,13 @@ button,
 
 //Form Proposal
 .node-proposal-form {
-  .form-actions .form-submit {
-    cursor: pointer;
-    @extend %btn-parallelogram-yellow;
+  .form-actions {
+    .form-next,
+    .form-submit {
+      @extend %btn-parallelogram-yellow-input;
+    }
+    .form-previous {
+      @extend %btn-parallelogram-black-input;
+    }
   }
 }
