@@ -86,7 +86,7 @@ projects:
   maxlength:
     version: "3.2"
   metatag:
-    version: "1.21"
+    version: "1.25"
   module_filter:
     version: "2.2"
   multistep:
