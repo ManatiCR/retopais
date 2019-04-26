@@ -35,8 +35,12 @@
   }
 }
 
+.pane-alianzas-panel-pane-2,
 .pane-alianzas-panel-pane-3 {
-  padding: 40px 0;
+  margin-top: 100px;
+}
+
+.pane-alianzas-panel-pane-3 {
   .pane-title {
     text-align: center;
     font-family: $rubik;
@@ -46,6 +50,6 @@
     text-align: center;
     margin: 0 0 80px 0;
     @include font-size(2.4);
-    @include separator($main-yellow, 0, 20px);
+    @include separator($main-yellow);
   }
 }

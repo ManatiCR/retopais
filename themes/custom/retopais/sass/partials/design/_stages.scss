@@ -6,7 +6,7 @@
     font-style: italic;
     text-align: center;
     line-height: 23px;
-    @include separator($main-yellow, 0, 20px);
+    @include separator($main-yellow);
   }
 }
 .stages-list {

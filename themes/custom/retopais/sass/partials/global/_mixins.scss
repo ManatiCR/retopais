@@ -27,7 +27,7 @@
   margin-left: 10px;
 }
 
-@mixin separator($color, $margin-top, $margin-bottom) {
+@mixin separator($color) {
   &:before {
     content: "";
     display: block;
@@ -36,7 +36,6 @@
     height: 5px;
     background: $color;
     margin: auto;
-    margin-top: $margin-top;
-    margin-bottom: $margin-bottom;
+    margin-bottom: 20px;
   }
 }
