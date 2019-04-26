@@ -1991,23 +1991,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   margin-bottom: 80px;
 }
 
-.pane-homepage-timeline {
-  text-align: center;
-  padding: 30px 20px;
-}
-
-@media (min-width: 0) and (max-width: 768px) {
-  .pane-homepage-timeline .timeline-image-desktop {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .pane-homepage-timeline .timeline-image-mobile {
-    display: none;
-  }
-}
-
 .que-es-reto-pais--title {
   margin: 0 0 20px 0;
   font-family: "Roboto Condensed", sans-serif;
@@ -2361,6 +2344,51 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .pane-proposal-counter {
   margin-bottom: 30px;
+}
+
+.pane-homepage-timeline {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.pane-homepage-timeline .pane-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 23px;
+  text-align: center;
+  margin: 0 auto 80px;
+}
+
+.pane-homepage-timeline .pane-title:before {
+  content: "";
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 5px;
+  background: #fcb614;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .pane-homepage-timeline .pane-title {
+    max-width: 156px;
+  }
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .pane-homepage-timeline .timeline-image-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .pane-homepage-timeline .timeline-image-mobile {
+    display: none;
+  }
 }
 
 .pane-problematicas-sidebar .ips-link {

@@ -1,0 +1,27 @@
+.pane-homepage-timeline {
+  text-align: center;
+  padding: 30px 20px;
+  .pane-title {
+    @include separator($main-yellow);
+    @include font-size(2.4);
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 23px;
+    text-align: center;
+    margin: 0 auto 80px;
+    @include breakpoint($medium) {
+      max-width: 156px;
+    }
+  }
+  @include breakpoint(0 $medium) {
+    .timeline-image-desktop {
+      display: none;
+    }
+  }
+  @include breakpoint($medium) {
+    .timeline-image-mobile {
+      display: none;
+    }
+  }
+}
