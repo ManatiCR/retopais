@@ -1466,7 +1466,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   font-size: 1.3rem;
   border-radius: 5px;
   background-color: #f2f2f2;
-  box-shadow: 0 3px 0 #5d5d5d;
+  box-shadow: 0 3px 0 #fcb614;
 }
 
 .select-buttons li a:hover {
@@ -1475,6 +1475,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .select-buttons li a.picked {
   background-color: #dddddd;
+  box-shadow: 0 3px 0 #b6830d;
 }
 
 .page-node-add-proposal .select-buttons li:first-child {
@@ -1487,38 +1488,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .tabledrag-toggle-weight-wrapper {
   display: none;
-}
-
-.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(2) a {
-  box-shadow: 0 3px 0 #8d519f;
-}
-
-.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(3) a {
-  box-shadow: 0 3px 0 #ffcb50;
-}
-
-.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(4) a {
-  box-shadow: 0 3px 0 #91c73e;
-}
-
-.page-node-add-proposal .form-item-field-problem-und ul li:nth-child(5) a {
-  box-shadow: 0 3px 0 #008ece;
-}
-
-.form-item-field-problem-und ul li:nth-child(1) a {
-  box-shadow: 0 3px 0 #8d519f;
-}
-
-.form-item-field-problem-und ul li:nth-child(2) a {
-  box-shadow: 0 3px 0 #ffcb50;
-}
-
-.form-item-field-problem-und ul li:nth-child(3) a {
-  box-shadow: 0 3px 0 #91c73e;
-}
-
-.form-item-field-problem-und ul li:nth-child(4) a {
-  box-shadow: 0 3px 0 #008ece;
 }
 
 .field-name-field-project-links {
