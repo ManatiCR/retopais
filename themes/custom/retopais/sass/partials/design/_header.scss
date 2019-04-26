@@ -4,53 +4,124 @@
 ///////////////////////////////////
 
 .site-header {
-  background: url(../img/backgrounds/header-bg.jpg) no-repeat center 40px;
-  background-size: cover;
+  background: black;
 }
 
 .container-header {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
   @include breakpoint($medium) {
-    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 196px;
+    flex-direction: row-reverse;
+    background: url("../img/backgrounds/hp-top-bg-full-width.png") no-repeat
+      bottom right / auto 136px;
+  }
+}
+
+.site-name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 45px 0;
+  justify-content: space-evenly;
+  background: url("../img/backgrounds/hp-mobile-bg.jpg") no-repeat center center /
+    cover;
+  @include breakpoint($medium) {
+    background: none;
+    width: 40%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  a {
+    display: block;
+    width: 109px;
+    height: 88px;
+    background: url("../img/logo/reto-pais-logo.png") no-repeat;
+    background-size: 100%;
+    text-indent: -999px;
+    white-space: nowrap;
+    order: 1;
+    @include breakpoint($medium) {
+      width: 143px;
+      height: 110px;
+    }
+  }
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 109px;
+    background-image: url("../img/logo/logo-1820-ideas.png");
+    order: 2;
+    @include breakpoint($medium) {
+      width: 116px;
+      height: 168px;
+    }
+  }
+  &:before {
+    content: "";
+    display: block;
+    width: 123px;
+    height: 47px;
+    background-image: url("../img/logo/impact-logo.png");
+    order: 3;
+    @include breakpoint($medium) {
+      width: 173px;
+      height: 68px;
+    }
+  }
+}
+
+.nav-main {
+  align-self: flex-end;
+  @include breakpoint($medium) {
+    align-self: auto;
+    flex-grow: 1;
+    margin-left: 25%;
+  }
+}
+
+.nav-main,
+.social-links {
+  position: relative;
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    @include breakpoint($medium) {
+      height: 60px;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.social-links {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include breakpoint($medium) {
+    position: unset;
   }
 }
 
 .header-top-bar {
   background-color: $white;
   height: 40px;
-}
-
-.site-name {
-  background: url(../img/logo/logo.svg) no-repeat;
-  background-size: 100%;
-  display: block;
-  height: 122px;
-  margin: 20px 10px;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  width: 150px;
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  @include breakpoint($medium) {
-    height: 174px;
-    margin: 40px 10px;
-    width: 215px;
-  }
-  @include breakpoint($large) {
-    height: 223px;
-    width: 276px;
-  }
-  @include breakpoint($max-width) {
-    height:248px;
-    width: 307px;
-  }
+  display: none;
 }

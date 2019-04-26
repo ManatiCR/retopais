@@ -4,11 +4,21 @@
 ////////////////////////////////////////////////
 
 .pane-alianzas-panel-pane-4 {
-  border-top: 2px solid $light-gray;
+  margin-top: 40px;
+  @include breakpoint($medium) {
+    margin-top: 80px;
+  }
+
   h2 {
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    @include font-size(1.8);
+    color: #282828;
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-style: italic;
+    font-weight: bold;
+    @include font-size(2.2);
+    line-height: normal;
+    text-align: center;
+    @include separator($main-yellow);
   }
   .view-content {
     align-items: center;

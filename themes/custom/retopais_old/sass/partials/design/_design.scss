@@ -1,0 +1,50 @@
+////////////////////////
+// Design Partials
+//
+// Separate your Layout from Design
+// Build sub folders and partials in this folder, with everything being imported, in cascading order, into this file.
+//
+// All styling, non box model properties go here
+////////////////////////
+@import "typography";
+@import "checkbox";
+@import "messages";
+@import "links";
+@import "lists";
+@import "radio";
+@import "input";
+@import "button";
+@import "hr";
+@import "select";
+@import "breadcrumb";
+@import "pager";
+@import "more";
+@import "header";
+@import "footer";
+@import "top-bar-nav";
+@import "main-nav";
+@import "social-links";
+@import "nav-footer";
+@import "problems";
+@import "pane-que-es-retopais";
+@import "stages";
+@import "ctas";
+@import "alliances";
+@import "mediakit";
+@import "proposal-list";
+@import "proposal-buttons";
+@import "proposals-table";
+@import "forms";
+@import "recent-articles";
+@import "proposal-cta-footer";
+@import "mesainnovacion-footer";
+@import "blog-categories";
+@import "blog-teaser";
+@import "blog-date";
+@import "blog-cta";
+@import "pane-back-to-blog";
+@import "ckeditor-embed";
+@import "homepage";
+@import "prizes";
+@import "proposals-node";
+@import "counter";

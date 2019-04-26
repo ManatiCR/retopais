@@ -1,0 +1,204 @@
+.parallelogram,
+%parallelogram {
+  transform: skew(-10deg);
+}
+
+.skew-fix,
+%skew-fix {
+  display: inline-block;
+  transform: skew(10deg);
+}
+
+%btn-parallelogram-yellow {
+  background: $main-yellow;
+  color: black;
+  border: 2px solid transparent;
+  text-decoration: none;
+  height: 56px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 26px;
+  font-family: $rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  margin-left: 10px;
+  &:hover {
+    text-decoration: none;
+    background: black;
+    color: white;
+    span {
+      color: inherit;
+    }
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+%btn-with-input {
+  @extend %parallelogram;
+  border: 2px solid transparent;
+  text-decoration: none;
+  height: 56px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-style: normal;
+  line-height: normal;
+  margin-left: 10px;
+  input[type="submit"] {
+    @extend %skew-fix;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-family: $rubik;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 26px;
+    color: white;
+  }
+  &:hover {
+    text-decoration: none;
+    span {
+      color: inherit;
+    }
+    input[type="submit"] {
+      color: black;
+    }
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+%btn-parallelogram-black-input {
+  @extend %btn-with-input;
+  background: black;
+  &:hover {
+    background: white;
+    border: 2px solid black;
+  }
+}
+%btn-parallelogram-yellow-input {
+  @extend %btn-with-input;
+  background: $main-yellow;
+  input[type="submit"] {
+    color: black;
+  }
+  &:hover {
+    background: black;
+    input[type="submit"] {
+      color: white;
+    }
+  }
+}
+
+%btn-parallelogram-black {
+  @extend %btn-parallelogram-yellow;
+  background: black;
+  color: white;
+  &:hover {
+    background: white;
+    color: black;
+    border: 2px solid black;
+  }
+}
+
+%gray-top-page-layout {
+  main {
+    max-width: unset;
+    background: $gray-light;
+    padding: 0;
+    margin: 0;
+  }
+  main > .pane-page-content {
+    overflow: hidden;
+    margin-top: 30px;
+    > .pane-title {
+      font-family: $rubik;
+      font-style: italic;
+      font-weight: bold;
+      @include font-size(3);
+      line-height: normal;
+      text-align: center;
+      @include separator($main-yellow);
+    }
+  }
+  main > .pane-page-content > .pane-content {
+    background: white;
+    padding: 60px 7% 0;
+    @include breakpoint($max-width) {
+      padding: unset;
+    }
+    section {
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+  }
+}
+
+%rwd-padding {
+  padding: 0 10%;
+  @include breakpoint($medium) {
+    padding: unset;
+  }
+}
+
+%taxonomy-layout {
+  max-width: $max-width;
+  margin: 0 auto;
+  .view-content {
+    display: grid;
+    grid-gap: 40px;
+    padding: 0 7% 50px;
+    grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
+    @include breakpoint($medium) {
+      grid-gap: 30px;
+    }
+    @include breakpoint($max-width) {
+      padding: unset;
+    }
+  }
+  .pane-title {
+    text-align: center;
+    font-family: $rubik;
+    font-style: italic;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+    @include font-size(2.4);
+    @include separator($main-yellow);
+    margin: 0 0 40px 0;
+  }
+  .views-row {
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 15px 15px 15px;
+    background: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    .field-image {
+      width: 162px;
+      height: 162px;
+      border-radius: 50% 50%;
+      display: block;
+      background: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -60px;
+    }
+    .views-field-name {
+      color: black;
+      margin: 40px 0;
+      font-family: $rubik;
+      font-style: normal;
+      font-weight: bold;
+      @include font-size(1.8);
+      line-height: normal;
+      text-align: center;
+    }
+  }
+}

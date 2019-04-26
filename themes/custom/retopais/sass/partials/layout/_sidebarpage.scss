@@ -3,14 +3,25 @@
 // @_sidebarpage.scss
 ///////////////////////////////
 
-.page-sidebar-primary-content {
-  @include layout-at(15, $medium) {
-    @include grid-span(11, 1);
+.page-sidebar {
+  display: grid;
+  grid-gap: 35px;
+  .page-sidebar-secondary-content {
+    border-top: 1px solid $gray;
+    padding-top: 40px;
+    text-align: center;
   }
-}
-
-.page-sidebar-secondary-content {
-  @include layout-at(15, $medium) {
-    @include grid-span(4, 12);
+  @include breakpoint($medium) {
+    grid-template-columns: auto 340px;
+    .page-sidebar-secondary-content {
+      padding: 0;
+      border: 0;
+      text-align: left;
+      padding-left: 35px;
+      border-left: 1px solid $gray;
+    }
+  }
+  @include breakpoint($max-width) {
+    padding-top: 50px;
   }
 }

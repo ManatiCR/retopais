@@ -1,0 +1,16 @@
+//////////////////////////////
+// Layout for proposals page.
+// @_form.scss
+//////////////////////////////
+
+.pane-proposal-progress {
+  @include layout-at(15, $medium) {
+    @include grid-span(3, 1);
+  }
+}
+
+.pane-form {
+  @include layout-at(15, $medium) {
+    @include grid-span(12, 4);
+  }
+}

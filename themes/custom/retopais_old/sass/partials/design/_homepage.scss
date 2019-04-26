@@ -1,0 +1,258 @@
+///////////////////////////////////
+// Styles for the site hhomepage.
+// @_homepage.scss
+///////////////////////////////////
+
+.page-homepage {
+  main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page-fullwidth-first-full, .page-fullwidth-third-full {
+  width: 100%;
+}
+
+.page-fullwidth-second, .page-fullwidth-fourth, .que-es-reto-pais--container-inner, .pane-homepage-timeline {
+  padding: 0 20px;
+  @include breakpoint($desktop) {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
+
+.page-fullwidth-first-full {
+  display: inline-block;
+  padding: 40px 0;
+  background-color: $red;
+  color: $white;
+  background-image: url(../img/backgrounds/hp-top-bg.png);
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
+  min-height: 324px;
+  .homepage-highlighted {
+    font-weight: bold;
+  }
+}
+
+.page-fullwidth-second {
+  margin-bottom: 30px;
+}
+
+.page-fullwidth-third-full {
+  background-color: $background-gray;
+}
+
+.pane-homepage-timeline {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.que-es-reto-pais--title {
+  color: white;
+  .homepage-highlighted {
+    color: $yellow;
+  }
+}
+
+.que-es-reto-pais--left {
+  display: block;
+  margin-bottom: 40px;
+  @include breakpoint ($medium) {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    padding-right: 30px;
+  }
+  p {
+    margin: 30px 0;
+  }
+}
+
+.que-es-reto-pais--right {
+  display: block;
+  @include breakpoint ($medium) {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    padding-left: 30px;
+  }
+}
+
+.que-es-reto-pais--link {
+  .button {
+    display: inline-block;
+    background-color: transparent;
+    color: $white;
+    border-color: $yellow;
+    &:hover {
+      box-shadow: 0 2px 0 $darkyellow;
+      background-color: $yellow;
+      text-decoration: none;
+    }
+  }
+}
+
+.que-es-reto-pais--image {
+  width: 100%;
+}
+
+.pane-problems-panel-pane-3 {
+  margin: 40px 0;
+  .view-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include breakpoint ($large) {
+      flex-wrap: nowrap;
+    }
+  }
+  .views-row {
+    text-align: center;
+    padding: 0 25px;
+    flex: 1 1 100%;
+    @include breakpoint($medium) {
+      flex: 1 1 50%;
+    }
+    @include breakpoint($large) {
+      flex: 0 1 25%;
+    }
+  }
+  .views-field-name {
+    font-size: 2.4rem;
+    font-family: $oswald;
+    margin: 10px 0;
+    min-height: 66px;
+  }
+  .field-abstract {
+    text-align: left;
+  }
+  .views-row-1 {
+    .views-field-name {
+      color: $icon-green;
+    }
+  }
+  .views-row-2 {
+    .views-field-name {
+      color: $icon-yellow;
+    }
+  }
+  .views-row-3 {
+    .views-field-name {
+      color: $icon-blue;
+    }
+  }
+  .views-row-4 {
+    .views-field-name {
+      color: $icon-purple;
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+}
+
+.pane-homepage-premios {
+  margin: 80px 0;
+  text-align: center;
+  background-image: url(../img/backgrounds/hp-bg-premios.png);
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  h2 {
+    font-weight: 400;
+  }
+  .button {
+    position: relative;
+    @include breakpoint($small) {
+      &:after {
+        @include triangle($black);
+      }
+      &:hover {
+        &:after {
+          top: 50%;
+        }
+      }
+    }
+  }
+}
+
+.homepage-premios--description {
+  margin: 30px 0;
+}
+
+.pane-homepage-participa {
+  width: 100%;
+  margin-bottom: 80px;
+  background-image: url(../img/backgrounds/hp-bg-participa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .pane-content {
+    padding: 80px 0;
+  }
+}
+
+.homepage-participa-en-el-reto--left, .homepage-participa-en-el-reto--right {
+  position: relative;
+  display: inline-block;
+}
+
+.homepage-participa-en-el-reto--container-inner {
+  position: relative;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  @include breakpoint($medium) {
+    text-align: left;
+    padding-bottom: 0;
+  }
+}
+
+.homepage-participa-en-el-reto--left {
+  text-align: left;
+}
+
+.homepage-participa-en-el-reto--right {
+  width: 100%;
+  @include breakpoint ($medium) {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+  .button {
+    position: relative;
+    &:after {
+      @include triangle($white);
+    }
+  }
+}
+
+.homepage-participa-en-el-reto--list {
+  list-style-type: none;
+  color: $white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  li {
+    margin: 15px 0;
+    &:nth-child(3) {
+      .homepage-particpa-en-el-reto--list-number {
+        padding: 4px 6px;
+      }
+    }
+  }
+}
+
+.homepage-particpa-en-el-reto--list-number {
+  border-radius: 16px;
+  padding: 4px 10px;
+  background-color: $dark;
+}
+
+.homepage-participa-en-el-reto--container {
+  background-color: transparentize($white, 0.6);
+}

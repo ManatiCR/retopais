@@ -127,6 +127,22 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     $form['path']['#access'] = FALSE;
     $form['field_juez_asignado']['#access'] = FALSE;
   }
+
+  // Add custom wrapper for each button.
+  if (isset($form['actions']['previous'])) {
+    $form['actions']['previous']['#prefix'] = '<div class="form-previous" id="edit-actions-previous">';
+    $form['actions']['previous']['#suffix'] = '</div>';
+  }
+
+  if (isset($form['actions']['next'])) {
+    $form['actions']['next']['#prefix'] = '<div class="form-next" id="edit-actions-next">';
+    $form['actions']['next']['#suffix'] = '</div>';
+  }
+
+  if (isset($form['actions']['done'])) {
+    $form['actions']['done']['#prefix'] = '<div class="form-done" id="edit-actions-done">';
+    $form['actions']['done']['#suffix'] = '</div>';
+  }
 }
 
 /**

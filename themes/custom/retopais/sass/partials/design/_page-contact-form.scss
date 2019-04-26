@@ -1,0 +1,13 @@
+.page-contacto {
+  main > .pane-page-content {
+    .pane-title {
+      @include separator($main-yellow);
+      font-family: $rubik;
+      font-style: italic;
+      font-weight: bold;
+      @include font-size(2.4);
+      line-height: normal;
+      text-align: center;
+    }
+  }
+}

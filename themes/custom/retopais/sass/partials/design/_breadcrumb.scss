@@ -3,24 +3,21 @@
 // @_breadcrumbs.scss
 //////////////////////////////
 
-.breadcrumb {
-  color: $blue;
-}
-
-// Blog entry full page view.
-
 .breadcrumbs-blog-full {
-  display: inline;
+  display: block;
+  margin-bottom: 30px;
   .breadcrumb {
-    color: $darker-gray;
-    font-family: $oswald;
-    @include font-size(1.4);
+    color: $cyan;
+    font-family: $rubik;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 14px;
+    @include font-size(1.2);
   }
   div {
     display: inline;
   }
   a {
-    color: $darker-gray;
-    font-weight: 400;
+    color: $cyan;
   }
 }

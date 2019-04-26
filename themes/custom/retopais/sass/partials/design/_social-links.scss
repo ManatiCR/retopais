@@ -4,17 +4,6 @@
 //////////////////////////////////
 
 .social-links {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  @include breakpoint($large) {
-    right: 18px;
-    top: 30px;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-  }
   li {
     margin: 0 0 5px 0;
     padding: 0;
@@ -27,12 +16,14 @@
   a {
     display: block;
     height: 25px;
+    width: 25px;
+    border-radius: 50% 50%;
     overflow: hidden;
     text-indent: 100%;
-    width: 25px;
     white-space: nowrap;
   }
   .social-fb {
-    background-image: url(../img/nav/icon-facebook.svg);
+    background: $main-yellow url("../img/nav/icon-facebook.svg") no-repeat
+      center center;
   }
 }

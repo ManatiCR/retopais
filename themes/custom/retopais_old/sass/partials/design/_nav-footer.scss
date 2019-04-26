@@ -1,0 +1,26 @@
+//////////////////////////////
+// Footer navigation.
+// @_nav-footer.scss
+//////////////////////////////
+
+.nav-footer {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    margin: 15px 0;
+    padding: 0;
+  }
+  a {
+    font-family: $oswald;
+    color: $black;
+    font-weight: 400;
+    @include font-size(1.5);
+    &.active, &:hover {
+      color: red;
+      text-decoration: none;
+    }
+  }
+}
