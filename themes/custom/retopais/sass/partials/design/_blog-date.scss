@@ -10,8 +10,4 @@
   font-weight: bold;
   @include font-size(1.2);
   line-height: 14px;
-  &.blog-full:after {
-    content: "/";
-    margin: 0 5px;
-  }
 }

@@ -3,14 +3,9 @@
 // @_breadcrumbs.scss
 //////////////////////////////
 
-.breadcrumb {
-  color: $blue;
-}
-
-// Blog entry full page view.
-
 .breadcrumbs-blog-full {
-  display: inline;
+  display: block;
+  margin-bottom: 30px;
   .breadcrumb {
     color: $cyan;
     font-family: $rubik;

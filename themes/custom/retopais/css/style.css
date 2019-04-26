@@ -710,12 +710,9 @@ hr {
   margin-right: 20px;
 }
 
-.breadcrumb {
-  color: #4ba3bf;
-}
-
 .breadcrumbs-blog-full {
-  display: inline;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .breadcrumbs-blog-full .breadcrumb {
@@ -1897,11 +1894,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   line-height: 14px;
 }
 
-.blog-item--date.blog-full:after {
-  content: "/";
-  margin: 0 5px;
-}
-
 .pane-back-to-blog {
   margin-top: 20px;
   text-align: right;
@@ -2625,4 +2617,12 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .form-type-item ul li {
   margin-bottom: 15px;
+}
+
+.node-type-blog h1 {
+  margin-bottom: 5px;
+}
+
+.node-type-blog .blog-item--date {
+  margin-bottom: 20px;
 }
