@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_blog.path_breadcrumbs.inc
