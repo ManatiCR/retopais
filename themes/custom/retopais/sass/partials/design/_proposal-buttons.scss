@@ -34,7 +34,7 @@
 }
 
 // Hide select a value.
-.page-node-add-proposal{
+.page-node-add-proposal {
   .select-buttons {
     li:first-child {
       display: none;
@@ -99,17 +99,5 @@
         box-shadow: 0 3px 0 $icon-blue;
       }
     }
-  }
-}
-
-#edit-previous {
-  padding: 0;
-  border: 0;
-  margin: 0 50px;
-  color: $blue;
-  &:hover {
-    background-color: $white;
-    box-shadow: none;
-    text-decoration: underline;
   }
 }

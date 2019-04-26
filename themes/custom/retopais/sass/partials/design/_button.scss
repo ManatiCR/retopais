@@ -9,6 +9,14 @@ button,
 }
 
 // Form Submit
-.form-actions {
+.contact-form .form-actions {
   @extend %btn-parallelogram-black-input;
+}
+
+//Form Proposal
+.node-proposal-form {
+  .form-actions .form-submit {
+    cursor: pointer;
+    @extend %btn-parallelogram-yellow;
+  }
 }
