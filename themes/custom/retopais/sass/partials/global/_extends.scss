@@ -111,7 +111,7 @@
   }
   main > .pane-page-content > .pane-content {
     background: white;
-    padding: 60px 7%;
+    padding: 60px 7% 0;
     @include breakpoint($max-width) {
       padding: unset;
     }
@@ -135,10 +135,13 @@
   .view-content {
     display: grid;
     grid-gap: 40px;
-    padding: 0 3% 50px;
+    padding: 0 7% 50px;
     grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
     @include breakpoint($medium) {
       grid-gap: 30px;
+    }
+    @include breakpoint($max-width) {
+      padding: unset;
     }
   }
   .pane-title {

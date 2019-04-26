@@ -8,7 +8,7 @@
   grid-gap: 35px;
   .page-sidebar-secondary-content {
     border-top: 1px solid $gray;
-    padding: 40px 0;
+    padding-top: 40px;
     text-align: center;
   }
   @include breakpoint($medium) {

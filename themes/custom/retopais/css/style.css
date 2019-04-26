@@ -152,7 +152,7 @@ button:focus,
 
 .page-blog main > .pane-page-content > .pane-content, .page-problematicas main > .pane-page-content > .pane-content, .page-que-es-reto-pais main > .pane-page-content > .pane-content {
   background: white;
-  padding: 60px 7%;
+  padding: 60px 7% 0;
 }
 
 @media (min-width: 1200px) {
@@ -185,7 +185,7 @@ button:focus,
   display: -ms-grid;
   display: grid;
   grid-gap: 40px;
-  padding: 0 3% 50px;
+  padding: 0 7% 50px;
   -ms-grid-columns: (minmax(253px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(253px, 1fr));
 }
@@ -193,6 +193,12 @@ button:focus,
 @media (min-width: 768px) {
   .pane-problems-panel-pane-1 .view-content, .pane-problems-panel-pane-3 .view-content {
     grid-gap: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pane-problems-panel-pane-1 .view-content, .pane-problems-panel-pane-3 .view-content {
+    padding: unset;
   }
 }
 
@@ -303,7 +309,7 @@ main {
 
 .page-sidebar .page-sidebar-secondary-content {
   border-top: 1px solid #b0b0b0;
-  padding: 40px 0;
+  padding-top: 40px;
   text-align: center;
 }
 
@@ -348,9 +354,16 @@ main {
 }
 
 .site-footer {
-  margin-top: 80px;
-  padding: 20px 0 40px;
+  margin-top: 40px;
   overflow: hidden;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 20px 0 40px;
+    margin-top: 80px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -372,6 +385,13 @@ main {
 
 .site-footer .pane-blog-recent-articles {
   grid-area: articles;
+  margin: 40px 0 20px;
+}
+
+@media (min-width: 768px) {
+  .site-footer .pane-blog-recent-articles {
+    margin: unset;
+  }
 }
 
 @media (min-width: 768px) {
@@ -697,10 +717,13 @@ hr {
 }
 
 .breadcrumbs-blog-full .breadcrumb {
-  color: #5d5d5d;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
+  color: #008ece;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 14px;
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .breadcrumbs-blog-full div {
@@ -708,8 +731,7 @@ hr {
 }
 
 .breadcrumbs-blog-full a {
-  color: #5d5d5d;
-  font-weight: 400;
+  color: #008ece;
 }
 
 ul.pager {
@@ -1723,7 +1745,13 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 }
 
 .pane-alianzas-panel-pane-4 {
-  margin-top: 80px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .pane-alianzas-panel-pane-4 {
+    margin-top: 80px;
+  }
 }
 
 .pane-alianzas-panel-pane-4 h2 {
@@ -1799,18 +1827,28 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .pane-blog-categories-panel-pane-1 ul li a {
   font-family: "Rubik", sans-serif;
-  color: black;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
+  color: #505050;
+}
+
+.pane-blog-categories-panel-pane-1 ul li a:hover {
+  color: #008ece;
 }
 
 .pane-blog-categories-panel-pane-1 ul li a:after {
   content: ">";
   margin-left: 5px;
   display: inline;
+}
+
+@media (min-width: 768px) {
+  .pane-blog-categories-panel-pane-1 ul li a {
+    color: black;
+  }
 }
 
 .blog-list-page .blog-item {
@@ -1863,9 +1901,13 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 }
 
 .blog-item--date {
-  color: #afafaf;
+  color: #b6830d;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 12px;
   font-size: 1.2rem;
+  line-height: 14px;
 }
 
 .blog-item--date.blog-full:after {
@@ -2368,19 +2410,14 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   margin: 0;
 }
 
-.page-blog main > .pane-page-content > .pane-title {
-  margin: 40px 0;
-}
-
-.page-blog .view-header {
+.page-blog main > .pane-page-content .view-header {
   text-align: center;
   max-width: 452px;
   margin: 30px auto;
 }
 
-.page-blog .view-header * {
+.page-blog main > .pane-page-content .view-header * {
   font-family: "Rubik", sans-serif;
-  color: black;
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -2389,11 +2426,27 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   font-size: 1.4rem;
 }
 
-.page-blog .page-sidebar-secondary-content .pane-problematicas-cta {
+@media (min-width: 768px) {
+  .page-blog main > .pane-page-content .view-header * {
+    color: black;
+  }
+}
+
+.page-blog main > .pane-page-content .page-sidebar-secondary-content .pane-problematicas-cta {
   background: #f2f2f2;
   padding: 24px;
   padding-top: 0;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 0) and (max-width: 480px) {
+  .page-blog main > .pane-page-content .page-sidebar .page-sidebar-secondary-content {
+    border-top: none;
+  }
+}
+
+.page-blog main > .pane-page-content > .pane-title {
+  margin: 40px 0;
 }
 
 .page-contacto main > .pane-page-content .pane-title {

@@ -4,7 +4,11 @@
 ////////////////////////////////////////////////
 
 .pane-alianzas-panel-pane-4 {
-  margin-top: 80px;
+  margin-top: 40px;
+  @include breakpoint($medium) {
+    margin-top: 80px;
+  }
+
   h2 {
     color: #282828;
     text-align: center;
