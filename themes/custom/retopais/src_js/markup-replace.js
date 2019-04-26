@@ -18,7 +18,6 @@
       reference
     ) {
       if (document.body.classList.contains(pageClassName)) {
-        console.log(elements);
         return elements.forEach(function (element) {
           return reference.parentNode.insertBefore(
             element,
