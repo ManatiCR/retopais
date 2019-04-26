@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
   var parallelogramMarkup = function parallelogramMarkup(elements) {
     elements.forEach(function (element) {
