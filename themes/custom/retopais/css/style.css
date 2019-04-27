@@ -770,8 +770,8 @@ hr {
 ul.pager {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: right;
-      justify-content: right;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   -ms-flex-align: center;
       align-items: center;
   margin-top: 15px;
