@@ -4,6 +4,9 @@
     > .pane-title {
       margin: 40px 0 20px 0;
     }
+    .pane-problems-panel-pane-1 {
+      margin-bottom: 60px;
+    }
     .introduction-text {
       max-width: 315px;
       display: flex;
@@ -81,6 +84,7 @@
           padding: 0 15%;
           li {
             margin-bottom: 15px;
+            list-style-position: inside;
           }
         }
       }
