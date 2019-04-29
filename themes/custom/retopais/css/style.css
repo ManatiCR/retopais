@@ -770,8 +770,8 @@ hr {
 ul.pager {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: right;
-      justify-content: right;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
   -ms-flex-align: center;
       align-items: center;
   margin-top: 15px;
@@ -2507,6 +2507,10 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   margin: 40px 0 20px 0;
 }
 
+.page-que-es-reto-pais main > .pane-page-content .pane-problems-panel-pane-1 {
+  margin-bottom: 60px;
+}
+
 .page-que-es-reto-pais main > .pane-page-content .introduction-text {
   max-width: 315px;
   display: -ms-flexbox;
@@ -2620,6 +2624,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .page-que-es-reto-pais main > .pane-page-content > .pane-content .pane-que-es-retopais-premios-main .form-type-item ul li {
   margin-bottom: 15px;
+  list-style-position: inside;
 }
 
 .node-type-blog h1 {
