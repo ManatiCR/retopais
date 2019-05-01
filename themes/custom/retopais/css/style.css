@@ -987,8 +987,16 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .header-top-bar {
   background-color: #fff;
-  height: 40px;
-  display: none;
+}
+
+.header-top-bar .container {
+  padding: 5px 15px;
+}
+
+@media (min-width: 1200px) {
+  .header-top-bar .container {
+    padding: 5px 0;
+  }
 }
 
 .site-footer {
@@ -998,31 +1006,45 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 .nav-top-bar ul {
   margin: 0;
   padding: 0;
-  text-align: right;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
 .nav-top-bar li {
-  display: inline-block;
   margin: 0 0 0 5px;
   padding: 0;
-  list-style-type: none;
+  display: block;
 }
 
 .nav-top-bar a {
   display: block;
   height: 40px;
-  width: 40px;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.menu-item-cafe-1820 {
+  background-image: url("../img/nav/logo-cafe1820.jpg");
+  width: 30px;
+}
+
+.menu-item-impacthub-sanjose {
+  background-image: url("../img/nav/logo-ihsjo.png");
+  width: 95px;
 }
 
 .menu-item-mesainnovacion {
-  background-image: url(../img/nav/logo-gobiernocr.png);
+  background-image: url("../img/nav/logo-gobiernocr.png");
 }
 
 .menu-item-impactico {
-  background-image: url(../img/nav/logo-impactico.png);
+  background-image: url("../img/nav/logo-impactico.png");
 }
 
 .nav-main {

@@ -122,6 +122,10 @@
 
 .header-top-bar {
   background-color: $white;
-  height: 40px;
-  display: none;
+  .container {
+    padding: 5px 15px;
+    @include breakpoint($max-width) {
+      padding: 5px 0;
+    }
+  }
 }
