@@ -7,7 +7,6 @@
       * {
         font-family: $rubik;
         color: $gray-dark;
-        font-weight: bold;
         margin: 0;
         padding: 0;
         line-height: normal;
@@ -16,9 +15,11 @@
       ul {
         margin-bottom: 30px;
       }
-      .pane-title,
+      .pane-title {
+        margin-bottom: 16px;
+      }
       ul li {
-        padding: 10px 0;
+        padding: 4px 0;
       }
     }
   }

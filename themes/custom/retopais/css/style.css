@@ -2497,7 +2497,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 .page-problematicas main > .pane-page-content .pane-problematicas-intro * {
   font-family: "Rubik", sans-serif;
   color: #505050;
-  font-weight: bold;
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -2509,9 +2508,12 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   margin-bottom: 30px;
 }
 
-.page-problematicas main > .pane-page-content .pane-problematicas-intro .pane-title,
+.page-problematicas main > .pane-page-content .pane-problematicas-intro .pane-title {
+  margin-bottom: 16px;
+}
+
 .page-problematicas main > .pane-page-content .pane-problematicas-intro ul li {
-  padding: 10px 0;
+  padding: 4px 0;
 }
 
 .page-que-es-reto-pais main > .pane-page-content > .pane-title {
