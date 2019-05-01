@@ -31,12 +31,15 @@
     cover;
   @include breakpoint($medium) {
     background: none;
-    width: 40%;
+    width: 25%;
     padding: 0;
     margin: 0;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+  @include breakpoint($medium $max-width) {
+    margin-left: 2%;
   }
   a {
     display: block;
@@ -52,8 +55,7 @@
       height: 110px;
     }
   }
-  &:after,
-  &:before {
+  &:after {
     content: "";
     display: block;
     background-size: contain;
@@ -71,18 +73,6 @@
       height: 168px;
     }
   }
-  &:before {
-    content: "";
-    display: block;
-    width: 123px;
-    height: 47px;
-    background-image: url("../img/logo/impact-logo.png");
-    order: 3;
-    @include breakpoint($medium) {
-      width: 173px;
-      height: 68px;
-    }
-  }
 }
 
 .nav-main {
@@ -90,7 +80,7 @@
   @include breakpoint($medium) {
     align-self: auto;
     flex-grow: 1;
-    margin-left: 25%;
+    margin-left: 28%;
   }
 }
 

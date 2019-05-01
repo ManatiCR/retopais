@@ -860,12 +860,18 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 @media (min-width: 768px) {
   .site-name {
     background: none;
-    width: 40%;
+    width: 25%;
     padding: 0;
     margin: 0;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .site-name {
+    margin-left: 2%;
   }
 }
 
@@ -888,7 +894,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   }
 }
 
-.site-name:after, .site-name:before {
+.site-name:after {
   content: "";
   display: block;
   background-size: contain;
@@ -912,23 +918,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   }
 }
 
-.site-name:before {
-  content: "";
-  display: block;
-  width: 123px;
-  height: 47px;
-  background-image: url("../img/logo/impact-logo.png");
-  -ms-flex-order: 3;
-      order: 3;
-}
-
-@media (min-width: 768px) {
-  .site-name:before {
-    width: 173px;
-    height: 68px;
-  }
-}
-
 .nav-main {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -941,7 +930,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
         align-self: auto;
     -ms-flex-positive: 1;
         flex-grow: 1;
-    margin-left: 25%;
+    margin-left: 28%;
   }
 }
 
