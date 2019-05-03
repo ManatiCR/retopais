@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_alliances.features.field_instance.inc
@@ -76,6 +77,7 @@ function retopais_feature_alliances_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',

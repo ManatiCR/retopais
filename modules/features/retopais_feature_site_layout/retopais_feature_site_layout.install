@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Reto País Site Layout installation.
@@ -133,16 +134,16 @@ function retopais_feature_site_layout_install() {
     'customized' => 1,
   );
 
-  // Mesa de Innovación.
-  $menu_links[] = array(
-    'link_title' => 'Mesa de Innovación',
-    'link_path' => 'http://presidencia.go.cr/consejoinnovaciontalento/',
-    'menu_name' => 'top-bar-menu',
+  // Café 1820 page link.
+  $menu_link = array(
+    'link_title' => 'Cafe 1820',
+    'link_path' => 'https://cafe1820.com',
+    'menu_name' => $menu_name,
     'weight' => 0,
     'plid' => 0,
     'options' => array(
       'attributes' => array(
-        'class' => array('menu-item-mesainnovacion'),
+        'class' => array('cafe-1820'),
         'target' => '_blank',
       ),
     ),
@@ -158,6 +159,22 @@ function retopais_feature_site_layout_install() {
     'options' => array(
       'attributes' => array(
         'class' => array('menu-item-impactico'),
+        'target' => '_blank',
+      ),
+    ),
+  );
+
+  // Mesa de Innovación.
+  $menu_links[] = array(
+    'link_title' => 'Mesa de Innovación',
+    'link_path' => 'http://presidencia.go.cr/consejoinnovaciontalento/',
+    'menu_name' => 'top-bar-menu',
+    'weight' => 3,
+    'plid' => 0,
+    'hidden' => 1,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('menu-item-mesainnovacion'),
         'target' => '_blank',
       ),
     ),
@@ -318,6 +335,46 @@ function retopais_feature_site_layout_update_7001() {
     'options' => array(
       'attributes' => array(
         'class' => array('social-fb'),
+        'target' => '_blank',
+      ),
+    ),
+  );
+
+  menu_link_save($menu_link);
+}
+
+/**
+ * Add Café 1820 menu link.
+ */
+function retopais_feature_site_layout_update_7002() {
+  $menu_name = 'top-bar-menu';
+  $links = menu_load_links($menu_name);
+
+  foreach ($links as $menu_link) {
+    if ($menu_link['link_path'] === 'http://www.impactico.org/') {
+      $menu_link['link_title'] = 'Impact Hub San José';
+      $menu_link['link_path'] = 'http://sanjose.new.impacthub.net/';
+      $menu_link['weight'] = 1;
+      $menu_link['options']['attributes']['class'] = array('menu-item-impacthub-sanjose');
+      menu_link_save($menu_link);
+    }
+    elseif ($menu_link['link_path'] === 'http://presidencia.go.cr/consejoinnovaciontalento/') {
+      $menu_link['weight'] = 3;
+      $menu_link['hidden'] = 1;
+      menu_link_save($menu_link);
+    }
+  }
+
+  // Café 1820 page link.
+  $menu_link = array(
+    'link_title' => 'Cafe 1820',
+    'link_path' => 'https://cafe1820.com',
+    'menu_name' => $menu_name,
+    'weight' => 0,
+    'plid' => 0,
+    'options' => array(
+      'attributes' => array(
+        'class' => array('menu-item-cafe-1820'),
         'target' => '_blank',
       ),
     ),

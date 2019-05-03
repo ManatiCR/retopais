@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_alliances.views_default.inc
@@ -23,10 +24,12 @@ function retopais_feature_alliances_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'más';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Reiniciar';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -246,7 +249,7 @@ function retopais_feature_alliances_views_default_views() {
   /* Display: Mesa Alliances */
   $handler = $view->new_display('panel_pane', 'Mesa Alliances', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Apoyado por:';
+  $handler->display->display_options['title'] = 'Aliados:';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
@@ -357,7 +360,7 @@ function retopais_feature_alliances_views_default_views() {
     t('Patrocinan:'),
     t('Alliance Type'),
     t('Mesa Alliances'),
-    t('Apoyado por:'),
+    t('Aliados:'),
     t('Prizes'),
   );
   $export['alianzas'] = $view;

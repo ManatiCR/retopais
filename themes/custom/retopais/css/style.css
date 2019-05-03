@@ -860,7 +860,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 @media (min-width: 768px) {
   .site-name {
     background: none;
-    width: 40%;
+    width: 25%;
     padding: 0;
     margin: 0;
     position: absolute;
@@ -869,10 +869,16 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+  .site-name {
+    margin-left: 2%;
+  }
+}
+
 .site-name a {
   display: block;
-  width: 109px;
-  height: 88px;
+  width: 137px;
+  height: 113px;
   background: url("../img/logo/reto-pais-logo.png") no-repeat;
   background-size: 100%;
   text-indent: -999px;
@@ -883,12 +889,12 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 @media (min-width: 768px) {
   .site-name a {
-    width: 143px;
-    height: 110px;
+    width: 167px;
+    height: 143px;
   }
 }
 
-.site-name:after, .site-name:before {
+.site-name:after {
   content: "";
   display: block;
   background-size: contain;
@@ -912,23 +918,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   }
 }
 
-.site-name:before {
-  content: "";
-  display: block;
-  width: 123px;
-  height: 47px;
-  background-image: url("../img/logo/impact-logo.png");
-  -ms-flex-order: 3;
-      order: 3;
-}
-
-@media (min-width: 768px) {
-  .site-name:before {
-    width: 173px;
-    height: 68px;
-  }
-}
-
 .nav-main {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -941,7 +930,7 @@ ul.pager li.pager-first, ul.pager li.pager-last {
         align-self: auto;
     -ms-flex-positive: 1;
         flex-grow: 1;
-    margin-left: 25%;
+    margin-left: 28%;
   }
 }
 
@@ -987,8 +976,16 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .header-top-bar {
   background-color: #fff;
-  height: 40px;
-  display: none;
+}
+
+.header-top-bar .container {
+  padding: 5px 15px;
+}
+
+@media (min-width: 1200px) {
+  .header-top-bar .container {
+    padding: 5px 0;
+  }
 }
 
 .site-footer {
@@ -998,31 +995,45 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 .nav-top-bar ul {
   margin: 0;
   padding: 0;
-  text-align: right;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
 .nav-top-bar li {
-  display: inline-block;
   margin: 0 0 0 5px;
   padding: 0;
-  list-style-type: none;
+  display: block;
 }
 
 .nav-top-bar a {
   display: block;
   height: 40px;
-  width: 40px;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.menu-item-cafe-1820 {
+  background-image: url("../img/nav/logo-cafe1820.jpg");
+  width: 30px;
+}
+
+.menu-item-impacthub-sanjose {
+  background-image: url("../img/nav/logo-ihsjo.png");
+  width: 95px;
 }
 
 .menu-item-mesainnovacion {
-  background-image: url(../img/nav/logo-gobiernocr.png);
+  background-image: url("../img/nav/logo-gobiernocr.png");
 }
 
 .menu-item-impactico {
-  background-image: url(../img/nav/logo-impactico.png);
+  background-image: url("../img/nav/logo-impactico.png");
 }
 
 .nav-main {
@@ -2486,7 +2497,6 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 .page-problematicas main > .pane-page-content .pane-problematicas-intro * {
   font-family: "Rubik", sans-serif;
   color: #505050;
-  font-weight: bold;
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -2498,9 +2508,12 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   margin-bottom: 30px;
 }
 
-.page-problematicas main > .pane-page-content .pane-problematicas-intro .pane-title,
+.page-problematicas main > .pane-page-content .pane-problematicas-intro .pane-title {
+  margin-bottom: 16px;
+}
+
 .page-problematicas main > .pane-page-content .pane-problematicas-intro ul li {
-  padding: 10px 0;
+  padding: 4px 0;
 }
 
 .page-que-es-reto-pais main > .pane-page-content > .pane-title {
