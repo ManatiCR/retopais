@@ -31,29 +31,31 @@
     cover;
   @include breakpoint($medium) {
     background: none;
-    width: 40%;
+    width: 25%;
     padding: 0;
     margin: 0;
     position: absolute;
     bottom: 0;
     left: 0;
   }
+  @include breakpoint($medium $max-width) {
+    margin-left: 2%;
+  }
   a {
     display: block;
-    width: 109px;
-    height: 88px;
+    width: 137px;
+    height: 113px;
     background: url("../img/logo/reto-pais-logo.png") no-repeat;
     background-size: 100%;
     text-indent: -999px;
     white-space: nowrap;
     order: 1;
     @include breakpoint($medium) {
-      width: 143px;
-      height: 110px;
+      width: 167px;
+      height: 143px;
     }
   }
-  &:after,
-  &:before {
+  &:after {
     content: "";
     display: block;
     background-size: contain;
@@ -71,18 +73,6 @@
       height: 168px;
     }
   }
-  &:before {
-    content: "";
-    display: block;
-    width: 123px;
-    height: 47px;
-    background-image: url("../img/logo/impact-logo.png");
-    order: 3;
-    @include breakpoint($medium) {
-      width: 173px;
-      height: 68px;
-    }
-  }
 }
 
 .nav-main {
@@ -90,7 +80,7 @@
   @include breakpoint($medium) {
     align-self: auto;
     flex-grow: 1;
-    margin-left: 25%;
+    margin-left: 28%;
   }
 }
 
@@ -122,6 +112,10 @@
 
 .header-top-bar {
   background-color: $white;
-  height: 40px;
-  display: none;
+  .container {
+    padding: 5px 15px;
+    @include breakpoint($max-width) {
+      padding: 5px 0;
+    }
+  }
 }

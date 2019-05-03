@@ -7,28 +7,40 @@
   ul {
     margin: 0;
     padding: 0;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
   }
   li {
-    display: inline-block;
     margin: 0 0 0 5px;
     padding: 0;
-    list-style-type: none;
+    display: block;
   }
   a {
     display: block;
     height: 40px;
-    width: 40px;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 }
 
+.menu-item-cafe-1820 {
+  background-image: url("../img/nav/logo-cafe1820.jpg");
+  width: 30px;
+}
+
+.menu-item-impacthub-sanjose {
+  background-image: url("../img/nav/logo-ihsjo.png");
+  width: 95px;
+}
+
 .menu-item-mesainnovacion {
-  background-image: url(../img/nav/logo-gobiernocr.png);
+  background-image: url("../img/nav/logo-gobiernocr.png");
 }
 
 .menu-item-impactico {
-  background-image: url(../img/nav/logo-impactico.png);
+  background-image: url("../img/nav/logo-impactico.png");
 }
