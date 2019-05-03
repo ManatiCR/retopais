@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_pages.pages_default.inc
@@ -217,7 +218,7 @@ function retopais_feature_pages_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Patrocinadores',
+    'override_title_text' => 'Organizan',
     'override_title_heading' => 'h2',
     'exposed' => array(
       'field_alliance_type_value' => 'sponsor1',
@@ -246,7 +247,7 @@ function retopais_feature_pages_default_page_manager_pages() {
       'field_alliance_type_value' => 'sponsor2',
     ),
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'Apoyan',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();

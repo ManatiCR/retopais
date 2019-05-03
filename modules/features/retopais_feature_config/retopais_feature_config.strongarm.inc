@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_config.strongarm.inc
@@ -282,7 +283,7 @@ function retopais_feature_config_strongarm() {
     'domain' => '',
     'prefix' => 'es',
     'weight' => '0',
-    'javascript' => 'TJCq9srd51b0zpYBm2qJBIP7mn_AUjDKhfUmJoI7Jmk',
+    'javascript' => 'X-Dl9E_FqfcgXJTYedsMSNHcfkR2l6TPOsMK2IzhNkQ',
   );
   $export['language_default'] = $strongarm;
 
