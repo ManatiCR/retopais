@@ -877,8 +877,8 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .site-name a {
   display: block;
-  width: 109px;
-  height: 88px;
+  width: 137px;
+  height: 113px;
   background: url("../img/logo/reto-pais-logo.png") no-repeat;
   background-size: 100%;
   text-indent: -999px;
@@ -889,8 +889,8 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 @media (min-width: 768px) {
   .site-name a {
-    width: 143px;
-    height: 110px;
+    width: 167px;
+    height: 143px;
   }
 }
 
