@@ -76,6 +76,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /var/www
+      - run: apt-get update -y && apt-get install python unzip -y
       - run:
           name: Install Composer
           command: |
@@ -264,4 +265,3 @@ workflows:
       - deploy-live:
           requires:
             - deploy-live-hold
-
