@@ -100,6 +100,11 @@ jobs:
             git config --global user.name $GIT_NAME
             echo 'Host *' >> /root/.ssh/config
             echo '   StrictHostKeyChecking no' >> /root/.ssh/config
+            # Hack drush.
+            mv /usr/local/bin/drush /usr/local/bin/drush_launcher
+            ln -s /var/www/retopais/.vendor/bin/drush /usr/local/bin/drush
+            alias drush=drush --root=/var/www/html/build
+            # Ending Hack drush.
             terminus connection:set  retopais.dev git
             ./node_modules/.bin/aquifer extensions-load
             ./node_modules/.bin/aquifer deploy-git -m "Auto deploy triggered from master branch" || echo 'Nothing to commit?'
