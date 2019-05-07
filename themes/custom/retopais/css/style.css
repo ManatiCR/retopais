@@ -1721,26 +1721,27 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 
 .pane-problems-problems-only-names .field-content {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 31px;
+  height: 31px;
   text-indent: -9999px;
   margin-bottom: 20px;
 }
 
-.pane-problems-problems-only-names .icon-paridad-de-genero-en-educacion {
-  background: url("../img/sprite.png") no-repeat -24px -3285px;
-}
-
-.pane-problems-problems-only-names .icon-accidentes-de-transito {
-  background: url("../img/sprite.png") no-repeat -16px -2997px;
-}
-
-.pane-problems-problems-only-names .icon-separacion-y-recoleccion-de-residuos {
-  background: url("../img/sprite.png") no-repeat -14px -2848px;
-}
-
 .pane-problems-problems-only-names .icon-acceso-a-cultura-y-recreacion {
-  background: url("../img/sprite.png") no-repeat -21px -3148px;
+  background: url("../img/icons/problematica/acceso-cultura-sm.png") no-repeat;
+  height: 37px;
+}
+
+.pane-problems-problems-only-names .icon-descarbonizacion {
+  background: url("../img/icons/problematica/descarbonizacion-sm.png") no-repeat;
+}
+
+.pane-problems-problems-only-names .icon-gestion-de-residuos {
+  background: url("../img/icons/problematica/gestion-residuos-sm.png") no-repeat;
+}
+
+.pane-problems-problems-only-names .icon-seguridad-ciudadana {
+  background: url("../img/icons/problematica/seguridad-ciudadana-sm.png") no-repeat;
 }
 
 .pane-alianzas-panel-pane-4 {
@@ -2525,16 +2526,18 @@ ul.pager li.pager-first, ul.pager li.pager-last {
 }
 
 .page-que-es-reto-pais main > .pane-page-content .introduction-text {
-  max-width: 315px;
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto 60px;
+  padding: 0 30px;
   text-align: center;
 }
 
-.page-que-es-reto-pais main > .pane-page-content .introduction-text * {
-  margin: 0;
-  padding: 0;
+@media (min-width: 768px) {
+  .page-que-es-reto-pais main > .pane-page-content .introduction-text {
+    padding: 0;
+    max-width: 38%;
+  }
 }
 
 .page-que-es-reto-pais main > .pane-page-content .pane-que-es-retopais-proposals {
