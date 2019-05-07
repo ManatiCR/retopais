@@ -8,13 +8,13 @@
       margin-bottom: 60px;
     }
     .introduction-text {
-      max-width: 315px;
       display: flex;
       margin: 0 auto 60px;
+      padding: 0 30px;
       text-align: center;
-      * {
-        margin: 0;
+      @include breakpoint($medium) {
         padding: 0;
+        max-width: 38%;
       }
     }
     .pane-que-es-retopais-proposals {

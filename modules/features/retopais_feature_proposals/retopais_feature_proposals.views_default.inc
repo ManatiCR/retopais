@@ -76,6 +76,13 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'problems' => 'problems',
   );
+  /* Criterios de filtrado: Término de taxonomía: Años (field_years) */
+  $handler->display->display_options['filters']['field_years_value']['id'] = 'field_years_value';
+  $handler->display->display_options['filters']['field_years_value']['table'] = 'field_data_field_years';
+  $handler->display->display_options['filters']['field_years_value']['field'] = 'field_years_value';
+  $handler->display->display_options['filters']['field_years_value']['value'] = array(
+    2019 => '2019',
+  );
 
   /* Display: Problems */
   $handler = $view->new_display('panel_pane', 'Problems', 'panel_pane_1');
@@ -263,6 +270,30 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_abstract']['field_api_classes'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Reto Pais';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Referencia a entidades */
+  $handler = $view->new_display('entityreference', 'Referencia a entidades', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'name' => 'name',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Término de taxonomía: Nombre */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $translatables['problems'] = array(
     t('Master'),
     t('more'),
@@ -293,6 +324,7 @@ function retopais_feature_proposals_views_default_views() {
     t('Content entity referenced from field_prize_image'),
     t('Problems with Abstract - Finalistas'),
     t('¿En cuáles problemáticas nos enfocamos?'),
+    t('Referencia a entidades'),
   );
   $export['problems'] = $view;
 
@@ -349,6 +381,8 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
@@ -357,6 +391,22 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
+/* Campo: Contenido: ¿Qué problemática deseás solucionar? */
+  $handler->display->display_options['fields']['field_problem_to_solve']['id'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['table'] = 'field_data_field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['field'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['label'] = 'Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_problem_to_solve']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 0,
+    'use_content_language' => 0,
+  );
+  $handler->display->display_options['fields']['field_problem_to_solve']['field_api_classes'] = TRUE;
   /* Field: Content: Correo electrónico */
   $handler->display->display_options['fields']['field_representative_email']['id'] = 'field_representative_email';
   $handler->display->display_options['fields']['field_representative_email']['table'] = 'field_data_field_representative_email';
@@ -396,18 +446,6 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_org_rep_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_org_rep_email']['type'] = 'email_plain';
   $handler->display->display_options['fields']['field_org_rep_email']['field_api_classes'] = TRUE;
-  /* Field: Content: Dirección de la organización */
-  $handler->display->display_options['fields']['field_organization_address']['id'] = 'field_organization_address';
-  $handler->display->display_options['fields']['field_organization_address']['table'] = 'field_data_field_organization_address';
-  $handler->display->display_options['fields']['field_organization_address']['field'] = 'field_organization_address';
-  $handler->display->display_options['fields']['field_organization_address']['alter']['trim_whitespace'] = TRUE;
-  $handler->display->display_options['fields']['field_organization_address']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_organization_address']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_organization_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_organization_address']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_organization_address']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_organization_address']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['field_organization_address']['field_api_classes'] = TRUE;
   /* Field: Content: Explicá cómo tu idea es innovadora */
   $handler->display->display_options['fields']['field_innovative_idea']['id'] = 'field_innovative_idea';
   $handler->display->display_options['fields']['field_innovative_idea']['table'] = 'field_data_field_innovative_idea';
@@ -689,6 +727,25 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Criterios de filtrado: Contenido: Fecha de mensaje */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['value']['min'] = '01-01-2019';
+  $handler->display->display_options['filters']['created']['value']['max'] = '31-12-2019';
+  $handler->display->display_options['filters']['created']['value']['value'] = '2017';
+  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Fecha de mensaje';
+  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
+  $handler->display->display_options['filters']['created']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
 
   /* Display: Data export */
   $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
@@ -729,8 +786,6 @@ function retopais_feature_proposals_views_default_views() {
     t('Correo electrónico del representante'),
     t('Correo electrónico del responsable del proyecto'),
     t('Correo electrónico de la organización del represante'),
-    t('Dirección del representante'),
-    t('Dirección de la organización'),
     t('Explicá cómo tu idea es innovadora'),
     t('Nombre completo del representante'),
     t('Nombre del representante legal de la organización'),
@@ -753,8 +808,8 @@ function retopais_feature_proposals_views_default_views() {
     t('¿Qué te motivó a proponer esta idea o a emprender en este tema?'),
     t('¿Qué tipo de solución querés proponer?'),
     t('¿Se encuentra en ejecución?'),
+    t('Fecha de mensaje'),
     t('Data export'),
-    t('more'),
   );
   $export['proposal_export'] = $view;
 
@@ -911,6 +966,17 @@ function retopais_feature_proposals_views_default_views() {
     1 => 0,
     3 => 0,
   );
+  /* Criterios de filtrado: Contenido: Fecha de mensaje */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['value']['min'] = '01-01-2019';
+  $handler->display->display_options['filters']['created']['value']['max'] = '31-12-2019';
+  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Fecha de mensaje';
+  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
 
   /* Display: Proposals review */
   $handler = $view->new_display('page', 'Proposals review', 'proposals');
@@ -1068,6 +1134,13 @@ function retopais_feature_proposals_views_default_views() {
     5 => 0,
     4 => 0,
   );
+  /* Criterios de filtrado: Contenido: Fecha de mensaje */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['value']['min'] = '01-01-2019';
+  $handler->display->display_options['filters']['created']['value']['max'] = '31-12-2019';
   $handler->display->display_options['path'] = 'admin/propuestas';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ver propuestas';
@@ -1205,6 +1278,13 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'field_juez_asignado_target_id';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
+  /* Criterios de filtrado: Contenido: Fecha de mensaje */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['value']['min'] = '01-01-2019';
+  $handler->display->display_options['filters']['created']['value']['max'] = '31-12-2019';
   $handler->display->display_options['path'] = 'admin/propuestas-finales';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ver propuestas finales';
@@ -1235,6 +1315,7 @@ function retopais_feature_proposals_views_default_views() {
     t('Individual/grupal'),
     t('Preaprobación'),
     t('Tipo de organización'),
+    t('Fecha de mensaje'),
     t('Proposals review'),
     t('- Choose an operation -'),
     t('Asignar a un juez'),
