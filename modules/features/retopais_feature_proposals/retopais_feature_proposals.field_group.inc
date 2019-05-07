@@ -140,9 +140,9 @@ function retopais_feature_proposals_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_organization_way',
-      1 => 'field_problem',
-      2 => 'field_solution_type',
-      3 => 'field_juez_asignado',
+      1 => 'field_solution_type',
+      2 => 'field_juez_asignado',
+      3 => 'field_problem_to_solve',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(

@@ -43,6 +43,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
       $current_step_name === 'group_info_solucion_info') {
       $fields_to_replace = array(
         'field_problem',
+        'field_problem_to_solve',
         'field_solution_type',
         'field_organization_way',
         'field_project_running',
@@ -125,6 +126,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     $form['options']['#access'] = FALSE;
     $form['menu']['#access'] = FALSE;
     $form['path']['#access'] = FALSE;
+    $form['field_problem']['#access'] = FALSE;
     $form['field_juez_asignado']['#access'] = FALSE;
   }
 

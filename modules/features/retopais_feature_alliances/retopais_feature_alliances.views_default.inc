@@ -102,12 +102,6 @@ function retopais_feature_alliances_views_default_views() {
   /* Display: Main Alliances */
   $handler = $view->new_display('panel_pane', 'Main Alliances', 'panel_pane_1');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Esta es una iniciativa promovida por la <a href="http://presidencia.go.cr/consejoinnovaciontalento" target="_blank">Mesa de Innovación Social</a> del Consejo Presidencial de Innovación y Talento Humano.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -249,7 +243,7 @@ function retopais_feature_alliances_views_default_views() {
   /* Display: Mesa Alliances */
   $handler = $view->new_display('panel_pane', 'Mesa Alliances', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Aliados:';
+  $handler->display->display_options['title'] = 'Aliados';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
@@ -352,7 +346,6 @@ function retopais_feature_alliances_views_default_views() {
     t('Desc'),
     t('Content entity referenced from field_featured_image'),
     t('Main Alliances'),
-    t('Esta es una iniciativa promovida por la <a href="http://presidencia.go.cr/consejoinnovaciontalento" target="_blank">Mesa de Innovación Social</a> del Consejo Presidencial de Innovación y Talento Humano.'),
     t('Reto Pais'),
     t('Organizer Alliances'),
     t('Organiza:'),
@@ -360,7 +353,7 @@ function retopais_feature_alliances_views_default_views() {
     t('Patrocinan:'),
     t('Alliance Type'),
     t('Mesa Alliances'),
-    t('Aliados:'),
+    t('Aliados'),
     t('Prizes'),
   );
   $export['alianzas'] = $view;

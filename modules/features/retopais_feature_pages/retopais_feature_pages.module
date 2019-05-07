@@ -43,6 +43,14 @@ function retopais_feature_pages_menu() {
     'page arguments' => array('retopais_feature_pages_que_es_reto_pais_form'),
   );
 
+  $items['admin/config/retopais/alianzas'] = array(
+    'title' => 'Configuración de página de Alianzas',
+    'description' => 'Configuración de la página de Alianzas',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_pages_alianzas_form'),
+  );
+
   $items['admin/config/retopais/contacto'] = array(
     'title' => 'Configuración de página de Contacto',
     'description' => 'Configuración de la página de Contacto',
@@ -295,6 +303,23 @@ function retopais_feature_pages_handle_file_submit($existing_fid, $new_fid) {
       file_usage_add($new_file, 'retopais_feature_pages', 'contact_page', 1);
     }
   }
+}
+
+/**
+ * Form builder for alianzas config form.
+ */
+function retopais_feature_pages_alianzas_form($form, $form_state) {
+  $retopais_feature_pages_alianzas_intro_text = variable_get('retopais_feature_pages_alianzas_intro_text', array('value' => 'Alianzas placeholder text.', 'format' => 'filtered_html'));
+
+  $form['retopais_feature_pages_alianzas_intro_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto introductorio de la página de alianzas'),
+    '#default_value' => $retopais_feature_pages_alianzas_intro_text['value'],
+    '#format' => $retopais_feature_pages_alianzas_intro_text['format'],
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
 }
 
 /**

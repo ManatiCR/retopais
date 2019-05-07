@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_field_bases.features.field_instance.inc
@@ -45,7 +46,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -59,6 +60,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -90,7 +92,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -104,6 +106,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -135,7 +138,7 @@ function retopais_feature_field_bases_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -172,13 +175,48 @@ function retopais_feature_field_bases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-problems-field_years'.
+  $field_instances['taxonomy_term-problems-field_years'] = array(
+    'bundle' => 'problems',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_years',
+    'label' => 'Años',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Abstract');
+  t('Años');
   t('Featured Image');
   t('Prize Image');
   t('Prize Text');
