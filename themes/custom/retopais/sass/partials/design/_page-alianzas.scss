@@ -1,4 +1,14 @@
 .page-alianzas {
+  .introduction-text {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+    @include breakpoint($medium) {
+      padding: 0;
+      max-width: 38%;
+    }
+  }
   .pane-title {
     @include separator($main-yellow);
     font-family: $rubik;

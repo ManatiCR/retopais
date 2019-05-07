@@ -2406,6 +2406,21 @@ ul.pager li.pager-first, ul.pager li.pager-last {
   display: block;
 }
 
+.page-alianzas .introduction-text {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-alianzas .introduction-text {
+    padding: 0;
+    max-width: 38%;
+  }
+}
+
 .page-alianzas .pane-title {
   font-family: "Rubik", sans-serif;
   font-style: italic;
