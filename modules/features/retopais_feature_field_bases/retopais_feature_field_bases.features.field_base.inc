@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * retopais_feature_field_bases.features.field_base.inc
@@ -924,6 +925,31 @@ function retopais_feature_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_years'.
+  $field_bases['field_years'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_years',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        2017 => 2017,
+        2019 => 2019,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   return $field_bases;

@@ -33,25 +33,29 @@
 
   .field-content {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 31px;
+    height: 31px;
     text-indent: -9999px;
     margin-bottom: 20px;
   }
 
-  .icon-paridad-de-genero-en-educacion {
-    background: url("../img/sprite.png") no-repeat -24px -3285px;
-  }
-
-  .icon-accidentes-de-transito {
-    background: url("../img/sprite.png") no-repeat -16px -2997px;
-  }
-
-  .icon-separacion-y-recoleccion-de-residuos {
-    background: url("../img/sprite.png") no-repeat -14px -2848px;
-  }
-
   .icon-acceso-a-cultura-y-recreacion {
-    background: url("../img/sprite.png") no-repeat -21px -3148px;
+    background: url("../img/icons/problematica/acceso-cultura-sm.png") no-repeat;
+    height: 37px;
+  }
+
+  .icon-descarbonizacion {
+    background: url("../img/icons/problematica/descarbonizacion-sm.png")
+      no-repeat;
+  }
+
+  .icon-gestion-de-residuos {
+    background: url("../img/icons/problematica/gestion-residuos-sm.png")
+      no-repeat;
+  }
+
+  .icon-seguridad-ciudadana {
+    background: url("../img/icons/problematica/seguridad-ciudadana-sm.png")
+      no-repeat;
   }
 }
