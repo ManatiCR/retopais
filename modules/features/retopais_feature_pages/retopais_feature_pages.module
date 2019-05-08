@@ -83,6 +83,14 @@ function retopais_feature_pages_menu() {
     'page arguments' => array('retopais_feature_pages_homepage_form'),
   );
 
+  $items['admin/config/retopais/reglamento'] = array(
+    'title' => 'Configuración del reglamento',
+    'description' => 'Configuración del reglamento',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_pages_reglamento_form'),
+  );
+
   return $items;
 }
 
@@ -306,7 +314,7 @@ function retopais_feature_pages_handle_file_submit($existing_fid, $new_fid) {
 }
 
 /**
- * Form builder for alianzas config form.
+ * Form builder for alliances config form.
  */
 function retopais_feature_pages_alianzas_form($form, $form_state) {
   $retopais_feature_pages_alianzas_intro_text = variable_get('retopais_feature_pages_alianzas_intro_text', array('value' => 'Alianzas placeholder text.', 'format' => 'filtered_html'));
@@ -529,4 +537,21 @@ function retopais_feature_pages_homepage_form_submit($form, &$form_state) {
   $existing_image = variable_get('retopais_feature_pages_homepage_que_es_reto_pais_image', 0);
   $new_image = $values['retopais_feature_pages_homepage_que_es_reto_pais_image'];
   retopais_feature_pages_handle_file_submit($existing_image, $new_image);
+}
+
+/**
+ * Form builder for regulation config form.
+ */
+function retopais_feature_pages_reglamento_form($form, $form_state) {
+  $retopais_feature_pages_regulation_text = variable_get('retopais_feature_pages_regulation_text', array('value' => 'Reglamento placeholder text.', 'format' => 'filtered_html'));
+
+  $form['retopais_feature_pages_regulation_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto completo del reglamento'),
+    '#default_value' => $retopais_feature_pages_regulation_text['value'],
+    '#format' => $retopais_feature_pages_regulation_text['format'],
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
 }
