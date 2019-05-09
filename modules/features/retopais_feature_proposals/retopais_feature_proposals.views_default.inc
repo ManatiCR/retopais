@@ -365,6 +365,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'marca';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
@@ -765,6 +766,66 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['use_batch'] = 'batch';
   $handler->display->display_options['return_path'] = '<front>';
   $handler->display->display_options['segment_size'] = '100';
+
+  /* Display: Compartir con patrocinadores */
+  $handler = $view->new_display('views_data_export', 'Compartir con patrocinadores', 'views_data_export_2');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = '%view-share-with-sponsors-%timestamp-dd_%timestamp-mm_%timestamp-yy.csv';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['newline_token'] = '1';
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Criterios de filtrado: Contenido: Tipo */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'proposal' => 'proposal',
+  );
+  /* Criterios de filtrado: Marcas: Marcado */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Criterios de filtrado: Contenido: Fecha de mensaje */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['value']['min'] = '01-01-2019';
+  $handler->display->display_options['filters']['created']['value']['max'] = '31-12-2019';
+  $handler->display->display_options['filters']['created']['value']['value'] = '2017';
+  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Fecha de mensaje';
+  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
+  $handler->display->display_options['filters']['created']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Criterios de filtrado: Contenido: ¿Te gustaría compartir tu idea como parte de la campaña 1820 ideas y participar por premios adicionales? (field_share_idea_with_sponsors) */
+  $handler->display->display_options['filters']['field_share_idea_with_sponsors_value']['id'] = 'field_share_idea_with_sponsors_value';
+  $handler->display->display_options['filters']['field_share_idea_with_sponsors_value']['table'] = 'field_data_field_share_idea_with_sponsors';
+  $handler->display->display_options['filters']['field_share_idea_with_sponsors_value']['field'] = 'field_share_idea_with_sponsors_value';
+  $handler->display->display_options['filters']['field_share_idea_with_sponsors_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['path'] = 'admin/propuestas/exportar-propuestas/compartir-con-patrocinadores';
+  $handler->display->display_options['use_batch'] = 'batch';
+  $handler->display->display_options['return_path'] = '<front>';
+  $handler->display->display_options['segment_size'] = '100';
   $translatables['proposal_export'] = array(
     t('Master'),
     t('más'),
@@ -810,6 +871,7 @@ function retopais_feature_proposals_views_default_views() {
     t('¿Se encuentra en ejecución?'),
     t('Fecha de mensaje'),
     t('Data export'),
+    t('Compartir con patrocinadores'),
   );
   $export['proposal_export'] = $view;
 
@@ -856,6 +918,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'marca';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
@@ -863,6 +926,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Título';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: ¿Qué problemática deseás solucionar? */
@@ -1008,6 +1072,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Título';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Correo electrónico */
@@ -1159,6 +1224,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'marca';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'invalidar_propuesta';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
@@ -1172,6 +1238,7 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Título';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: ¿Qué problemática deseás solucionar? */
