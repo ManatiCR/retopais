@@ -33,6 +33,7 @@ function retopais_feature_proposals_field_group_info() {
       6 => 'field_representative_sex',
       7 => 'field_heard',
       8 => 'field_representative_prov_canton',
+      9 => 'field_share_idea_with_sponsors',
     ),
     'format_type' => 'multistep',
     'format_settings' => array(

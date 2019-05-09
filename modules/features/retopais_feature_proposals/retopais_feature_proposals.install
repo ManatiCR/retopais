@@ -128,3 +128,30 @@ function retopais_feature_proposals_create_menu_links(array $menu_links) {
     menu_link_save($menu_link);
   }
 }
+
+/**
+ * Create menu item for the proposal export.
+ */
+function retopais_feature_proposals_update_7003() {
+  $menu_links = [];
+
+  $menu_links[] = [
+    'link_title' => 'Todas las propuestas',
+    'link_path' => 'admin/propuestas/exportar-propuestas',
+    'menu_name' => 'management',
+    'weight' => 1,
+    'plid' => 364,
+    'customized' => 1,
+  ];
+
+  $menu_links[] = [
+    'link_title' => 'Compartir con patrocinadores',
+    'link_path' => 'admin/propuestas/exportar-propuestas/compartir-con-patrocinadores',
+    'menu_name' => 'management',
+    'weight' => 2,
+    'plid' => 364,
+    'customized' => 1,
+  ];
+
+  retopais_feature_proposals_create_menu_links($menu_links);
+}
