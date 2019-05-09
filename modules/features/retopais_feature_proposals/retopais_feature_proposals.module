@@ -7,6 +7,88 @@
 include_once 'retopais_feature_proposals.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function retopais_feature_proposals_menu() {
+  $items['admin/config/retopais/formulario-propuestas'] = array(
+    'title' => 'Configuración del formulario de propuestas',
+    'description' => 'Configuración del formulario de propuestas',
+    'access arguments' => array('configure reto pais pages'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('retopais_feature_proposals_settings_form'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form builder for proposals config form.
+ */
+function retopais_feature_proposals_settings_form($form, $form_state) {
+  $form['retopais_feature_proposals_form_end_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Título al enviar formulario de propuestas'),
+    '#description' => t('Se muestra cuando un usuario envía el formulario.'),
+    '#default_value' => variable_get('retopais_feature_proposals_form_end_title', '¡Felicidades y muchas gracias por haber aportado tu propuesta a Reto PAÍS!'),
+    '#required' => TRUE,
+  );
+
+  $retopais_feature_proposals_form_end_text = variable_get('retopais_feature_proposals_form_end_text', array('value' => '', 'format' => 'filtered_html'));
+  $form['retopais_feature_proposals_form_end_text'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Texto de cierre del formulario de propuestas'),
+    '#description' => t('Se muestra cuando un usuario envía el formulario.'),
+    '#format' => $retopais_feature_proposals_form_end_text['format'],
+    '#default_value' => $retopais_feature_proposals_form_end_text['value'],
+    '#required' => TRUE,
+  );
+
+  $form['retopais_feature_proposals_form_end_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Imagen al enviar el formulario de propuestas'),
+    '#description' => t('Tipos de archivo permitidos: gif, png, jpg, jpeg. Utilice el token: "!image" para insertarlo en el campo de texto.'),
+    '#default_value' => variable_get('retopais_feature_proposals_form_end_image', 0),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+    '#upload_location' => 'public://proposals/',
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Submit form for proposals form page.
+ */
+function retopais_feature_proposals_settings_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $existing_image = variable_get('retopais_feature_proposals_form_end_image', 0);
+  $new_image = $values['retopais_feature_proposals_form_end_image'];
+  retopais_feature_proposals_handle_file_submit($existing_image, $new_image);
+}
+
+/**
+ * Handle file uploads.
+ */
+function retopais_feature_proposals_handle_file_submit($existing_fid, $new_fid) {
+  if ($existing_fid && $existing_fid !== $new_fid) {
+    // Delete old fid.
+    $existing_file = file_load($existing_fid);
+    if ($existing_file) {
+      file_delete($existing_file, TRUE);
+    }
+  }
+  if (!$existing_fid || $existing_fid !== $new_fid) {
+    $new_file = file_load($new_fid);
+    if ($new_file) {
+      $new_file->status = FILE_STATUS_PERMANENT;
+      file_save($new_file);
+      file_usage_add($new_file, 'retopais_feature_proposals', 'proposals_form', 1);
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_state) {
@@ -93,7 +175,7 @@ function retopais_feature_proposals_form_proposal_node_form_alter(&$form, $form_
     if ($current_step_name === 'group_datos_representante') {
       $form['tos'] = array(
         '#type' => 'checkbox',
-        '#title' => t('He leído y acepto los !tos', array('!tos' => l(t('términos del reglamento'), 'reglamento'))),
+        '#title' => t('He leído y acepto los !tos', array('!tos' => l(t('términos del reglamento y políticas de privacidad'), 'reglamento'))),
         '#required' => TRUE,
         '#weight' => 50,
       );

@@ -1611,6 +1611,50 @@ Mentoría|Mentoría',
     ),
   );
 
+  // Exported field_instance: 'node-proposal-field_share_idea_with_sponsors'.
+  $field_instances['node-proposal-field_share_idea_with_sponsors'] = array(
+    'bundle' => 'proposal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'ckeditor_embed' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 34,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_share_idea_with_sponsors',
+    'label' => '¿Te gustaría compartir tu idea como parte de la campaña 1820 ideas y participar por premios adicionales?',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-proposal-field_solution_type'.
   $field_instances['node-proposal-field_solution_type'] = array(
     'bundle' => 'proposal',
@@ -1690,6 +1734,7 @@ Mentoría|Mentoría',
   t('¿Qué te motivó a proponer esta idea o a emprender en este tema?');
   t('¿Qué tipo de solución querés proponer?');
   t('¿Se encuentra en ejecución?');
+  t('¿Te gustaría compartir tu idea como parte de la campaña 1820 ideas y participar por premios adicionales?');
 
   return $field_instances;
 }

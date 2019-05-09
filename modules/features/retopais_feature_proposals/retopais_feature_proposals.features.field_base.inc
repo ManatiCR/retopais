@@ -45,5 +45,30 @@ function retopais_feature_proposals_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_share_idea_with_sponsors'.
+  $field_bases['field_share_idea_with_sponsors'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_share_idea_with_sponsors',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'No',
+        1 => 'Sí',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   return $field_bases;
 }
