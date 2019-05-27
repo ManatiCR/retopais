@@ -161,6 +161,9 @@
     @include breakpoint($max-width) {
       padding: unset;
     }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: flex;
+    }
   }
   .pane-title {
     text-align: center;

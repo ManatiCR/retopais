@@ -234,6 +234,12 @@ button:focus,
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .pane-problems-panel-pane-1 .view-content, .pane-problems-panel-pane-3 .view-content {
+    display: flex;
+  }
+}
+
 .pane-problems-panel-pane-1 .pane-title, .pane-problems-panel-pane-3 .pane-title {
   text-align: center;
   font-family: "Rubik", sans-serif;
