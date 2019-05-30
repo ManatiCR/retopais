@@ -710,6 +710,16 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_project_running']['field'] = 'field_project_running';
   $handler->display->display_options['fields']['field_project_running']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_project_running']['alter']['strip_tags'] = TRUE;
+  /* Campo: Contenido: ¿Te gustaría compartir tu idea como parte de la campaña 1820 ideas y participar por premios adicionales? */
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['id'] = 'field_share_idea_with_sponsors';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['table'] = 'field_data_field_share_idea_with_sponsors';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['field'] = 'field_share_idea_with_sponsors';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['label'] = 'Compartir idea con patrocinadores';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_share_idea_with_sponsors']['field_api_classes'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -869,6 +879,7 @@ function retopais_feature_proposals_views_default_views() {
     t('¿Qué te motivó a proponer esta idea o a emprender en este tema?'),
     t('¿Qué tipo de solución querés proponer?'),
     t('¿Se encuentra en ejecución?'),
+    t('Compartir idea con patrocinadores'),
     t('Fecha de mensaje'),
     t('Data export'),
     t('Compartir con patrocinadores'),
