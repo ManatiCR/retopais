@@ -283,7 +283,7 @@ function retopais_feature_config_strongarm() {
     'domain' => '',
     'prefix' => 'es',
     'weight' => '0',
-    'javascript' => 'X-Dl9E_FqfcgXJTYedsMSNHcfkR2l6TPOsMK2IzhNkQ',
+    'javascript' => 'amU3ykMc6w0oyDmzXK3JtmJwtAHMWrmxS51mvLfvUIM',
   );
   $export['language_default'] = $strongarm;
 
@@ -578,14 +578,14 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'retopais.web@gmail.com';
+  $strongarm->value = 'reto03050@gmail.com';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_allowhtml';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['smtp_allowhtml'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -620,14 +620,14 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_from';
-  $strongarm->value = 'retopais.web@gmail.com';
+  $strongarm->value = 'reto03050@gmail.com';
   $export['smtp_from'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_fromname';
-  $strongarm->value = '';
+  $strongarm->value = 'Reto País';
   $export['smtp_fromname'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -655,7 +655,7 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_password';
-  $strongarm->value = '?E+=po3e\'}6d*YMZ';
+  $strongarm->value = 'HOLA19HOLA';
   $export['smtp_password'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -697,7 +697,7 @@ function retopais_feature_config_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_username';
-  $strongarm->value = 'retopais.web@gmail.com';
+  $strongarm->value = 'reto03050@gmail.com';
   $export['smtp_username'] = $strongarm;
 
   return $export;
