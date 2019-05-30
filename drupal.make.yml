@@ -119,7 +119,7 @@ projects:
   shs:
     version: "1.8"
   smtp:
-    version: "1.4"
+    version: "1.7"
   strongarm:
     version: "2.0"
   styleguide:
