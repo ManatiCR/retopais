@@ -378,12 +378,24 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Campo: Contenido: ¿Qué problemática deseás solucionar? */
+  $handler->display->display_options['fields']['field_problem_to_solve']['id'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['table'] = 'field_data_field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['field'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['label'] = 'Problemática a resolver';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_problem_to_solve']['field_api_classes'] = TRUE;
   /* Field: Content: Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
@@ -392,22 +404,6 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
-/* Campo: Contenido: ¿Qué problemática deseás solucionar? */
-  $handler->display->display_options['fields']['field_problem_to_solve']['id'] = 'field_problem_to_solve';
-  $handler->display->display_options['fields']['field_problem_to_solve']['table'] = 'field_data_field_problem_to_solve';
-  $handler->display->display_options['fields']['field_problem_to_solve']['field'] = 'field_problem_to_solve';
-  $handler->display->display_options['fields']['field_problem_to_solve']['label'] = 'Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática';
-  $handler->display->display_options['fields']['field_problem_to_solve']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_problem_to_solve']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_problem_to_solve']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_problem_to_solve']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_problem_to_solve']['type'] = 'entityreference_entity_view';
-  $handler->display->display_options['fields']['field_problem_to_solve']['settings'] = array(
-    'view_mode' => 'default',
-    'links' => 0,
-    'use_content_language' => 0,
-  );
-  $handler->display->display_options['fields']['field_problem_to_solve']['field_api_classes'] = TRUE;
   /* Field: Content: Correo electrónico */
   $handler->display->display_options['fields']['field_representative_email']['id'] = 'field_representative_email';
   $handler->display->display_options['fields']['field_representative_email']['table'] = 'field_data_field_representative_email';
@@ -853,6 +849,7 @@ function retopais_feature_proposals_views_default_views() {
     t('última »'),
     t('flag'),
     t('Nombre de la solución'),
+    t('Problemática a resolver'),
     t('Contanos de manera resumida de qué se trata tu idea y cómo resolverá la problemática'),
     t('Correo electrónico del representante'),
     t('Correo electrónico del responsable del proyecto'),
