@@ -1088,15 +1088,18 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['field_representative_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_representative_email']['field_api_classes'] = TRUE;
   /* Field: Content: ¿Qué problemática deseás solucionar? */
-  $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
-  $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
-  $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
-  $handler->display->display_options['fields']['field_problem']['label'] = 'Problemática';
-  $handler->display->display_options['fields']['field_problem']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_problem']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['id'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['table'] = 'field_data_field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['field'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['label'] = 'Problemática';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_problem_to_solve']['field_api_classes'] = TRUE;
   /* Field: Content: ¿Qué tipo de solución querés proponer? */
   $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
   $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
@@ -1230,15 +1233,18 @@ function retopais_feature_proposals_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: ¿Qué problemática deseás solucionar? */
-  $handler->display->display_options['fields']['field_problem']['id'] = 'field_problem';
-  $handler->display->display_options['fields']['field_problem']['table'] = 'field_data_field_problem';
-  $handler->display->display_options['fields']['field_problem']['field'] = 'field_problem';
-  $handler->display->display_options['fields']['field_problem']['label'] = 'Problemática';
-  $handler->display->display_options['fields']['field_problem']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_problem']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_problem']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_problem']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_problem']['field_api_classes'] = TRUE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['id'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['table'] = 'field_data_field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['field'] = 'field_problem_to_solve';
+  $handler->display->display_options['fields']['field_problem_to_solve']['label'] = 'Problemática';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_problem_to_solve']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_problem_to_solve']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_problem_to_solve']['field_api_classes'] = TRUE;
   /* Field: Content: ¿Qué tipo de solución querés proponer? */
   $handler->display->display_options['fields']['field_solution_type']['id'] = 'field_solution_type';
   $handler->display->display_options['fields']['field_solution_type']['table'] = 'field_data_field_solution_type';
